@@ -59,6 +59,8 @@ import Rect = Protocol.DOM.Rect;
 import SetDeviceMetricsOverrideRequest = Protocol.Emulation.SetDeviceMetricsOverrideRequest;
 import Viewport = Protocol.Page.Viewport;
 import JavascriptDialogClosedEvent = Protocol.Page.JavascriptDialogClosedEvent;
+import * as Path from 'path';
+import { IBrowserNetworkEvents } from '@ulixee/unblocked-specification/agent/browser/IBrowserNetworkEvents';
 
 export interface IPageCreateOptions {
   groupName?: string;
@@ -124,10 +126,11 @@ export default class Page extends TypedEventEmitter<IPageLevelEvents> implements
   }
 
   public readonly logger: IBoundLog;
+
+  private downloadsByGuid = new Map<string, { emitOnOpener: boolean; url: string }>();
   private isClosing = false;
   private closePromise = createPromise();
   private readonly events = new EventSubscriber();
-
   private waitTimeouts: { timeout: NodeJS.Timeout; reject: (reason?: any) => void }[] = [];
 
   constructor(
@@ -175,6 +178,7 @@ export default class Page extends TypedEventEmitter<IPageLevelEvents> implements
       'websocket-frame',
       'websocket-handshake',
       'navigation-response',
+      'navigation-canceled',
       'worker',
     ]);
 
@@ -182,6 +186,7 @@ export default class Page extends TypedEventEmitter<IPageLevelEvents> implements
     this.domStorageTracker.addEventEmitter(this, ['dom-storage-updated']);
     this.networkManager.addEventEmitter(this, [
       'navigation-response',
+      'navigation-canceled',
       'websocket-frame',
       'websocket-handshake',
       'resource-will-be-requested',
@@ -210,6 +215,8 @@ export default class Page extends TypedEventEmitter<IPageLevelEvents> implements
     this.events.on(session, 'Page.fileChooserOpened', this.onFileChooserOpened.bind(this));
     this.events.on(session, 'Page.windowOpen', this.onWindowOpen.bind(this));
     this.events.on(session, 'Page.screencastFrame', this.onScreencastFrame.bind(this));
+    this.events.on(session, 'Page.downloadWillBegin', this.onDownloadWillBegin.bind(this));
+    this.events.on(session, 'Page.downloadProgress', this.onDownloadProgress.bind(this));
 
     const resources = this.browserContext.resources;
     // websocket events
@@ -297,15 +304,32 @@ export default class Page extends TypedEventEmitter<IPageLevelEvents> implements
     return this.mainFrame.evaluate<T>(expression, isolatedFromWebPageEnvironment);
   }
 
-  async navigate(url: string, options: { referrer?: string } = {}): Promise<{ loaderId: string }> {
+  async navigate(
+    url: string,
+    options: { referrer?: string } = {},
+  ): Promise<{ loaderId: string; loaderType: 'download' | 'page' }> {
     const navigationResponse = await this.devtoolsSession.send('Page.navigate', {
       url,
       referrer: options.referrer,
       frameId: this.mainFrame.id,
     });
-    if (navigationResponse.errorText) throw new Error(navigationResponse.errorText);
-    await this.framesManager.waitForFrame(navigationResponse, url, true);
-    return { loaderId: navigationResponse.loaderId };
+    const { errorText, loaderId } = navigationResponse;
+    let didInitiateDownload = false;
+    if (errorText) {
+      if (errorText) {
+        didInitiateDownload = await this.waitForPossibleDownloadPrompt(url, loaderId);
+
+        if (!didInitiateDownload) {
+          throw new Error(errorText);
+        }
+      }
+    }
+
+    if (!didInitiateDownload) {
+      await this.framesManager.waitForFrame(navigationResponse, url, true);
+    }
+
+    return { loaderId, loaderType: didInitiateDownload ? 'download' : 'page' };
   }
 
   async goto(
@@ -595,6 +619,10 @@ export default class Page extends TypedEventEmitter<IPageLevelEvents> implements
     }
   }
 
+  didUrlPromptDownload(url: string): boolean {
+    return [...this.downloadsByGuid.values()].some(x => x.url === url);
+  }
+
   private async navigateToHistory(delta: number): Promise<string> {
     const history = await this.devtoolsSession.send('Page.getNavigationHistory');
     const entry = history.entries[history.currentIndex + delta];
@@ -645,7 +673,10 @@ export default class Page extends TypedEventEmitter<IPageLevelEvents> implements
       }
       if (this.mainFrame.isDefaultUrl) {
         // if we're on the default page, wait for a loader to be created before telling the page it's ready
-        await this.mainFrame.waitOn('frame-loader-created', null, 2e3).catch(() => null);
+        await Promise.race([
+          this.waitOn('download-started', null, 2e3).catch(() => null),
+          this.mainFrame.waitOn('frame-loader-created', null, 2e3).catch(() => null),
+        ]);
         if (this.isClosed) return;
       }
       await this.opener.popupInitializeFn(this, this.opener.windowOpenParams);
@@ -709,6 +740,79 @@ export default class Page extends TypedEventEmitter<IPageLevelEvents> implements
 
   private onWindowOpen(event: WindowOpenEvent): void {
     this.windowOpenParams = event;
+  }
+
+  private async waitForPossibleDownloadPrompt(url: string, loaderId: string): Promise<boolean> {
+    const canceledNavigation = this.networkManager
+      .getCanceledNavigationRequests()
+      .find(x => x.loaderId === loaderId);
+
+    let isDownloadPrompted = this.didUrlPromptDownload(url);
+    if (!isDownloadPrompted && canceledNavigation) {
+      try {
+        // if we get this
+        await this.waitOn('download-started', x => x.download.url === url, 5e3);
+        isDownloadPrompted = true;
+      } catch (err) {
+        return false;
+      }
+    }
+
+    // if the url prompted a download
+    if (isDownloadPrompted) {
+      this.mainFrame.onDownloadNavigation(url, loaderId);
+    }
+    return isDownloadPrompted;
+  }
+
+  private onDownloadWillBegin(payload: Protocol.Page.DownloadWillBeginEvent): void {
+    let originPage: Page;
+    const isCanceledNavigation = this.networkManager
+      .getCanceledNavigationRequests()
+      .find(x => x.url === payload.url);
+
+    let shouldEmitOnOpener = false;
+    if (this.mainFrame?.activeLoader?.isNavigationComplete) {
+      originPage = this;
+    } else if (!this.mainFrame || isCanceledNavigation) {
+      originPage = this.opener;
+      shouldEmitOnOpener = true;
+    }
+
+    if (!originPage) return;
+    this.downloadsByGuid.set(payload.guid, { emitOnOpener: shouldEmitOnOpener, url: payload.url });
+
+    originPage.emit('download-started', {
+      download: {
+        id: payload.guid,
+        suggestedFilename: payload.suggestedFilename,
+        path: Path.join(this.browserContext.downloadsPath, payload.guid),
+        url: payload.url,
+      },
+    });
+  }
+
+  private onDownloadProgress(event: Protocol.Page.DownloadProgressEvent) {
+    const state = <IPageEvents['download-progress']['state']>{
+      id: event.guid,
+      totalBytes: event.totalBytes,
+      canceled: event.state === Protocol.Page.DownloadProgressEventState.Canceled,
+    };
+
+    const isFinished = event.state !== Protocol.Page.DownloadProgressEventState.InProgress;
+
+    const emitter = this.downloadsByGuid.get(state.id)?.emitOnOpener ? this.opener : this;
+
+    if (event.totalBytes) {
+      state.progress = Math.round((event.receivedBytes * 100) / event.totalBytes);
+    } else {
+      state.progress = 0;
+    }
+    if (isFinished) {
+      state.complete = true;
+    }
+    emitter.emit('download-progress', { state });
+    if (state.complete) emitter.emit('download-finished', { id: event.guid });
   }
 
   private onJavascriptDialogOpening(dialog: JavascriptDialogOpeningEvent): void {

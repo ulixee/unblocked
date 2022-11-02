@@ -10,6 +10,7 @@ export default {
   disableDevtools: parseEnvBool(env.ULX_DISABLE_DEVTOOLS),
   noChromeSandbox: parseEnvBool(env.ULX_NO_CHROME_SANDBOX),
   disableGpu: parseEnvBool(env.ULX_DISABLE_GPU),
+  agentDownloadsPath: parseEnvPath(env.ULX_AGENT_DOWNLOADS_PATH),
   defaultChromeId:
     env.ULX_DEFAULT_BROWSER_ID ||
     Object.keys(pkgJson.dependencies)

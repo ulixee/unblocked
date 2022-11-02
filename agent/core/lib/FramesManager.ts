@@ -95,6 +95,7 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
     this.events.on(page, 'resource-loaded', this.onResourceLoaded);
     this.events.on(page, 'resource-failed', this.onResourceFailed);
     this.events.on(page, 'navigation-response', this.onNavigationResourceResponse);
+    this.events.on(page, 'navigation-canceled', this.onNavigationCanceled);
   }
 
   public initialize(): Promise<void> {
@@ -590,5 +591,23 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
       event.loaderId,
       event.timestamp,
     );
+  }
+
+  private async onNavigationCanceled(event: IPageEvents['navigation-canceled']): Promise<void> {
+    const { url, loaderId } = event;
+    let isDownloadPrompted = this.page.didUrlPromptDownload(url);
+    if (!isDownloadPrompted) {
+      try {
+        // if we get this
+        await this.page.waitOn('download-started', x => x.download.url === url, 5e3);
+        isDownloadPrompted = true;
+      } catch (err) {}
+    }
+
+    // if the url prompted a download
+    if (isDownloadPrompted) {
+      const frame = this.framesById.get(event.frameId) ?? this.main;
+      frame.onDownloadNavigation(url, loaderId);
+    }
   }
 }

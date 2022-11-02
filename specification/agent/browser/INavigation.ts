@@ -22,4 +22,4 @@ export default interface INavigation {
 }
 
 export const ContentPaint = 'ContentPaint';
-export type NavigationStatus = ILoadStatus | 'ContentPaint';
+export type NavigationStatus = ILoadStatus | 'ContentPaint' | 'Canceled';

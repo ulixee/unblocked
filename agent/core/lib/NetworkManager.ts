@@ -42,7 +42,10 @@ export default class NetworkManager extends TypedEventEmitter<IBrowserNetworkEve
   private readonly requestsById = new Map<string, IBrowserResourceRequest>();
   private readonly requestPublishingById = new Map<string, IResourcePublishing>();
 
-  private readonly navigationRequestIdsToLoaderId = new Map<string, string>();
+  private readonly navigationRequestsById = new Map<
+    string,
+    { loaderId: string; url: string; wasCanceled: boolean; frameId: string }
+  >();
 
   private parentManager?: NetworkManager;
   private readonly events = new EventSubscriber();
@@ -95,6 +98,20 @@ export default class NetworkManager extends TypedEventEmitter<IBrowserNetworkEve
       this.parentManager.emit(eventType, event);
     }
     return super.emit(eventType, event);
+  }
+
+  public getCanceledNavigationRequests(): { requestId: string; loaderId: string; url: string }[] {
+    const response: { requestId: string; loaderId: string; url: string }[] = [];
+    for (const [requestId, navigation] of this.navigationRequestsById) {
+      if (navigation.wasCanceled) {
+        response.push({
+          requestId,
+          loaderId: navigation.loaderId,
+          url: navigation.url,
+        });
+      }
+    }
+    return response;
   }
 
   public async initialize(): Promise<void> {
@@ -288,7 +305,12 @@ export default class NetworkManager extends TypedEventEmitter<IBrowserNetworkEve
     const isNavigation =
       networkRequest.requestId === networkRequest.loaderId && networkRequest.type === 'Document';
     if (isNavigation) {
-      this.navigationRequestIdsToLoaderId.set(networkRequest.requestId, networkRequest.loaderId);
+      this.navigationRequestsById.set(networkRequest.requestId, {
+        loaderId: networkRequest.loaderId,
+        wasCanceled: false,
+        url: networkRequest.request.url,
+        frameId: networkRequest.frameId,
+      });
     }
     let resource: IBrowserResourceRequest;
     try {
@@ -418,10 +440,10 @@ export default class NetworkManager extends TypedEventEmitter<IBrowserNetworkEve
 
     const event = <IBrowserNetworkEvents['resource-will-be-requested']>{
       resource,
-      isDocumentNavigation: this.navigationRequestIdsToLoaderId.has(browserRequestId),
+      isDocumentNavigation: this.navigationRequestsById.has(browserRequestId),
       frameId: resource.frameId,
       redirectedFromUrl: resource.redirectedFromUrl,
-      loaderId: this.navigationRequestIdsToLoaderId.get(browserRequestId),
+      loaderId: this.navigationRequestsById.get(browserRequestId)?.loaderId,
     };
 
     // NOTE: same requestId will be used in devtools for redirected resources
@@ -486,29 +508,39 @@ export default class NetworkManager extends TypedEventEmitter<IBrowserNetworkEve
 
   private onLoadingFailed(event: LoadingFailedEvent): void {
     const { requestId, canceled, blockedReason, errorText, timestamp } = event;
+    if (this.navigationRequestsById.has(requestId)) {
+      const nav = this.navigationRequestsById.get(requestId);
+      nav.wasCanceled = canceled;
+      this.emit('navigation-canceled', {
+        browserRequestId: requestId,
+        timestamp: this.monotonicTimeToUnix(timestamp),
+        url: nav.url,
+        loaderId: nav.loaderId,
+        frameId: nav.frameId,
+      });
+      return;
+    }
 
     const resource = this.requestsById.get(requestId);
-    if (resource) {
-      if (!resource.url || !resource.requestTime) {
-        return;
-      }
-
-      if (canceled) resource.browserCanceled = true;
-      if (blockedReason) resource.browserBlockedReason = blockedReason;
-      if (errorText) resource.browserLoadFailure = errorText;
-      resource.browserLoadedTime = this.monotonicTimeToUnix(timestamp);
-
-      if (!this.requestPublishingById.get(requestId)?.isPublished) {
-        this.doEmitResourceRequested(requestId);
-      }
-
-      this.emit('resource-failed', {
-        resource,
-      });
-      this.redirectsById.delete(requestId);
-      this.requestsById.delete(requestId);
-      this.requestPublishingById.delete(requestId);
+    if (!resource || !resource.url || !resource.requestTime) {
+      return;
     }
+
+    if (canceled) resource.browserCanceled = true;
+    if (blockedReason) resource.browserBlockedReason = blockedReason;
+    if (errorText) resource.browserLoadFailure = errorText;
+    resource.browserLoadedTime = this.monotonicTimeToUnix(timestamp);
+
+    if (!this.requestPublishingById.get(requestId)?.isPublished) {
+      this.doEmitResourceRequested(requestId);
+    }
+
+    this.emit('resource-failed', {
+      resource,
+    });
+    this.redirectsById.delete(requestId);
+    this.requestsById.delete(requestId);
+    this.requestPublishingById.delete(requestId);
   }
 
   private onLoadingFinished(event: LoadingFinishedEvent): void {
@@ -523,7 +555,7 @@ export default class NetworkManager extends TypedEventEmitter<IBrowserNetworkEve
       if (!this.requestPublishingById.get(id)?.isPublished) this.emitResourceRequested(id);
       this.requestsById.delete(id);
       this.requestPublishingById.delete(id);
-      const loaderId = this.navigationRequestIdsToLoaderId.get(id);
+      const loaderId = this.navigationRequestsById.get(id)?.loaderId;
 
       resource.browserLoadedTime = timestamp;
 

@@ -18,6 +18,13 @@ export interface IBrowserNetworkEvents {
     loaderId: string;
     timestamp: number;
   };
+  'navigation-canceled': {
+    url: string;
+    browserRequestId: string;
+    loaderId: string;
+    frameId: string;
+    timestamp: number;
+  };
   'websocket-frame': {
     browserRequestId: string;
     message: string | Buffer;

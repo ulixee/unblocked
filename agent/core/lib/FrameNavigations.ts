@@ -22,7 +22,7 @@ export default class FrameNavigations
   implements IFrameNavigations
 {
   public get top(): INavigation {
-    return this.history.length > 0 ? this.history[this.history.length - 1] : null;
+    return this.findMostRecentHistory(x => !x.statusChanges.has('Canceled'));
   }
 
   // last navigation not loaded in-page
@@ -202,6 +202,19 @@ export default class FrameNavigations
       });
     }
     return nextTop;
+  }
+
+  public onNavigationCanceled(url: string, loaderId: string): void {
+    const navigation = this.historyByLoaderId[loaderId];
+    this.recordStatusChange(navigation, 'Canceled', Date.now());
+    if (navigation === this.lastHttpNavigationRequest) {
+      this.lastHttpNavigationRequest = this.findMostRecentHistory(
+        x =>
+          x.statusChanges.has(LoadStatus.HttpRequested) &&
+          x.statusChanges.has(LoadStatus.HttpResponded) &&
+          !x.statusChanges.has('Canceled'),
+      );
+    }
   }
 
   public onHttpRequested(

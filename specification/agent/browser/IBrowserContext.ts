@@ -5,7 +5,7 @@ import { IWorker } from './IWorker';
 import IBrowser from './IBrowser';
 import { IBrowserContextHooks } from '../hooks/IBrowserHooks';
 import { ICookie } from '../net/ICookie';
-import IInteractHooks from "../hooks/IInteractHooks";
+import IInteractHooks from '../hooks/IInteractHooks';
 
 export default interface IBrowserContext extends ITypedEventEmitter<IBrowserContextEvents> {
   id: string;
@@ -15,11 +15,12 @@ export default interface IBrowserContext extends ITypedEventEmitter<IBrowserCont
   pagesById: Map<string, IPage>;
   workersById: Map<string, IWorker>;
   defaultPageInitializationFn: (page: IPage) => Promise<any>;
-  hooks: (IBrowserContextHooks & IInteractHooks);
+  hooks: IBrowserContextHooks & IInteractHooks;
+  downloadsPath: string;
 
   newPage(): Promise<IPage>;
   close(): Promise<void>;
-
+  enableDownloads(downloadsPath?: string): Promise<void>;
   getCookies(url?: URL): Promise<ICookie[]>;
   addCookies(
     cookies: (Omit<ICookie, 'expires'> & { expires?: string | Date | number })[],

@@ -28,6 +28,10 @@ import Resources from './Resources';
 import WebsocketMessages from './WebsocketMessages';
 import { DefaultCommandMarker } from './DefaultCommandMarker';
 import DevtoolsSessionLogger from './DevtoolsSessionLogger';
+import * as Fs from 'fs';
+import { existsAsync } from '@ulixee/commons/lib/fileUtils';
+import ShutdownHandler from '@ulixee/commons/lib/ShutdownHandler';
+import env from '../env';
 import CookieParam = Protocol.Network.CookieParam;
 import TargetInfo = Protocol.Target.TargetInfo;
 import CreateBrowserContextRequest = Protocol.Target.CreateBrowserContextRequest;
@@ -60,6 +64,7 @@ export default class BrowserContext
   public domStorage: IDomStorage;
   public id: string;
   public hooks: IBrowserContextHooks & IInteractHooks = {};
+  public downloadsPath: string;
 
   public readonly browser: Browser;
   public get browserId(): string {
@@ -93,6 +98,7 @@ export default class BrowserContext
     this.isIncognito = isIncognito;
     this.logger = options?.logger;
     this.hooks = options?.hooks ?? {};
+    this.downloadsPath = env.agentDownloadsPath;
     this.commandMarker = options?.commandMarker ?? new DefaultCommandMarker(this);
     this.resources = new Resources(this);
     this.websocketMessages = new WebsocketMessages(this.logger);
@@ -121,6 +127,7 @@ export default class BrowserContext
       this,
     );
     this.id = browserContextId;
+    await this.enableDownloads();
     this.logger ??= log.createChild(module, {
       browserContextId,
     });
@@ -165,6 +172,21 @@ export default class BrowserContext
   trackPage(page: Page): void {
     this.pagesById.set(page.id, page);
     this.pagesByTabId.set(page.tabId, page);
+  }
+
+  async enableDownloads(downloadsPath?: string): Promise<void> {
+    if (downloadsPath !== undefined) this.downloadsPath = downloadsPath;
+    if (!(await existsAsync(this.downloadsPath))) {
+      const path = this.downloadsPath;
+      ShutdownHandler.register(() =>
+        Fs.promises.rmdir(path, { recursive: true }).catch(() => null),
+      );
+    }
+    await this.sendWithBrowserDevtoolsSession('Browser.setDownloadBehavior', {
+      behavior: 'allowAndName',
+      browserContextId: this.id,
+      downloadPath: this.downloadsPath,
+    });
   }
 
   initializePage(page: Page): Promise<any> {
@@ -318,6 +340,9 @@ export default class BrowserContext
       this.resources.cleanup();
       this.events.close();
       this.emit('close');
+      if (this.downloadsPath) {
+        await Fs.promises.rmdir(this.downloadsPath, { recursive: true }).catch(() => null);
+      }
       this.devtoolsSessionLogger.close();
       this.removeAllListeners();
       this.logger.stats('BrowserContext.Closed', { parentLogId: logId });

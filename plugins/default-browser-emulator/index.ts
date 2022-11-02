@@ -18,6 +18,7 @@ import IBrowserLaunchArgs from '@ulixee/unblocked-specification/agent/browser/IB
 import IBrowser from '@ulixee/unblocked-specification/agent/browser/IBrowser';
 import Log from '@ulixee/commons/lib/Logger';
 import { IFrame } from '@ulixee/unblocked-specification/agent/browser/IFrame';
+import IBrowserContext from '@ulixee/unblocked-specification/agent/browser/IBrowserContext';
 import Viewports from './lib/Viewports';
 import BrowserEngine from './lib/BrowserEngine';
 import setWorkerDomOverrides from './lib/setWorkerDomOverrides';
@@ -176,6 +177,13 @@ export default class DefaultBrowserEmulator<T = IEmulatorOptions> implements IUn
       this.domOverridesBuilder.addWorkerScript(script, args);
     }
     return true;
+  }
+
+  public onNewBrowserContext(context: IBrowserContext): Promise<void> {
+    if (this.browserEngine.userDataDir) {
+      context.downloadsPath = `${this.browserEngine.userDataDir}/downloads`;
+    }
+    return Promise.resolve();
   }
 
   public onNewPage(page: IPage): Promise<any> {

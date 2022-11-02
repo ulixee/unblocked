@@ -571,6 +571,14 @@ export default class Frame extends TypedEventEmitter<IFrameEvents> implements IF
     this.emit('frame-navigated', { frame: this, navigatedInDocument: true, loaderId });
   }
 
+  public onDownloadNavigation(url: string, loaderId: string): void {
+    this.setLoader(loaderId, url);
+    this.navigationLoadersById[loaderId].navigationResolver.resolve(url);
+    this.navigations.onNavigationCanceled(url, loaderId);
+    this.onStoppedLoading();
+    this.emit('frame-navigated', { frame: this, loaderId });
+  }
+
   /////// LIFECYCLE ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   public onStoppedLoading(): void {

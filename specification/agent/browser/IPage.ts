@@ -12,6 +12,7 @@ import { IJsPath } from '@ulixee/js-path';
 import IExecJsPathResult from './IExecJsPathResult';
 import IFileChooserPrompt from './IFileChooserPrompt';
 import { IInteractionGroups } from '../interact/IInteractions';
+import IDownload, { IDownloadState } from './IDownload';
 
 export interface IPage extends ITypedEventEmitter<IPageEvents> {
   id: string;
@@ -30,7 +31,10 @@ export interface IPage extends ITypedEventEmitter<IPageEvents> {
   interact(...interactionGroups: IInteractionGroups): Promise<void>;
   click(jsPathOrSelector: IJsPath | string): Promise<void>;
   type(text: string): Promise<void>;
-  navigate(url: string, options?: { referrer?: string }): Promise<{ loaderId: string }>;
+  navigate(
+    url: string,
+    options?: { referrer?: string },
+  ): Promise<{ loaderId: string; loaderType: 'page' | 'download' }>;
   close(options?: { timeoutMs?: number }): Promise<void>;
   bringToFront(): Promise<void>;
   screenshot(options: IScreenshotOptions): Promise<Buffer>;
@@ -58,6 +62,9 @@ export interface IPageEvents extends IFrameManagerEvents, IBrowserNetworkEvents 
   crashed: { error: Error; fatal?: boolean };
   console: { frameId: number; type: string; message: string; location: string };
   'dialog-opening': { dialog: IDialog };
+  'download-started': { download: IDownload };
+  'download-progress': { state: IDownloadState };
+  'download-finished': { id: string };
   filechooser: { prompt: IFileChooserPrompt };
   'page-error': { frameId: number; error: Error };
   'page-callback-triggered': { name: string; frameId: number; payload: string };
