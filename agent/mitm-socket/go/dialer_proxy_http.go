@@ -27,8 +27,8 @@ func DialAddrViaHttpProxy(dialer net.Dialer, addr string, proxyUrl *url.URL, all
 	}
 
 	if proxyUrl.User != nil {
-		authBuffer := bytes.NewBuffer()
-		authEncoder := base64.NewEncoder(base64.StdEncoding, authbuffer)
+		authBuffer := bytes.NewBuffer(nil)
+		authEncoder := base64.NewEncoder(base64.StdEncoding, authBuffer)
 		authEncoder.Write([]byte(proxyUrl.User.Username()))
 		if password, passwordSet := proxyUrl.User.Password(); passwordSet {
 			authEncoder.Write([]byte{':'})
