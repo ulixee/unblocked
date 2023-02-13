@@ -34,6 +34,7 @@ func DialAddrViaHttpProxy(dialer net.Dialer, addr string, proxyUrl *url.URL, all
 			authEncoder.Write([]byte{':'})
 			authEncoder.Write([]byte(password))
 		}
+		authEncoder.Close() // flush any partially written blocks
 		connectReq.Header.Set("Proxy-Authorization", fmt.Sprintf("Basic %s", authBuffer.Bytes()))
 	}
 
