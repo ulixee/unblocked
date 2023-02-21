@@ -130,6 +130,14 @@ export default class RequestSession
     }
   }
 
+  public async haveSentResponse(context: IMitmRequestContext): Promise<void> {
+    context.setState(ResourceState.EmulationHaveSentResponse);
+
+    for (const hook of this.hooks) {
+      await hook.afterHttpResponse?.(context);
+    }
+  }
+
   public async lookupDns(host: string): Promise<string> {
     if (this.dns && !this.isClosing) {
       try {

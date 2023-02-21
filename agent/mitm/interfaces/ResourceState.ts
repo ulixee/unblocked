@@ -3,6 +3,7 @@ enum ResourceState {
   InterceptHandler = 'InterceptHandler',
   DetermineResourceType = 'DetermineResourceType',
   EmulationWillSendResponse = 'EmulationWillSendResponse',
+  EmulationHaveSentResponse = 'EmulationHaveSentResponse',
   CheckCacheOnRequest = 'CheckCacheOnRequest',
   GetSocket = 'GetSocket',
   BeforeSendRequest = 'BeforeSendRequest',
