@@ -96,7 +96,7 @@ export default class HttpUpgradeHandler extends BaseHttpHandler {
     for (let i = 0; i < serverResponse.rawHeaders.length; i += 2) {
       responseMessage += `${serverResponse.rawHeaders[i]}: ${serverResponse.rawHeaders[i + 1]}\r\n`;
     }
-    this.context.resourceBodySize = responseMessage.length + 2; // 2 for \r\n
+    this.context.responseBodySize = 0;
     await requestSession.willSendResponse(this.context);
 
     this.context.setState(ResourceState.WriteProxyToClientResponseBody);

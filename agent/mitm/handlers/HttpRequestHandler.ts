@@ -126,7 +126,7 @@ export default class HttpRequestHandler extends BaseHttpHandler {
     }
 
     try {
-      context.resourceBodySize = await this.writeResponse();
+      context.responseBodySize = await this.writeResponse();
     } catch (err) {
       return this.onError('ServerToProxyToClient.ReadWriteResponseError', err);
     }
@@ -260,17 +260,18 @@ export default class HttpRequestHandler extends BaseHttpHandler {
     proxyToClientResponse.writeHead(proxyToClientResponse.statusCode);
   }
 
-  private async writeResponse(): Promise<number> {
+  private async writeResponse(): Promise<void> {
     const context = this.context;
     const { serverToProxyResponse, proxyToClientResponse } = context;
 
     context.setState(ResourceState.WriteProxyToClientResponseBody);
 
-    let resourceSize = 0;
+    context.responseBodySize = 0;
 
     for await (const chunk of serverToProxyResponse) {
-      const data = context.cacheHandler.onResponseData(chunk as Buffer);
-      resourceSize += data.length;
+      let buffer = chunk as Buffer;
+      context.responseBodySize += buffer.length;
+      const data = context.cacheHandler.onResponseData(buffer);
       this.safeWriteToClient(data);
     }
 
@@ -279,7 +280,6 @@ export default class HttpRequestHandler extends BaseHttpHandler {
     }
 
     if (serverToProxyResponse instanceof http.IncomingMessage) {
-      resourceSize += serverToProxyResponse.rawTrailers.map(s => s.length).reduce((a, b) => a + b, 0);
       context.responseTrailers = parseRawHeaders(serverToProxyResponse.rawTrailers);
     }
     if (context.responseTrailers) {
@@ -293,8 +293,6 @@ export default class HttpRequestHandler extends BaseHttpHandler {
     // wait for browser request id before resolving
     await context.browserHasRequested;
     context.requestSession.emit('response', MitmRequestContext.toEmittedResource(context));
-
-    return resourceSize;
   }
 
   private safeWriteToClient(data: Buffer): void {
