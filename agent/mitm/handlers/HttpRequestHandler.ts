@@ -126,7 +126,7 @@ export default class HttpRequestHandler extends BaseHttpHandler {
     }
 
     try {
-      context.responseBodySize = await this.writeResponse();
+      await this.writeResponse();
     } catch (err) {
       return this.onError('ServerToProxyToClient.ReadWriteResponseError', err);
     }
