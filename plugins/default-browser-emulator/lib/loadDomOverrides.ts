@@ -1,9 +1,9 @@
-import IEmulationProfile from '@ulixee/unblocked-specification/plugin/IEmulationProfile';
 import { pickRandom } from '@ulixee/commons/lib/utils';
-import DomOverridesBuilder from './DomOverridesBuilder';
+import IEmulationProfile from '@ulixee/unblocked-specification/plugin/IEmulationProfile';
 import IBrowserData from '../interfaces/IBrowserData';
-import parseNavigatorPlugins from './utils/parseNavigatorPlugins';
 import IUserAgentData from '../interfaces/IUserAgentData';
+import DomOverridesBuilder from './DomOverridesBuilder';
+import parseNavigatorPlugins from './utils/parseNavigatorPlugins';
 
 export default function loadDomOverrides(
   emulationProfile: IEmulationProfile,
@@ -17,6 +17,10 @@ export default function loadDomOverrides(
   const deviceProfile = emulationProfile.deviceProfile;
   const rtt = pickRandom([25, 50, 100]);
   const isHeadless = emulationProfile.browserEngine.isHeaded !== true;
+
+  domOverrides.add('navigator.hardwareConcurrency', {
+    concurrency: pickRandom([4, 8, 12, 16, 24]),
+  });
 
   domOverrides.add('navigator.deviceMemory', {
     memory: deviceProfile.deviceMemory,
@@ -94,7 +98,7 @@ export default function loadDomOverrides(
   if (voices?.length) {
     domOverrides.add('speechSynthesis.getVoices', { voices });
   }
-  const frame = data.windowFraming
+  const frame = data.windowFraming;
   domOverrides.add('window.outerWidth', {
     frameBorderWidth: frame.frameBorderWidth,
   });
@@ -102,9 +106,9 @@ export default function loadDomOverrides(
     frameBorderHeight: frame.frameBorderHeight,
   });
   domOverrides.add('window.screen', {
-      unAvailHeight: frame.screenGapTop + frame.screenGapBottom,
-      unAvailWidth: frame.screenGapLeft + frame.screenGapRight,
-  })
+    unAvailHeight: frame.screenGapTop + frame.screenGapBottom,
+    unAvailWidth: frame.screenGapLeft + frame.screenGapRight,
+  });
 
   return domOverrides;
 }
