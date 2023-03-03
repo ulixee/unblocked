@@ -19,9 +19,8 @@ export default function loadDomOverrides(
   const isHeadless = emulationProfile.browserEngine.isHeaded !== true;
 
   domOverrides.add('navigator.hardwareConcurrency', {
-    concurrency: pickRandom([4, 8, 12, 16, 24]),
+    concurrency: deviceProfile.hardwareConcurrency,
   });
-
   domOverrides.add('navigator.deviceMemory', {
     memory: deviceProfile.deviceMemory,
     storageTib: deviceProfile.deviceStorageTib,
