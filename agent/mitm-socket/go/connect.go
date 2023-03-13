@@ -5,11 +5,11 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"golang.org/x/net/http2"
 	"log"
-	"net"
 	"os"
 	"time"
+
+	"golang.org/x/net/http2"
 
 	utls "github.com/ulixee/utls"
 )
@@ -154,8 +154,8 @@ func handleSocket(connectArgs ConnectArgs, sessionArgs SessionArgs, signals *Sig
 
 			}
 		}
-		tcpConn, ok := dialConn.(*net.TCPConn)
-		if protocol == "h2" && ok {
+
+		if tcpConn, ok := asTCPConn(dialConn); protocol == "h2" && ok {
 			tcpConn.SetNoDelay(true)
 		}
 	}
