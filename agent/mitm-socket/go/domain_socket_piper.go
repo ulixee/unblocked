@@ -28,14 +28,7 @@ func (piper *DomainSocketPiper) Pipe(remote net.Conn) {
 	go piper.copy(remote, client, clientHasDataChan, false)
 
 	piper.wg.Wait()
-	if stats, ok := extractTrackedStats(remote); ok {
-		SendToIpc(piper.id, "closing", map[string]interface{}{
-			"bytesRead":   stats.BytesRead,
-			"byesWritten": stats.BytesWritten,
-		})
-	} else {
-		SendToIpc(piper.id, "closing", nil)
-	}
+	SendToIpc(piper.id, "closing", nil)
 }
 
 func (piper *DomainSocketPiper) copy(dst net.Conn, src net.Conn, clientHasData chan bool, isReadingFromRemote bool) {

@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-func DialAddrViaHttpProxy(dialer *Dialer, addr string, proxyUrl *url.URL, allowInsecure bool) (net.Conn, error) {
+func DialAddrViaHttpProxy(dialer net.Dialer, addr string, proxyUrl *url.URL, allowInsecure bool) (net.Conn, error) {
 	isSecure, proxyHost, _ := getCleanHost(proxyUrl)
 
 	fmt.Printf("Dialing proxy connect %s to %s\n", proxyHost, addr)

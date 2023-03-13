@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"net"
 	"os"
 	"time"
 
@@ -155,7 +156,7 @@ func handleSocket(connectArgs ConnectArgs, sessionArgs SessionArgs, signals *Sig
 			}
 		}
 
-		if tcpConn, ok := asTCPConn(dialConn); protocol == "h2" && ok {
+		if tcpConn, ok := dialConn.(*net.TCPConn); protocol == "h2" && ok {
 			tcpConn.SetNoDelay(true)
 		}
 	}

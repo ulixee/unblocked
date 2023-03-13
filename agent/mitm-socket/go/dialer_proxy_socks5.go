@@ -10,7 +10,7 @@ import (
 	"golang.org/x/net/proxy"
 )
 
-func DialAddrViaSock5Proxy(dialer *Dialer, addr string, proxyUrl *url.URL) (net.Conn, error) {
+func DialAddrViaSock5Proxy(dialer net.Dialer, addr string, proxyUrl *url.URL) (net.Conn, error) {
 	var socksAuth *proxy.Auth = nil
 
 	proxyHost := proxyUrl.Host

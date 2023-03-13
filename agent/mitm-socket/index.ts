@@ -17,8 +17,8 @@ export default class MitmSocket
   extends TypedEventEmitter<{
     connect: void;
     dial: void;
-    eof: void;
-    close: void;
+    eof: { bytesRead: number; bytesWritten: number };
+    close: { bytesRead: number; bytesWritten: number };
   }>
   implements IHttpSocketWrapper
 {
@@ -120,7 +120,7 @@ export default class MitmSocket
         ),
       );
     }
-    this.emit('close');
+    this.emit('close', { bytesRead: this.socket.bytesRead, bytesWritten: this.socket.bytesWritten });
     this.cleanupSocket();
     this.closedPromise.resolve(this.closeTime);
     this.events.close('error');
@@ -210,7 +210,7 @@ export default class MitmSocket
       this.receivedEOF = true;
       setImmediate(() => {
         if (this.isClosing) return;
-        this.emit('eof');
+        this.emit('eof', { bytesRead: this.socket.bytesRead, bytesWritten: this.socket.bytesWritten });
       });
     } else if (status === 'closing') {
       this.bytesRead = message?.bytesRead;
