@@ -53,6 +53,9 @@ export default class MitmSocket
   public connectError?: string;
   public receivedEOF = false;
 
+  public bytesWritten = 0;
+  public bytesRead = 0;
+
   protected logger: IBoundLog;
 
   private server: net.Server;
@@ -210,6 +213,8 @@ export default class MitmSocket
         this.emit('eof');
       });
     } else if (status === 'closing') {
+      this.bytesRead = message?.bytesRead;
+      this.bytesWritten = message?.bytesWritten;
       setImmediate(this.close.bind(this));
     }
   }

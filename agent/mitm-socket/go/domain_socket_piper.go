@@ -30,10 +30,8 @@ func (piper *DomainSocketPiper) Pipe(remote net.Conn) {
 	piper.wg.Wait()
 	if stats, ok := extractTrackedStats(remote); ok {
 		SendToIpc(piper.id, "closing", map[string]interface{}{
-			"conn_start":    stats.StartTime,
-			"conn_duration": stats.Duration,
-			"bytes_read":    stats.BytesRead,
-			"byes_written":  stats.BytesWritten,
+			"bytesRead":   stats.BytesRead,
+			"byesWritten": stats.BytesWritten,
 		})
 	} else {
 		SendToIpc(piper.id, "closing", nil)

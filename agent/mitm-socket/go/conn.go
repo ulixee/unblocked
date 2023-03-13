@@ -3,16 +3,12 @@ package main
 import (
 	"fmt"
 	"net"
-	"time"
 
 	utls "github.com/ulixee/utls"
 )
 
 type TrackedConn struct {
 	net.Conn
-
-	startTime time.Time
-	target    string
 
 	bytesRead    int
 	bytesWritten int
@@ -29,7 +25,7 @@ func asTCPConn(conn net.Conn) (*net.TCPConn, bool) {
 	return nil, false
 }
 
-func extractTrackedStats(conn net.Conn) (*TrackedStats, bool) {
+func extractTrackedStats(conn net.Conn) (*TrackedConnStats, bool) {
 	if trackeConn, ok := conn.(*TrackedConn); ok {
 		stats := trackeConn.Stats()
 		return &stats, true
@@ -40,11 +36,7 @@ func extractTrackedStats(conn net.Conn) (*TrackedStats, bool) {
 	return nil, false
 }
 
-type TrackedStats struct {
-	StartTime time.Time
-	Duration  time.Duration
-	Target    string
-
+type TrackedConnStats struct {
 	BytesRead    int
 	BytesWritten int
 }
@@ -52,9 +44,6 @@ type TrackedStats struct {
 func NewTrackedConn(conn net.Conn, target string) *TrackedConn {
 	return &TrackedConn{
 		Conn: conn,
-
-		startTime: time.Now(),
-		target:    target,
 	}
 }
 
@@ -76,12 +65,8 @@ func (t *TrackedConn) Write(p []byte) (int, error) {
 	return n, nil
 }
 
-func (t *TrackedConn) Stats() TrackedStats {
-	return TrackedStats{
-		StartTime: t.startTime,
-		Duration:  time.Since(t.startTime),
-		Target:    t.target,
-
+func (t *TrackedConn) Stats() TrackedConnStats {
+	return TrackedConnStats{
 		BytesRead:    t.bytesRead,
 		BytesWritten: t.bytesWritten,
 	}
