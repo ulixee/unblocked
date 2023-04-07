@@ -65,7 +65,7 @@ export default function modifyHeaders(
     let value = requestLowerHeaders[lowerName];
 
     if (lowerName === 'accept-language') {
-      value = `${locale};q=0.9`;
+      // value = `${locale};q=0.9`;
       // if header is an Sec- header, trust Chrome
     } else if (lowerName === 'rtt') {
       value = deviceProfile.rtt;
