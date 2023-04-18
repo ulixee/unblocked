@@ -799,6 +799,7 @@ describe('Proxy detections', () => {
 it('should emulate in a shared worker', async () => {
   const hasAllResults = new Resolvable<void>();
   const jsonResults: string[] = [];
+  let postResolvable = new Resolvable<void>();
   const httpsServer = await Helpers.runHttpsServer(async (req, res) => {
     res.setHeader('access-control-allow-origin', '*');
     if (req.url === '/test.html') {
@@ -845,6 +846,7 @@ it('should emulate in a shared worker', async () => {
 </body></html>`);
     } else if (req.url.includes('worker-result')) {
       const result = await Helpers.readableToBuffer(req);
+      postResolvable.resolve();
       jsonResults.push(result.toString());
       if (jsonResults.length === 10) {
         hasAllResults.resolve();
@@ -859,12 +861,13 @@ it('should emulate in a shared worker', async () => {
       res.end(body);
     }
   });
-
+  const agent = pool.createAgent({ logger });
+  Helpers.needsClosing.push(agent);
+  const page = await agent.newPage();
   for (let i = 0; i < 10; i += 1) {
-    const agent = pool.createAgent({ logger });
-    Helpers.needsClosing.push(agent);
-    const page = await agent.newPage();
+    postResolvable = new Resolvable<void>();
     await page.goto(`${httpsServer.baseUrl}/test.html`);
+    await postResolvable;
   }
 
   await hasAllResults;

@@ -1,4 +1,4 @@
-import { loadEnv, parseEnvBool, parseEnvPath } from '@ulixee/commons/lib/envUtils';
+import { loadEnv, parseEnvBool } from '@ulixee/commons/lib/envUtils';
 
 loadEnv(__dirname);
 const env = process.env;
@@ -15,5 +15,5 @@ export default {
       .find(x => x.match(/^@ulixee\/chrome-\d+-0$/))
       ?.split('@ulixee/')
       ?.pop(),
-  noRosettaChromeOnMac: parseEnvBool(env.ULX_NO_CHROME_ROSETTA),
+  useRosettaChromeOnMac: parseEnvBool(env.ULX_USE_CHROME_ROSETTA),
 };
