@@ -9,6 +9,7 @@ export default {
   showChrome: parseEnvBool(env.ULX_SHOW_CHROME),
   noChromeSandbox: parseEnvBool(env.ULX_NO_CHROME_SANDBOX),
   disableGpu: parseEnvBool(env.ULX_DISABLE_GPU),
+  enableHeadlessNewMode: parseEnvBool(env.ULX_ENABLE_HEADLESS_NEW),
   defaultChromeId:
     env.ULX_DEFAULT_BROWSER_ID ||
     Object.keys(pkgJson.dependencies)
