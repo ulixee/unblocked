@@ -12,7 +12,9 @@ export default function loadDomOverrides(
   const domOverrides = new DomOverridesBuilder();
 
   const deviceProfile = emulationProfile.deviceProfile;
-  const isHeadless = emulationProfile.browserEngine.isHeaded !== true && emulationProfile.browserEngine.isHeadlessNew !== true;
+  const isHeadless =
+    emulationProfile.browserEngine.isHeaded !== true &&
+    emulationProfile.browserEngine.isHeadlessNew !== true;
 
   domOverrides.add('navigator.hardwareConcurrency', {
     concurrency: deviceProfile.hardwareConcurrency,
@@ -34,6 +36,8 @@ export default function loadDomOverrides(
   domOverrides.add('MediaDevices.prototype.enumerateDevices', {
     videoDevice: deviceProfile.videoDevice,
   });
+
+  domOverrides.add('performance');
 
   if (isHeadless) {
     domOverrides.add('Notification.permission');
