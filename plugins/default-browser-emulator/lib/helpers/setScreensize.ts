@@ -25,6 +25,21 @@ export default async function setScreensize(
     }),
   ];
 
+  if (emulationProfile.browserEngine.isHeaded && viewport.screenWidth) {
+    promises.push(
+      page.devtoolsSession.send('Browser.getWindowForTarget').then(({ windowId }) => {
+        return devtools.send('Browser.setWindowBounds', {
+          windowId,
+          bounds: {
+            width: viewport.screenWidth,
+            height: viewport.screenHeight,
+            windowState: 'normal',
+          },
+        });
+      }),
+    );
+  }
+
   if (viewport.width === 0 || viewport.height === 0) {
     promises.push(
       devtools.send('Page.getLayoutMetrics').then(x => {
