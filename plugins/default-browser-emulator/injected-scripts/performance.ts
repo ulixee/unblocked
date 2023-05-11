@@ -4,7 +4,7 @@ proxyFunction(
   performance,
   'getEntriesByType',
   (target, thisArg, argArray): PerformanceEntryList => {
-    let entries = ReflectCached.apply(target, thisArg, argArray);
+    const entries = ReflectCached.apply(target, thisArg, argArray);
 
     if (argArray[0] === 'navigation') {
       entries.forEach(entry => {
@@ -18,7 +18,7 @@ proxyFunction(
 );
 
 proxyFunction(performance, 'getEntries', (target, thisArg, argArray): PerformanceEntryList => {
-  let entries = ReflectCached.apply(target, thisArg, argArray);
+  const entries = ReflectCached.apply(target, thisArg, argArray);
 
   entries.forEach(entry => {
     if (entry.entryType === 'navigation') {
