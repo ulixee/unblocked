@@ -37,8 +37,6 @@ export default function loadDomOverrides(
     videoDevice: deviceProfile.videoDevice,
   });
 
-  domOverrides.add('performance');
-
   if (isHeadless) {
     domOverrides.add('Notification.permission');
     domOverrides.add('Permission.prototype.query');
@@ -102,6 +100,9 @@ export default function loadDomOverrides(
   domOverrides.add('window.outerHeight', {
     frameBorderHeight: frame.frameBorderHeight,
   });
+  if (Number(emulationProfile.browserEngine.fullVersion.split('.')[0]) >= 109) {
+    domOverrides.add('performance');
+  }
   domOverrides.add('window.screen', {
     unAvailHeight: frame.screenGapTop + frame.screenGapBottom,
     unAvailWidth: frame.screenGapLeft + frame.screenGapRight,
