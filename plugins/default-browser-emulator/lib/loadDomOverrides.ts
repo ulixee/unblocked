@@ -105,6 +105,7 @@ export default function loadDomOverrides(
   domOverrides.add('window.screen', {
     unAvailHeight: frame.screenGapTop + frame.screenGapBottom,
     unAvailWidth: frame.screenGapLeft + frame.screenGapRight,
+    colorDepth: emulationProfile.viewport.colorDepth,
   });
 
   return domOverrides;
