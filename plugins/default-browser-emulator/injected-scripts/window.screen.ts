@@ -13,4 +13,5 @@ proxyGetter(
 
 if (args.colorDepth) {
   proxyGetter(window.screen, 'colorDepth', () => args.colorDepth, true);
+  proxyGetter(window.screen, 'pixelDepth', () => args.colorDepth, true);
 }
