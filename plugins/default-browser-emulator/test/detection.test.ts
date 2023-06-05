@@ -5,6 +5,7 @@ import Pool from '@ulixee/unblocked-agent/lib/Pool';
 import { LocationStatus } from '@ulixee/unblocked-specification/agent/browser/Location';
 import * as fpscanner from 'fpscanner';
 import * as Fs from 'fs';
+import * as Path from 'path';
 import BrowserEmulator from '../index';
 
 const fpCollectPath = require.resolve('fpcollect/src/fpCollect.js');
@@ -852,7 +853,7 @@ describe('Proxy detections', () => {
 it('should emulate in a shared worker', async () => {
   const hasAllResults = new Resolvable<void>();
   const jsonResults: string[] = [];
-  let postResolvable = new Resolvable<void>();
+  const iterations = 10;
   const httpsServer = await Helpers.runHttpsServer(async (req, res) => {
     res.setHeader('access-control-allow-origin', '*');
     if (req.url === '/test.html') {
@@ -899,9 +900,8 @@ it('should emulate in a shared worker', async () => {
 </body></html>`);
     } else if (req.url.includes('worker-result')) {
       const result = await Helpers.readableToBuffer(req);
-      postResolvable.resolve();
       jsonResults.push(result.toString());
-      if (jsonResults.length === 10) {
+      if (jsonResults.length === iterations) {
         hasAllResults.resolve();
       }
 
@@ -914,21 +914,114 @@ it('should emulate in a shared worker', async () => {
       res.end(body);
     }
   });
-  const agent = pool.createAgent({ logger });
-  Helpers.needsClosing.push(agent);
-  const page = await agent.newPage();
-  for (let i = 0; i < 10; i += 1) {
-    postResolvable = new Resolvable<void>();
+
+  for (let i = 0; i < iterations; i += 1) {
+    const agent = pool.createAgent({ logger });
+    Helpers.needsClosing.push(agent);
+    const page = await agent.newPage();
     await page.goto(`${httpsServer.baseUrl}/test.html`);
-    await postResolvable;
   }
 
   await hasAllResults;
   const results = jsonResults.map(x => JSON.parse(x));
-  expect(results).toHaveLength(10);
+  expect(results).toHaveLength(iterations);
+
+  const resultWithUnmasked: any[] = [];
 
   for (const result of results) {
-    expect([...new Set(result.map(x => x.hardwareConcurrency))]).toHaveLength(1);
-    expect([...new Set(result.map(x => x.userAgent))]).toHaveLength(1);
+    const hardware = new Set(result.map(x => x.hardwareConcurrency));
+    const ua = new Set(result.map(x => x.userAgent));
+    if (ua.size > 1 || hardware.size > 1)
+      resultWithUnmasked.push({ hardware: [...hardware], ua: [...ua] });
   }
+  expect(resultWithUnmasked).toHaveLength(0);
+});
+
+it('should emulate in a blob shared worker', async () => {
+  const hasAllResults = new Resolvable<void>();
+  const jsonResults: string[] = [];
+  const iterations = 2;
+
+  const httpsServer = await Helpers.runHttpsServer(async (req, res) => {
+    res.setHeader('access-control-allow-origin', '*');
+    if (req.url === '/test.html') {
+      res.end(`<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+      const { hardwareConcurrency, userAgent, deviceMemory } = navigator;
+		  const results = [{ hardwareConcurrency, userAgent, deviceMemory }];
+      
+      (async () => {
+        async function check() {
+          const { port } = new SharedWorker(URL.createObjectURL(new Blob([
+            "const { hardwareConcurrency, userAgent, deviceMemory } = navigator;",
+            "onconnect = e => {",
+            "  const port = e.ports[0];",
+            "  port.postMessage({ hardwareConcurrency, userAgent, deviceMemory });",
+            "  port.close();",
+            "};"
+         ], { type: 'application/javascript' })));
+  
+          port.start();
+  
+          await new Promise(resolve => {
+            port.addEventListener("message", e => {
+              port.close();
+              results.push(e.data);
+              resolve();
+            });
+          })
+        }
+  
+        const checks = [];
+        for (let index = 0; index < 20; index++) {
+          checks.push(check());
+        }
+        await Promise.all(checks)
+        
+       await fetch('/worker-result', {
+          method: 'POST',
+          body: JSON.stringify(results),
+        });
+     })();
+		</script>
+</body></html>`);
+    } else if (req.url.includes('worker-result')) {
+      const result = await Helpers.readableToBuffer(req);
+      jsonResults.push(result.toString());
+      if (jsonResults.length === iterations) {
+        hasAllResults.resolve();
+      }
+
+      res.end('');
+    }
+  });
+
+  for (let i = 0; i < iterations; i += 1) {
+    const agent = pool.createAgent({ logger });
+    Helpers.needsClosing.push(agent);
+    const page = await agent.newPage();
+    await page.goto(`${httpsServer.baseUrl}/test.html`);
+  }
+
+  await hasAllResults;
+  const results = jsonResults.map(x => JSON.parse(x));
+  expect(results).toHaveLength(iterations);
+
+  const resultWithUnmasked: any[] = [];
+
+  for (const result of results) {
+    const hardware = new Set(result.map(x => x.hardwareConcurrency));
+    const ua = new Set(result.map(x => x.userAgent));
+    if (ua.size > 1 || hardware.size > 1)
+      resultWithUnmasked.push({ hardware: [...hardware], ua: [...ua] });
+  }
+  expect(resultWithUnmasked).toHaveLength(0);
 });

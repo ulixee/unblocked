@@ -34,7 +34,6 @@ proxySetter(self.HTMLIFrameElement.prototype, 'srcdoc', function (_, iframe) {
           if (contentWindow) {
             if (!hasRunNewDocumentScripts.has(contentWindow)) {
               hasRunNewDocumentScripts.add(contentWindow);
-              // @ts-expect-error
               newDocumentScript(contentWindow);
               frameWindowProxies.delete(iframe);
             }
