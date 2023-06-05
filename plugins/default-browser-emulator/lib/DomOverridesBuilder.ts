@@ -52,15 +52,25 @@ export default class DomOverridesBuilder {
     return {
       callbacks,
       // NOTE: don't make this async. It can cause issues if you read a frame right after creation, for instance
-      script: `(function newDocumentScript(selfOverride) {
-if (selfOverride) self = selfOverride;
+      script: `(function newDocumentScriptWrapper() {
 // Worklet has no scope to override, but we can't detect until it loads
 if (typeof self === 'undefined' && typeof window === 'undefined') return;
+
+runMap = typeof runMap === 'undefined' ? new WeakSet() : runMap;
+if (runMap.has(self)) return;
   
 const sourceUrl = '${injectedSourceUrl}';
 ${utilsScript}
 
-${scripts.map(x => `try { ${x} } catch(e) {${catchHandling}}`).join('\n\n')}
+(function newDocumentScript(selfOverride) {
+  if (selfOverride) self = selfOverride;
+  
+  if (runMap.has(self)) return;
+  runMap.add(self);
+  
+  ${scripts.map(x => `try { ${x} } catch(e) {${catchHandling}}`).join('\n\n')}
+})();
+
 })();
 //# sourceURL=${injectedSourceUrl}`.replace(/\/\/# sourceMap.+/g, ''),
     };

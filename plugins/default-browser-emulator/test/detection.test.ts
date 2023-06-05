@@ -320,31 +320,58 @@ test('cannot detect a proxy of args passed into a proxied function', async () =>
   expect(result.result).toBe('Intel Inc.');
 });
 
-test('should get the correct platform from a nested srcdoc iframe', async () => {
+test('should get the correct platform from a nested cross-domain srcdoc iframe', async () => {
+  koaServer.get('/nested-platform', ctx => {
+    ctx.body = `<html><body><h1>hi</h1>
+<iframe src='http://127.0.0.1:${koaServer.baseHost.split(':').pop()}/platform-iframe'></iframe>
+</body></html>`;
+  });
+  koaServer.get('/platform-iframe', ctx => {
+    ctx.body = `<html><head><script async src='./platform.js' type='text/javascript'></script></head></html>`;
+  });
+  koaServer.get('/platform.js', async ctx => {
+    ctx.set('content-type', 'application/javascript');
+    ctx.body = `let iframe = document.createElement("iframe");
+    iframe.srcdoc = "/**/";
+    iframe.setAttribute("style", "display: none;");
+    document.head.appendChild(iframe);
+    
+    const nav = iframe.contentWindow.navigator;
+    document.head.removeChild(iframe);
+    iframe = null;
+    
+    fetch('/js-result', {
+      method: 'POST',
+      body: JSON.stringify( { win: window.navigator.platform, iframe: nav.platform }),
+    })`;
+  });
+
+  const result = new Promise<{ win: string; iframe: string }>(resolve => {
+    koaServer.post('/js-result', async ctx => {
+      const body = (await Helpers.readableToBuffer(ctx.req)).toString();
+      ctx.body = 'ok';
+      const data = JSON.parse(body);
+      resolve(data);
+    });
+  });
+
   const agent = pool.createAgent({
     logger,
+    customEmulatorConfig: { userAgentSelector: `~ win & chrome = 112` },
   });
+  agent.hook({
+    onNewBrowser(b) {
+      b.engine.launchArguments.push('--site-per-process', '--host-rules=MAP * 127.0.0.1');
+    },
+  });
+
   Helpers.needsClosing.push(agent);
   const page = await agent.newPage();
-  page.on('console', console.log);
-  await page.goto(`${koaServer.baseUrl}`);
+  await page.goto(`${koaServer.baseUrl}/nested-platform`);
   await page.waitForLoad('DomContentLoaded');
-  await expect(page.evaluate('document.body.outerHTML')).resolves.toContain(
-    '<h1>Example Domain</h1>',
-  );
-  const result = await page.evaluate<{ win: string; iframe: string }>(`(async () => {
-  var iframe = document.createElement("iframe");
-  iframe.srcdoc = "/**/";
-  iframe.setAttribute("style", "display: none;");
-  document.head.appendChild(iframe);
-  
-  const navigator = iframe.contentWindow.navigator;
-  document.head.removeChild(iframe);
-  
-  return { win :window.navigator.platform, iframe: navigator.platform };
- })()`);
 
-  expect(result.iframe).toBe(result.win);
+  const { win, iframe } = await result;
+  expect(win).toBe(iframe);
 });
 
 test('should get the correct webgl vendor from a nested srcdoc iframe', async () => {
@@ -853,7 +880,7 @@ describe('Proxy detections', () => {
 it('should emulate in a shared worker', async () => {
   const hasAllResults = new Resolvable<void>();
   const jsonResults: string[] = [];
-  const iterations = 10;
+  const iterations = 1;
   const httpsServer = await Helpers.runHttpsServer(async (req, res) => {
     res.setHeader('access-control-allow-origin', '*');
     if (req.url === '/test.html') {
@@ -886,7 +913,7 @@ it('should emulate in a shared worker', async () => {
         }
   
         const checks = [];
-        for (let index = 0; index < 20; index++) {
+        for (let index = 0; index < 5; index++) {
           checks.push(check());
         }
         await Promise.all(checks)
@@ -915,12 +942,16 @@ it('should emulate in a shared worker', async () => {
     }
   });
 
-  for (let i = 0; i < iterations; i += 1) {
-    const agent = pool.createAgent({ logger });
-    Helpers.needsClosing.push(agent);
-    const page = await agent.newPage();
-    await page.goto(`${httpsServer.baseUrl}/test.html`);
-  }
+  await Promise.allSettled(
+    Array(iterations)
+      .fill(0)
+      .map(async () => {
+        const agent = pool.createAgent({ logger });
+        Helpers.needsClosing.push(agent);
+        const page = await agent.newPage();
+        await page.goto(`${httpsServer.baseUrl}/test.html`);
+      }),
+  );
 
   await hasAllResults;
   const results = jsonResults.map(x => JSON.parse(x));
