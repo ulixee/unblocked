@@ -5,7 +5,6 @@ import Pool from '@ulixee/unblocked-agent/lib/Pool';
 import { LocationStatus } from '@ulixee/unblocked-specification/agent/browser/Location';
 import * as fpscanner from 'fpscanner';
 import * as Fs from 'fs';
-import * as Path from 'path';
 import BrowserEmulator from '../index';
 
 const fpCollectPath = require.resolve('fpcollect/src/fpCollect.js');
@@ -357,7 +356,7 @@ test('should get the correct platform from a nested cross-domain srcdoc iframe',
 
   const agent = pool.createAgent({
     logger,
-    customEmulatorConfig: { userAgentSelector: `~ win & chrome = 112` },
+    customEmulatorConfig: { userAgentSelector: `~ win` },
   });
   agent.hook({
     onNewBrowser(b) {
