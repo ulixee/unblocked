@@ -23,6 +23,8 @@ const ObjectCached = {
   defineProperty: Object.defineProperty.bind(Object),
   create: Object.create.bind(Object),
   entries: Object.entries.bind(Object),
+  values: Object.values.bind(Object),
+  keys: Object.keys.bind(Object),
   getOwnPropertyDescriptors: Object.getOwnPropertyDescriptors.bind(Object),
   getOwnPropertyDescriptor: Object.getOwnPropertyDescriptor.bind(Object),
 };
@@ -452,7 +454,12 @@ proxyFunction(Object, 'keys', (target, thisArg, argArray) => {
   return keys;
 });
 
-function reorderNonConfigurableDescriptors(objectPath, propertyName, prevProperty, throughProperty) {
+function reorderNonConfigurableDescriptors(
+  objectPath,
+  propertyName,
+  prevProperty,
+  throughProperty,
+) {
   const objectAtPath = getObjectAtPath(objectPath);
   if (!reordersByObject.has(objectAtPath)) reordersByObject.set(objectAtPath, []);
   const reorders = reordersByObject.get(objectAtPath);
