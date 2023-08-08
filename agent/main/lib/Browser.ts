@@ -380,7 +380,10 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
   private onAttachedToTarget(event: Protocol.Target.AttachedToTargetEvent): void {
     const { targetInfo, sessionId } = event;
 
-    assert(targetInfo.browserContextId, `targetInfo: ${JSON.stringify(targetInfo, null, 2)}`);
+    // assert(targetInfo.browserContextId, `targetInfo: ${JSON.stringify(targetInfo, null, 2)}`);
+    if (!targetInfo.browserContextId) {
+      return
+    }
 
     this.browserContextsById
       .get(targetInfo.browserContextId)
