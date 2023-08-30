@@ -30,8 +30,7 @@ import { CanceledPromiseError } from '@ulixee/commons/interfaces/IPendingWaitEve
 import Frame from './Frame';
 import { JsPath } from './JsPath';
 import MouseListener from './MouseListener';
-import * as rectUtils from './oldrectUtils';
-import * as newrectUtils from './rectUtils';
+import * as rectUtils from './rectUtils';
 import BrowserContext from './BrowserContext';
 import {
   IPositionAbsolute,
@@ -98,8 +97,8 @@ export default class Interactor implements IInteractionsHelper {
   public viewportSize: IViewportSize;
 
   // Publish rect utils
-  public isPointWithinRect = newrectUtils.isPointWithinRect;
-  public createPointInRect = newrectUtils.createPointInRect;
+  public isPointWithinRect = rectUtils.isPointWithinRect;
+  public createPointInRect = rectUtils.createPointInRect;
   public createScrollPointForRect = rectUtils.createScrollPointForRect;
   public isRectanglePointInViewport = rectUtils.isRectanglePointInViewport;
 
