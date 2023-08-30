@@ -19,6 +19,7 @@ import { IMouseOptions } from '@ulixee/unblocked-specification/agent/interact/II
 import IPoint from '@ulixee/unblocked-specification/agent/browser/IPoint';
 import DevtoolsSession from './DevtoolsSession';
 import { Keyboard } from './Keyboard';
+import { IPositionRelativeViewport } from '@ulixee/unblocked-specification/agent/browser/IPosition';
 
 /**
  * The Mouse class operates in main-frame CSS pixels
@@ -49,7 +50,7 @@ import { Keyboard } from './Keyboard';
  */
 
 export default class Mouse {
-  public position: IPoint = { x: 0, y: 0 };
+  public position: IPositionRelativeViewport = { rx: 0, ry: 0 };
 
   private devtoolsSession: DevtoolsSession;
   private keyboard: Keyboard;
@@ -60,18 +61,18 @@ export default class Mouse {
     this.keyboard = keyboard;
   }
 
-  async move(x: number, y: number): Promise<void> {
-    const roundedX = Math.round(x ?? 0);
-    const roundedY = Math.round(y ?? 0);
-    if (roundedX === this.position.x && roundedY === this.position.y) return;
-    this.position.x = roundedX;
-    this.position.y = roundedY;
+  async move(rx: number, ry: number): Promise<void> {
+    const roundedRX = Math.round(rx ?? 0);
+    const roundedRY = Math.round(ry ?? 0);
+    if (roundedRX === this.position.rx && roundedRY === this.position.ry) return;
+    this.position.rx = roundedRX;
+    this.position.ry = roundedRY;
 
     await this.devtoolsSession.send('Input.dispatchMouseEvent', {
       type: 'mouseMoved',
       button: this.button,
-      x: this.position.x,
-      y: this.position.y,
+      x: this.position.rx,
+      y: this.position.ry,
       modifiers: this.keyboard.modifiers,
     });
   }
@@ -82,8 +83,8 @@ export default class Mouse {
     await this.devtoolsSession.send('Input.dispatchMouseEvent', {
       type: 'mousePressed',
       button,
-      x: this.position.x,
-      y: this.position.y,
+      x: this.position.rx,
+      y: this.position.ry,
       modifiers: this.keyboard.modifiers,
       clickCount,
     });
@@ -95,8 +96,8 @@ export default class Mouse {
     await this.devtoolsSession.send('Input.dispatchMouseEvent', {
       type: 'mouseReleased',
       button,
-      x: this.position.x,
-      y: this.position.y,
+      x: this.position.rx,
+      y: this.position.ry,
       modifiers: this.keyboard.modifiers,
       clickCount,
     });

@@ -4,7 +4,7 @@ import {
   createScrollPointForRect,
   isPointWithinRect,
   isRectInViewport,
-} from '../lib/rectUtils';
+} from '../lib/oldrectUtils';
 
 test('should find a point in a rect', () => {
   const rect: IRect = { x: 0, y: 0, width: 10, height: 10 };

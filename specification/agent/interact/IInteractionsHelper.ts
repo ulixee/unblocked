@@ -4,10 +4,11 @@ import IMouseResult from './IMouseResult';
 import IPoint from '../browser/IPoint';
 import { IMousePosition } from './IInteractions';
 import IRect from '../browser/IRect';
+import { IPositionAbsolute, IPositionRelativeViewport } from '../browser/IPosition';
 
 export default interface IInteractionsHelper {
-  mousePosition: IPoint;
-  scrollOffset: Promise<IPoint>;
+  mousePosition: IPositionRelativeViewport;
+  scrollOffset: Promise<IPositionAbsolute>;
   viewportSize: IViewportSize;
   logger: IBoundLog;
   doesBrowserAnimateScrolling: boolean;
@@ -37,11 +38,11 @@ export default interface IInteractionsHelper {
   ): IPoint;
   createScrollPointForRect(rect: IRect, viewport: IViewportSize): IPoint;
   isPointWithinRect(point: IPoint, rect: IRect): boolean;
-  isRectInViewport(
+  isRectanglePointInViewport(
     rect: IRect,
     viewport: { width: number; height: number },
     percent: number,
-  ): { width: boolean; height: boolean };
+  ): { all: boolean; horizontal: boolean; vertical: boolean };
 }
 
 export type IRectLookup = IRect & {

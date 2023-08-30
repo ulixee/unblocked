@@ -28,6 +28,7 @@ import { IFrame } from '@ulixee/unblocked-specification/agent/browser/IFrame';
 import IResourceType from '@ulixee/unblocked-specification/agent/net/IResourceType';
 import ChromeEngine from './ChromeEngine';
 import Interactor from './Interactor';
+import { IPositionRelativeViewport } from '@ulixee/unblocked-specification/agent/browser/IPosition';
 
 type ICallbackFn = (...args: any[]) => Promise<void> | void;
 
@@ -152,7 +153,7 @@ export default class Plugins implements IUnblockedPlugins {
     }
   }
 
-  public async adjustStartingMousePoint(point: IPoint, helper: IInteractionsHelper): Promise<void> {
+  public async adjustStartingMousePoint(point: IPositionRelativeViewport, helper: IInteractionsHelper): Promise<void> {
     for (const fn of this.hooksByName.adjustStartingMousePoint) {
       await fn(point, helper);
     }

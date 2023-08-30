@@ -3,9 +3,9 @@ import {
   IInteractionStep,
   IKeyboardCommand,
   IMousePosition,
-  IMousePositionXY,
+  IMousePositionRxRy,
   InteractionCommand,
-  isMousePositionXY,
+  isMousePositionRxRy,
 } from '@ulixee/unblocked-specification/agent/interact/IInteractions';
 import { IBoundLog } from '@ulixee/commons/interfaces/ILog';
 import IInteractionsHelper, {
@@ -19,6 +19,7 @@ import IUnblockedPlugin, {
 } from '@ulixee/unblocked-specification/plugin/IUnblockedPlugin';
 import IEmulationProfile from '@ulixee/unblocked-specification/plugin/IEmulationProfile';
 import generateVector from './generateVector';
+import { IJsPath } from '@ulixee/js-path';
 
 const { log } = logger(module);
 
@@ -253,9 +254,10 @@ export default class DefaultHumanEmulator implements IUnblockedPlugin {
     targetWidth: number,
   ): Promise<boolean> {
     const mousePosition = helper.mousePosition;
+    const mousePoint: IPoint = { x: mousePosition.rx, y: mousePosition.ry };
 
     const vector = generateVector(
-      mousePosition,
+      mousePoint,
       targetPoint,
       targetWidth,
       DefaultHumanEmulator.minMoveVectorPoints,
@@ -282,12 +284,18 @@ export default class DefaultHumanEmulator implements IUnblockedPlugin {
     runFn: (interactionStep: IInteractionStep) => Promise<void>,
   ): Promise<void> {
     const mousePosition = helper.mousePosition;
-    const jitterX = Math.max(mousePosition.x + Math.round(getRandomPositiveOrNegativeNumber()), 0);
-    const jitterY = Math.max(mousePosition.y + Math.round(getRandomPositiveOrNegativeNumber()), 0);
-    if (jitterX !== mousePosition.x || jitterY !== mousePosition.y) {
+    const jitterRx = Math.max(
+      mousePosition.rx + Math.round(getRandomPositiveOrNegativeNumber()),
+      0,
+    );
+    const jitterRy = Math.max(
+      mousePosition.ry + Math.round(getRandomPositiveOrNegativeNumber()),
+      0,
+    );
+    if (jitterRx !== mousePosition.rx || jitterRy !== mousePosition.ry) {
       // jitter mouse
       await runFn({
-        mousePosition: [jitterX, jitterY],
+        mousePosition: [jitterRx, jitterRy],
         command: InteractionCommand.move,
       });
     }
@@ -334,8 +342,8 @@ export default class DefaultHumanEmulator implements IUnblockedPlugin {
     const currentScrollOffset = await helper.scrollOffset;
 
     const { mousePosition, relativeToScrollOffset, verification } = interactionStep;
-    if (isMousePositionXY(mousePosition)) {
-      const [x, y] = mousePosition as IMousePositionXY;
+    if (isMousePositionRxRy(mousePosition)) {
+      const [x, y] = mousePosition;
       scrollToPoint = { x, y };
       if (relativeToScrollOffset) {
         scrollToPoint.y = scrollToPoint.y + relativeToScrollOffset.y - currentScrollOffset.y;
@@ -349,9 +357,9 @@ export default class DefaultHumanEmulator implements IUnblockedPlugin {
       });
       // figure out if target is in view
       const viewportSize = helper.viewportSize;
-      const isRectVisible = helper.isRectInViewport(targetRect, viewportSize, 50);
-      shouldScrollY = !isRectVisible.height;
-      shouldScrollX = !isRectVisible.width;
+      const isRectVisible = helper.isRectanglePointInViewport(targetRect, viewportSize, 50);
+      shouldScrollY = !isRectVisible.vertical;
+      shouldScrollX = !isRectVisible.horizontal;
 
       scrollToPoint = helper.createScrollPointForRect(targetRect, viewportSize);
 
@@ -454,7 +462,7 @@ export default class DefaultHumanEmulator implements IUnblockedPlugin {
     if (!isConnected) {
       const { verification } = interactionStep;
       if (verification === 'elementAtPath') {
-        const nodePointer = await helper.reloadJsPath(interactionStep.mousePosition);
+        const nodePointer = await helper.reloadJsPath(interactionStep.mousePosition as IJsPath);
         helper.logger.warn(`${interactionName} - checking for new element matching query.`, {
           interactionStep,
           nodePointer,
@@ -511,7 +519,7 @@ export default class DefaultHumanEmulator implements IUnblockedPlugin {
 
 async function delay(millis: number): Promise<void> {
   if (!millis) return;
-  await new Promise<void>((resolve) => setTimeout(resolve, Math.floor(millis)).unref());
+  await new Promise<void>(resolve => setTimeout(resolve, Math.floor(millis)).unref());
 }
 
 function splitIntoMaxLengthSegments(total: number, maxValue: number): number[] {

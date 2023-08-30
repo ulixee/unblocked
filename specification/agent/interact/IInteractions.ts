@@ -1,8 +1,13 @@
 import { IJsPath } from '@ulixee/js-path';
 import IMouseResult from './IMouseResult';
 import IPoint from '../browser/IPoint';
-import {IKeyboardShortcut} from "./IKeyboardShortcuts";
-import {IKeyboardKeyCode} from "./IKeyboardLayoutUS";
+import { IKeyboardShortcut } from './IKeyboardShortcuts';
+import { IKeyboardKeyCode } from './IKeyboardLayoutUS';
+import {
+  IPositionAbsolute,
+  IPositionRelativeMouse,
+  IPositionRelativeViewport,
+} from '../browser/IPosition';
 
 export type IElementInteractVerification = 'elementAtPath' | 'exactElement' | 'none';
 
@@ -55,9 +60,9 @@ export enum MouseButton {
 }
 export type IMouseButton = keyof typeof MouseButton;
 
-export type IMousePositionXY = [number, number];
+export type IMousePositionRxRy = [number, number];
 
-export function isMousePositionXY(mousePosition: any): boolean {
+export function isMousePositionRxRy(mousePosition: any): mousePosition is IMousePositionRxRy {
   return (
     Array.isArray(mousePosition) &&
     mousePosition.length === 2 &&
@@ -66,7 +71,17 @@ export function isMousePositionXY(mousePosition: any): boolean {
   );
 }
 
-export type IMousePosition = IMousePositionXY | IJsPath;
+// TODO remove deprecated
+export function isMousePositionXY(mousePosition: any): mousePosition is IMousePositionRxRy {
+  return isMousePositionRxRy(mousePosition);
+}
+
+export type IMousePosition =
+  | IMousePositionRxRy
+  | IJsPath
+  | IPositionAbsolute
+  | IPositionRelativeViewport
+  | IPositionRelativeMouse;
 
 // Keyboard-specific Types
 

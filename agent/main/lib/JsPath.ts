@@ -3,7 +3,7 @@ import IExecJsPathResult from '@ulixee/unblocked-specification/agent/browser/IEx
 import TypeSerializer from '@ulixee/commons/lib/TypeSerializer';
 import { IBoundLog } from '@ulixee/commons/interfaces/ILog';
 import IPoint from '@ulixee/unblocked-specification/agent/browser/IPoint';
-import { isMousePositionXY } from '@ulixee/unblocked-specification/agent/interact/IInteractions';
+import { isMousePositionRxRy } from '@ulixee/unblocked-specification/agent/interact/IInteractions';
 import IJsPathFunctions, {
   getClientRectFnName,
   getComputedVisibilityFnName,
@@ -74,7 +74,7 @@ export class JsPath implements IJsPathFunctions {
     jsPath: IJsPath,
     containerOffset: IPoint,
   ): Promise<IExecJsPathResult<T>> {
-    if (typeof jsPath[0] === 'number' && !isMousePositionXY(jsPath.slice(0, 2))) {
+    if (typeof jsPath[0] === 'number' && !isMousePositionRxRy(jsPath.slice(0, 2))) {
       const paths = this.getJsPathHistoryForNode(jsPath[0]);
       for (const path of paths) {
         const result = await this.getNodePointer(path.jsPath, containerOffset);

@@ -3,9 +3,9 @@ import {
   IInteractionGroups,
   IInteractionStep,
   IMousePosition,
-  IMousePositionXY,
+  IMousePositionRxRy,
   InteractionCommand,
-  isMousePositionXY,
+  isMousePositionRxRy,
 } from '@ulixee/unblocked-specification/agent/interact/IInteractions';
 import { assert } from '@ulixee/commons/lib/utils';
 import {
@@ -30,8 +30,19 @@ import { CanceledPromiseError } from '@ulixee/commons/interfaces/IPendingWaitEve
 import Frame from './Frame';
 import { JsPath } from './JsPath';
 import MouseListener from './MouseListener';
-import * as rectUtils from './rectUtils';
+import * as rectUtils from './oldrectUtils';
+import * as newrectUtils from './rectUtils';
 import BrowserContext from './BrowserContext';
+import {
+  IPositionAbsolute,
+  IPositionRelativeViewport,
+  isIPositionAbsolute,
+  isIPositionRelativeMouse,
+  isIPositionRelativeViewport,
+  isPosition,
+} from '@ulixee/unblocked-specification/agent/browser/IPosition';
+import { isIJsPath } from '@ulixee/js-path/interfaces/IJsPath';
+import { absoluteToRelativeViewportPosition } from './coordinateUtils';
 
 const commandsNeedingScroll = new Set([
   InteractionCommand.click,
@@ -51,7 +62,7 @@ const mouseCommands = new Set(
 );
 
 export default class Interactor implements IInteractionsHelper {
-  public get mousePosition(): IPoint {
+  public get mousePosition(): IPositionRelativeViewport {
     return { ...this.mouse.position };
   }
 
@@ -87,10 +98,10 @@ export default class Interactor implements IInteractionsHelper {
   public viewportSize: IViewportSize;
 
   // Publish rect utils
-  public isPointWithinRect = rectUtils.isPointWithinRect;
-  public createPointInRect = rectUtils.createPointInRect;
+  public isPointWithinRect = newrectUtils.isPointWithinRect;
+  public createPointInRect = newrectUtils.createPointInRect;
   public createScrollPointForRect = rectUtils.createScrollPointForRect;
-  public isRectInViewport = rectUtils.isRectInViewport;
+  public isRectanglePointInViewport = rectUtils.isRectanglePointInViewport;
 
   private preInteractionPaintStableStatus: { isStable: boolean; timeUntilReadyMs?: number };
 
@@ -169,7 +180,7 @@ export default class Interactor implements IInteractionsHelper {
   public async lookupBoundingRect(
     mousePosition: IMousePosition,
     options?: {
-      relativeToScrollOffset?: IPoint;
+      relativeToScrollOffset?: IPositionAbsolute;
       includeNodeVisibility?: boolean;
       useLastKnownPosition?: boolean;
     },
@@ -178,8 +189,27 @@ export default class Interactor implements IInteractionsHelper {
       throw new Error('Null mouse position provided to frame.interact');
     }
 
-    if (isMousePositionXY(mousePosition)) {
-      let [x, y] = mousePosition as IMousePositionXY;
+    if (isMousePositionRxRy(mousePosition) || isPosition(mousePosition)) {
+      let x: number;
+      let y: number;
+
+      const currentScrollOffset = await this.scrollOffset;
+      const relativeToScrollOffset = options.relativeToScrollOffset ?? { x: 0, y: 0 };
+      const scrollOffset: IPositionAbsolute = {
+        x: currentScrollOffset.x - relativeToScrollOffset.x,
+        y: currentScrollOffset.y - relativeToScrollOffset.y,
+      };
+      if (isMousePositionRxRy(mousePosition)) {
+        [x, y] = mousePosition;
+      } else if (isIPositionAbsolute(mousePosition)) {
+        const { rx, ry } = absoluteToRelativeViewportPosition(mousePosition, scrollOffset);
+        [x, y] = [rx, ry];
+      } else if (isIPositionRelativeViewport(mousePosition)) {
+        [x, y] = [mousePosition.rx, mousePosition.ry];
+      } else if (isIPositionRelativeMouse(mousePosition)) {
+        throw new Error('Not supported yet');
+      }
+      // let [x, y] = mousePosition;
       x = Math.round(x);
       y = Math.round(y);
       if (options?.relativeToScrollOffset) {
@@ -189,6 +219,7 @@ export default class Interactor implements IInteractionsHelper {
         x = x + relativeToScrollOffset.x - currentScrollOffset.x;
       }
 
+      // TODO change this to absolute or rename to rx,ry
       return {
         x,
         y,
@@ -199,8 +230,9 @@ export default class Interactor implements IInteractionsHelper {
 
     if (
       options?.useLastKnownPosition &&
-      typeof mousePosition[0] === 'number' &&
-      mousePosition.length === 1
+      isIJsPath(mousePosition) &&
+      mousePosition.length === 1 &&
+      typeof mousePosition[0] === 'number'
     ) {
       const nodeId = mousePosition[0] as number;
       const lastKnownPosition = this.jsPath.getLastClientRect(nodeId);
@@ -276,8 +308,8 @@ export default class Interactor implements IInteractionsHelper {
 
     switch (interactionStep.command) {
       case InteractionCommand.move: {
-        const [x, y] = await this.getMousePositionXY(interactionStep);
-        await this.mouse.move(x, y);
+        const { rx, ry } = await this.getMousePosition(interactionStep);
+        await this.mouse.move(rx, ry);
         break;
       }
       case InteractionCommand.scroll: {
@@ -285,19 +317,20 @@ export default class Interactor implements IInteractionsHelper {
 
         let scrollToY = scrollOffset.y;
         let scrollToX = scrollOffset.x;
+        const mousePosition = interactionStep.mousePosition;
         // if this is a JsPath, see if we actually need to scroll
-        if (isMousePositionXY(interactionStep.mousePosition) === false) {
+        if (!isMousePositionRxRy(mousePosition)) {
           const interactRect = await this.getInteractionRect(interactionStep);
-          const isRectVisible = this.isRectInViewport(interactRect, this.viewportSize, 50);
+          const isRectVisible = this.isRectanglePointInViewport(interactRect, this.viewportSize, 50);
           if (isRectVisible.all) return;
 
           const pointForRect = this.createScrollPointForRect(interactRect, this.viewportSize);
 
           // positions are all relative to viewport, so normalize based on the current offsets
-          if (!isRectVisible.height) scrollToY += pointForRect.y;
-          if (!isRectVisible.width) scrollToX += pointForRect.x;
+          if (!isRectVisible.vertical) scrollToY += pointForRect.y;
+          if (!isRectVisible.horizontal) scrollToX += pointForRect.x;
         } else {
-          [scrollToX, scrollToY] = interactionStep.mousePosition as IMousePositionXY;
+          [scrollToX, scrollToY] = mousePosition;
         }
 
         const maxX = scrollOffset.width - this.viewportSize.width - scrollOffset.x;
@@ -322,7 +355,7 @@ export default class Interactor implements IInteractionsHelper {
         // if this is a jsPath, need to look it up
         if (
           interactionStep.mousePosition &&
-          isMousePositionXY(interactionStep.mousePosition) === false
+          isMousePositionRxRy(interactionStep.mousePosition) === false
         ) {
           interactRect = await this.getInteractionRect(interactionStep);
           if (interactRect.elementTag === 'option') {
@@ -337,8 +370,8 @@ export default class Interactor implements IInteractionsHelper {
           break;
         }
 
-        const [x, y] = await this.getMousePositionXY(interactionStep, true, interactRect);
-        await this.mouse.move(x, y);
+        const { rx, ry } = await this.getMousePosition(interactionStep, true, interactRect);
+        await this.mouse.move(rx, ry);
 
         const button = mouseButton || 'left';
         const clickCount = command === InteractionCommand.doubleclick ? 2 : 1;
@@ -428,23 +461,23 @@ export default class Interactor implements IInteractionsHelper {
     });
   }
 
-  private async getMousePositionXY(
+  private async getMousePosition(
     interactionStep: IInteractionStep,
     constrainToViewport = true,
     rect?: IRectLookup,
-  ): Promise<[x: number, y: number]> {
-    if (!interactionStep.mousePosition) return [this.mouse.position.x, this.mouse.position.y];
+  ): Promise<IPositionRelativeViewport> {
+    if (!interactionStep.mousePosition) return { ...this.mouse.position };
     rect ??= await this.getInteractionRect(interactionStep);
 
-    if (isMousePositionXY(interactionStep.mousePosition)) {
-      return [rect.x, rect.y];
+    if (isMousePositionRxRy(interactionStep.mousePosition)) {
+      return { rx: rect.x, ry: rect.y };
     }
 
     const point = await rectUtils.createPointInRect(rect, {
       paddingPercent: { height: 10, width: 10 },
       constrainToViewport: constrainToViewport ? this.viewportSize : undefined,
     });
-    return [point.x, point.y];
+    return { rx: point.x, ry: point.y };
   }
 
   private async injectScrollToPositions(
@@ -452,25 +485,43 @@ export default class Interactor implements IInteractionsHelper {
   ): Promise<IInteractionGroups> {
     const finalInteractions: IInteractionGroups = [];
     let relativeToScrollOffset: IPoint;
+    let internalScrollOffset: IPoint;
+    // debugger
     for (const group of interactions) {
       const groupCommands: IInteractionGroup = [];
       finalInteractions.push(groupCommands);
       for (const step of group) {
         if (commandsNeedingScroll.has(InteractionCommand[step.command]) && step.mousePosition) {
-          if (isMousePositionXY(step.mousePosition)) {
+          if (isMousePositionRxRy(step.mousePosition)) {
             relativeToScrollOffset ??= await this.scrollOffset;
+            internalScrollOffset ??= {...relativeToScrollOffset};
           }
-          groupCommands.push({
-            command: InteractionCommand.scroll,
-            mousePosition: step.mousePosition,
-            verification: step.verification,
-            relativeToScrollOffset,
-          });
+          const interactRect = await this.getInteractionRect(step);
+          // debugger
+          interactRect.x -= internalScrollOffset.x;
+          interactRect.y -= internalScrollOffset.y;
+          const isRectVisible = this.isRectanglePointInViewport(interactRect, this.viewportSize, 50);
+          if (!isRectVisible.all) {
+            const pointForRect = this.createScrollPointForRect(interactRect, this.viewportSize);
+            groupCommands.push({
+              command: InteractionCommand.scroll,
+              mousePosition: [pointForRect.x, pointForRect.y],
+              verification: step.verification,
+              relativeToScrollOffset,
+            });
+            internalScrollOffset.x += pointForRect.x;
+            internalScrollOffset.y += pointForRect.y;
+          };
           step.relativeToScrollOffset = relativeToScrollOffset;
         }
+        groupCommands.push({
+          command: InteractionCommand.waitForMillis,
+          delayMillis: 3000,
+        });
         groupCommands.push(step);
       }
     }
+    // debugger
     return finalInteractions;
   }
 

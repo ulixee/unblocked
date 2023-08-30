@@ -194,7 +194,7 @@ describe('scroll', () => {
 
 function createInteractHelper(extras: Partial<IInteractionsHelper>): IInteractionsHelper {
   return {
-    mousePosition: { x: 25, y: 25 },
+    mousePosition: { rx: 25, ry: 25 },
     viewportSize: {
       height: 600,
       width: 800,
