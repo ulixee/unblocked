@@ -6,21 +6,21 @@ export type IPositionRelativeViewport = { rx: number; ry: number };
 export type IPositionRelativeMouse = { mx: number; my: number };
 
 export type Position = IPositionAbsolute | IPositionRelativeViewport | IPositionRelativeMouse;
-export default Position
+export default Position;
 
 export function isPosition(input: unknown): input is Position {
     if (typeof input === 'object' && input !== null) {
         if ('x' in input && 'y' in input) {
-            return true
+            return true;
         }
         if ('rx' in input && 'ry' in input) {
-            return true
+            return true;
         }
         if ('mx' in input && 'my' in input) {
-            return true
+            return true;
         }
     }
-    return false
+    return false;
 }
 
 export function isIPositionAbsolute(
@@ -48,9 +48,4 @@ export function isIPositionRelativeMouse(
     return true;
   }
   return false;
-}
-
-const bla = {x: 4, y:7}
-if(isPosition(bla)){
-    bla.x
 }

@@ -1,20 +1,7 @@
 import IRect from '@ulixee/unblocked-specification/agent/browser/IRect';
-import IPoint from '@ulixee/unblocked-specification/agent/browser/IPoint';
-import { IViewportSize } from '@ulixee/unblocked-specification/agent/interact/IInteractionsHelper';
-import {
-  IPositionAbsolute,
-  IPositionRelativeViewport,
-} from '@ulixee/unblocked-specification/agent/browser/IPosition';
+import { IPositionAbsolute } from '@ulixee/unblocked-specification/agent/browser/IPosition';
 import { assert } from '@ulixee/commons/lib/utils';
-import IViewport from '@ulixee/unblocked-specification/agent/browser/IViewport';
-
-// Keep original type but make some optional fields required
-type AddRequired<T, R extends keyof T> = T & Required<Pick<T, R>>;
-type IViewportWithPosition = AddRequired<IViewport, 'positionX' | 'positionY'>;
-
-// TODO migrate to absolute positions and remove this. This is just syntactic sugar now.
-type IPointRelativeViewport = IPoint;
-type IRectRelativeViewport = IRect;
+import { IViewportSizeWithPosition } from '@ulixee/unblocked-specification/agent/interact/IInteractionsHelper';
 
 /**
  * Create random integer in interval [min, max], both points contained
@@ -45,18 +32,6 @@ export function rectangleWithCoordinates(rectangle: IRect): IRectCoordinates {
   };
 }
 
-// Use viewport: IViewportWithPosition, and IRect
-export function viewportAsRectangle(viewport: IViewportSize): IRectRelativeViewport {
-  return {
-    // x: viewport.positionX,
-    // y: viewport.positionY,
-    x: 0,
-    y: 0,
-    width: viewport.width,
-    height: viewport.height,
-  };
-}
-
 export function paddedRectangle(rect: IRect, paddingX: number, paddingY: number): IRect {
   return {
     x: rect.x + paddingX,
@@ -69,7 +44,10 @@ export function paddedRectangle(rect: IRect, paddingX: number, paddingY: number)
 /**
  * Cecks if a given point is within the rectangle, and if not clip it to the closest edge position
  */
-export function clipPointToRectangle(point: IPoint, rectangle: IRect): IPoint {
+export function clipPointToRectangle(
+  point: IPositionAbsolute,
+  rectangle: IRect,
+): IPositionAbsolute {
   const rect = rectangleWithCoordinates(rectangle);
   let { x, y } = point;
 
@@ -82,7 +60,7 @@ export function clipPointToRectangle(point: IPoint, rectangle: IRect): IPoint {
   return { x, y };
 }
 
-export function isPointWithinRect(point: IPoint, rectangle: IRect): boolean {
+export function isPointWithinRect(point: IPositionAbsolute, rectangle: IRect): boolean {
   const rect = rectangleWithCoordinates(rectangle);
   return (
     isWithinInterval(point.x, [rect.x, rect.x2]) && isWithinInterval(point.y, [rect.y, rect.y2])
@@ -90,10 +68,10 @@ export function isPointWithinRect(point: IPoint, rectangle: IRect): boolean {
 }
 
 export function rectangleToCorners(rectangle: IRect): {
-  topLeft: IPoint;
-  topRight: IPoint;
-  bottomLeft: IPoint;
-  bottomRight: IPoint;
+  topLeft: IPositionAbsolute;
+  topRight: IPositionAbsolute;
+  bottomLeft: IPositionAbsolute;
+  bottomRight: IPositionAbsolute;
 } {
   const rect = rectangleWithCoordinates(rectangle);
   return {
@@ -112,8 +90,8 @@ export function rectangleToCorners(rectangle: IRect): {
  * @param percent should be in range [0, 100]
  */
 export function isRectanglePointInViewport(
-  rect: IRectRelativeViewport,
-  viewport: IViewportSize,
+  rect: IRect,
+  viewport: IViewportSizeWithPosition,
   percent: number,
 ): { all: boolean; horizontal: boolean; vertical: boolean } {
   assert(isWithinInterval(percent, [0, 100]), 'percentage should be in range [0, 100]');
@@ -122,7 +100,7 @@ export function isRectanglePointInViewport(
     x: rect.x + rect.width * multiplier,
     y: rect.y + rect.height * multiplier,
   };
-  const view = rectangleWithCoordinates(viewportAsRectangle(viewport));
+  const view = rectangleWithCoordinates(viewport);
   const horizontal = isWithinInterval(point.x, [view.x, view.x2]);
   const vertical = isWithinInterval(point.y, [view.y, view.y2]);
 
@@ -133,18 +111,17 @@ export function isRectanglePointInViewport(
   };
 }
 
-// Use viewport: IViewportWithPosition
 /**
- * Create a scrollpoint for a given rectangle. This functions use these steps:
+ * Create a scrollpoint for a given rectangle.
  */
 export function createScrollPointForRect(
-  targetRect: IRectRelativeViewport,
-  viewport: IViewportSize,
+  targetRect: IRect,
+  viewport: IViewportSizeWithPosition,
   randomness = 0,
-): IPointRelativeViewport {
-  const scrollPoint = { x: 0, y: 0 };
+): IPositionAbsolute {
+  const scrollPoint = { x: viewport.x, y: viewport.y };
   const rect = rectangleWithCoordinates(targetRect);
-  const view = rectangleWithCoordinates(viewportAsRectangle(viewport));
+  const view = rectangleWithCoordinates(viewport);
   const corners = rectangleToCorners(rect);
 
   // Is rectangle already in viewport
@@ -153,24 +130,26 @@ export function createScrollPointForRect(
   }
 
   // Is rectangle vertically not in viewport -> scroll to reference point (15% below top of screen)
-  if (!isPointWithinRect(corners.topLeft, view) || !isPointWithinRect(corners.bottomLeft, view)) {
-    const referecePoint = view.y + 0.15 * view.height + randomInteger(0, randomness);
+  if (
+    !isWithinInterval(corners.topLeft.y, [view.y, view.y2]) ||
+    !isWithinInterval(corners.bottomLeft.y, [view.y, view.y2])
+  ) {
+    const referecePoint = 0.15 * view.height + randomInteger(0, randomness);
     scrollPoint.y = rect.y - referecePoint;
   }
 
   // We only move horizontally when absolutely needed, this mimicks real humans.
-  const leftSideInViewport = isPointWithinRect(corners.topLeft, view);
-  if (!leftSideInViewport || !isPointWithinRect(corners.topRight, view)) {
+  const leftSideInViewport = isWithinInterval(corners.topLeft.x, [view.x, view.x2]);
+  if (!leftSideInViewport || !isWithinInterval(corners.topRight.x, [view.x, view.x2])) {
     const middleX = { x: (rect.x + rect.x2) / 2, y: scrollPoint.y };
     if (leftSideInViewport && middleX) {
       // Don't scroll if left corner and at least half of the content is within viewport
     } else {
       // Always scroll if left corner not inside viewport (left side always most import side)
-      const referecePoint = view.x + 0.15 * view.width + randomInteger(0, randomness);
+      const referecePoint = 0.15 * view.width + randomInteger(0, randomness);
       scrollPoint.x = rect.x - referecePoint;
     }
   }
-
   return roundPoint(scrollPoint, 1);
 }
 
@@ -179,12 +158,12 @@ export function createScrollPointForRect(
  * When using constrainToViewport make sure at least part of rectangle is within the viewport.
  */
 export function createPointInRect(
-  rectangle: IRectRelativeViewport,
+  rectangle: IRect,
   options?: {
     paddingPercent?: { height: number; width: number };
-    constrainToViewport?: IViewportSize;
+    constrainToViewport?: IViewportSizeWithPosition;
   },
-): IPoint {
+): IPositionAbsolute {
   const paddingPercent = options?.paddingPercent ?? { height: 33, width: 33 };
   assert(
     isWithinInterval(paddingPercent.height, [0, 100]),
@@ -199,16 +178,19 @@ export function createPointInRect(
     y: (rectangle.height * paddingPercent.height) / 100,
   };
   const rect = rectangleWithCoordinates(paddedRectangle(rectangle, padding.x, padding.y));
-  let point: IPoint = { x: randomInteger(rect.x, rect.x2), y: randomInteger(rect.y, rect.y2) };
+  let point: IPositionAbsolute = {
+    x: randomInteger(rect.x, rect.x2),
+    y: randomInteger(rect.y, rect.y2),
+  };
 
   if (options?.constrainToViewport) {
-    point = clipPointToRectangle(point, viewportAsRectangle(options.constrainToViewport));
+    point = clipPointToRectangle(point, options.constrainToViewport);
   }
 
   return roundPoint(point, 1);
 }
 
-function roundPoint(point: IPoint, decimals: number): IPoint {
+function roundPoint(point: IPositionAbsolute, decimals: number): IPositionAbsolute {
   return { x: round(point.x, decimals), y: round(point.y, decimals) };
 }
 

@@ -16,10 +16,9 @@
  */
 import { IMouseButton } from '@ulixee/unblocked-specification/agent/interact/IInteractions';
 import { IMouseOptions } from '@ulixee/unblocked-specification/agent/interact/IInput';
-import IPoint from '@ulixee/unblocked-specification/agent/browser/IPoint';
+import { IPositionRelativeViewport } from '@ulixee/unblocked-specification/agent/browser/IPosition';
 import DevtoolsSession from './DevtoolsSession';
 import { Keyboard } from './Keyboard';
-import { IPositionRelativeViewport } from '@ulixee/unblocked-specification/agent/browser/IPosition';
 
 /**
  * The Mouse class operates in main-frame CSS pixels

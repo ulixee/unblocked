@@ -1,6 +1,5 @@
 import { IKeyboardKey } from './IKeyboardLayoutUS';
 import { IMouseButton } from './IInteractions';
-import IPoint from '../browser/IPoint';
 import { IPositionRelativeViewport } from '../browser/IPosition';
 
 export interface IKeyboard {

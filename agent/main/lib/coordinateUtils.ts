@@ -6,10 +6,10 @@ import {
 
 export function absoluteToRelativeViewportPosition(
   position: IPositionAbsolute,
-  scrollOffset: IPositionAbsolute,
+  scrollPosition: IPositionAbsolute,
 ): IPositionRelativeViewport {
   const { x, y } = position;
-  return { rx: x - scrollOffset.x, ry: y - scrollOffset.y };
+  return { rx: x - scrollPosition.x, ry: y - scrollPosition.y };
 }
 
 export function absoluteToRelativeMousePosition(
@@ -22,10 +22,10 @@ export function absoluteToRelativeMousePosition(
 
 export function relativeViewportPositionToAbsolute(
   position: IPositionRelativeViewport,
-  scrollOffset: IPositionAbsolute,
+  scrollPosition: IPositionAbsolute,
 ): IPositionAbsolute {
   const { rx, ry } = position;
-  return { x: rx + scrollOffset.x, y: ry + scrollOffset.y };
+  return { x: rx + scrollPosition.x, y: ry + scrollPosition.y };
 }
 
 export function relativeMousePositionToAbsolute(
@@ -38,18 +38,18 @@ export function relativeMousePositionToAbsolute(
 
 export function relativeViewportPositionToRelativeMouse(
   position: IPositionRelativeViewport,
-  scrollOffset: IPositionAbsolute,
+  scrollPosition: IPositionAbsolute,
   mousePosition: IPositionAbsolute,
 ): IPositionRelativeMouse {
-  const absolutePosition = relativeViewportPositionToAbsolute(position, scrollOffset);
+  const absolutePosition = relativeViewportPositionToAbsolute(position, scrollPosition);
   return absoluteToRelativeMousePosition(absolutePosition, mousePosition);
 }
 
 export function relativeMousePositionToRelativeViewport(
   position: IPositionRelativeMouse,
   mousePosition: IPositionAbsolute,
-  scrollOffset: IPositionAbsolute,
+  scrollPosition: IPositionAbsolute,
 ): IPositionRelativeViewport {
   const absolutePosition = relativeMousePositionToAbsolute(position, mousePosition);
-  return absoluteToRelativeViewportPosition(absolutePosition, scrollOffset);
+  return absoluteToRelativeViewportPosition(absolutePosition, scrollPosition);
 }
