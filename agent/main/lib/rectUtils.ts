@@ -19,6 +19,10 @@ export function isWithinInterval(value: number, inverval: [number, number]): boo
   return start <= value && value <= end;
 }
 
+export function isSamePoint(point1: IPositionAbsolute, point2: IPositionAbsolute): boolean {
+  return point1.x === point2.x && point1.y === point2.y;
+}
+
 type IRectCoordinates = IRect & {
   x2: number;
   y2: number;
@@ -119,38 +123,47 @@ export function createScrollPointForRect(
   viewport: IViewportSizeWithPosition,
   randomness = 0,
 ): IPositionAbsolute {
-  const scrollPoint = { x: viewport.x, y: viewport.y };
-  const rect = rectangleWithCoordinates(targetRect);
-  const view = rectangleWithCoordinates(viewport);
-  const corners = rectangleToCorners(rect);
+  const scrollToPoint: IPositionAbsolute = (() => {
+    const scrollPoint = { x: viewport.x, y: viewport.y };
+    const rect = rectangleWithCoordinates(targetRect);
+    const view = rectangleWithCoordinates(viewport);
+    const corners = rectangleToCorners(rect);
 
-  // Is rectangle already in viewport
-  if (isPointWithinRect(corners.topLeft, view) && isPointWithinRect(corners.bottomRight, view)) {
-    return scrollPoint;
-  }
-
-  // Is rectangle vertically not in viewport -> scroll to reference point (15% below top of screen)
-  if (
-    !isWithinInterval(corners.topLeft.y, [view.y, view.y2]) ||
-    !isWithinInterval(corners.bottomLeft.y, [view.y, view.y2])
-  ) {
-    const referecePoint = 0.15 * view.height + randomInteger(0, randomness);
-    scrollPoint.y = rect.y - referecePoint;
-  }
-
-  // We only move horizontally when absolutely needed, this mimicks real humans.
-  const leftSideInViewport = isWithinInterval(corners.topLeft.x, [view.x, view.x2]);
-  if (!leftSideInViewport || !isWithinInterval(corners.topRight.x, [view.x, view.x2])) {
-    const middleX = { x: (rect.x + rect.x2) / 2, y: scrollPoint.y };
-    if (leftSideInViewport && middleX) {
-      // Don't scroll if left corner and at least half of the content is within viewport
-    } else {
-      // Always scroll if left corner not inside viewport (left side always most import side)
-      const referecePoint = 0.15 * view.width + randomInteger(0, randomness);
-      scrollPoint.x = rect.x - referecePoint;
+    // Is rectangle already in viewport
+    if (isPointWithinRect(corners.topLeft, view) && isPointWithinRect(corners.bottomRight, view)) {
+      return scrollPoint;
     }
+
+    // Is rectangle vertically not in viewport -> scroll to reference point (15% below top of screen)
+    if (
+      !isWithinInterval(corners.topLeft.y, [view.y, view.y2]) ||
+      !isWithinInterval(corners.bottomLeft.y, [view.y, view.y2])
+    ) {
+      const referecePoint = 0.15 * view.height;
+      scrollPoint.y = rect.y - referecePoint;
+    }
+
+    // We only move horizontally when absolutely needed, this mimicks real humans.
+    const leftSideInViewport = isWithinInterval(corners.topLeft.x, [view.x, view.x2]);
+    if (!leftSideInViewport || !isWithinInterval(corners.topRight.x, [view.x, view.x2])) {
+      const middleX = { x: (rect.x + rect.x2) / 2, y: scrollPoint.y };
+      if (leftSideInViewport && middleX) {
+        // Don't scroll if left corner and at least half of the content is within viewport
+      } else {
+        // Always scroll if left corner not inside viewport (left side always most import side)
+        const referecePoint = 0.15 * view.width;
+        scrollPoint.x = rect.x - referecePoint;
+      }
+    }
+    return scrollPoint;
+  })();
+
+  if (randomness) {
+    scrollToPoint.x -= randomInteger(0, randomness);
+    scrollToPoint.y -= randomInteger(0, randomness);
   }
-  return roundPoint(scrollPoint, 1);
+
+  return roundPoint(scrollToPoint, 1);
 }
 
 /**

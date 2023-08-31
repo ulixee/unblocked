@@ -2,10 +2,10 @@ import {
   IInteractionGroupsAbsolute,
   IInteractionStepAbsolute,
   IJsPath,
+  isIJsPath,
   IKeyboardCommand,
   IMousePositionAbsolute,
   InteractionCommand,
-  isMousePositionRxRy,
 } from '@ulixee/unblocked-specification/agent/interact/IInteractions';
 import { IBoundLog } from '@ulixee/commons/interfaces/ILog';
 import IInteractionsHelper, {
@@ -23,7 +23,6 @@ import {
   isIPositionAbsolute,
 } from '@ulixee/unblocked-specification/agent/browser/IPosition';
 import generateVector from './generateVector';
-import { isIJsPath } from '@ulixee/js-path/interfaces/IJsPath';
 
 const { log } = logger(module);
 
@@ -75,6 +74,7 @@ export default class DefaultHumanEmulator implements IUnblockedPlugin {
         }
 
         if (step.command === InteractionCommand.move) {
+          await this.scrollIfNeeded(step, runFn, helper);
           await this.moveMouse(step, runFn, helper);
           continue;
         }
@@ -85,6 +85,7 @@ export default class DefaultHumanEmulator implements IUnblockedPlugin {
           step.command === InteractionCommand.clickDown ||
           step.command === InteractionCommand.doubleclick
         ) {
+          await this.scrollIfNeeded(step, runFn, helper);
           await this.moveMouseAndClick(step, runFn, helper);
           continue;
         }
@@ -113,6 +114,27 @@ export default class DefaultHumanEmulator implements IUnblockedPlugin {
         await runFn(step);
       }
     }
+  }
+
+  protected async scrollIfNeeded(
+    interactionStep: IInteractionStepAbsolute,
+    runFn: (interactionStep: IInteractionStepAbsolute) => Promise<void>,
+    helper: IInteractionsHelper,
+  ): Promise<void> {
+    const viewport = await helper.viewportSizeWithPosition;
+    const interactRect = await helper.getInteractionRect(interactionStep);
+    // TODO maybe add randomness here
+    const scrollToPosition = await helper.createScrollPointForRect(interactRect, viewport, 0);
+    if (helper.isSamePoint(viewport, scrollToPosition)) {
+      return;
+    }
+    const scrollStep: IInteractionStepAbsolute = {
+      command: InteractionCommand.scroll,
+      mousePosition: scrollToPosition,
+    };
+    await this.scroll(scrollStep, runFn, helper);
+    const millis = Math.random() * DefaultHumanEmulator.maxDelayBetweenInteractions;
+    await delay(millis);
   }
 
   protected async scroll(
@@ -342,7 +364,7 @@ export default class DefaultHumanEmulator implements IUnblockedPlugin {
       throw new Error('Unsupported mousePosition');
     }
 
-    if (currentScroll.x === scrollToPoint.x && currentScroll.y === scrollToPoint.y) {
+    if (helper.isSamePoint(currentScroll, scrollToPoint)) {
       return [];
     }
 
@@ -365,8 +387,8 @@ export default class DefaultHumanEmulator implements IUnblockedPlugin {
 
     const points: IPoint[] = [];
     let lastPoint = { ...currentScroll };
-    for (let point of scrollVector) {
-      const scrollToPoint = { x: Math.round(point.x), y: Math.round(point.y) };
+    for (const point of scrollVector) {
+      scrollToPoint = { x: Math.round(point.x), y: Math.round(point.y) };
 
       if (scrollToPoint.y === lastPoint.y && scrollToPoint.x === lastPoint.x) {
         continue;

@@ -1,4 +1,5 @@
 import { IJsPath } from '@ulixee/js-path';
+import { isIJsPath } from '@ulixee/js-path/interfaces/IJsPath';
 import IMouseResult from './IMouseResult';
 import { IKeyboardShortcut } from './IKeyboardShortcuts';
 import { IKeyboardKeyCode } from './IKeyboardLayoutUS';
@@ -8,7 +9,7 @@ import {
   IPositionRelativeViewport,
 } from '../browser/IPosition';
 
-export { IJsPath };
+export { IJsPath, isIJsPath };
 
 export type IElementInteractVerification = 'elementAtPath' | 'exactElement' | 'none';
 
