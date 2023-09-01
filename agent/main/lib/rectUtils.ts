@@ -16,6 +16,7 @@ export function randomInteger(min: number, max: number): number {
  */
 export function isWithinInterval(value: number, inverval: [number, number]): boolean {
   const [start, end] = inverval;
+  assert(start <= end, 'Start should be smaller then end or equal');
   return start <= value && value <= end;
 }
 
@@ -37,6 +38,11 @@ export function rectangleWithCoordinates(rectangle: IRect): IRectCoordinates {
 }
 
 export function paddedRectangle(rect: IRect, paddingX: number, paddingY: number): IRect {
+  assert(paddingX >= 0 && paddingY >= 0, 'Padding should be >= 0');
+  assert(
+    paddingX <= rect.width && paddingY <= rect.height,
+    'padding should not exceed 50% of width/height',
+  );
   return {
     x: rect.x + paddingX,
     width: rect.width - 2 * paddingX,
@@ -135,22 +141,23 @@ export function createScrollPointForRect(
     }
 
     // Is rectangle vertically not in viewport -> scroll to reference point (15% below top of screen)
+    const vertical: [number, number] = [view.y, view.y2];
     if (
-      !isWithinInterval(corners.topLeft.y, [view.y, view.y2]) ||
-      !isWithinInterval(corners.bottomLeft.y, [view.y, view.y2])
+      !isWithinInterval(corners.topLeft.y, vertical) ||
+      !isWithinInterval(corners.bottomLeft.y, vertical)
     ) {
       const referecePoint = 0.15 * view.height;
       scrollPoint.y = rect.y - referecePoint;
     }
 
     // We only move horizontally when absolutely needed, this mimicks real humans.
-    const leftSideInViewport = isWithinInterval(corners.topLeft.x, [view.x, view.x2]);
-    if (!leftSideInViewport || !isWithinInterval(corners.topRight.x, [view.x, view.x2])) {
-      const middleX = { x: (rect.x + rect.x2) / 2, y: scrollPoint.y };
-      if (leftSideInViewport && middleX) {
+    const horizontal: [number, number] = [view.x, view.x2];
+    const leftSideInViewport = isWithinInterval(corners.topLeft.x, horizontal);
+    if (!leftSideInViewport || !isWithinInterval(corners.topRight.x, horizontal)) {
+      if (leftSideInViewport && isWithinInterval((rect.x + rect.x2) / 2, horizontal)) {
         // Don't scroll if left corner and at least half of the content is within viewport
       } else {
-        // Always scroll if left corner not inside viewport (left side always most import side)
+        // Always scroll if left corner not inside viewport (left side always most important side)
         const referecePoint = 0.15 * view.width;
         scrollPoint.x = rect.x - referecePoint;
       }
@@ -168,7 +175,8 @@ export function createScrollPointForRect(
 
 /**
  * Creates a random point within a rectangle.
- * When using constrainToViewport make sure at least part of rectangle is within the viewport.
+ * When using constrainToViewport make sure at least part of rectangle is within the viewport,
+ * otherwise an error will be thrown.
  */
 export function createPointInRect(
   rectangle: IRect,
@@ -187,8 +195,8 @@ export function createPointInRect(
     'padding width percentage should be in range [0, 100]',
   );
   const padding = {
-    x: (rectangle.width * paddingPercent.width) / 100,
-    y: (rectangle.height * paddingPercent.height) / 100,
+    x: (rectangle.width * paddingPercent.width) / 100 / 2,
+    y: (rectangle.height * paddingPercent.height) / 100 / 2,
   };
   const rect = rectangleWithCoordinates(paddedRectangle(rectangle, padding.x, padding.y));
   let point: IPositionAbsolute = {
@@ -198,6 +206,9 @@ export function createPointInRect(
 
   if (options?.constrainToViewport) {
     point = clipPointToRectangle(point, options.constrainToViewport);
+    if (!isPointWithinRect(point, rectangle)) {
+      throw new Error('(padded)Rectangle should overlap with viewport');
+    }
   }
 
   return roundPoint(point, 1);
