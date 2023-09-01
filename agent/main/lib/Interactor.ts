@@ -264,9 +264,7 @@ export default class Interactor implements IInteractionsHelper {
     };
   }
 
-  public async getInteractionRect(
-    interactionStep: IInteractionStepAbsolute,
-  ): Promise<IRectLookup> {
+  public async getInteractionRect(interactionStep: IInteractionStepAbsolute): Promise<IRectLookup> {
     const mousePosition = interactionStep.mousePosition;
     return await this.lookupBoundingRect(mousePosition, {
       useLastKnownPosition: interactionStep.verification === 'none',
@@ -326,6 +324,8 @@ export default class Interactor implements IInteractionsHelper {
           } else {
             throw new Error('Unsupported position for mousePosition');
           }
+        } else if (!mousePosition) {
+          step = { ...originalStep, mousePosition: undefined };
         } else {
           throw new Error('Unsupported mousePosition');
         }
