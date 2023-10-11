@@ -64,7 +64,7 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
   private preferencesInterceptor?: DevtoolsPreferences;
 
   private browserContextCreationHooks: IBrowserContextHooks;
-  private connectOnlyToPageTargets: { [targetId: string]: IPageCreateOptions };
+  private connectOnlyToPageTargets?: { [targetId: string]: IPageCreateOptions };
 
   private get defaultBrowserContext(): BrowserContext {
     return this.browserContextsById.get(undefined);
@@ -387,11 +387,12 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
     const isDevtoolsPanel = targetInfo.url.startsWith('devtools://devtools');
     const isContextLess = !targetInfo.browserContextId;
     if (
-      isContextLess ||
-      (event.targetInfo.type === 'page' &&
+      isContextLess || (
+        event.targetInfo.type === 'page' &&
         !isDevtoolsPanel &&
         this.connectOnlyToPageTargets &&
-        !this.connectOnlyToPageTargets[targetInfo.targetId])
+        !this.connectOnlyToPageTargets[targetInfo.targetId]
+      )
     ) {
       if (this.debugLog) {
         log.stats('Not connecting to target', { event, sessionId: null });
