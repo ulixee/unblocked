@@ -69,7 +69,6 @@ export class Worker extends TypedEventEmitter<IWorkerEvents> implements IWorker 
     this.events.on(session, 'Inspector.targetReloadedAfterCrash', () => {
       return this.initialize(parentNetworkManager);
     });
-    this.events.on(session, 'Inspector.targetCrashed', this.close.bind(this));
     this.events.once(session, 'disconnected', this.emit.bind(this, 'close'));
     this.isReady = this.initialize(parentNetworkManager).catch(err => err);
   }
