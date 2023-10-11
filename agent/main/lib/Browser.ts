@@ -380,21 +380,18 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
   private onAttachedToTarget(event: Protocol.Target.AttachedToTargetEvent): void {
     const { targetInfo, sessionId } = event;
 
-    // assert(targetInfo.browserContextId, `targetInfo: ${JSON.stringify(targetInfo, null, 2)}`);
-    if (!targetInfo.browserContextId) {
-      return
-    }
-
     this.browserContextsById
       .get(targetInfo.browserContextId)
       ?.targetsById.set(targetInfo.targetId, targetInfo);
 
     const isDevtoolsPanel = targetInfo.url.startsWith('devtools://devtools');
+    const isContextLess = !targetInfo.browserContextId;
     if (
-      event.targetInfo.type === 'page' &&
-      !isDevtoolsPanel &&
-      this.connectOnlyToPageTargets &&
-      !this.connectOnlyToPageTargets[targetInfo.targetId]
+      isContextLess ||
+      (event.targetInfo.type === 'page' &&
+        !isDevtoolsPanel &&
+        this.connectOnlyToPageTargets &&
+        !this.connectOnlyToPageTargets[targetInfo.targetId])
     ) {
       if (this.debugLog) {
         log.stats('Not connecting to target', { event, sessionId: null });
