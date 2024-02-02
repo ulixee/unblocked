@@ -1,0 +1,168 @@
+{
+  "add": [
+    {
+      "path": "window.MediaSource.prototype",
+      "propertyName": "handle",
+      "prevProperty": "setLiveSeekableRange",
+      "property": {
+        "_$flags": "ce",
+        "_$accessException": "TypeError: Illegal invocation",
+        "_$get": "function get handle() { [native code] }",
+        "_$getToStringToString": "function toString() { [native code] }"
+      }
+    },
+    {
+      "path": "window.MediaSource",
+      "propertyName": "canConstructInDedicatedWorker",
+      "prevProperty": "isTypeSupported",
+      "property": {
+        "_$type": "boolean",
+        "_$flags": "ce",
+        "_$value": true,
+        "_$get": "function get canConstructInDedicatedWorker() { [native code] }",
+        "_$getToStringToString": "function toString() { [native code] }"
+      }
+    },
+    {
+      "path": "window",
+      "propertyName": "MediaSourceHandle",
+      "prevProperty": "SourceBufferList",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": "MediaSourceHandle"
+        },
+        "arguments": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "caller": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "prototype": {
+          "_$protos": [
+            "Object.prototype"
+          ],
+          "Symbol(Symbol.toStringTag)": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "MediaSourceHandle"
+          },
+          "_$type": "object",
+          "_$flags": ""
+        },
+        "new()": {
+          "_$type": "constructor",
+          "_$constructorException": "TypeError: Illegal constructor"
+        },
+        "_$type": "function",
+        "_$function": "function MediaSourceHandle() { [native code] }",
+        "_$invocation": "TypeError: Illegal constructor",
+        "_$flags": "cw",
+        "_$value": "function MediaSourceHandle() { [native code] }"
+      }
+    }
+  ],
+  "remove": [
+    {
+      "path": "window.Text.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "createShadowRoot"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Document.prototype",
+      "propertyName": "registerElement"
+    },
+    {
+      "path": "window.document",
+      "propertyName": "$cdc_asdjflasutopfhvcZLmcfl_"
+    },
+    {
+      "path": "window",
+      "propertyName": "cdc_adoQpoasnfa76pfcZLmcfl"
+    },
+    {
+      "path": "window.HTMLLinkElement.prototype",
+      "propertyName": "import"
+    }
+  ],
+  "modify": [
+    {
+      "path": "window.Notification.permission",
+      "propertyName": "_$value",
+      "property": "default"
+    }
+  ],
+  "reorder": [
+    {
+      "path": "window",
+      "propertyName": "WebAssembly",
+      "throughProperty": "SourceBufferList",
+      "prevProperty": "chrome"
+    },
+    {
+      "path": "window",
+      "propertyName": "MediaStreamTrack",
+      "throughProperty": "webkitResolveLocalFileSystemURL",
+      "prevProperty": "MediaSourceHandle"
+    },
+    {
+      "path": "window",
+      "propertyName": "TEMPORARY",
+      "throughProperty": "PERSISTENT",
+      "prevProperty": "cdc_adoQpoasnfa76pfcZLmcfl_Symbol"
+    },
+    {
+      "path": "window.document",
+      "propertyName": "implementation",
+      "throughProperty": "DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC",
+      "prevProperty": "$cdc_asdjflasutopfhvcZLmcfl_"
+    },
+    {
+      "path": "window.MediaSource",
+      "propertyName": "new()",
+      "throughProperty": "new()",
+      "prevProperty": "canConstructInDedicatedWorker"
+    },
+    {
+      "path": "window.navigator.languages",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "1"
+    },
+    {
+      "path": "window.navigator.mimeTypes",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "text/pdf"
+    },
+    {
+      "path": "window.navigator.plugins",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "WebKit built-in PDF"
+    },
+    {
+      "path": "window.navigator.userAgentData.brands",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "2"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@double-agent/user-interaction",
+  "version": "1.0.0",
+  "description": "Recording of order of exact steps performed (pages loaded, mouse movements/clicks, element interaction, typing)",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "private": true,
+  "checkCategories": [
+    "Time Between User Actions",
+    "Time to Interact with Page",
+    "Repeated Interaction Steps"
+  ],
+  "scripts": {},
+  "types": "index.d.ts"
+}
