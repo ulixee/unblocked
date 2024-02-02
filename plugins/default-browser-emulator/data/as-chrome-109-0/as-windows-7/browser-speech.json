@@ -1,0 +1,18 @@
+{
+  "voices": [
+    {
+      "default": true,
+      "lang": "en-US",
+      "localService": true,
+      "name": "Microsoft Anna - English (United States)",
+      "voiceURI": "Microsoft Anna - English (United States)"
+    },
+    {
+      "default": false,
+      "lang": "zh-CN",
+      "localService": true,
+      "name": "Microsoft Lili - Chinese (China)",
+      "voiceURI": "Microsoft Lili - Chinese (China)"
+    }
+  ]
+}

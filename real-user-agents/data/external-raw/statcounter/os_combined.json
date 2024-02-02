@@ -1,0 +1,14 @@
+{
+    "fromMonthYear": "2024-01",
+    "toMonthYear": "2024-02",
+    "lastModified": "2024-02-01T20:34:07.338Z",
+    "results": {
+        "Windows": ["64.18", "0"],
+        "OS X": ["25.35", "0"],
+        "Chrome OS": ["4.28", "0"],
+        "Linux": ["3.44", "0"],
+        "Unknown": ["2.72", "0"],
+        "FreeBSD": ["0.01", "0"],
+        "Other": ["0.02", "0"]
+    }
+}

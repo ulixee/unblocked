@@ -1,0 +1,43 @@
+{
+  "name": "double-agent",
+  "version": "1.0.0",
+  "description": "Double agent is a detection system for when an http request or browser interaction is not the user agent it says it is",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true,
+  "scripts": {
+    "tsc": "tsc -b -i && ulx-repo-after-build && ulx-repo-adjust-paths && node alsoCopy.js",
+    "clean": "tsc -b --clean",
+    "docs": "node build/docs/generator",
+    "start": "cd build && yarn workspace @double-agent/collect-controller start",
+    "prod": "cd build && yarn workspace @double-agent/collect-controller prod"
+  },
+  "devDependencies": {
+    "@ulixee/repo-tools": "^1.0.29",
+    "typescript": "^5.3.3"
+  },
+  "workspaces": [
+    "analyze",
+    "analyze/plugins/*",
+    "collect",
+    "collect/plugins/*",
+    "collect-controller",
+    "config",
+    "docs",
+    "tls-server",
+    "runner",
+    "../../shared/build/*"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@double-agent/user-mouse",
+  "version": "1.0.0",
+  "description": "Does the mouse move (scrolling, clicking, movement)?",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "private": true,
+  "checkCategories": [
+    "Mouse Movement"
+  ],
+  "scripts": {},
+  "types": "index.d.ts"
+}
