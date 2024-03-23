@@ -41,7 +41,7 @@ describe('typing', () => {
     let totalMillis = 0;
     await humanEmulator.playInteractions(
       groups,
-      async (interactionStep) => {
+      async interactionStep => {
         expect(interactionStep.keyboardKeyupDelay).toBeGreaterThanOrEqual(10);
         expect(interactionStep.keyboardKeyupDelay).toBeLessThanOrEqual(60);
 
@@ -74,7 +74,7 @@ describe('move', () => {
         command: 'move',
         mousePosition: [['document', 'querySelector', 'x']],
       },
-      async (step) => {
+      async step => {
         commands.push(step);
       },
       createInteractHelper({
@@ -104,7 +104,7 @@ describe('scroll', () => {
         command: 'scroll',
         mousePosition: [['document', 'querySelector', 'x']],
       },
-      async (step) => {
+      async step => {
         commands.push(step);
       },
       createInteractHelper({
@@ -132,7 +132,7 @@ describe('scroll', () => {
         command: 'scroll',
         mousePosition: [['document', 'querySelector', 'x']],
       },
-      async (step) => {
+      async step => {
         commands.push(step);
       },
       createInteractHelper({
@@ -160,7 +160,7 @@ describe('scroll', () => {
         command: 'scroll',
         mousePosition: [['document', 'querySelector', 'x']],
       },
-      async (step) => {
+      async step => {
         commands.push(step);
       },
       createInteractHelper({
@@ -178,7 +178,7 @@ describe('scroll', () => {
 
     expect(commands.length).toBeGreaterThan(2);
 
-    const scrolls = commands.filter((x) => x.command === 'scroll');
+    const scrolls = commands.filter(x => x.command === 'scroll');
     for (let i = 0; i < scrolls.length; i += 1) {
       const current = scrolls[i];
       const next = scrolls[i + 1];
@@ -194,11 +194,15 @@ describe('scroll', () => {
 
 function createInteractHelper(extras: Partial<IInteractionsHelper>): IInteractionsHelper {
   return {
-    mousePosition: { x: 25, y: 25 },
+    mousePosition: Promise.resolve({ x: 25, y: 25 }),
+    scrollOffset: Promise.resolve({ x: 0, y: 0 }),
     viewportSize: {
       height: 600,
       width: 800,
     },
+    viewportSizeWithPosition: Promise.resolve({ x: 0, y: 0, height: 600, width: 800 }),
+    logger,
+    doesBrowserAnimateScrolling: true,
     async lookupBoundingRect() {
       return {
         elementTag: 'div',
@@ -208,9 +212,9 @@ function createInteractHelper(extras: Partial<IInteractionsHelper>): IInteractio
         y: 50000,
       };
     },
-    doesBrowserAnimateScrolling: true,
-    scrollOffset: Promise.resolve({ x: 0, y: 0 }),
-    logger,
+    async getInteractionRect() {
+      return { x: 0, y: 0, width: 0, height: 0 };
+    },
     createMousedownTrigger() {
       return Promise.resolve({
         nodeVisibility: { isVisible: true, isClickable: true },

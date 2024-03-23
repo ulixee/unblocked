@@ -15,7 +15,7 @@ describe('Frames Out of Process', () => {
     server = await TestServer.create(0);
     browser = new Browser(browserEngineOptions, {
       onNewBrowser(b: IBrowser) {
-        b.engine.launchArguments.push('--site-per-process', '--host-rules=MAP * 127.0.0.1');
+        b.engine.launchArguments.push('--site-per-process', '--host-rules=MAP * 127.0.0.1', '--user-data-dir=/tmp');
       },
     });
     await browser.launch();

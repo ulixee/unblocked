@@ -1,8 +1,15 @@
 import { IJsPath } from '@ulixee/js-path';
+import { isIJsPath } from '@ulixee/js-path/interfaces/IJsPath';
 import IMouseResult from './IMouseResult';
-import IPoint from '../browser/IPoint';
-import {IKeyboardShortcut} from "./IKeyboardShortcuts";
-import {IKeyboardKeyCode} from "./IKeyboardLayoutUS";
+import { IKeyboardShortcut } from './IKeyboardShortcuts';
+import { IKeyboardKeyCode } from './IKeyboardLayoutUS';
+import {
+  IPositionAbsolute,
+  IPositionRelativeMouse,
+  IPositionRelativeViewport,
+} from '../browser/IPosition';
+
+export { IJsPath, isIJsPath };
 
 export type IElementInteractVerification = 'elementAtPath' | 'exactElement' | 'none';
 
@@ -24,8 +31,14 @@ export interface IInteractionStep {
   delayElement?: IJsPath;
   delayMillis?: number;
   verification?: IElementInteractVerification;
-  relativeToScrollOffset?: IPoint;
 }
+
+// Internally, and all plugins/hooks should use absolute positions
+export type IInteractionStepAbsolute = Omit<IInteractionStep, 'mousePosition'> & {
+  mousePosition?: IMousePositionAbsolute;
+};
+export type IInteractionGroupsAbsolute = IInteractionGroupAbsolute[];
+export type IInteractionGroupAbsolute = IInteractionStepAbsolute[];
 
 export enum InteractionCommand {
   move = 'move',
@@ -55,9 +68,9 @@ export enum MouseButton {
 }
 export type IMouseButton = keyof typeof MouseButton;
 
-export type IMousePositionXY = [number, number];
+export type IMousePositionRxRy = [number, number];
 
-export function isMousePositionXY(mousePosition: any): boolean {
+export function isMousePositionRxRy(mousePosition: any): mousePosition is IMousePositionRxRy {
   return (
     Array.isArray(mousePosition) &&
     mousePosition.length === 2 &&
@@ -66,7 +79,18 @@ export function isMousePositionXY(mousePosition: any): boolean {
   );
 }
 
-export type IMousePosition = IMousePositionXY | IJsPath;
+// TODO remove deprecated
+export function isMousePositionXY(mousePosition: any): mousePosition is IMousePositionRxRy {
+  return isMousePositionRxRy(mousePosition);
+}
+
+export type IMousePositionAbsolute = IJsPath | IPositionAbsolute;
+
+export type IMousePosition =
+  | IMousePositionAbsolute
+  | IMousePositionRxRy
+  | IPositionRelativeViewport
+  | IPositionRelativeMouse;
 
 // Keyboard-specific Types
 

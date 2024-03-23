@@ -61,6 +61,46 @@ describe('basic interaction tests', () => {
     expect(spy).toHaveBeenCalledTimes(1);
     const interactGroups = spy.mock.calls[0][0];
     expect(interactGroups).toHaveLength(1);
+    expect(interactGroups[0]).toHaveLength(1);
+
+    const buttonClass = await page.execJsPath([
+      'document',
+      ['querySelector', 'button'],
+      'classList',
+    ]);
+    expect(buttonClass.value).toStrictEqual({ 0: 'clicked' });
+  });
+
+  it('executes basic click command that needs scrolling', async () => {
+    koaServer.get('/mouse-with-scroll', ctx => {
+      ctx.body = `
+      <body>
+        <div style="height: 2000px"></div>
+        <button>Test</button>
+        <script>
+          document.querySelector('button').addEventListener('click', event => {
+            document.querySelector('button').classList.add('clicked');
+          });
+        </script>
+      </body>
+    `;
+    });
+
+    const agent = await createAgent();
+    const page = await agent.newPage();
+    await page.goto(`${koaServer.baseUrl}/mouse-with-scroll`);
+
+    const spy = jest.spyOn<any, any>(page.mainFrame.interactor, 'playAllInteractions');
+    await page.interact([
+      {
+        command: InteractionCommand.click,
+        mousePosition: ['document', ['querySelector', 'button']],
+      },
+    ]);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+    const interactGroups = spy.mock.calls[0][0];
+    expect(interactGroups).toHaveLength(1);
     expect(interactGroups[0]).toHaveLength(2);
     expect(interactGroups[0][0].command).toBe('scroll');
 

@@ -1,6 +1,6 @@
 import { IKeyboardKey } from './IKeyboardLayoutUS';
 import { IMouseButton } from './IInteractions';
-import IPoint from '../browser/IPoint';
+import { IPositionRelativeViewport } from '../browser/IPosition';
 
 export interface IKeyboard {
   up(key: IKeyboardKey): Promise<void>;
@@ -12,8 +12,8 @@ export interface IKeyboard {
 }
 
 export interface IMouse {
-  position: IPoint;
-  move(x: number, y: number): Promise<void>;
+  position: IPositionRelativeViewport;
+  move(rx: number, ry: number): Promise<void>;
   up(options?: IMouseOptions): Promise<void>;
   down(options?: IMouseOptions): Promise<void>;
   wheel(options: { deltaX?: number; deltaY?: number }): Promise<void>;

@@ -5,8 +5,8 @@ import IUnblockedPlugin, {
 } from '@ulixee/unblocked-specification/plugin/IUnblockedPlugin';
 import { URL } from 'url';
 import {
-  IInteractionGroups,
-  IInteractionStep,
+  IInteractionGroupsAbsolute,
+  IInteractionStepAbsolute,
 } from '@ulixee/unblocked-specification/agent/interact/IInteractions';
 import IInteractionsHelper from '@ulixee/unblocked-specification/agent/interact/IInteractionsHelper';
 import IHttpResourceLoadDetails from '@ulixee/unblocked-specification/agent/net/IHttpResourceLoadDetails';
@@ -20,12 +20,12 @@ import IHttpSocketAgent from '@ulixee/unblocked-specification/agent/net/IHttpSoc
 import ITlsSettings from '@ulixee/unblocked-specification/agent/net/ITlsSettings';
 import ITcpSettings from '@ulixee/unblocked-specification/agent/net/ITcpSettings';
 import IDnsSettings from '@ulixee/unblocked-specification/agent/net/IDnsSettings';
-import IPoint from '@ulixee/unblocked-specification/agent/browser/IPoint';
 import IDevtoolsSession from '@ulixee/unblocked-specification/agent/browser/IDevtoolsSession';
 import ChromeApp from '@ulixee/chrome-app';
 import { IHooksProvider } from '@ulixee/unblocked-specification/agent/hooks/IHooks';
 import { IFrame } from '@ulixee/unblocked-specification/agent/browser/IFrame';
 import IResourceType from '@ulixee/unblocked-specification/agent/net/IResourceType';
+import { IPositionRelativeViewport } from '@ulixee/unblocked-specification/agent/browser/IPosition';
 import ChromeEngine from './ChromeEngine';
 import Interactor from './Interactor';
 
@@ -139,8 +139,8 @@ export default class Plugins implements IUnblockedPlugins {
   // INTERACTIONS
 
   public async playInteractions(
-    interactionGroups: IInteractionGroups,
-    runFn: (interaction: IInteractionStep) => Promise<void>,
+    interactionGroups: IInteractionGroupsAbsolute,
+    runFn: (interaction: IInteractionStepAbsolute) => Promise<void>,
     helper: IInteractionsHelper,
   ): Promise<void> {
     if (this.hooksByName.playInteractions.length) {
@@ -152,7 +152,10 @@ export default class Plugins implements IUnblockedPlugins {
     }
   }
 
-  public async adjustStartingMousePoint(point: IPoint, helper: IInteractionsHelper): Promise<void> {
+  public async adjustStartingMousePoint(
+    point: IPositionRelativeViewport,
+    helper: IInteractionsHelper,
+  ): Promise<void> {
     for (const fn of this.hooksByName.adjustStartingMousePoint) {
       await fn(point, helper);
     }

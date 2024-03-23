@@ -1,11 +1,11 @@
 import {
-  IInteractionGroup,
+  IInteractionGroupAbsolute,
   IInteractionGroups,
-  IInteractionStep,
-  IMousePosition,
-  IMousePositionXY,
+  IInteractionGroupsAbsolute,
+  IInteractionStepAbsolute,
+  IMousePositionAbsolute,
   InteractionCommand,
-  isMousePositionXY,
+  isMousePositionRxRy,
 } from '@ulixee/unblocked-specification/agent/interact/IInteractions';
 import { assert } from '@ulixee/commons/lib/utils';
 import {
@@ -16,10 +16,10 @@ import {
 import IInteractionsHelper, {
   IRectLookup,
   IViewportSize,
+  IViewportSizeWithPosition,
 } from '@ulixee/unblocked-specification/agent/interact/IInteractionsHelper';
 import { IBoundLog } from '@ulixee/commons/interfaces/ILog';
-import { INodePointer, IJsPath, INodeVisibility } from '@ulixee/js-path';
-import IPoint from '@ulixee/unblocked-specification/agent/browser/IPoint';
+import { INodePointer, IJsPath, INodeVisibility, IElementRect } from '@ulixee/js-path';
 import IMouseResult from '@ulixee/unblocked-specification/agent/interact/IMouseResult';
 import IResolvablePromise from '@ulixee/commons/interfaces/IResolvablePromise';
 import { IInteractHooks } from '@ulixee/unblocked-specification/agent/hooks/IHooks';
@@ -27,11 +27,24 @@ import IRect from '@ulixee/unblocked-specification/agent/browser/IRect';
 import { IKeyboard, IMouse } from '@ulixee/unblocked-specification/agent/interact/IInput';
 import IWindowOffset from '@ulixee/unblocked-specification/agent/browser/IWindowOffset';
 import { CanceledPromiseError } from '@ulixee/commons/interfaces/IPendingWaitEvent';
+import {
+  IPositionAbsolute,
+  isIPositionAbsolute,
+  isIPositionRelativeMouse,
+  isIPositionRelativeViewport,
+  isPosition,
+} from '@ulixee/unblocked-specification/agent/browser/IPosition';
+import { isIJsPath } from '@ulixee/js-path/interfaces/IJsPath';
 import Frame from './Frame';
 import { JsPath } from './JsPath';
 import MouseListener from './MouseListener';
 import * as rectUtils from './rectUtils';
 import BrowserContext from './BrowserContext';
+import {
+  absoluteToRelativeViewportPosition,
+  relativeViewportPositionToAbsolute,
+} from './coordinateUtils';
+import { isSamePoint } from './rectUtils';
 
 const commandsNeedingScroll = new Set([
   InteractionCommand.click,
@@ -49,21 +62,34 @@ const mouseCommands = new Set(
     InteractionCommand.clickDown,
   ].map(String),
 );
-
 export default class Interactor implements IInteractionsHelper {
-  public get mousePosition(): IPoint {
-    return { ...this.mouse.position };
+  public get mousePosition(): Promise<IPositionAbsolute> {
+    return (async () => {
+      return relativeViewportPositionToAbsolute(this.mouse.position, await this.scrollOffset);
+    })();
   }
 
   public get scrollOffset(): Promise<IRect> {
-    return this.getWindowOffset().then(offset => {
+    return (async () => {
+      const offset = await this.getWindowOffset();
       return {
         x: offset.scrollX,
         y: offset.scrollY,
         width: offset.scrollWidth,
         height: offset.scrollHeight,
       };
-    });
+    })();
+  }
+
+  public get viewportSizeWithPosition(): Promise<IViewportSizeWithPosition> {
+    return (async () => {
+      const scrollOffset = await this.scrollOffset;
+      return {
+        ...this.viewportSize,
+        x: scrollOffset.x,
+        y: scrollOffset.y,
+      };
+    })();
   }
 
   public get doesBrowserAnimateScrolling(): boolean {
@@ -71,12 +97,12 @@ export default class Interactor implements IInteractionsHelper {
   }
 
   public beforeEachInteractionStep: (
-    interactionStep: IInteractionStep,
+    interactionStep: IInteractionStepAbsolute,
     isMouseCommand: boolean,
   ) => Promise<void>;
 
   public afterEachInteractionStep: (
-    interactionStep: IInteractionStep,
+    interactionStep: IInteractionStepAbsolute,
     startTime: number,
   ) => Promise<void>;
 
@@ -90,7 +116,8 @@ export default class Interactor implements IInteractionsHelper {
   public isPointWithinRect = rectUtils.isPointWithinRect;
   public createPointInRect = rectUtils.createPointInRect;
   public createScrollPointForRect = rectUtils.createScrollPointForRect;
-  public isRectInViewport = rectUtils.isRectInViewport;
+  public isRectanglePointInViewport = rectUtils.isRectanglePointInViewport;
+  public isSamePoint = rectUtils.isSamePoint;
 
   private preInteractionPaintStableStatus: { isStable: boolean; timeUntilReadyMs?: number };
 
@@ -130,6 +157,8 @@ export default class Interactor implements IInteractionsHelper {
   }
 
   public async initialize(): Promise<void> {
+    // TODO this should probably throw an error otherwise playInterations might fail
+    // because viewportSize is undefined.
     // can't run javascript if active dialog!
     if (this.frame.page.activeDialog) return;
     this.isReady ??= this.initializeViewport(!this.frame.parentId);
@@ -142,10 +171,11 @@ export default class Interactor implements IInteractionsHelper {
 
     this.logger.info('Interactor.play', { interactions });
 
-    this.injectScrollToPositions(interactions)
-      .then(async finalInteractions => {
+    this.initialize()
+      .then(async () => {
+        const absoluteInteractions = await this.convertToAbsolutePositionInteractions(interactions);
+        const finalInteractions = await this.injectScrollToPositions(absoluteInteractions);
         try {
-          await this.initialize();
           return await this.playAllInteractions(
             finalInteractions,
             this.playInteraction.bind(this, resolvablePromise),
@@ -167,9 +197,8 @@ export default class Interactor implements IInteractionsHelper {
   }
 
   public async lookupBoundingRect(
-    mousePosition: IMousePosition,
+    mousePosition: IMousePositionAbsolute,
     options?: {
-      relativeToScrollOffset?: IPoint;
       includeNodeVisibility?: boolean;
       useLastKnownPosition?: boolean;
     },
@@ -178,62 +207,37 @@ export default class Interactor implements IInteractionsHelper {
       throw new Error('Null mouse position provided to frame.interact');
     }
 
-    if (isMousePositionXY(mousePosition)) {
-      let [x, y] = mousePosition as IMousePositionXY;
-      x = Math.round(x);
-      y = Math.round(y);
-      if (options?.relativeToScrollOffset) {
-        const currentScrollOffset = await this.scrollOffset;
-        const { relativeToScrollOffset } = options;
-        y = y + relativeToScrollOffset.y - currentScrollOffset.y;
-        x = x + relativeToScrollOffset.x - currentScrollOffset.x;
-      }
-
-      return {
-        x,
-        y,
-        width: 1,
-        height: 1,
-      };
+    if (isPosition(mousePosition) && isIPositionAbsolute(mousePosition)) {
+      return { ...mousePosition, width: 1, height: 1 };
     }
-
     if (
       options?.useLastKnownPosition &&
-      typeof mousePosition[0] === 'number' &&
-      mousePosition.length === 1
+      isIJsPath(mousePosition) &&
+      mousePosition.length === 1 &&
+      typeof mousePosition[0] === 'number'
     ) {
       const nodeId = mousePosition[0] as number;
       const lastKnownPosition = this.jsPath.getLastClientRect(nodeId);
       if (lastKnownPosition) {
-        const currentScroll = await this.scrollOffset;
         return {
-          x: lastKnownPosition.x + lastKnownPosition.scrollX - currentScroll.x,
-          y: lastKnownPosition.y + lastKnownPosition.scrollY - currentScroll.y,
-          height: lastKnownPosition.height,
-          width: lastKnownPosition.width,
-          elementTag: lastKnownPosition.tag,
+          ...this.jsPathRectToAbsoluteRect(lastKnownPosition),
           nodeId,
         };
       }
     }
 
-    const rectResult = await this.jsPath.getClientRect(
+    const jsPathRectResult = await this.jsPath.getClientRect(
       mousePosition,
       options?.includeNodeVisibility,
     );
 
-    const rect = rectResult.value;
-    const nodePointer = rectResult.nodePointer as INodePointer;
+    const rect = this.jsPathRectToAbsoluteRect(jsPathRectResult.value);
+    const nodePointer = jsPathRectResult.nodePointer;
     if (!nodePointer) throw new Error('Element does not exist.');
 
     return {
-      x: rect.x,
-      y: rect.y,
-      height: rect.height,
-      width: rect.width,
-      elementTag: rect.tag,
+      ...rect,
       nodeId: nodePointer?.id,
-      nodeVisibility: rect.nodeVisibility,
     };
   }
 
@@ -260,9 +264,80 @@ export default class Interactor implements IInteractionsHelper {
     };
   }
 
+  public async getInteractionRect(interactionStep: IInteractionStepAbsolute): Promise<IRectLookup> {
+    const mousePosition = interactionStep.mousePosition;
+    return await this.lookupBoundingRect(mousePosition, {
+      useLastKnownPosition: interactionStep.verification === 'none',
+    });
+  }
+
+  private jsPathRectToAbsoluteRect(rectangle: IElementRect): IRectLookup {
+    const rectanglePositionAbsolute = relativeViewportPositionToAbsolute(
+      { rx: rectangle.x, ry: rectangle.y },
+      { x: rectangle.scrollX, y: rectangle.scrollY },
+    );
+    return {
+      ...rectanglePositionAbsolute,
+      height: rectangle.height,
+      width: rectangle.width,
+      elementTag: rectangle.tag,
+      nodeVisibility: rectangle.nodeVisibility,
+    };
+  }
+
+  private async convertToAbsolutePositionInteractions(
+    interactions: IInteractionGroups,
+  ): Promise<IInteractionGroupsAbsolute> {
+    const absoluteInteractions: IInteractionGroupsAbsolute = [];
+    const scrollOffset: IPositionAbsolute = await this.scrollOffset;
+
+    for (const group of interactions) {
+      const groupCommands: IInteractionGroupAbsolute = [];
+      absoluteInteractions.push(groupCommands);
+      for (const originalStep of group) {
+        const mousePosition = originalStep.mousePosition;
+        let step: IInteractionStepAbsolute;
+        if (isMousePositionRxRy(mousePosition)) {
+          const [rx, ry] = mousePosition;
+          step = {
+            ...originalStep,
+            mousePosition: relativeViewportPositionToAbsolute({ rx, ry }, scrollOffset),
+          };
+        } else if (isIJsPath(mousePosition)) {
+          step = {
+            ...originalStep,
+            mousePosition,
+          };
+        } else if (isPosition(mousePosition)) {
+          if (isIPositionAbsolute(mousePosition)) {
+            step = {
+              ...originalStep,
+              mousePosition,
+            };
+          } else if (isIPositionRelativeViewport(mousePosition)) {
+            step = {
+              ...originalStep,
+              mousePosition: relativeViewportPositionToAbsolute(mousePosition, scrollOffset),
+            };
+          } else if (isIPositionRelativeMouse(mousePosition)) {
+            throw new Error('Not yet supported');
+          } else {
+            throw new Error('Unsupported position for mousePosition');
+          }
+        } else if (!mousePosition) {
+          step = { ...originalStep, mousePosition: undefined };
+        } else {
+          throw new Error('Unsupported mousePosition');
+        }
+        groupCommands.push(step);
+      }
+    }
+    return absoluteInteractions;
+  }
+
   private async playInteraction(
     resolvable: IResolvablePromise<any>,
-    interactionStep: IInteractionStep,
+    interactionStep: IInteractionStepAbsolute,
   ): Promise<void> {
     if (resolvable.isResolved) {
       this.logger.warn('Canceling interaction due to external event');
@@ -274,39 +349,49 @@ export default class Interactor implements IInteractionsHelper {
       mouseCommands.has(interactionStep.command),
     );
 
+    const scrollOffset = await this.scrollOffset;
+    const viewport = await this.viewportSizeWithPosition;
     switch (interactionStep.command) {
       case InteractionCommand.move: {
-        const [x, y] = await this.getMousePositionXY(interactionStep);
-        await this.mouse.move(x, y);
+        const moveToPosition = await this.getMousePosition(interactionStep);
+        const { rx, ry } = absoluteToRelativeViewportPosition(moveToPosition, viewport);
+        await this.mouse.move(rx, ry);
         break;
       }
       case InteractionCommand.scroll: {
-        const scrollOffset = await this.scrollOffset;
-
-        let scrollToY = scrollOffset.y;
-        let scrollToX = scrollOffset.x;
+        const mousePosition = interactionStep.mousePosition;
+        let scrollToPosition: IPositionAbsolute;
         // if this is a JsPath, see if we actually need to scroll
-        if (isMousePositionXY(interactionStep.mousePosition) === false) {
+        if (isIJsPath(mousePosition)) {
+          // Maybe move this to where we convert all positions to absolutes ones?
           const interactRect = await this.getInteractionRect(interactionStep);
-          const isRectVisible = this.isRectInViewport(interactRect, this.viewportSize, 50);
-          if (isRectVisible.all) return;
-
-          const pointForRect = this.createScrollPointForRect(interactRect, this.viewportSize);
-
-          // positions are all relative to viewport, so normalize based on the current offsets
-          if (!isRectVisible.height) scrollToY += pointForRect.y;
-          if (!isRectVisible.width) scrollToX += pointForRect.x;
+          scrollToPosition = await this.createScrollPointForRect(interactRect, viewport);
+          if (isSamePoint(viewport, scrollToPosition)) return;
+        } else if (isIPositionAbsolute(mousePosition)) {
+          scrollToPosition = { ...mousePosition };
         } else {
-          [scrollToX, scrollToY] = interactionStep.mousePosition as IMousePositionXY;
+          throw new Error('Unsupported mousePosition');
         }
 
-        const maxX = scrollOffset.width - this.viewportSize.width - scrollOffset.x;
-        const maxY = scrollOffset.height - this.viewportSize.height - scrollOffset.y;
-        const deltaX = Math.min(scrollToX - scrollOffset.x, maxX);
-        const deltaY = Math.min(scrollToY - scrollOffset.y, maxY);
+        const scrollDelta = {
+          x: scrollToPosition.x - viewport.x,
+          y: scrollToPosition.y - viewport.y,
+        };
 
-        if (deltaY !== 0 || deltaX !== 0) {
-          await this.mouse.wheel({ deltaX, deltaY });
+        const maxDeltaScroll = {
+          left: -viewport.x,
+          right: scrollOffset.width - this.viewportSize.width - viewport.x,
+          top: -viewport.y,
+          bottom: scrollOffset.height - this.viewportSize.height - scrollOffset.y,
+        };
+
+        const scrollDeltaWithMax = {
+          x: Math.min(Math.max(maxDeltaScroll.left, scrollDelta.x), maxDeltaScroll.right),
+          y: Math.min(Math.max(maxDeltaScroll.top, scrollDelta.y), maxDeltaScroll.bottom),
+        };
+
+        if (scrollDeltaWithMax.x !== 0 || scrollDeltaWithMax.y !== 0) {
+          await this.mouse.wheel({ deltaX: scrollDeltaWithMax.x, deltaY: scrollDeltaWithMax.y });
           // need to check for offset since wheel event doesn't wait for scroll
           await this.frame.waitForScrollStop();
         }
@@ -320,10 +405,7 @@ export default class Interactor implements IInteractionsHelper {
         const { delayMillis, mouseButton, command, mouseResultVerifier } = interactionStep;
         let interactRect: IRectLookup;
         // if this is a jsPath, need to look it up
-        if (
-          interactionStep.mousePosition &&
-          isMousePositionXY(interactionStep.mousePosition) === false
-        ) {
+        if (isIJsPath(interactionStep.mousePosition)) {
           interactRect = await this.getInteractionRect(interactionStep);
           if (interactRect.elementTag === 'option') {
             // options need a browser level call
@@ -337,8 +419,9 @@ export default class Interactor implements IInteractionsHelper {
           break;
         }
 
-        const [x, y] = await this.getMousePositionXY(interactionStep, true, interactRect);
-        await this.mouse.move(x, y);
+        const moveToPosition = await this.getMousePosition(interactionStep, true, interactRect);
+        const { rx, ry } = absoluteToRelativeViewportPosition(moveToPosition, viewport);
+        await this.mouse.move(rx, ry);
 
         const button = mouseButton || 'left';
         const clickCount = command === InteractionCommand.doubleclick ? 2 : 1;
@@ -420,53 +503,46 @@ export default class Interactor implements IInteractionsHelper {
     }
   }
 
-  private async getInteractionRect(interactionStep: IInteractionStep): Promise<IRectLookup> {
-    const mousePosition = interactionStep.mousePosition;
-    return await this.lookupBoundingRect(mousePosition, {
-      relativeToScrollOffset: interactionStep.relativeToScrollOffset,
-      useLastKnownPosition: interactionStep.verification === 'none',
-    });
-  }
-
-  private async getMousePositionXY(
-    interactionStep: IInteractionStep,
+  private async getMousePosition(
+    interactionStep: IInteractionStepAbsolute,
     constrainToViewport = true,
     rect?: IRectLookup,
-  ): Promise<[x: number, y: number]> {
-    if (!interactionStep.mousePosition) return [this.mouse.position.x, this.mouse.position.y];
+  ): Promise<IPositionAbsolute> {
+    if (!interactionStep.mousePosition) return { ...this.mousePosition };
     rect ??= await this.getInteractionRect(interactionStep);
-
-    if (isMousePositionXY(interactionStep.mousePosition)) {
-      return [rect.x, rect.y];
-    }
 
     const point = await rectUtils.createPointInRect(rect, {
       paddingPercent: { height: 10, width: 10 },
-      constrainToViewport: constrainToViewport ? this.viewportSize : undefined,
+      constrainToViewport: constrainToViewport ? await this.viewportSizeWithPosition : undefined,
     });
-    return [point.x, point.y];
+    return point;
   }
 
   private async injectScrollToPositions(
-    interactions: IInteractionGroups,
-  ): Promise<IInteractionGroups> {
-    const finalInteractions: IInteractionGroups = [];
-    let relativeToScrollOffset: IPoint;
+    interactions: IInteractionGroupsAbsolute,
+  ): Promise<IInteractionGroupsAbsolute> {
+    const finalInteractions: IInteractionGroupsAbsolute = [];
+    const viewport = await this.viewportSizeWithPosition;
     for (const group of interactions) {
-      const groupCommands: IInteractionGroup = [];
+      const groupCommands: IInteractionGroupAbsolute = [];
       finalInteractions.push(groupCommands);
-      for (const step of group) {
+      for (const originalStep of group) {
+        const step = { ...originalStep };
         if (commandsNeedingScroll.has(InteractionCommand[step.command]) && step.mousePosition) {
-          if (isMousePositionXY(step.mousePosition)) {
-            relativeToScrollOffset ??= await this.scrollOffset;
+          const interactRect = await this.getInteractionRect(step);
+          const scrollPoint = this.createScrollPointForRect(interactRect, viewport);
+          if (!isSamePoint(viewport, scrollPoint)) {
+            // Might not be completely accurate as emulator might manipulate scroll
+            // but should be accurate enough to estimate viewport. Either way we
+            // always check again if scrolling is needed when doing the actual interaction.
+            groupCommands.push({
+              command: InteractionCommand.scroll,
+              mousePosition: scrollPoint,
+              verification: step.verification,
+            });
+            viewport.x = scrollPoint.x;
+            viewport.y = scrollPoint.y;
           }
-          groupCommands.push({
-            command: InteractionCommand.scroll,
-            mousePosition: step.mousePosition,
-            verification: step.verification,
-            relativeToScrollOffset,
-          });
-          step.relativeToScrollOffset = relativeToScrollOffset;
         }
         groupCommands.push(step);
       }
@@ -475,8 +551,8 @@ export default class Interactor implements IInteractionsHelper {
   }
 
   public static async defaultPlayInteractions(
-    interactionGroups: IInteractionGroups,
-    runFn: (interactionStep: IInteractionStep) => Promise<void>,
+    interactionGroups: IInteractionGroupsAbsolute,
+    runFn: (interactionStep: IInteractionStepAbsolute) => Promise<void>,
   ): Promise<void> {
     for (const group of interactionGroups) {
       for (const step of group) {
@@ -489,8 +565,11 @@ export default class Interactor implements IInteractionsHelper {
 async function waitFor(millis: number, resolvable: IResolvablePromise): Promise<void> {
   if (millis === undefined || millis === null) return;
 
+  let timeout: NodeJS.Timeout;
   await Promise.race([
     resolvable.promise,
-    new Promise(resolve => setTimeout(resolve, millis).unref()),
-  ]);
+    new Promise(resolve => {
+      timeout = setTimeout(resolve, millis).unref();
+    }),
+  ]).finally(() => clearTimeout(timeout));
 }
