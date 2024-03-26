@@ -37,7 +37,6 @@ export default function createHttpRequestHandler(
 
     if (!isRecognizedDomain(requestUrl.host, [MainDomain, SubDomain, CrossDomain])) {
       req.socket.destroy();
-      console.warn('Invalid domain used to access site', req.url, req.headers.host);
       console.warn('Invalid domain used to access site', String(req.url).replace(/\n|\r/g, ''), String(req.headers.host).replace(/\n|\r/g, ''));
       return;
     }
