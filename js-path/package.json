@@ -1,0 +1,23 @@
+{
+  "name": "@ulixee/js-path",
+  "version": "2.0.0-alpha.28",
+  "description": "The Serialization format to reference Paths to elements/nodes and properties in the DOM",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js"
+}

@@ -1,0 +1,84 @@
+{
+  "add": [],
+  "remove": [
+    {
+      "path": "window.Text.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "createShadowRoot"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Document.prototype",
+      "propertyName": "registerElement"
+    },
+    {
+      "path": "window.document",
+      "propertyName": "$cdc_asdjflasutopfhvcZLmcfl_"
+    },
+    {
+      "path": "window",
+      "propertyName": "cdc_adoQpoasnfa76pfcZLmcfl"
+    },
+    {
+      "path": "window.HTMLLinkElement.prototype",
+      "propertyName": "import"
+    }
+  ],
+  "modify": [
+    {
+      "path": "window.Notification.permission",
+      "propertyName": "_$value",
+      "property": "default"
+    }
+  ],
+  "reorder": [
+    {
+      "path": "window",
+      "propertyName": "WebAssembly",
+      "throughProperty": "webkitResolveLocalFileSystemURL",
+      "prevProperty": "chrome"
+    },
+    {
+      "path": "window",
+      "propertyName": "TEMPORARY",
+      "throughProperty": "PERSISTENT",
+      "prevProperty": "cdc_adoQpoasnfa76pfcZLmcfl_Symbol"
+    },
+    {
+      "path": "window.document",
+      "propertyName": "implementation",
+      "throughProperty": "DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC",
+      "prevProperty": "$cdc_asdjflasutopfhvcZLmcfl_"
+    },
+    {
+      "path": "window.navigator.languages",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "1"
+    },
+    {
+      "path": "window.navigator.mimeTypes",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "text/pdf"
+    },
+    {
+      "path": "window.navigator.plugins",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "WebKit built-in PDF"
+    },
+    {
+      "path": "window.navigator.userAgentData.brands",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "2"
+    }
+  ]
+}

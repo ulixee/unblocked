@@ -1,0 +1,27 @@
+{
+  "name": "@double-agent/collect-http2-session",
+  "version": "2.0.0-alpha.28",
+  "description": "Collects the settings, pings and frames sent across by a browser http2 client",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "disabled": false,
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "@double-agent/collect": "2.0.0-alpha.28",
+    "@double-agent/config": "2.0.0-alpha.28"
+  },
+  "types": "index.d.ts"
+}

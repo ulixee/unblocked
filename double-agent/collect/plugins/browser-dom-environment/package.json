@@ -1,0 +1,25 @@
+{
+  "name": "@double-agent/collect-browser-dom-environment",
+  "version": "2.0.0-alpha.28",
+  "description": "Collects the browser's DOM environment such as object structure, class inheritance amd key order",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "@double-agent/collect": "2.0.0-alpha.28"
+  },
+  "types": "index.d.ts"
+}

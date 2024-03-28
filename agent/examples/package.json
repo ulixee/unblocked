@@ -1,0 +1,24 @@
+{
+  "name": "@ulixee/unblocked-agent-examples",
+  "version": "2.0.0-alpha.28",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true,
+  "dependencies": {
+    "@ulixee/chrome-113-0": "^5672.127.8",
+    "@ulixee/js-path": "2.0.0-alpha.28",
+    "@ulixee/unblocked-agent": "2.0.0-alpha.28"
+  }
+}

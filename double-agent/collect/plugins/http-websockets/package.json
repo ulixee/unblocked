@@ -1,0 +1,34 @@
+{
+  "name": "@double-agent/collect-http-websockets",
+  "version": "2.0.0-alpha.28",
+  "description": "Collects the headers used when initializing and facilitating web sockets",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "@double-agent/collect": "2.0.0-alpha.28",
+    "@double-agent/config": "2.0.0-alpha.28",
+    "axios": "^1.6.7",
+    "diff": "^4.0.2",
+    "source-map-support": "^0.5.16",
+    "uuid": "^7.0.2",
+    "ws": "^7.5.9"
+  },
+  "devDependencies": {
+    "@types/diff": "^4.0.2"
+  },
+  "types": "index.d.ts"
+}

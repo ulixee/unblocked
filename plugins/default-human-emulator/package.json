@@ -1,0 +1,28 @@
+{
+  "name": "@ulixee/default-human-emulator",
+  "version": "2.0.0-alpha.28",
+  "description": "Default human emulator based on Xetera/ghost-cursor",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@ulixee/commons": "2.0.0-alpha.28",
+    "@ulixee/unblocked-specification": "2.0.0-alpha.28"
+  },
+  "types": "index.d.ts"
+}

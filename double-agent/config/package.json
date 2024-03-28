@@ -1,0 +1,26 @@
+{
+  "name": "@double-agent/config",
+  "version": "2.0.0-alpha.28",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true,
+  "dependencies": {
+    "@double-agent/analyze": "2.0.0-alpha.28",
+    "@double-agent/collect": "2.0.0-alpha.28",
+    "@ulixee/commons": "2.0.0-alpha.28",
+    "@ulixee/real-user-agents": "2.0.0-alpha.28"
+  },
+  "main": "index.js"
+}

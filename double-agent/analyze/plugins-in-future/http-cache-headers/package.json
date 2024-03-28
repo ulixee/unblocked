@@ -1,0 +1,26 @@
+{
+  "name": "@double-agent/http-cache",
+  "version": "1.0.0",
+  "description": "Http caching headers sent in different conditions vs default user agent behavior",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "private": true,
+  "checkCategories": [
+    "Cache Headers"
+  ],
+  "scripts": {},
+  "types": "index.d.ts"
+}

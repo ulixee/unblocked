@@ -1,0 +1,26 @@
+{
+  "name": "@double-agent/tls-server",
+  "version": "2.0.0-alpha.28",
+  "description": "TLS server for capturing clienthello",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "@double-agent/config": "2.0.0-alpha.28",
+    "@ulixee/commons": "2.0.0-alpha.28"
+  },
+  "types": "index.d.ts"
+}

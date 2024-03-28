@@ -1,0 +1,11 @@
+declare function installNamedNodeItems(nativeObj: PluginArray | MimeTypeArray, list: (Plugin | MimeType)[], prop: 'type' | 'name'): any[];
+declare const uint32Overflow = 4294967296;
+declare const weakMimes: WeakSet<MimeType>;
+declare const weakPlugins: WeakSet<Plugin>;
+declare function createNamedNodeMap(protoClass: PluginArray | MimeTypeArray, list: (Plugin | MimeType)[], prop: 'type' | 'name', hiddenProperties?: PropertyKey[]): PluginArray | MimeTypeArray;
+declare function createMime(fakeMime: any): MimeType;
+declare const mimeList: MimeType[];
+declare const mimes: MimeTypeArray;
+declare const pluginList: Plugin[];
+declare const navigatorPlugins: PluginArray;
+declare function handleCloneObject(target: any, thisArg: any, argArray: any): any;

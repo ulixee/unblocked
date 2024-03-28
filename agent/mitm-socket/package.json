@@ -1,0 +1,32 @@
+{
+  "name": "@ulixee/unblocked-agent-mitm-socket",
+  "version": "2.0.0-alpha.28",
+  "description": "Man-in-the-middle socket library to emulate TLS and TCP settings",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node install.js"
+  },
+  "dependencies": {
+    "@ulixee/commons": "2.0.0-alpha.28",
+    "@ulixee/unblocked-specification": "2.0.0-alpha.28",
+    "nanoid": "^3.3.6"
+  },
+  "types": "index.d.ts"
+}

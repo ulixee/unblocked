@@ -1,0 +1,29 @@
+{
+  "name": "@double-agent/collect-browser-speech",
+  "version": "2.0.0-alpha.28",
+  "description": "Collects browser speech synthesis voices",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "@double-agent/collect": "2.0.0-alpha.28",
+    "@double-agent/config": "2.0.0-alpha.28"
+  },
+  "devDependencies": {
+    "@types/diff": "^4.0.2"
+  },
+  "types": "index.d.ts"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@double-agent/browser-dom-rendering",
+  "version": "1.0.0",
+  "description": "Detect nuances and capabilities for each browser rendering engine",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "private": true,
+  "checkCategories": [
+    "Browser Rendering"
+  ],
+  "scripts": {},
+  "types": "index.d.ts"
+}

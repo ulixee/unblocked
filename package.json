@@ -1,0 +1,42 @@
+{
+  "name": "@ulixee/unblocked",
+  "description": "The Unblocking Bot-Blocker monorepo",
+  "homepage": "https://ulixee.org/unblocked",
+  "repository": "git@github.com:ulixee/unblocked.git",
+  "bugs": {
+    "url": "https://github.com/ulixee/unblocked/issues"
+  },
+  "license": "MIT",
+  "author": "Ulixee",
+  "contributors": [
+    "Caleb Clark",
+    "Blake Byrnes"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true,
+  "scripts": {
+    "postinstall": "yarn workspace @ulixee/unblocked-agent-mitm-socket postinstall",
+    "dist": "lerna publish from-package"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "workspaces": [
+    "agent/*",
+    "specification",
+    "js-path",
+    "real-user-agents",
+    "plugins/*"
+  ],
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
+  "packageManager": "yarn@1.22.21+sha256.dbed5b7e10c552ba0e1a545c948d5473bc6c5a28ce22a8fd27e493e3e5eb6370"
+}
