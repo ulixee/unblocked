@@ -99,7 +99,7 @@ export default class DomOverridesBuilder {
           return snippet;
         })
         .join('\n\n')}
-    finally {
+    } finally {
       self = originalSelf;
     }
   })();
