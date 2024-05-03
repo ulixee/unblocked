@@ -1,7 +1,7 @@
 // Logging error on any of these levels triggers a getter, which could be proxied.
 // The same could technically be done for any object so to prevent detection here
-// we have to disable all console logging functionality, which is pretty annoying
-// and hopefully we find a better solution for this.
+// we use json stringify, so we ignore all of this dangerous logic while still
+// logging as much as possible of the original object.
 const logLevels = ['trace', 'debug', 'info', 'warn', 'error', 'log'] as const;
 const reflectCached = ReflectCached;
 
@@ -9,7 +9,7 @@ for (const logLevel of logLevels) {
   proxyFunction(console, logLevel, (target, thisArg, args) => {
     const safeArgs = args.map(arg => {
       if (typeof arg === 'object') {
-        return 'Object Logging Disabled by Hero Stealth';
+        return JSON.stringify(arg, null, 2);
       }
       return arg;
     });
