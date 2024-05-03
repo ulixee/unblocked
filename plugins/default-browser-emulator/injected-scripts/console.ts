@@ -9,7 +9,7 @@ for (const logLevel of logLevels) {
   proxyFunction(console, logLevel, (target, thisArg, args) => {
     const safeArgs = args.map(arg => {
       if (typeof arg === 'object') {
-        return 'hiding arg';
+        return 'Object Logging Disabled by Hero Stealth';
       }
       return arg;
     });
