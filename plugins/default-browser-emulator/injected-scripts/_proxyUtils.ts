@@ -227,7 +227,7 @@ function internalCreateFnProxy(
       let protoTarget = newPrototype;
       let newPrototypeProto;
       try {
-        newPrototypeProto = newPrototype?.__proto__ ;
+        newPrototypeProto = newPrototype?.__proto__;
       } catch {}
       if (newPrototype === proxy || newPrototypeProto === proxy) {
         protoTarget = target;
