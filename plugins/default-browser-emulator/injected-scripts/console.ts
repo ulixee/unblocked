@@ -17,7 +17,7 @@ function replaceErrorStackWithOriginal(object: unknown) {
       return object;
     }
 
-    const error = new Error(`Unblocked stealth created new error from: ${object.message}`);
+    const error = new Error(`Unblocked stealth created new error from: ${JSON.stringify(object)}`);
     error.stack = `${error.message}\n   Stack removed to prevent leaking debugger active (error stack was proxied)`;
     return error;
   }
