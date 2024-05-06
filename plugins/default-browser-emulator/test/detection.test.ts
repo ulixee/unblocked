@@ -147,13 +147,19 @@ test('should not call evaluate on a stack getter when using console for logging'
       enumerable: false,
       get: function () {
         window.keys.push(window.keys.at(-1));
-        return '';
+        return 'proxied stack';
       }
     });
     Object.keys(console).forEach(key => {
       try {
         window.keys.push(key);
         console[key](error);
+        console[key]([error]);
+        console[key]({outer: error});
+        console[key]({outer: [error]});
+        // These don't trigger in normal chrome
+        console[key]({outer: {inner: error}});
+        console[key]({outer: {inner: [error]}});
       } catch (error) {}
       window.keys.pop(-1);
     })
