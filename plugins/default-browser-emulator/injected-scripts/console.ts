@@ -5,16 +5,15 @@ ObjectCached.keys(console).forEach(key => {
   });
 });
 
+const defaultErrorStackGetter = Object.getOwnPropertyDescriptor(new Error(''), 'stack').get;
+
 function replaceErrorStackWithOriginal(object: unknown) {
   if (!object || typeof object !== 'object') {
     return object;
   }
 
   if (object instanceof Error) {
-    if (
-      ObjectCached.getOwnPropertyDescriptor(object, 'stack').get.toString() ===
-      'function () { [native code] }'
-    ) {
+    if (ObjectCached.getOwnPropertyDescriptor(object, 'stack')?.get === defaultErrorStackGetter) {
       return object;
     }
 
