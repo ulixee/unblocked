@@ -34,7 +34,7 @@ const ObjectCached = {
 const stringFnsCached = Object.getOwnPropertyNames(String.prototype).reduce((acc, key) => {
   acc[key] = String.prototype[key];
   return acc;
-}, {} as String);
+}, {} as typeof String.prototype);
 
 (function trackProxyInstances() {
   if (typeof self === 'undefined') return;
