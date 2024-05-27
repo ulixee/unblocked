@@ -9,7 +9,7 @@ export function buildChromeDocker(version: string, chromeUrl: string): string {
   const dockerName = `chromes-${version}`;
   console.log(chromeUrl);
   const chromeFolder = chromeUrl.match(/chrome_(.+)_linux.tar.gz$/)[1];
-  const command = `docker build --build-arg chrome_url="${chromeUrl}" --build-arg chrome_folder="${chromeFolder}" -f "Dockerfile-linux" -t "${dockerName}" .`;
+  const command = `docker build --platform linux/amd64 --build-arg chrome_url="${chromeUrl}" --build-arg chrome_folder="${chromeFolder}" -f "Dockerfile-linux" -t "${dockerName}" .`;
   console.log(command);
   execSync(command, { stdio: 'inherit', cwd: dockerWorkingDirectory });
   return dockerName;
@@ -35,6 +35,8 @@ export async function startDockerAndLoadUrl(
   chromeVersion: number,
 ): Promise<ChildProcess> {
   const { hostname } = new URL(url);
+  // TODO should we also run this with remote-debugging-pipe, as there migth be differences
+  // between pipe and port debugging?
   const hasDevtools = automationType === 'devtools';
   const dockerArgs = hasDevtools ? `-p=9222:9222` : '';
   counter += 1;
@@ -45,16 +47,8 @@ export async function startDockerAndLoadUrl(
     '--incognito',
     `--user-data-dir=/tmp/${Date.now()}-${(counter += 1)}`,
   ];
-  if (chromeVersion >= 109) {
-    // NOTE: not working on docker.
-    //   chromeArgs.push('--headless=new');
-    // } else if (chromeVersion >= 96) {
-    //   chromeArgs.push('--headless=chrome');
-    // } else {
-    //   chromeArgs.push('--headless');
-  }
-  // regular headless isn't launching without new
-  if (chromeVersion >= 111 && !hasDevtools) {
+
+  if (chromeVersion >= 111) {
     chromeArgs[2] = '--headless=new';
   }
   if (hasDevtools) {
@@ -63,7 +57,7 @@ export async function startDockerAndLoadUrl(
 
   const hostArg = needsLocalHost ? `--add-host="${hostname}:${dockerHost}"` : '';
   const urlArg = hasDevtools ? 'about:blank' : url;
-  const command = `docker run --init --rm --name ${dockerName} --privileged --ipc=host --shm-size='3gb' --cap-add=SYS_ADMIN ${hostArg} ${dockerArgs} ${dockerName} "${chromeArgs.join(
+  const command = `docker run --init --platform linux/amd64 --rm --name ${dockerName} --privileged -ipc=host --shm-size='3gb' --cap-add=SYS_ADMIN ${hostArg} ${dockerArgs} ${dockerName} "${chromeArgs.join(
     ' ',
   )}" "${urlArg}"`;
 
