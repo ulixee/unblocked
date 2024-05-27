@@ -385,10 +385,8 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
 
     this.engine.isHeaded = options.showChrome === true;
     if (!this.engine.isHeaded) {
-      // NOTE: disabling because something is hanging when launching with headless=new.
-      // TODO: some tests still failing
       const majorVersion = this.engine.fullVersion.split('.').map(Number)[0];
-      if (majorVersion >= 109 && env.enableHeadlessNewMode) {
+      if (majorVersion >= 109 && !env.disableHeadlessNewMode) {
         this.engine.isHeadlessNew = true;
         launchArgs.push('--headless=new');
       } else {
