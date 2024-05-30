@@ -391,10 +391,8 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
     if (!this.engine.isHeaded) {
       const majorVersion = this.engine.fullVersion.split('.').map(Number)[0];
       if (majorVersion >= 109 && !env.disableHeadlessNewMode) {
-        // TODO enable headless=new
-        // this.engine.isHeadlessNew = true;
-        // launchArgs.push('--headless=new');
-        // launchArgs.push('--headless');
+        this.engine.isHeadlessNew = true;
+        launchArgs.push('--headless=new');
       } else {
         launchArgs.push('--headless');
       }
