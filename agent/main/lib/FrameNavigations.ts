@@ -22,7 +22,7 @@ export default class FrameNavigations
   implements IFrameNavigations
 {
   public get top(): INavigation {
-    return this.history.length > 0 ? this.history[this.history.length - 1] : null;
+    return this.history.at(-1);
   }
 
   // last navigation not loaded in-page

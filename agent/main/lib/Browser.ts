@@ -390,12 +390,15 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
     this.engine.isHeaded = options.showChrome === true;
     if (!this.engine.isHeaded) {
       const majorVersion = this.engine.fullVersion.split('.').map(Number)[0];
-      if (majorVersion >= 109 && !env.disableHeadlessNewMode) {
-        this.engine.isHeadlessNew = true;
-        launchArgs.push('--headless=new');
-      } else {
-        launchArgs.push('--headless');
+      if (majorVersion < 110) {
+        throw new Error(
+          `ERROR: Running unblocked headless with chrome < 110 is not supported anymore.
+            This is because we rely on the new headless mode of recent chrome versions.
+            To fix this problem either use a newer chrome version or run unblocked in headfull mode.`);
       }
+
+      this.engine.isHeadlessNew = true;
+      launchArgs.push('--headless=new');
     }
     // Make sure we don't pass duplicates so we can reuse browsers
     this.engine.launchArguments = [...new Set(launchArgs)];
