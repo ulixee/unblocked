@@ -614,7 +614,6 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
     const lastCommandId = this.page.browserContext.commandMarker.lastId;
     const { resource, isDocumentNavigation, frameId, redirectedFromUrl } = event;
     const url = resource.url.href;
-    console.log(url);
 
     const frame = frameId
       ? this.getFrameForEventOrQueueForReady('resource-will-be-requested', event)
@@ -653,7 +652,6 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
       ? this.getFrameForEventOrQueueForReady('resource-was-requested', event as any)
       : this.main;
 
-    console.log(event.resource.url);
     // if we didn't get a frame, don't keep going
     if (!frame) return;
 
@@ -712,7 +710,6 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
   private onResourceFailed(event: IPageEvents['resource-failed']): void {
     const { resource } = event;
     const loadError = Resources.translateResourceError(resource);
-    console.log(event.resource.url);
     const frame = this.framesById.get(resource.frameId);
 
     const resourceMeta = this.resources.onBrowserRequestFailed(
@@ -732,7 +729,6 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
     const frame = event.frameId
       ? this.getFrameForEventOrQueueForReady('navigation-response', event)
       : this.main;
-    console.log(event.url);
 
     if (!frame) {
       return;

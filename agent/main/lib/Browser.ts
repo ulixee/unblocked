@@ -357,6 +357,7 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
       ...this.engine.launchArguments,
       '--ignore-certificate-errors',
       '--no-startup-window',
+      '--use-mock-keychain', // Use mock keychain on Mac to prevent blocking permissions dialogs
     ];
 
     if (options.proxyPort !== undefined && !launchArgs.some(x => x.startsWith('--proxy-server'))) {
@@ -394,7 +395,7 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
         throw new Error(
           `ERROR: Running unblocked headless with chrome < 110 is not supported anymore.
             This is because we rely on the new headless mode of recent chrome versions.
-            To fix this problem either use a newer chrome version or run unblocked in headfull mode.`);
+            To fix this problem either use a newer chrome version or run unblocked in headed (showChrome) mode.`);
       }
 
       this.engine.isHeadlessNew = true;

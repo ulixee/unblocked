@@ -141,7 +141,7 @@ test('should not call evaluate on a stack getter when using console for logging'
   });
   Helpers.needsClosing.push(agent);
   const page = await agent.newPage();
-  page.on('console', console.log);
+  // page.on('console', console.log);
   koaServer.get('/debug', ctx => {
     ctx.body = `<html lang='en'><body><h1>Hi</h1><div id='result'>no result</div></body>
   <script>
