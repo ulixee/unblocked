@@ -92,6 +92,7 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
     browserUserConfig.showChrome ??= env.showChrome;
 
     this.applyDefaultLaunchArgs(browserUserConfig);
+    this.setUserDataDir();
 
     if (hooks) {
       this.hooks = hooks;
@@ -141,7 +142,6 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
     }
 
     try {
-      this.setUserDataDir();
       this.process = new BrowserProcess(this.engine);
 
       this.connection = new Connection(this.process.transport);
@@ -262,6 +262,7 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
 
   public isEqualEngine(engine: IBrowserEngine): boolean {
     if (this.engine.executablePath !== engine.executablePath) return false;
+    // TODO order can mess this up, but sorting this can also alter it?
     for (let i = 0; i < engine.launchArguments.length; i += 1) {
       const launchArg = engine.launchArguments[i];
       if (launchArg.startsWith('--user-data-dir=')) continue;
@@ -312,9 +313,11 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
   }
 
   public setUserDataDir(): void {
+    // TODO weird behaviour if userDataDir is not set but --user-data-dir is passed
+    // we need to decide what a user should configure.
     if (this.engine.userDataDir) return;
     const launchArgs = this.engine.launchArguments;
-    // headless=new requires a profile
+
     if (!launchArgs.some(x => x.startsWith('--user-data-dir'))) {
       const dataDir = Path.join(
         os.tmpdir(),
@@ -350,8 +353,11 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
   }
 
   private applyDefaultLaunchArgs(options: IBrowserUserConfig): void {
-    this.engine.launchArguments = [...(this.engine.launchArguments ?? [])];
-    const launchArgs = this.engine.launchArguments;
+    const launchArgs = [
+      ...this.engine.launchArguments,
+      '--ignore-certificate-errors',
+      '--no-startup-window',
+    ];
 
     if (options.proxyPort !== undefined && !launchArgs.some(x => x.startsWith('--proxy-server'))) {
       launchArgs.push(
@@ -381,18 +387,20 @@ export default class Browser extends TypedEventEmitter<IBrowserEvents> implement
       launchArgs.push('--remote-debugging-pipe');
     }
 
-    launchArgs.push('--ignore-certificate-errors');
-
     this.engine.isHeaded = options.showChrome === true;
     if (!this.engine.isHeaded) {
       const majorVersion = this.engine.fullVersion.split('.').map(Number)[0];
       if (majorVersion >= 109 && !env.disableHeadlessNewMode) {
-        this.engine.isHeadlessNew = true;
-        launchArgs.push('--headless=new');
+        // TODO enable headless=new
+        // this.engine.isHeadlessNew = true;
+        // launchArgs.push('--headless=new');
+        // launchArgs.push('--headless');
       } else {
         launchArgs.push('--headless');
       }
     }
+    // Make sure we don't pass duplicates so we can reuse browsers
+    this.engine.launchArguments = [...new Set(launchArgs)];
   }
 
   private onAttachedToTarget(event: Protocol.Target.AttachedToTargetEvent): void {
