@@ -38,28 +38,42 @@ export async function startDockerAndLoadUrl(
   // TODO should we also run this with remote-debugging-pipe, as there migth be differences
   // between pipe and port debugging?
   const hasDevtools = automationType === 'devtools';
-  const dockerArgs = hasDevtools ? `-p=9222:9222` : '';
+  const dockerArgs = [
+    '--init',
+    `--name=${dockerName}`,
+    '--rm',
+    '--privileged',
+    '--ipc=host',
+    '--shm-size="3gb"',
+    '--cap-add=SYS_ADMIN',
+  ];
   counter += 1;
   const chromeArgs = [
     '--allow-running-insecure-content',
     '--ignore-certificate-errors',
-    '--headless',
     '--incognito',
+    '--use-mock-keychain',
     `--user-data-dir=/tmp/${Date.now()}-${(counter += 1)}`,
   ];
 
   if (chromeVersion >= 111) {
-    chromeArgs[2] = '--headless=new';
+    chromeArgs.push('--headless=new');
+  } else {
+    chromeArgs.push('--headless');
   }
   if (hasDevtools) {
     chromeArgs.push('--remote-debugging-address=0.0.0.0', '--remote-debugging-port=9222');
+    dockerArgs.push('-p=9222:9222');
+  }
+  if (process.platform === 'darwin') {
+    dockerArgs.push('--platform=linux/amd64');
+  }
+  if (needsLocalHost) {
+    dockerArgs.push(`--add-host="${hostname}:${dockerHost}"`);
   }
 
-  const hostArg = needsLocalHost ? `--add-host="${hostname}:${dockerHost}"` : '';
   const urlArg = hasDevtools ? 'about:blank' : url;
-  const command = `docker run --init --platform linux/amd64 --rm --name ${dockerName} --privileged -ipc=host --shm-size='3gb' --cap-add=SYS_ADMIN ${hostArg} ${dockerArgs} ${dockerName} "${chromeArgs.join(
-    ' ',
-  )}" "${urlArg}"`;
+  const command = `docker run ${dockerArgs.join(' ')} ${dockerName} "${chromeArgs.join(' ')}" "${urlArg}"`;
 
   console.log(command);
   const child = spawn(command, { shell: true, stdio: 'pipe', cwd: dockerWorkingDirectory });
