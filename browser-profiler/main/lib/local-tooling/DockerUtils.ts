@@ -9,7 +9,16 @@ export function buildChromeDocker(version: string, chromeUrl: string): string {
   const dockerName = `chromes-${version}`;
   console.log(chromeUrl);
   const chromeFolder = chromeUrl.match(/chrome_(.+)_linux.tar.gz$/)[1];
-  const command = `docker build --platform linux/amd64 --build-arg chrome_url="${chromeUrl}" --build-arg chrome_folder="${chromeFolder}" -f "Dockerfile-linux" -t "${dockerName}" .`;
+  const dockerArgs = [
+    `--build-arg chrome_url="${chromeUrl}"`,
+    `--build-arg chrome_folder="${chromeFolder}"`,
+    '-f "Dockerfile-linux"',
+    `-t "${dockerName}"`,
+  ];
+  if (process.platform === 'darwin') {
+    dockerArgs.push('--platform=linux/amd64');
+  }
+  const command = `docker build ${dockerArgs.join(' ')} .`;
   console.log(command);
   execSync(command, { stdio: 'inherit', cwd: dockerWorkingDirectory });
   return dockerName;
