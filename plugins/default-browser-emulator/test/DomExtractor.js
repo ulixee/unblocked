@@ -1,5 +1,5 @@
 // copied from double-agent. do not modify manually!
-
+// TODO make sure to update this, or refactor to import
 function DomExtractor(selfName, pageMeta = {}) {
   const { saveToUrl, pageUrl, pageHost, pageName } = pageMeta;
   const skipProps = [

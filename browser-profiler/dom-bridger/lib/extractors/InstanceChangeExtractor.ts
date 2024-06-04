@@ -109,6 +109,8 @@ export default class InstanceChangeExtractor extends BaseExtractor {
     /navigator.appVersion/,
     /navigator.userAgent/,
     /Document.new.+lastModified/,
+    // TODO this does not work?
+    /window.ScrollTimeline/,
 
     /window.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable/,
 

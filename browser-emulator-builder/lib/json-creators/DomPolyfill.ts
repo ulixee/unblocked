@@ -34,7 +34,9 @@ export default class DomPolyfillJson {
       );
       const { operatingSystemId: emulateOsId } =
         BrowserProfiler.extractMetaFromUserAgentId(userAgentId);
+      if (emulateOsId !== 'windows-10') continue;
       for (const runtimeOsId of Object.keys(foundationDomsByOsId)) {
+        if (runtimeOsId !== 'linux') continue;
         const foundationDom = foundationDomsByOsId[runtimeOsId];
 
         const polyfill = generatePolyfill(profile.data.https, foundationDom);
@@ -44,6 +46,10 @@ export default class DomPolyfillJson {
         DomBridger.removeHeadlessFromPolyfill(polyfill);
         // remove variations
         DomBridger.removeVariationsFromPolyfill(polyfill);
+
+        polyfill.add = polyfill.add.filter((x)=>!x.path.includes('window.ScrollTimeline'));
+        polyfill.modify = polyfill.modify.filter((x)=>!x.path.includes('window.ScrollTimeline'));
+
 
         this.dataMap[emulateOsId] = this.dataMap[emulateOsId] || {};
         this.dataMap[emulateOsId][runtimeOsId] = polyfill;
