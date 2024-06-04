@@ -161,12 +161,6 @@ function DomExtractor(selfName, pageMeta = {}) {
       if (doNotAccess.includes(path)) {
         continue;
       }
-      if (path.includes('document.body')) {
-        continue;
-      }
-      if (path.includes('document')) {
-        continue;
-      }
       try {
         const isOwnProp =
           obj.hasOwnProperty && obj.hasOwnProperty(key) && !inheritedProps.includes(key);

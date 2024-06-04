@@ -109,10 +109,10 @@ const browserstackSettings = {
 };
 
 const browserstackLocalSettings = {
-  'acceptInsecureCerts': true,
+  acceptInsecureCerts: true,
   'browserstack.local': true,
-  'browserstack.browserStackLocalOptions.forceLocal': true
-}
+  'browserstack.browserStackLocalOptions.forceLocal': true,
+};
 
 function getChromeOptions({ browser, browser_version: browserVersion }: IBrowserstackAgent): {
   args: string[];
