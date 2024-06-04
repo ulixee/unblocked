@@ -50,7 +50,6 @@ function DomExtractor(selfName, pageMeta = {}) {
   ].map(x => x.replace(/self\./g, `${selfName}.`));
   const excludedInheritedKeys = ['name', 'length', 'constructor'];
   const loadedObjects = new Map([[self, selfName]]);
-  const loadedRefs = new Map();
   const hierarchyNav = new Map();
   const detached = {};
   async function extractPropsFromObject(obj, parentPath) {
