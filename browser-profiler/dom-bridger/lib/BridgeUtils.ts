@@ -1,7 +1,7 @@
 import * as Fs from 'fs';
 import IBridgeType from '../interfaces/IBridgeType';
 
-const FOLDER_MATCH = /chrome-(8|9|10|11)[0-9]/;
+const FOLDER_MATCH = /chrome-(8|9|[1-9][0-9])[0-9]/;
 
 export function extractDirGroupsMap(
   bridge: [IBridgeType, IBridgeType],
@@ -34,7 +34,8 @@ export function extractDirGroupsMap(
 
 export function pathIsPatternMatch(path: string, pattern: string): boolean {
   if (pattern.charAt(0) === '*') {
-    return path.includes(pattern.substr(1));
+    return path.includes(pattern.slice(1));
   }
-  return path.startsWith(pattern);
+  const nestedPath = path.split('_$otherInvocations.').at(1);
+  return path.startsWith(pattern) || nestedPath?.startsWith(pattern);
 }

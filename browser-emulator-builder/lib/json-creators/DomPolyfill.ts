@@ -45,6 +45,8 @@ export default class DomPolyfillJson {
         // remove variations
         DomBridger.removeVariationsFromPolyfill(polyfill);
 
+        DomBridger.removeUnsupportedPropertiesFromPolyfill(polyfill);
+
         // TODO do this the proper way
         polyfill.add = polyfill.add.filter((x)=>!x.path.includes('window.ScrollTimeline'));
         polyfill.modify = polyfill.modify.filter((x)=>!x.path.includes('window.ScrollTimeline'));
