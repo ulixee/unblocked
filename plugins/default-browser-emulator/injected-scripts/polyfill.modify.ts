@@ -33,8 +33,40 @@ for (const itemToModify of args.itemsToModify || []) {
       overriddenFns.set(descriptor.get, itemToModify.property);
     } else if (itemToModify.propertyName === '_$set') {
       overriddenFns.set(descriptor.set, itemToModify.property);
+    } else if (itemToModify.propertyName.startsWith('_$otherInvocations')) {
+      // TODO why is this needed, Im guessing since this is one big dump?
+      const ReflectCachedHere = ReflectCached;
+      const invocationThrowIfNeededHere = invocationThrowIfNeeded;
+      const OtherInvocationsTrackerHere = OtherInvocationsTracker;
+      // Create single proxy on original prototype so 'this' rebinding is possible.
+      if (!OtherInvocationsTracker.basePaths.has(itemToModify.path)) {
+        proxyFunction(parent, property, (target, thisArg, argArray) => {
+          const invocation = OtherInvocationsTrackerHere.getOtherInvocation(
+            itemToModify.path,
+            thisArg,
+          );
+          if (invocation !== undefined) {
+            invocationThrowIfNeededHere(invocation);
+            return invocation;
+          }
+
+          return ReflectCachedHere.apply(target, thisArg, argArray);
+        });
+      }
+
+      const [_otherKey, ...partsOther] = itemToModify.propertyName.split('.');
+      const otherPath = partsOther.slice(0, -1).join('.');
+      OtherInvocationsTracker.addOtherInvocation(
+        itemToModify.path,
+        otherPath,
+        itemToModify.property,
+      );
     }
   } catch (err) {
-    console.log(`WARN: error changing prop ${itemToModify.path}.${itemToModify.propertyName}\n${err.stack}`);
+    console.log(
+      `WARN: error changing prop ${itemToModify.path}.${itemToModify.propertyName}\n${err.stack}`,
+    );
   }
 }
+// Technically not needed but here to prevent race conditions
+PathToInstanceTracker.updateAllReferences();

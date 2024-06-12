@@ -38,8 +38,7 @@ function newObjectConstructor(newProps: IDescriptor, path: string, invocation?: 
       !ObjectCached.values(newProps).some(x => x['_$$value()'])
     ) {
       if (typeof invocation === 'function') return invocation(...arguments);
-      if (invocation.startsWith('TypeError'))
-        throw new TypeError(invocation.replace('TypeError: ', ''));
+      invocationThrowIfNeeded(invocation);
       return invocation;
     }
     const props = Object.entries(newProps);
@@ -110,11 +109,23 @@ function buildDescriptor(entry: IDescriptor, path: string): PropertyDescriptor {
     if (newProps) {
       attrs.value = newObjectConstructor(newProps, path, entry._$invocation);
     } else {
+      Object.keys(entry)
+        .filter(key => key.startsWith('_$otherInvocations'))
+        .forEach(key => {
+          const [_otherKey, ...parts] = key.split('.');
+          const otherPath = parts.slice(0, -1).join('.');
+          const otherInvocation = entry[key];
+          OtherInvocationsTracker.addOtherInvocation(path, otherPath, otherInvocation);
+        });
+
       // use function call just to get a function that doesn't create prototypes on new
       // bind to an empty object so we don't modify the original
       attrs.value = new Proxy(Function.prototype.call.bind({}), {
-        apply() {
-          return entry._$invocation;
+        apply(_target, thisArg) {
+          const invocation =
+            OtherInvocationsTracker.getOtherInvocation(path, thisArg) ?? entry._$invocation;
+          invocationThrowIfNeeded(invocation);
+          return invocation;
         },
       });
     }
@@ -200,6 +211,84 @@ function getObjectAtPath(path) {
   const parts = breakdownPath(path, 0);
   if (!parts) return undefined;
   return parts.parent;
+}
+
+function invocationThrowIfNeeded(invocation: any) {
+  if (typeof invocation !== 'string') {
+    return;
+  }
+  const errorType = invocation.match(/(\w+Error): (.+)/);
+  if (!errorType) {
+    return;
+  }
+
+  if (errorType) {
+    throw createError(invocation);
+  }
+}
+
+/**
+ * At runtime we need to check if instances of objects are equal to the original ones. Just doing
+ * if instance == orginal wont work since we will be modifying original instances. Each plugin
+ * doesn't know about the others so it has no way of tracking original instances. To solve this we store all
+ * paths of instances we will need later and refresh instances when done modify. Refreshing should be done
+ * after all plugins are done modifying original instances, calling this multiple times before that is also possible
+ * if it is needed earlier.
+ */
+class PathToInstanceTracker {
+  private static pathsToTrack = new Set<string>();
+  private static instanceToPath = new Map<any, string>();
+
+  static addPath(path: string) {
+    this.pathsToTrack.add(path);
+  }
+
+  static getPath(instance: any) {
+    return this.instanceToPath.get(instance);
+  }
+
+  static updateAllReferences() {
+    this.instanceToPath.clear();
+    for (const path of this.pathsToTrack) {
+      this.instanceToPath.set(this.getInstanceForPath(path), path);
+    }
+  }
+
+  private static getInstanceForPath(path: string) {
+    const { parent, property } = getParentAndProperty(path);
+    return parent[property];
+  }
+}
+
+// Base Path and Other Path combined for efficient indexing
+type OtherInvocationKey = `${string}...${string}`;
+
+/**
+ * This tracks all other invocations of a prototype functions. This means we use the same prototype but have
+ * bound/used a different 'this' object which could result in a different output.
+ */
+class OtherInvocationsTracker {
+  static basePaths = new Set<string>();
+  private static otherInvocations = new Map<OtherInvocationKey, any>();
+
+  static addOtherInvocation(basePath: string, otherPath: string, otherInvocation: any) {
+    // Store this path so we can later check if we have the reference we expect
+    PathToInstanceTracker.addPath(otherPath);
+    this.basePaths.add(basePath);
+    this.otherInvocations.set(this.key(basePath, otherPath), otherInvocation);
+  }
+
+  static getOtherInvocation(basePath: string, otherThis: any) {
+    const otherPath = PathToInstanceTracker.getPath(otherThis);
+    if (!otherPath) {
+      return;
+    }
+    return this.otherInvocations.get(this.key(basePath, otherPath));
+  }
+
+  private static key(basePath: string, otherPath: string): OtherInvocationKey {
+    return `${basePath}...${otherPath}`;
+  }
 }
 
 declare interface IDescriptor {
