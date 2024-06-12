@@ -83,6 +83,7 @@ export default class InstanceChangeExtractor extends BaseExtractor {
     'window.AudioContext.new().destination.context.currentTime',
     'window.AudioContext.new().currentTime',
     'window.document.fonts.ready',
+    'window.ScrollTimeline',
   ];
 
   public static override ignoredExtraPatterns = [];
