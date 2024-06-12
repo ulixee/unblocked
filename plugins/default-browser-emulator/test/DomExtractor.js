@@ -1,5 +1,3 @@
-// copied from double-agent. do not modify manually!
-// TODO make sure to update this, or refactor to import
 function DomExtractor(selfName, pageMeta = {}) {
   const { saveToUrl, pageUrl, pageHost, pageName } = pageMeta;
   const skipProps = [
@@ -12,6 +10,7 @@ function DomExtractor(selfName, pageMeta = {}) {
   ];
   const skipValues = ['innerHTML', 'outerHTML', 'innerText', 'outerText'];
   const doNotInvoke = [
+    'replaceChildren',
     'print',
     'alert',
     'prompt',
@@ -44,12 +43,14 @@ function DomExtractor(selfName, pageMeta = {}) {
     'getDisplayMedia',
   ].map(x => x.replace(/self\./g, `${selfName}.`));
   const doNotAccess = [
+    'document.body',
     'self.CSSAnimation.prototype.timeline',
     'self.Animation.prototype.timeline',
     'self.CSSTransition.prototype.timeline',
   ].map(x => x.replace(/self\./g, `${selfName}.`));
   const excludedInheritedKeys = ['name', 'length', 'constructor'];
-  const loadedObjects = new Map([[self, selfName]]);
+  const loadedObjectsRef = new Map([[self, selfName]]);
+  const loadedObjectsProp = new Map();
   const hierarchyNav = new Map();
   const detached = {};
   async function extractPropsFromObject(obj, parentPath) {
@@ -120,7 +121,7 @@ function DomExtractor(selfName, pageMeta = {}) {
       }
     }
     // TODO: re-enable inherited properties once we are on stable ground with chrome flags
-    // keys.push(...inheritedProps)
+    keys.push(...inheritedProps);
     for (const key of keys) {
       if (skipProps.includes(key)) {
         continue;
@@ -205,7 +206,7 @@ function DomExtractor(selfName, pageMeta = {}) {
       try {
         const name = getObjectName(proto);
         if (name && !hierarchy.includes(name)) hierarchy.push(name);
-        if (loadedObjects.has(proto)) continue;
+        if (loadedObjectsRef.has(proto)) continue;
         let path = `${selfName}.${name}`;
         const topType = name.split('.').shift();
         if (!(topType in self)) {
@@ -246,21 +247,28 @@ function DomExtractor(selfName, pageMeta = {}) {
     }).catch(err => {
       accessException = err;
     });
+    let ref;
     if (
       value &&
       path !== `${selfName}.document` &&
       (typeof value === 'function' || typeof value === 'object' || typeof value === 'symbol')
     ) {
-      if (loadedObjects.has(value)) {
+      if (loadedObjectsRef.has(value)) {
+        ref = loadedObjectsRef.get(value);
         // TODO: re-enable invoking re-used functions once we are on stable ground with chrome flags
-        const shouldContinue = false; // typeof value === 'function' && (isInherited || !path.replace(String(key), '').includes(String(key)));
-        if (!shouldContinue) return `REF: ${loadedObjects.get(value)}`;
+        const shouldContinue =
+          typeof value === 'function' &&
+          (isInherited || !path.replace(String(key), '').includes(String(key)));
+        // const shouldContinue = false;
+        if (!shouldContinue) return `REF: ${loadedObjectsRef.get(value)}`;
       }
       // safari will end up in an infinite loop since each plugin is a new object as your traverse
       if (path.includes('.navigator') && path.endsWith('.enabledPlugin')) {
         return `REF: ${selfName}.navigator.plugins.X`;
       }
-      loadedObjects.set(value, path);
+      if (!loadedObjectsRef.has(value)) {
+        loadedObjectsRef.set(value, path);
+      }
     }
     let details = {};
     if (value && (typeof value === 'object' || typeof value === 'function')) {
@@ -272,6 +280,15 @@ function DomExtractor(selfName, pageMeta = {}) {
     if (prop._$value === `REF: ${path}`) {
       prop._$value = undefined;
     }
+    if (ref) {
+      const baseProp = loadedObjectsProp.get(value);
+      if (baseProp["_$invocation"] === prop._$invocation) {
+        return
+      }
+      baseProp[`_$otherInvocations.${path}`] = prop._$invocation;
+      return;
+    }
+    loadedObjectsProp.set(value, prop);
     return prop;
   }
   async function getDescriptor(obj, key, accessException, path) {
@@ -378,8 +395,8 @@ function DomExtractor(selfName, pageMeta = {}) {
         value = 'Promise';
       } else if (value && typeof value === 'object') {
         const values = [];
-        if (loadedObjects.has(value)) {
-          return `REF: ${loadedObjects.get(value)}`;
+        if (loadedObjectsRef.has(value)) {
+          return `REF: ${loadedObjectsRef.get(value)}`;
         }
         if (value.join !== undefined) {
           // is array
@@ -488,4 +505,4 @@ function DomExtractor(selfName, pageMeta = {}) {
   return this;
 }
 module.exports = DomExtractor;
-if (typeof exports !== 'undefined') exports.default = DomExtractor;
+// # sourceMappingURL=DomExtractor.js.map
