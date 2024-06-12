@@ -51,7 +51,6 @@ export default class InstanceChangeExtractor extends BaseExtractor {
     'window.webkitRTCPeerConnection.new().createOffer',
     'window.RTCPeerConnection.new().createOffer',
     'window.crypto.randomUUID',
-    // TODO do we leave this?
     'window.navigator.storage.estimate',
   ];
 
