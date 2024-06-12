@@ -19,3 +19,6 @@ for (const itemToAdd of args.itemsToAdd || []) {
     console.log(`ERROR adding polyfill ${itemToAdd.path}.${itemToAdd.propertyName}\n${err.stack}`);
   }
 }
+
+// Technically not needed but here to prevent race conditions
+PathToInstanceTracker.updateAllReferences();
