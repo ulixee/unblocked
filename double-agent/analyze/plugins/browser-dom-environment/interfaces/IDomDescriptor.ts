@@ -11,6 +11,8 @@ export default interface IDomDescriptor {
   _$setToStringToString?: string;
   _$function?: string;
   _$invocation?: string;
+  _$isAsync?: string;
+  [key: `_$otherInvocations.${string}`]: string;
   _$protos?: string[];
   'new()'?: IDomDescriptor;
   prototype?: IDomDescriptor;

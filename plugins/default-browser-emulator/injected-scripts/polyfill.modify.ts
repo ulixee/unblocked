@@ -36,21 +36,25 @@ for (const itemToModify of args.itemsToModify || []) {
     } else if (itemToModify.propertyName.startsWith('_$otherInvocations')) {
       // TODO why is this needed, Im guessing since this is one big dump?
       const ReflectCachedHere = ReflectCached;
-      const invocationThrowIfNeededHere = invocationThrowIfNeeded;
+      const invocationReturnOrThrowHere = invocationReturnOrThrow;
       const OtherInvocationsTrackerHere = OtherInvocationsTracker;
       // Create single proxy on original prototype so 'this' rebinding is possible.
       if (!OtherInvocationsTracker.basePaths.has(itemToModify.path)) {
+        const fnResult = parent[property]();
+        let isAsync = false;
+        if (fnResult instanceof Promise) {
+          fnResult.catch(() => undefined);
+          isAsync = true;
+        }
         proxyFunction(parent, property, (target, thisArg, argArray) => {
           const invocation = OtherInvocationsTrackerHere.getOtherInvocation(
             itemToModify.path,
             thisArg,
           );
-          if (invocation !== undefined) {
-            invocationThrowIfNeededHere(invocation);
-            return invocation;
-          }
 
-          return ReflectCachedHere.apply(target, thisArg, argArray);
+          return invocation !== undefined
+            ? invocationReturnOrThrowHere(invocation, isAsync)
+            : ReflectCachedHere.apply(target, thisArg, argArray);
         });
       }
 

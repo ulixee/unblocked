@@ -25,7 +25,12 @@ function createError(message: string, type?: { new (msg: string): any }) {
   return cleanErrorStack(errType);
 }
 
-function newObjectConstructor(newProps: IDescriptor, path: string, invocation?: string | Function) {
+function newObjectConstructor(
+  newProps: IDescriptor,
+  path: string,
+  invocation?: string | Function,
+  isAsync?: boolean,
+) {
   return function () {
     if (newProps._$constructorException) {
       throw createError(newProps._$constructorException);
@@ -38,8 +43,7 @@ function newObjectConstructor(newProps: IDescriptor, path: string, invocation?: 
       !ObjectCached.values(newProps).some(x => x['_$$value()'])
     ) {
       if (typeof invocation === 'function') return invocation(...arguments);
-      invocationThrowIfNeeded(invocation);
-      return invocation;
+      return invocationReturnOrThrow(invocation, isAsync);
     }
     const props = Object.entries(newProps);
     const obj = {};
@@ -107,7 +111,7 @@ function buildDescriptor(entry: IDescriptor, path: string): PropertyDescriptor {
   if (entry._$function) {
     const newProps = entry['new()'];
     if (newProps) {
-      attrs.value = newObjectConstructor(newProps, path, entry._$invocation);
+      attrs.value = newObjectConstructor(newProps, path, entry._$invocation, entry._$isAsync);
     } else {
       Object.keys(entry)
         .filter(key => key.startsWith('_$otherInvocations'))
@@ -124,8 +128,7 @@ function buildDescriptor(entry: IDescriptor, path: string): PropertyDescriptor {
         apply(_target, thisArg) {
           const invocation =
             OtherInvocationsTracker.getOtherInvocation(path, thisArg) ?? entry._$invocation;
-          invocationThrowIfNeeded(invocation);
-          return invocation;
+          return invocationReturnOrThrow(invocation, entry._$isAsync);
         },
       });
     }
@@ -213,7 +216,7 @@ function getObjectAtPath(path) {
   return parts.parent;
 }
 
-function invocationThrowIfNeeded(invocation: any) {
+function invocationToMaybeError(invocation: any): Error | undefined {
   if (typeof invocation !== 'string') {
     return;
   }
@@ -223,8 +226,16 @@ function invocationThrowIfNeeded(invocation: any) {
   }
 
   if (errorType) {
-    throw createError(invocation);
+    return createError(invocation);
   }
+}
+
+function invocationReturnOrThrow(invocation: any, isAsync?: boolean): any | Promise<any> {
+  const error = invocationToMaybeError(invocation);
+  if (isAsync && error) return Promise.reject(error);
+  if (isAsync) return Promise.resolve(invocation);
+  if (error) throw error;
+  return invocation;
 }
 
 /**
@@ -302,6 +313,8 @@ declare interface IDescriptor {
   '_$$value()'?: () => string;
   _$function?: string;
   _$invocation?: string;
+  _$isAsync?: boolean;
+  [key: `_$otherInvocations.${string}`]: string;
   _$protos?: string[];
   'new()'?: IDescriptor;
   prototype: IDescriptor;

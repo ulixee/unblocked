@@ -313,6 +313,7 @@ function DomExtractor(selfName, pageMeta = {}) {
         _$type: type,
         _$function: functionDetails.func,
         _$invocation: functionDetails.invocation,
+        _$isAsync: functionDetails.isAsync,
         _$flags: flags.join(''),
         _$accessException: accessException ? accessException.toString() : undefined,
         _$value: value,
@@ -337,11 +338,13 @@ function DomExtractor(selfName, pageMeta = {}) {
     plainObject._$value = getJsonUsableValue(value, key);
     plainObject._$function = functionDetails.func;
     plainObject._$invocation = functionDetails.invocation;
+    plainObject._$isAsync = functionDetails.isAsync;
     return plainObject;
   }
   async function getFunctionDetails(value, obj, key, type, path) {
     let func;
     let invocation;
+    let isAsync;
     if (type === 'undefined') type = undefined;
     if (type === 'function') {
       try {
@@ -361,6 +364,7 @@ function DomExtractor(selfName, pageMeta = {}) {
                   console.log('Error', err, obj, key);
                 });
               }
+              isAsync = answer instanceof Promise
               answer = await answer;
               if (didReply) return;
               clearTimeout(c);
@@ -382,6 +386,7 @@ function DomExtractor(selfName, pageMeta = {}) {
       type,
       func,
       invocation: func || invocation !== undefined ? getJsonUsableValue(invocation) : undefined,
+      isAsync,
     };
   }
   function getJsonUsableValue(value, key) {
