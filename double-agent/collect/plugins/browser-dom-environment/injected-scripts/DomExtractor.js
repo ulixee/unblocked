@@ -282,10 +282,14 @@ function DomExtractor(selfName, pageMeta = {}) {
     }
     if (ref) {
       const baseProp = loadedObjectsProp.get(value);
-      if (baseProp["_$invocation"] === prop._$invocation) {
-        return
+      if (baseProp['_$invocation'] === prop._$invocation) {
+        return;
       }
-      baseProp[`_$otherInvocations.${path}`] = prop._$invocation;
+      let key = '_$otherInvocation';
+      if (prop._$isAsync) {
+        key += 'Async';
+      }
+      baseProp[`${key}.${path}`] = prop._$invocation;
       return;
     }
     loadedObjectsProp.set(value, prop);
@@ -364,7 +368,7 @@ function DomExtractor(selfName, pageMeta = {}) {
                   console.log('Error', err, obj, key);
                 });
               }
-              isAsync = answer instanceof Promise
+              isAsync = answer instanceof Promise;
               answer = await answer;
               if (didReply) return;
               clearTimeout(c);

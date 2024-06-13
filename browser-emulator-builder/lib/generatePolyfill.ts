@@ -175,7 +175,7 @@ function get<T>(obj: T, path: string): T {
 
     if (next) {
       current = next;
-    } else if (key === '_$otherInvocations') {
+    } else if (key.startsWith('_$otherInvocation')) {
       return current[`${key}.${split.join('.')}`];
     } else if (split.length && split[0] === 'prototype') {
       current = current[`${key}.prototype`];
@@ -185,12 +185,18 @@ function get<T>(obj: T, path: string): T {
 }
 
 function extractPathParts(path: string): [string, string[]] {
-  let pathParts: string[];
+  let pathParts: string[] = [];
   let propertyName: string;
-  if (path.includes('._$otherInvocations.')) {
-    const parts = path.split('._$otherInvocations.');
-    pathParts = parts[0].split('.');
-    propertyName = `_$otherInvocations.${parts[1]}`;
+  if (path.includes('._$otherInvocation')) {
+    const parts = path.split('.');
+    for (const item of parts) {
+      if (item.startsWith('_$otherInvocation')) {
+        const idx = parts.indexOf(item);
+        propertyName = parts.slice(idx).join('.');
+        break;
+      }
+      pathParts.push(item);
+    }
   } else if (path.includes('Symbol(')) {
     const symbolSplit = path.split('.Symbol(');
     propertyName = symbolSplit.pop().replace(')', '');

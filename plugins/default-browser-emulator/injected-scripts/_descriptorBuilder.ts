@@ -114,20 +114,16 @@ function buildDescriptor(entry: IDescriptor, path: string): PropertyDescriptor {
       attrs.value = newObjectConstructor(newProps, path, entry._$invocation, entry._$isAsync);
     } else {
       Object.keys(entry)
-        .filter(key => key.startsWith('_$otherInvocations'))
-        .forEach(key => {
-          const [_otherKey, ...parts] = key.split('.');
-          const otherPath = parts.slice(0, -1).join('.');
-          const otherInvocation = entry[key];
-          OtherInvocationsTracker.addOtherInvocation(path, otherPath, otherInvocation);
-        });
+        .filter((key): key is OtherInvocationKey => key.startsWith('_$otherInvocation'))
+        .forEach(key => OtherInvocationsTracker.addOtherInvocation(path, key, entry[key]));
 
       // use function call just to get a function that doesn't create prototypes on new
       // bind to an empty object so we don't modify the original
       attrs.value = new Proxy(Function.prototype.call.bind({}), {
         apply(_target, thisArg) {
           const invocation =
-            OtherInvocationsTracker.getOtherInvocation(path, thisArg) ?? entry._$invocation;
+            OtherInvocationsTracker.getOtherInvocation(path, thisArg)?.invocation ??
+            entry._$invocation;
           return invocationReturnOrThrow(invocation, entry._$isAsync);
         },
       });
@@ -272,7 +268,7 @@ class PathToInstanceTracker {
 }
 
 // Base Path and Other Path combined for efficient indexing
-type OtherInvocationKey = `${string}...${string}`;
+type OtherInvocationWithBaseKey = `${string}...${string}`;
 
 /**
  * This tracks all other invocations of a prototype functions. This means we use the same prototype but have
@@ -280,27 +276,51 @@ type OtherInvocationKey = `${string}...${string}`;
  */
 class OtherInvocationsTracker {
   static basePaths = new Set<string>();
-  private static otherInvocations = new Map<OtherInvocationKey, any>();
+  private static otherInvocations = new Map<
+    OtherInvocationWithBaseKey,
+    { invocation: any; isAsync: boolean }
+  >();
 
-  static addOtherInvocation(basePath: string, otherPath: string, otherInvocation: any) {
+  static addOtherInvocation(
+    basePath: string,
+    otherKey: OtherInvocationKey,
+    otherInvocation: any,
+  ) {
+    const [invocationKey, ...otherParts] = otherKey.split('.');
+    const otherPath = otherParts.join('.');
     // Store this path so we can later check if we have the reference we expect
     PathToInstanceTracker.addPath(otherPath);
     this.basePaths.add(basePath);
-    this.otherInvocations.set(this.key(basePath, otherPath), otherInvocation);
+    this.otherInvocations.set(this.key(basePath, otherPath), {
+      invocation: otherInvocation,
+      isAsync: invocationKey.includes('Async'),
+    });
   }
 
-  static getOtherInvocation(basePath: string, otherThis: any) {
+  static getOtherInvocation(
+    basePath: string,
+    otherThis: any,
+  ): { invocation: any; path: string; isAsync: boolean } {
     const otherPath = PathToInstanceTracker.getPath(otherThis);
     if (!otherPath) {
       return;
     }
-    return this.otherInvocations.get(this.key(basePath, otherPath));
+
+    const info = this.otherInvocations.get(this.key(basePath, otherPath));
+    return {
+      path: otherPath,
+      invocation: info?.invocation,
+      isAsync: info?.isAsync,
+    };
   }
 
-  private static key(basePath: string, otherPath: string): OtherInvocationKey {
-    return `${basePath}...${otherPath}`;
+  private static key(basePath: string, otherPath: string): OtherInvocationWithBaseKey {
+    return `${basePath}....${otherPath}`;
   }
 }
+
+type OtherInvocationInfo = `` | `Async`;
+type OtherInvocationKey = `_$otherInvocation${OtherInvocationInfo}.${string}`;
 
 declare interface IDescriptor {
   _$flags: string;
@@ -314,7 +334,7 @@ declare interface IDescriptor {
   _$function?: string;
   _$invocation?: string;
   _$isAsync?: boolean;
-  [key: `_$otherInvocations.${string}`]: string;
+  [key: OtherInvocationKey]: string;
   _$protos?: string[];
   'new()'?: IDescriptor;
   prototype: IDescriptor;

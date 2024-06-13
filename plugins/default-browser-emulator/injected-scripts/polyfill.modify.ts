@@ -33,21 +33,15 @@ for (const itemToModify of args.itemsToModify || []) {
       overriddenFns.set(descriptor.get, itemToModify.property);
     } else if (itemToModify.propertyName === '_$set') {
       overriddenFns.set(descriptor.set, itemToModify.property);
-    } else if (itemToModify.propertyName.startsWith('_$otherInvocations')) {
+    } else if (itemToModify.propertyName.startsWith('_$otherInvocation')) {
       // TODO why is this needed, Im guessing since this is one big dump?
       const ReflectCachedHere = ReflectCached;
       const invocationReturnOrThrowHere = invocationReturnOrThrow;
       const OtherInvocationsTrackerHere = OtherInvocationsTracker;
       // Create single proxy on original prototype so 'this' rebinding is possible.
       if (!OtherInvocationsTracker.basePaths.has(itemToModify.path)) {
-        const fnResult = parent[property]();
-        let isAsync = false;
-        if (fnResult instanceof Promise) {
-          fnResult.catch(() => undefined);
-          isAsync = true;
-        }
         proxyFunction(parent, property, (target, thisArg, argArray) => {
-          const invocation = OtherInvocationsTrackerHere.getOtherInvocation(
+          const { invocation, isAsync } = OtherInvocationsTrackerHere.getOtherInvocation(
             itemToModify.path,
             thisArg,
           );
@@ -58,8 +52,8 @@ for (const itemToModify of args.itemsToModify || []) {
         });
       }
 
-      const [_otherKey, ...partsOther] = itemToModify.propertyName.split('.');
-      const otherPath = partsOther.slice(0, -1).join('.');
+      // We need to remove the actuall property
+      const otherPath = itemToModify.propertyName.split('.').slice(0, -1).join('.');
       OtherInvocationsTracker.addOtherInvocation(
         itemToModify.path,
         otherPath,
