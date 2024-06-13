@@ -55,13 +55,17 @@ test('it should mimic a chrome object', async () => {
   delete chrome._$type;
   delete chrome._$flags;
 
+  const shouldFilterKey = key => {
+    return key === '_$value' || key === '_$invocation' || key === ' _$isAsync';
+  };
+
   const structureJson = JSON.stringify(structure.chrome, (key, value) => {
-    if (key === '_$value' || key === '_$invocation') return undefined;
+    if (shouldFilterKey(key)) return undefined;
     return value;
   });
 
   const chromeJson = JSON.stringify(chrome, (key, value) => {
-    if (key === '_$value' || key === '_$invocation') return undefined;
+    if (shouldFilterKey(key)) return undefined;
     return value;
   });
   // must delete csi's invocation since it's different on each run
