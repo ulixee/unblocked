@@ -100,14 +100,6 @@ export default class DomOverridesBuilder {
         })
         .join('\n\n')}
 
-      PathToInstanceTracker.updateAllReferences();
-      if (!isWorker) {
-        new MutationObserver((list, observer) => {
-          observer.disconnect();
-          // timeout so other listener callbacks are first to execute
-          setTimeout(() => PathToInstanceTracker.updateAllReferences(), 0)
-        }).observe(document, {childList: true, subtree: true});
-      }
     } finally {
       self = originalSelf;
     }
@@ -142,11 +134,9 @@ export default class DomOverridesBuilder {
     new MutationObserver((list, observer) => {
       observer.disconnect();
       ${wrapper};
-      PathToInstanceTracker.updateAllReferences();
     }).observe(document, {childList: true, subtree: true});
   } else {
     ${wrapper};
-    PathToInstanceTracker.updateAllReferences();
   }
 
 `;
