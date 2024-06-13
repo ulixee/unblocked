@@ -98,8 +98,9 @@ export default class DomOverridesBuilder {
           if (shouldNotRunInWorker(name)) snippet += '\n}';
           return snippet;
         })
-        .join('\n\n')}
+        .join('\n\n')};
 
+      PathToInstanceTracker.updateAllReferences();
     } finally {
       self = originalSelf;
     }
