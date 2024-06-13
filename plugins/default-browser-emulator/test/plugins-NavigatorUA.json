@@ -54,6 +54,7 @@
         "_$type": "function",
         "_$function": "function getHighEntropyValues() { [native code] }",
         "_$invocation": "TypeError: Failed to execute 'getHighEntropyValues' on 'NavigatorUAData': Illegal invocation",
+        "_$isAsync": true,
         "_$flags": "cew",
         "_$value": "function getHighEntropyValues() { [native code] }"
       },
@@ -78,7 +79,9 @@
         "_$type": "string",
         "_$flags": "c",
         "_$value": "NavigatorUAData"
-      }
+      },
+      "_$type": "object",
+      "_$flags": ""
     },
     "new()": {
       "_$type": "constructor",
