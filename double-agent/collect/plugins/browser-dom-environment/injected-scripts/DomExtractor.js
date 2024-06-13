@@ -120,7 +120,6 @@ function DomExtractor(selfName, pageMeta = {}) {
         }
       }
     }
-    // TODO: re-enable inherited properties once we are on stable ground with chrome flags
     keys.push(...inheritedProps);
     for (const key of keys) {
       if (skipProps.includes(key)) {
@@ -255,11 +254,9 @@ function DomExtractor(selfName, pageMeta = {}) {
     ) {
       if (loadedObjectsRef.has(value)) {
         ref = loadedObjectsRef.get(value);
-        // TODO: re-enable invoking re-used functions once we are on stable ground with chrome flags
         const shouldContinue =
           typeof value === 'function' &&
           (isInherited || !path.replace(String(key), '').includes(String(key)));
-        // const shouldContinue = false;
         if (!shouldContinue) return `REF: ${loadedObjectsRef.get(value)}`;
       }
       // safari will end up in an infinite loop since each plugin is a new object as your traverse
