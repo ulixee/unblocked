@@ -56,7 +56,8 @@
         "_$invocation": "TypeError: Failed to execute 'getHighEntropyValues' on 'NavigatorUAData': Illegal invocation",
         "_$isAsync": true,
         "_$flags": "cew",
-        "_$value": "function getHighEntropyValues() { [native code] }"
+        "_$value": "function getHighEntropyValues() { [native code] }",
+        "_$otherInvocationAsync.window.navigator.userAgentData.getHighEntropyValues": "TypeError: Failed to execute 'getHighEntropyValues' on 'NavigatorUAData': 1 argument required, but only 0 present."
       },
       "toJSON": {
         "length": {
@@ -73,7 +74,8 @@
         "_$function": "function toJSON() { [native code] }",
         "_$invocation": "TypeError: Illegal invocation",
         "_$flags": "cew",
-        "_$value": "function toJSON() { [native code] }"
+        "_$value": "function toJSON() { [native code] }",
+        "_$otherInvocation.window.navigator.userAgentData.toJSON": "{brands: [{brand: Chromium,version: 124},{brand: Google Chrome,version: 124},{brand: Not-A.Brand,version: 99}],mobile: false,platform: macOS}"
       },
       "Symbol(Symbol.toStringTag)": {
         "_$type": "string",

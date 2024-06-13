@@ -47,7 +47,7 @@ if (args.userAgentData && 'userAgentData' in self.navigator) {
     if (!error) {
       try {
         // check if these work
-        await target.call(thisArg, argArray);
+        await ReflectCached.apply(target, thisArg, argArray);
       } catch (e) {
         error = e;
       }

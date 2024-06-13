@@ -6,7 +6,7 @@ import { LoadStatus } from '@ulixee/unblocked-specification/agent/browser/Locati
 import { IPage } from '@ulixee/unblocked-specification/agent/browser/IPage';
 import { TestLogger } from '@ulixee/unblocked-agent-testing';
 import { defaultHooks } from '@ulixee/unblocked-agent-testing/browserUtils';
-import BrowserEmulator from '../index';
+import BrowserEmulator, { defaultBrowserEngine } from '../index';
 import * as pluginsNavigatorStructure from './plugins-NavigatorUA.json';
 import { getOverrideScript } from '../lib/DomOverridesBuilder';
 import parseNavigatorPlugins from '../lib/utils/parseNavigatorPlugins';
@@ -19,7 +19,9 @@ let navigatorConfig: any;
 let browser: Browser;
 beforeEach(Helpers.beforeEach);
 beforeAll(async () => {
-  const selectBrowserMeta = BrowserEmulator.selectBrowserMeta('~ mac = 10.15');
+  const selectBrowserMeta = BrowserEmulator.selectBrowserMeta(
+    `~ chrome=${defaultBrowserEngine.majorVersion} && mac=10.15`,
+  );
   const { browserVersion, operatingSystemVersion } = selectBrowserMeta.userAgentOption;
   const asOsDataDir = `${emulatorDataDir}/as-chrome-${browserVersion.major}-0/as-mac-os-${operatingSystemVersion.major}-${operatingSystemVersion.minor}`;
 
