@@ -101,11 +101,13 @@ export default class DomOverridesBuilder {
         .join('\n\n')}
 
       PathToInstanceTracker.updateAllReferences();
-      new MutationObserver((list, observer) => {
-        observer.disconnect();
-        // timeout so other listener callbacks are first to execute
-        setTimeout(() => PathToInstanceTracker.updateAllReferences(), 0)
-      }).observe(document, {childList: true, subtree: true});
+      if (!isWorker) {
+        new MutationObserver((list, observer) => {
+          observer.disconnect();
+          // timeout so other listener callbacks are first to execute
+          setTimeout(() => PathToInstanceTracker.updateAllReferences(), 0)
+        }).observe(document, {childList: true, subtree: true});
+      }
     } finally {
       self = originalSelf;
     }
