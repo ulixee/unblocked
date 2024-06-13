@@ -66,5 +66,5 @@ for (const itemToModify of args.itemsToModify || []) {
     );
   }
 }
-// Technically not needed but here to prevent race conditions
+
 PathToInstanceTracker.updateAllReferences();

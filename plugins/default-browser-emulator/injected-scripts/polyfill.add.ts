@@ -20,5 +20,4 @@ for (const itemToAdd of args.itemsToAdd || []) {
   }
 }
 
-// Technically not needed but here to prevent race conditions
 PathToInstanceTracker.updateAllReferences();
