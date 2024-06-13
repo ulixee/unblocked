@@ -56,7 +56,7 @@ test('it should mimic a chrome object', async () => {
   delete chrome._$flags;
 
   const shouldFilterKey = key => {
-    return key === '_$value' || key === '_$invocation' || key === ' _$isAsync';
+    return key === '_$value' || key === '_$invocation' || key === '_$isAsync';
   };
 
   const structureJson = JSON.stringify(structure.chrome, (key, value) => {
