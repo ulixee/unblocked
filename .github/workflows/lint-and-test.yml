@@ -97,7 +97,7 @@ jobs:
           ULX_DATA_DIR: .data-test
           NODE_ENV: test
           ULX_DEFAULT_BROWSER_ID: ${{ matrix.browser }}
-          NODE_OPTIONS=--max-old-space-size=4096
+          NODE_OPTIONS: --max-old-space-size=4096
 
       - name: 'Tar files'
         if: ${{ failure() }}
