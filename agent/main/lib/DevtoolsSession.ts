@@ -80,7 +80,7 @@ export default class DevtoolsSession
     };
     const timestamp = new Date();
     const resolvable = createPromise<ProtocolMapping.Commands[T]['returnType']>(
-      60e3,
+      180e3,
       `DevtoolsApiMessage did not respond after 60 seconds. (${method}, id=${id})`,
     );
     resolvable.promise.catch(err => {
