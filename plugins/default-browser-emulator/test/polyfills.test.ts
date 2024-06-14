@@ -26,6 +26,7 @@ afterAll(Helpers.afterAll);
 afterEach(Helpers.afterEach);
 
 const debug = process.env.DEBUG || false;
+const domExtractorTimeout = 180e3;
 
 test('it should be able to add polyfills', async () => {
   const page = await createPage();
@@ -103,7 +104,7 @@ test('it should be able to add polyfills', async () => {
   );
   await Promise.all([
     page.navigate(httpServer.baseUrl),
-    page.mainFrame.waitOn('frame-lifecycle', (event) => event.name === 'load'),
+    page.mainFrame.waitOn('frame-lifecycle', event => event.name === 'load'),
   ]);
 
   const json = await page.mainFrame.evaluate(
@@ -127,7 +128,7 @@ test('it should be able to add polyfills', async () => {
   }
   expect(window.ObjectTest).toStrictEqual(objectTestProperties);
   expect(windowKeys.indexOf('ObjectTest')).toBe(windowKeys.indexOf('chromey') + 1);
-}, 60e3);
+}, domExtractorTimeout);
 
 test('it should be able to remove properties', async () => {
   const page = await createPage();

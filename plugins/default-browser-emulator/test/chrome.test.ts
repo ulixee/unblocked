@@ -30,7 +30,7 @@ afterAll(Helpers.afterAll);
 afterEach(Helpers.afterEach);
 
 const debug = process.env.DEBUG || false;
-const timeout = 180e3;
+const domExtractorTimeout = 180e3;
 
 test('it should mimic a chrome object', async () => {
   const httpServer = await Helpers.runHttpServer();
@@ -71,7 +71,7 @@ test('it should mimic a chrome object', async () => {
   });
   // must delete csi's invocation since it's different on each run
   expect(structureJson).toBe(chromeJson);
-}, timeout);
+}, domExtractorTimeout);
 
 test('it should update loadtimes and csi values', async () => {
   const httpServer = await Helpers.runHttpServer();
@@ -96,7 +96,7 @@ test('it should update loadtimes and csi values', async () => {
   expect(csi.onloadT).not.toBe(chrome.csi['new()'].onloadT._$value);
   expect(String(csi.onloadT).length).toBe(String(chrome.csi['new()'].onloadT._$value).length);
   expect(Object.keys(csi)).toHaveLength(4);
-}, timeout);
+}, domExtractorTimeout);
 
 async function createPage(): Promise<Page> {
   const context = await browser.newContext({ logger: TestLogger.forTest(module) });
