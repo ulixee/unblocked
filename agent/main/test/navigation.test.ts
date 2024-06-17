@@ -97,7 +97,7 @@ describe.each([
     }
   });
 
-  it.only('can load a cached page multiple times', async () => {
+  it('can load a cached page multiple times', async () => {
     const startingUrl = `${koaServer.baseUrl}/etag`;
     koaServer.get('/etag', ctx => {
       ctx.set('ETag', `W/\\"d02-48a7cf4b62c40\\"`);
