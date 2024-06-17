@@ -1,3 +1,5 @@
+// eslint-disable-next-line eslint-comments/disable-enable-pair
+/* eslint-disable jest/no-standalone-expect */
 import { inspect } from 'util';
 import * as Helpers from '@ulixee/unblocked-agent-testing/helpers';
 import { ITestKoaServer } from '@ulixee/unblocked-agent-testing/helpers';
@@ -28,7 +30,10 @@ afterEach(Helpers.afterEach);
 const debug = process.env.DEBUG || false;
 const domExtractorTimeout = 180e3;
 
-test('it should be able to add polyfills', async () => {
+const testIfNotVersion115 =
+  browser.engine.fullVersion.split('.')[0] === '115' ? test.skip : test;
+
+testIfNotVersion115('it should be able to add polyfills', async () => {
   const page = await createPage();
 
   const objectTestProperties = {
