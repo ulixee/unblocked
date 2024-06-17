@@ -115,7 +115,7 @@ jobs:
         run: NODE_OPTIONS=--max-old-space-size=4096 yarn lint
 
       - name: Run tests
-        run: yarn jest --testTimeout=180000 --maxWorkers=1
+        run: yarn jest --testTimeout=60000 --maxWorkers=1
         working-directory: ./build
         env:
           ULX_DATA_DIR: .data-test
