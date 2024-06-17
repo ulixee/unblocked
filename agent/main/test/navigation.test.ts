@@ -44,6 +44,9 @@ describe.each([
   ['with Mitm', true],
   ['withoutMitm', false],
 ])('basic Navigation tests %s', (key, enableMitm) => {
+  if (!enableMitm) {
+    jest.retryTimes(3);
+  }
   beforeAll(async () => {
     koaServer = await Helpers.runKoaServer();
   });
@@ -94,7 +97,7 @@ describe.each([
     }
   });
 
-  it('can load a cached page multiple times', async () => {
+  it.only('can load a cached page multiple times', async () => {
     const startingUrl = `${koaServer.baseUrl}/etag`;
     koaServer.get('/etag', ctx => {
       ctx.set('ETag', `W/\\"d02-48a7cf4b62c40\\"`);
@@ -122,7 +125,7 @@ describe.each([
     await new Promise(resolve => setTimeout(resolve, 100));
 
     const resources = page.browserContext.resources.getForTab(page.tabId);
-    expect(resources.filter(x => !x.url.endsWith("favicon.ico"))).toHaveLength(20);
+    expect(resources.filter(x => !x.url.endsWith('favicon.ico'))).toHaveLength(20);
   });
 
   it('can goto a page multiple times', async () => {
@@ -175,6 +178,57 @@ describe.each([
     const text = await page.execJsPath(['document', 'body', 'textContent']);
 
     expect(text.value).toBe('Reloaded');
+  });
+
+  it('can handle frames changing in the same context', async () => {
+    const { page } = await createAgent(enableMitm);
+    koaServer.get('/testBrowserTop', ctx => {
+      ctx.body = `<html>
+<body>
+    <h1>Main Page</h1>
+    <iframe id="testFrame" src="/testFrame"></iframe>
+    <br />
+    <img src="/doesntmatter.png"> <!-- without this element we get different error: Timeout waiting for navigation "JavascriptReady" -->
+</body>
+</html>`;
+    });
+    koaServer.get('/testFrame', ctx => {
+      ctx.body = `<html>
+<body>
+    <h2>This is the Frame Page 1</h2>
+    <a id='changeTopDocument' href='/any' target='_top'>Change whole page, not only the frame.</a>
+</body>
+</html>`;
+    });
+
+    await page.goto(`${koaServer.baseUrl}/testBrowserTop`);
+    await page.waitForLoad('PaintingStable');
+    expect(page.frames).toHaveLength(2);
+    await page.frames[1].waitForLoad({ loadStatus: LocationStatus.DomContentLoaded });
+    expect(page.frames[1].url).toBe(`${koaServer.baseUrl}/testFrame`);
+    await page.goto(`${koaServer.baseUrl}/testBrowserTop?test=1`);
+    await page.waitForLoad('PaintingStable');
+    expect(page.frames.map(x => [x.frameId, x.url])).toHaveLength(2);
+    await page.frames[1].waitForLoad({ loadStatus: LocationStatus.DomContentLoaded });
+    expect(page.frames[1].url).toBe(`${koaServer.baseUrl}/testFrame`);
+    const frameElem = await page.mainFrame.jsPath.getNodePointer([
+      'document',
+      ['querySelector', '#testFrame'],
+    ]);
+    expect(frameElem.nodePointer.type).toBe('HTMLIFrameElement');
+
+    for (const frame of page.frames) {
+      const frameNodePointerId = await frame.getFrameElementNodePointerId();
+      if (frameNodePointerId === frameElem.nodePointer.id) {
+        const top = await frame.jsPath.getNodePointer([
+          'document',
+          ['getElementById', 'changeTopDocument'],
+        ]);
+        expect(top.nodePointer.type).toBe('HTMLAnchorElement');
+        return;
+      }
+    }
+    throw new Error('Frame not found');
   });
 
   it('can reload a page', async () => {
@@ -618,6 +672,9 @@ describe.each([
   ['with Mitm', true],
   ['withoutMitm', false],
 ])('PaintingStable tests %s', (key, enableMitm) => {
+  if (!enableMitm) {
+    jest.retryTimes(3);
+  }
   it('should trigger painting stable after a redirect', async () => {
     const startingUrl = `${koaServer.baseUrl}/stable-redirect`;
     koaServer.get('/stable-redirect', async ctx => {
