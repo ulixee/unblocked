@@ -25,9 +25,6 @@ jobs:
         include:
           - node-version: 20.x
             os: ubuntu-latest
-            browser: chrome-125-0
-          - node-version: 20.x
-            os: ubuntu-latest
             browser: chrome-124-0
           - node-version: 20.x
             os: ubuntu-latest
