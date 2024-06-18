@@ -29,7 +29,7 @@ for (const itemToModify of args.itemsToModify || []) {
 
     if (itemToModify.propertyName === '_$value') {
       if (descriptor.get) {
-        if ('navigator' in itemToModify.path) {
+        if (itemToModify.path.includes('navigator')) {
           descriptor = { ...descriptor };
         }
         descriptor.get = proxyGetter(parent, property, () => itemToModify.property);
