@@ -115,6 +115,8 @@ function buildDescriptor(entry: IDescriptor, path: string): PropertyDescriptor {
     } else {
       Object.keys(entry)
         .filter((key): key is OtherInvocationKey => key.startsWith('_$otherInvocation'))
+        // Not supported currently
+        .filter((key)=> !key.includes('new()'))
         .forEach(key => OtherInvocationsTracker.addOtherInvocation(path, key, entry[key]));
 
       // use function call just to get a function that doesn't create prototypes on new
