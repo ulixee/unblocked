@@ -100,7 +100,7 @@ test('it should update loadtimes and csi values', async () => {
   expect(csi.onloadT).not.toBe(chrome.csi['new()'].onloadT._$value);
   expect(String(csi.onloadT).length).toBe(String(chrome.csi['new()'].onloadT._$value).length);
   expect(Object.keys(csi)).toHaveLength(4);
-},);
+});
 
 async function createPage(): Promise<Page> {
   const context = await browser.newContext({ logger: TestLogger.forTest(module) });
