@@ -15,11 +15,11 @@ let browser: Browser;
 
 beforeEach(Helpers.beforeEach);
 beforeAll(async () => {
-  const selectBrowserMeta = BrowserEmulator.selectBrowserMeta('~ mac = 10.14');
+  const selectBrowserMeta = BrowserEmulator.selectBrowserMeta('~ mac = 14');
   const { browserVersion, operatingSystemVersion } = selectBrowserMeta.userAgentOption;
   const windowChromePath = Path.resolve(
     emulatorDataDir,
-    `as-chrome-${browserVersion.major}-0/as-mac-os-${operatingSystemVersion.major}-${operatingSystemVersion.minor}/window-chrome.json`,
+    `as-chrome-${browserVersion.major}-0/as-mac-os-${operatingSystemVersion.major}/window-chrome.json`,
   );
   ({ chrome } = JSON.parse(Fs.readFileSync(windowChromePath, 'utf8')) as any);
   browser = new Browser(selectBrowserMeta.browserEngine, defaultHooks);
