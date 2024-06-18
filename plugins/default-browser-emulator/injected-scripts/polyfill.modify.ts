@@ -34,6 +34,7 @@ for (const itemToModify of args.itemsToModify || []) {
     } else if (itemToModify.propertyName === '_$set') {
       overriddenFns.set(descriptor.set, itemToModify.property);
     } else if (itemToModify.propertyName.startsWith('_$otherInvocation')) {
+      if (itemToModify.propertyName.includes('new()')) continue;
       // TODO why is this needed, Im guessing since this is one big dump?
       const ReflectCachedHere = ReflectCached;
       const invocationReturnOrThrowHere = invocationReturnOrThrow;
