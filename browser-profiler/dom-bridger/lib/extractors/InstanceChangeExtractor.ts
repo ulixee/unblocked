@@ -54,7 +54,8 @@ export default class InstanceChangeExtractor extends BaseExtractor {
     'window.navigator.storage.estimate',
     'window.document.hasFocus',
     'window.navigator.mediaDevices.enumerateDevices',
-    'window.navigator.requestMIDIAccessn'
+    'window.navigator.requestMIDIAccess',
+    'window.navigator.clipboard.readText',
   ];
 
   public static override extraAddPatterns = [];
