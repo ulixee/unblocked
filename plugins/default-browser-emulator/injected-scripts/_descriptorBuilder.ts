@@ -287,7 +287,8 @@ class OtherInvocationsTracker {
     otherInvocation: any,
   ) {
     const [invocationKey, ...otherParts] = otherKey.split('.');
-    const otherPath = otherParts.join('.');
+    // Remove key/property from path
+    const otherPath = otherParts.slice(0, -1).join('.');
     // Store this path so we can later check if we have the reference we expect
     PathToInstanceTracker.addPath(otherPath);
     this.basePaths.add(basePath);

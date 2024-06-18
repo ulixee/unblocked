@@ -52,11 +52,10 @@ for (const itemToModify of args.itemsToModify || []) {
         });
       }
 
-      // We need to remove the actuall property
-      const otherPath = itemToModify.propertyName.split('.').slice(0, -1).join('.');
+      const otherKey = itemToModify.propertyName;
       OtherInvocationsTracker.addOtherInvocation(
         itemToModify.path,
-        otherPath,
+        otherKey,
         itemToModify.property,
       );
     }
