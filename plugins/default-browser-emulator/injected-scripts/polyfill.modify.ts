@@ -20,17 +20,18 @@ for (const itemToModify of args.itemsToModify || []) {
       console.warn('Descriptor not found for polyfill', itemToModify);
       continue;
     }
-    const { descriptor } = descriptorInHierarchy;
+    let { descriptor } = descriptorInHierarchy;
 
     if (itemToModify.propertyName === '_$value') {
       if (descriptor.get) {
-        // descriptor.get = proxyGetter(parent, property, () => itemToModify.property);
+        if ('navigator' in itemToModify.path) {
+          descriptor = { ...descriptor };
+        }
+        descriptor.get = proxyGetter(parent, property, () => itemToModify.property);
+        Object.defineProperty(parent, property, descriptor);
       } else {
-        // if ('navigator' in itemToModify.path) {
-        //   descriptor = { ...descriptor };
-        // }
-        // descriptor.value = itemToModify.property;
-        // Object.defineProperty(parent, property, descriptor);
+        descriptor.value = itemToModify.property;
+        Object.defineProperty(parent, property, descriptor);
       }
     } else if (itemToModify.propertyName === '_$get') {
       overriddenFns.set(descriptor.get, itemToModify.property);
