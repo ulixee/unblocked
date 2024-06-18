@@ -12,6 +12,11 @@ for (const itemToModify of args.itemsToModify || []) {
       continue;
     }
 
+    // Currently not supported
+    if (itemToModify.path.includes('new()')) {
+      continue;
+    }
+
     const parts = getParentAndProperty(itemToModify.path);
     const property = parts.property;
     const parent = parts.parent;
@@ -24,7 +29,7 @@ for (const itemToModify of args.itemsToModify || []) {
 
     if (itemToModify.propertyName === '_$value') {
       if (descriptor.get) {
-        descriptor.get = proxyGetter(parent, property, () => itemToModify.property, itemToModify.path.includes('navigator'));
+        descriptor.get = proxyGetter(parent, property, () => itemToModify.property);
       } else {
         descriptor.value = itemToModify.property;
         Object.defineProperty(parent, property, descriptor);
@@ -34,7 +39,6 @@ for (const itemToModify of args.itemsToModify || []) {
     } else if (itemToModify.propertyName === '_$set') {
       overriddenFns.set(descriptor.set, itemToModify.property);
     } else if (itemToModify.propertyName.startsWith('_$otherInvocation')) {
-      if (itemToModify.propertyName.includes('new()')) continue;
       // TODO why is this needed, Im guessing since this is one big dump?
       const ReflectCachedHere = ReflectCached;
       const invocationReturnOrThrowHere = invocationReturnOrThrow;
