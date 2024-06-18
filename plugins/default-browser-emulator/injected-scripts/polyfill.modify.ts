@@ -29,10 +29,13 @@ for (const itemToModify of args.itemsToModify || []) {
 
     if (itemToModify.propertyName === '_$value') {
       if (descriptor.get) {
-        descriptor.get = proxyGetter(parent, property, () => itemToModify.property);
+        // descriptor.get = proxyGetter(parent, property, () => itemToModify.property);
       } else {
-        descriptor.value = itemToModify.property;
-        Object.defineProperty(parent, property, descriptor);
+        // if ('navigator' in itemToModify.path) {
+        //   descriptor = { ...descriptor };
+        // }
+        // descriptor.value = itemToModify.property;
+        // Object.defineProperty(parent, property, descriptor);
       }
     } else if (itemToModify.propertyName === '_$get') {
       overriddenFns.set(descriptor.get, itemToModify.property);
