@@ -52,6 +52,9 @@ export default class InstanceChangeExtractor extends BaseExtractor {
     'window.RTCPeerConnection.new().createOffer',
     'window.crypto.randomUUID',
     'window.navigator.storage.estimate',
+    'window.document.hasFocus',
+    'window.navigator.mediaDevices.enumerateDevices',
+    'window.navigator.requestMIDIAccessn'
   ];
 
   public static override extraAddPatterns = [];
