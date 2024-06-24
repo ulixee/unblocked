@@ -28,6 +28,7 @@ interface ICreatePoolOptions {
   certificateStore?: ICertificateStore;
   defaultBrowserEngine?: IBrowserEngine;
   plugins?: IUnblockedPluginClass[];
+  pluginConfigs?: Record<string, any>;
   dataDir?: string;
   logger?: IBoundLog;
 }
@@ -52,6 +53,7 @@ export default class Pool extends TypedEventEmitter<{
   public readonly agentsById = new Map<string, Agent>();
   public sharedMitmProxy: MitmProxy;
   public plugins: IUnblockedPluginClass[] = [];
+  public pluginConfigs: Record<string, any> = {};
 
   #activeAgentsCount = 0;
   #waitingForAvailability: {
@@ -94,6 +96,10 @@ export default class Pool extends TypedEventEmitter<{
       };
     }
     options.plugins ??= [...this.plugins];
+    options.pluginConfigs = {
+      // TODO JSON stringify and parse to make copy?
+      ...this.pluginConfigs,
+    };
     const agent = new Agent(options, this);
     this.agentsById.set(agent.id, agent);
     this.emit('agent-created', { agent });

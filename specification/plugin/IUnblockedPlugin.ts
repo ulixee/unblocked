@@ -13,9 +13,10 @@ export default interface IUnblockedPlugin<T = any> extends IHooksProvider {
   onClose?(): void;
 }
 
-export interface IUnblockedPluginClass<T = any> {
-  shouldActivate?(emulationProfile: IEmulationProfile<T>): boolean;
-  new (emulationProfile?: IEmulationProfile<T>): IUnblockedPlugin<T>;
+export interface IUnblockedPluginClass<C = any, T = any> {
+  id: string;
+  shouldActivate?(emulationProfile: IEmulationProfile<T>, customConfig?: C): boolean;
+  new (emulationProfile: IEmulationProfile<T>, customConfig?: C): IUnblockedPlugin<T>;
 }
 
 // decorator for browser emulator classes. hacky way to check the class implements statics we need

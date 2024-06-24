@@ -26,6 +26,7 @@ const { log } = Log(module);
 export interface IAgentCreateOptions extends Omit<IEmulationProfile, keyof IEmulationOptions> {
   id?: string;
   plugins?: IUnblockedPluginClass[];
+  pluginConfigs?: Record<string, any>;
   commandMarker?: ICommandMarker;
 }
 
@@ -83,7 +84,7 @@ export default class Agent extends TypedEventEmitter<{ close: void }> {
         sessionId: this.id,
       });
 
-    this.plugins = new Plugins(options, options.plugins);
+    this.plugins = new Plugins(options, options.plugins, options.pluginConfigs);
     this.mitmRequestSession = new RequestSession(
       this.id,
       this.plugins,

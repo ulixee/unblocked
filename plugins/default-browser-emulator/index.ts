@@ -46,6 +46,8 @@ import IUserAgentData from './interfaces/IUserAgentData';
 import UserAgentOptions from './lib/UserAgentOptions';
 import BrowserEngineOptions from './lib/BrowserEngineOptions';
 
+import { name } from './package.json';
+
 // Configuration to rotate out the default browser id. Used for testing different browsers via cli
 const defaultBrowserId = process.env.ULX_DEFAULT_BROWSER_ID;
 
@@ -65,6 +67,7 @@ let hasWarnedAboutProxyIp = false;
 
 @UnblockedPluginClassDecorator
 export default class DefaultBrowserEmulator<T = IEmulatorOptions> implements IUnblockedPlugin<T> {
+  public static id = name;
   // Should the system attempt to manipulate tcp settings to match the emulated OS. NOTE that this can affect tcp performance.
   public static enableTcpEmulation = false;
   public readonly logger: IBoundLog;

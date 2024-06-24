@@ -69,7 +69,11 @@ export default class Plugins implements IUnblockedPlugins {
     websiteHasFirstPartyInteraction: [],
   };
 
-  constructor(emulationProfile: IEmulationProfile, pluginClasses: IUnblockedPluginClass[]) {
+  constructor(
+    emulationProfile: IEmulationProfile,
+    pluginClasses: IUnblockedPluginClass[],
+    pluginConfigs: Record<string, any>,
+  ) {
     this.profile = emulationProfile ?? {};
     this.profile.options ??= {};
     Object.assign(this.profile, this.profile.options);
@@ -78,13 +82,14 @@ export default class Plugins implements IUnblockedPlugins {
       this.profile.browserEngine = new ChromeEngine(this.profile.browserEngine);
     }
 
-    if (pluginClasses?.length) {
-      const PluginClasses = pluginClasses.filter(x => x.shouldActivate?.(this.profile) ?? true);
-      for (const Plugin of PluginClasses) {
-        const plugin = new Plugin(this.profile);
-        this.instances.push(plugin);
-        this.hook(plugin, false);
+    for (const Plugin of pluginClasses) {
+      const config = pluginConfigs[Plugin.id];
+      if (config === false || Plugin.shouldActivate?.(this.profile) === false) {
+        continue;
       }
+      const plugin = new Plugin(this.profile, config);
+      this.instances.push(plugin);
+      this.hook(plugin, false);
     }
 
     if (!this.profile.browserEngine && !pluginClasses?.length) {
