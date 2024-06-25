@@ -1,4 +1,6 @@
-import { UnblockedPluginClassDecorator } from '@ulixee/unblocked-specification/plugin/IUnblockedPlugin';
+import IUnblockedPlugin, {
+  UnblockedPluginClassDecorator,
+} from '@ulixee/unblocked-specification/plugin/IUnblockedPlugin';
 import IEmulationProfile from '@ulixee/unblocked-specification/plugin/IEmulationProfile';
 import Plugins from '../lib/Plugins';
 
@@ -110,4 +112,83 @@ test("plugin implementations should be called in the order they're installed", a
   expect(newPage1Fn).toHaveBeenCalledTimes(1);
   expect(newPage2Fn).toHaveBeenCalledTimes(1);
   expect(callOrder).toEqual([newPage1Fn, newPage2Fn]);
+});
+
+test('should pass config to correct plugin', async () => {
+  const plugin1Config = { plugin1: true };
+  const plugin2Config = { plugin2: true };
+
+  @UnblockedPluginClassDecorator
+  class Plugins1 {
+    static id = 'Plugins1';
+
+    constructor(_emulationProfile: IEmulationProfile, config?: typeof plugin1Config) {
+      expect(config).toEqual(plugin1Config);
+    }
+  }
+
+  @UnblockedPluginClassDecorator
+  class Plugins2 implements IUnblockedPlugin {
+    static id = 'Plugins2';
+
+    constructor(emulationProfile: IEmulationProfile, config?: typeof plugin1Config) {
+      expect(config).toEqual(plugin2Config);
+    }
+  }
+
+  const _plugins = new Plugins({}, [Plugins1, Plugins2], {
+    [Plugins1.id]: plugin1Config,
+    [Plugins2.id]: plugin2Config,
+  });
+});
+
+test('should disable plugin if config = false', async () => {  @UnblockedPluginClassDecorator
+  class Plugins1 {
+    static id = 'Plugins1';
+  }
+
+  class Plugins2 {
+    static id = 'Plugins2';
+  }
+
+  const plugins = new Plugins({}, [Plugins1, Plugins2], {
+    [Plugins1.id]: true,
+    [Plugins2.id]: false,
+  });
+
+  expect(plugins.instances).toHaveLength(1);
+});
+
+test('should skip shouldEnabled if config = true', async () => {  
+  const shouldActivate1 = jest.fn();
+  const shouldActivate2 = jest.fn();
+  
+  @UnblockedPluginClassDecorator
+  class Plugins1 {
+    static id = 'Plugins1';
+
+    static shouldActivate(): boolean {
+      shouldActivate1();
+      return false;
+    }
+  }
+
+  @UnblockedPluginClassDecorator
+  class Plugins2 {
+    static id = 'Plugins2';
+
+    static shouldActivate(): boolean {
+      shouldActivate2();
+      return false;
+    }
+  }
+
+  const plugins = new Plugins({}, [Plugins1, Plugins2], {
+    [Plugins1.id]: true,
+    [Plugins2.id]: undefined,
+  });
+
+  expect(shouldActivate1).not.toHaveBeenCalled();
+  expect(shouldActivate2).toHaveBeenCalled();
+  expect(plugins.instances).toHaveLength(1);
 });

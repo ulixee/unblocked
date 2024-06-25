@@ -1,7 +1,7 @@
 import IEmulationProfile from '@ulixee/unblocked-specification/plugin/IEmulationProfile';
 import IUnblockedPlugins from '@ulixee/unblocked-specification/plugin/IUnblockedPlugins';
 import IUnblockedPlugin, {
-  IUnblockedPluginClass,
+  IUnblockedPluginClass, PluginConfigs,
 } from '@ulixee/unblocked-specification/plugin/IUnblockedPlugin';
 import { URL } from 'url';
 import {
@@ -72,7 +72,7 @@ export default class Plugins implements IUnblockedPlugins {
   constructor(
     emulationProfile: IEmulationProfile,
     pluginClasses: IUnblockedPluginClass[],
-    pluginConfigs: Record<string, any> = {},
+    pluginConfigs: PluginConfigs = {},
   ) {
     this.profile = emulationProfile ?? {};
     this.profile.options ??= {};
@@ -86,7 +86,8 @@ export default class Plugins implements IUnblockedPlugins {
 
     for (const Plugin of pluginClasses) {
       const config = pluginConfigs[Plugin.id];
-      if (config === false || Plugin.shouldActivate?.(this.profile, config) === false) {
+      // true shortcircuits and doesn't check shouldActivate
+      if (config !== true && (config === false || Plugin.shouldActivate?.(this.profile, config) === false)) {
         continue;
       }
       const plugin = new Plugin(this.profile, config);
