@@ -72,11 +72,13 @@ export default class Plugins implements IUnblockedPlugins {
   constructor(
     emulationProfile: IEmulationProfile,
     pluginClasses: IUnblockedPluginClass[],
-    pluginConfigs: Record<string, any>,
+    pluginConfigs: Record<string, any> = {},
   ) {
     this.profile = emulationProfile ?? {};
     this.profile.options ??= {};
     Object.assign(this.profile, this.profile.options);
+    pluginClasses ??= [];
+    pluginConfigs ??= {};
 
     if (this.profile.browserEngine instanceof ChromeApp) {
       this.profile.browserEngine = new ChromeEngine(this.profile.browserEngine);
