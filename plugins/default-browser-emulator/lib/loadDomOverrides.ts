@@ -28,10 +28,10 @@ export default function loadDomOverrides(
 
   const domPolyfill = data.domPolyfill;
 
-  const consoleConfig = config[InjectedScript.CONSOLE_LOG];
+  const consoleConfig = config[InjectedScript.CONSOLE];
   if (consoleConfig) {
     const mode: ConsolePatchModes = consoleConfig === true ? 'patchLeaks' : consoleConfig.mode;
-    domOverrides.add(InjectedScript.CONSOLE_LOG, { mode });
+    domOverrides.add(InjectedScript.CONSOLE, { mode });
     domOverrides.registerWorkerOverrides('console');
   }
 

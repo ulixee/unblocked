@@ -1,5 +1,5 @@
 export default interface IBrowserEmulatorConfig {
-  [InjectedScript.CONSOLE_LOG]: InjectedScriptConfig<{ mode: ConsolePatchModes }>;
+  [InjectedScript.CONSOLE]: InjectedScriptConfig<{ mode: ConsolePatchModes }>;
   [InjectedScript.DOCUMENT_PROTOTYPE_COOKIE]: InjectedScriptConfig;
   [InjectedScript.JSON_STRINGIFY]: InjectedScriptConfig;
   [InjectedScript.MEDIA_DEVICES_PROTOTYPE_ENUMERATE_DEVICES]: InjectedScriptConfig;
@@ -22,7 +22,7 @@ export default interface IBrowserEmulatorConfig {
 export type ConsolePatchModes = 'patchLeaks' | 'disableConsole';
 
 export enum InjectedScript {
-  CONSOLE_LOG = 'console.log',
+  CONSOLE = 'console',
   DOCUMENT_PROTOTYPE_COOKIE = 'Document.prototype.cookie',
   JSON_STRINGIFY = 'JSON.stringify',
   MEDIA_DEVICES_PROTOTYPE_ENUMERATE_DEVICES = 'MediaDevices.prototype.enumerateDevices',
