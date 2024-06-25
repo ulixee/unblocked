@@ -185,7 +185,7 @@ export default class DefaultBrowserEmulator<T = IEmulatorOptions> implements IUn
       this.logger.info('PublicIp Lookup', {
         ...upstreamProxyIpMask,
       });
-      this.domOverridesBuilder.add('webrtc', {
+      this.domOverridesBuilder.add(InjectedScript.WEBRTC, {
         localIp: upstreamProxyIpMask.publicIp,
         proxyIp: upstreamProxyIpMask.proxyIp,
       });
