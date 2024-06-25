@@ -2,8 +2,10 @@ import IEmulationProfile from '@ulixee/unblocked-specification/plugin/IEmulation
 import IBrowserData from '../interfaces/IBrowserData';
 import IUserAgentData from '../interfaces/IUserAgentData';
 import DomOverridesBuilder from './DomOverridesBuilder';
+import IBrowserEmulatorConfig, { InjectedScript } from '../interfaces/IBrowserEmulatorConfig';
 
 export default function loadDomOverrides(
+  config: IBrowserEmulatorConfig,
   emulationProfile: IEmulationProfile,
   data: IBrowserData,
   userAgentData: IUserAgentData,
@@ -15,9 +17,13 @@ export default function loadDomOverrides(
     emulationProfile.browserEngine.isHeaded !== true &&
     emulationProfile.browserEngine.isHeadlessNew !== true;
 
-  domOverrides.add('navigator.hardwareConcurrency', {
-    concurrency: deviceProfile.hardwareConcurrency,
-  });
+  if (config[InjectedScript.NAVIGATOR_HARDWARE_CONCURRENCY]) {
+    domOverrides.add(InjectedScript.NAVIGATOR_HARDWARE_CONCURRENCY, {
+      concurrency: deviceProfile.hardwareConcurrency,
+    });
+    domOverrides.registerWorkerOverrides(InjectedScript.NAVIGATOR_HARDWARE_CONCURRENCY);
+  }
+
   domOverrides.add('navigator.deviceMemory', {
     memory: deviceProfile.deviceMemory,
     storageTib: deviceProfile.deviceStorageTib,
@@ -90,7 +96,6 @@ export default function loadDomOverrides(
   domOverrides.registerWorkerOverrides(
     'console',
     'navigator.deviceMemory',
-    'navigator.hardwareConcurrency',
     'navigator',
     'WebGLRenderingContext.prototype.getParameter',
   );

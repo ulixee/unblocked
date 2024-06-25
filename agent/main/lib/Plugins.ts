@@ -86,7 +86,7 @@ export default class Plugins implements IUnblockedPlugins {
 
     for (const Plugin of pluginClasses) {
       const config = pluginConfigs[Plugin.id];
-      if (config === false || Plugin.shouldActivate?.(this.profile) === false) {
+      if (config === false || Plugin.shouldActivate?.(this.profile, config) === false) {
         continue;
       }
       const plugin = new Plugin(this.profile, config);
