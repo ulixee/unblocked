@@ -96,7 +96,7 @@ export default class Pool extends TypedEventEmitter<{
       };
     }
     options.plugins ??= [...this.plugins];
-    options.pluginConfigs = {
+    options.pluginConfigs ??= {
       // TODO JSON stringify and parse to make copy?
       ...this.pluginConfigs,
     };
