@@ -86,11 +86,16 @@ export default class Plugins implements IUnblockedPlugins {
 
     for (const Plugin of pluginClasses) {
       const config = pluginConfigs[Plugin.id];
+      let plugin: IUnblockedPlugin<any>;
       // true shortcircuits and doesn't check shouldActivate
-      if (config !== true && (config === false || Plugin.shouldActivate?.(this.profile, config) === false)) {
+      if (config === true) {
+        plugin = new Plugin(this.profile);
+      } else if (config === false || Plugin.shouldActivate?.(this.profile, config) === false) {
         continue;
+      } else {
+        plugin = new Plugin(this.profile, config);
       }
-      const plugin = new Plugin(this.profile, config);
+
       this.instances.push(plugin);
       this.hook(plugin, false);
     }

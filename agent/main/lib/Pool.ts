@@ -13,7 +13,10 @@ import EventSubscriber from '@ulixee/commons/lib/EventSubscriber';
 import IResolvablePromise from '@ulixee/commons/interfaces/IResolvablePromise';
 import IBrowserUserConfig from '@ulixee/unblocked-specification/agent/browser/IBrowserUserConfig';
 import { IHooksProvider } from '@ulixee/unblocked-specification/agent/hooks/IHooks';
-import { IUnblockedPluginClass, UnblockedPluginConfig } from '@ulixee/unblocked-specification/plugin/IUnblockedPlugin';
+import {
+  IUnblockedPluginClass,
+  UnblockedPluginConfig,
+} from '@ulixee/unblocked-specification/plugin/IUnblockedPlugin';
 import IEmulationProfile from '@ulixee/unblocked-specification/plugin/IEmulationProfile';
 import IRegisteredEventListener from '@ulixee/commons/interfaces/IRegisteredEventListener';
 import Browser from './Browser';
@@ -96,10 +99,7 @@ export default class Pool extends TypedEventEmitter<{
       };
     }
     options.plugins ??= [...this.plugins];
-    options.pluginConfigs ??= {
-      // TODO JSON stringify and parse to make copy?
-      ...this.pluginConfigs,
-    };
+    options.pluginConfigs ??= structuredClone(this.pluginConfigs);
     const agent = new Agent(options, this);
     this.agentsById.set(agent.id, agent);
     this.emit('agent-created', { agent });
