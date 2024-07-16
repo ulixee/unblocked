@@ -1,3 +1,4 @@
+import type { Args as ConsoleArgs } from "../injected-scripts/console";
 export default interface IBrowserEmulatorConfig {
   [InjectedScript.CONSOLE]: InjectedScriptConfig<{ mode: ConsolePatchModes }>;
   [InjectedScript.DOCUMENT_PROTOTYPE_COOKIE]: InjectedScriptConfig;
@@ -14,7 +15,7 @@ export default interface IBrowserEmulatorConfig {
   [InjectedScript.RTC_RTP_SENDER_GETCAPABILITIES]: InjectedScriptConfig;
   [InjectedScript.SHAREDWORKER_PROTOTYPE]: InjectedScriptConfig;
   [InjectedScript.SPEECH_SYNTHESIS_GETVOICES]: InjectedScriptConfig;
-  [InjectedScript.WEBGL_RENDERING_CONTEXT_PROTOTYPE_GETPARAMETERS]: InjectedScriptConfig;
+  [InjectedScript.UNHANDLED_ERRORS_AND_REJECTIONS]: InjectedScriptConfig;
   [InjectedScript.WEBRTC]: InjectedScriptConfig;
   [InjectedScript.WINDOW_SCREEN]: InjectedScriptConfig;
 }
@@ -37,6 +38,7 @@ export enum InjectedScript {
   RTC_RTP_SENDER_GETCAPABILITIES = 'RTCRtpSender.getCapabilities',
   SHAREDWORKER_PROTOTYPE = 'SharedWorker.prototype',
   SPEECH_SYNTHESIS_GETVOICES = 'speechSynthesis.getVoices',
+  UNHANDLED_ERRORS_AND_REJECTIONS = 'UnhandledErrorsAndRejections',
   WEBGL_RENDERING_CONTEXT_PROTOTYPE_GETPARAMETERS = 'WebGLRenderingContext.prototype.getParameter',
   WEBRTC = 'webrtc',
   WINDOW_SCREEN = 'window.screen',
