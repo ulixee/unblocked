@@ -31,6 +31,11 @@ const ObjectCached = {
   getOwnPropertyDescriptor: Object.getOwnPropertyDescriptor.bind(Object),
 };
 
+const stringFnsCached = Object.getOwnPropertyNames(String.prototype).reduce((acc, key) => {
+  acc[key] = String.prototype[key];
+  return acc;
+}, {} as typeof String.prototype);
+
 (function trackProxyInstances() {
   if (typeof self === 'undefined') return;
   const descriptor = ObjectCached.getOwnPropertyDescriptor(self, 'Proxy');
