@@ -1347,7 +1347,7 @@ it('should emulate in a blob shared worker', async () => {
   expect(resultWithUnmasked).toHaveLength(0);
 });
 
-test.only('should not trigger stack for unhandled error', async () => {
+test('should not trigger stack for unhandled error', async () => {
   const agent = pool.createAgent({
     logger,
   });
@@ -1376,7 +1376,7 @@ test.only('should not trigger stack for unhandled error', async () => {
   expect(getterCalled).toBeFalsy();
 });
 
-test.only('should not trigger stack for unhandled rejections', async () => {
+test('should not trigger stack for unhandled rejections', async () => {
   const agent = pool.createAgent({
     logger,
   });

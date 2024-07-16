@@ -1,6 +1,7 @@
-import type { Args as ConsoleArgs } from "../injected-scripts/console";
+import type { Args as ConsoleArgs } from '../injected-scripts/console';
+
 export default interface IBrowserEmulatorConfig {
-  [InjectedScript.CONSOLE]: InjectedScriptConfig<{ mode: ConsolePatchModes }>;
+  [InjectedScript.CONSOLE]: InjectedScriptConfig<ConsoleArgs>;
   [InjectedScript.DOCUMENT_PROTOTYPE_COOKIE]: InjectedScriptConfig;
   [InjectedScript.JSON_STRINGIFY]: InjectedScriptConfig;
   [InjectedScript.MEDIA_DEVICES_PROTOTYPE_ENUMERATE_DEVICES]: InjectedScriptConfig;
@@ -20,8 +21,6 @@ export default interface IBrowserEmulatorConfig {
   [InjectedScript.WEBRTC]: InjectedScriptConfig;
   [InjectedScript.WINDOW_SCREEN]: InjectedScriptConfig;
 }
-
-export type ConsolePatchModes = 'patchLeaks' | 'disableConsole';
 
 export enum InjectedScript {
   CONSOLE = 'console',

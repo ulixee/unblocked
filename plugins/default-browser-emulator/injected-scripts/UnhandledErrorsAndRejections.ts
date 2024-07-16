@@ -6,13 +6,23 @@ function preventDefault(event: ErrorEvent | PromiseRejectionEvent) {
 
   // Hide this, but make sure if they hide it we mimic normal behaviour
   let prevented = event.defaultPrevented;
-  proxyFunction(event, 'preventDefault', (originalFunction, thisArg, argArray) => {
-    // Will raise correct error if 'thisArg' is wrong
-    ReflectCached.apply(originalFunction, thisArg, argArray)
-    prevented = true;
-  }, true);
-  proxyGetter(event, 'defaultPrevented', (target, thisArg) => {
-    ReflectCached.get(target, thisArg)
-    return prevented;
-  }, true);
+  proxyFunction(
+    event,
+    'preventDefault',
+    (originalFunction, thisArg, argArray) => {
+      // Will raise correct error if 'thisArg' is wrong
+      ReflectCached.apply(originalFunction, thisArg, argArray);
+      prevented = true;
+    },
+    true,
+  );
+  proxyGetter(
+    event,
+    'defaultPrevented',
+    (target, thisArg) => {
+      ReflectCached.get(target, thisArg);
+      return prevented;
+    },
+    true,
+  );
 }
