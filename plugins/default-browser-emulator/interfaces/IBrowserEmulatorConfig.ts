@@ -16,6 +16,7 @@ export default interface IBrowserEmulatorConfig {
   [InjectedScript.SHAREDWORKER_PROTOTYPE]: InjectedScriptConfig;
   [InjectedScript.SPEECH_SYNTHESIS_GETVOICES]: InjectedScriptConfig;
   [InjectedScript.UNHANDLED_ERRORS_AND_REJECTIONS]: InjectedScriptConfig;
+  [InjectedScript.WEBGL_RENDERING_CONTEXT_PROTOTYPE_GETPARAMETERS]: InjectedScriptConfig;
   [InjectedScript.WEBRTC]: InjectedScriptConfig;
   [InjectedScript.WINDOW_SCREEN]: InjectedScriptConfig;
 }
