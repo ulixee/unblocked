@@ -23,6 +23,5 @@ module.exports = {
         'no-console': 'off',
       },
     },
-    {ignores: ["**/interfaces/*ts"]},
   ],
 };
