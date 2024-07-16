@@ -25,4 +25,11 @@ function preventDefault(event: ErrorEvent | PromiseRejectionEvent) {
     },
     true,
   );
+
+  if (!('console' in self)) {
+    return;
+  }
+
+  const error = event instanceof ErrorEvent ? event.error : event.reason;
+  self.console.error(`Default ${event.type} event prevented, error:`, error);
 }
