@@ -1,0 +1,46 @@
+{
+  "add": [],
+  "remove": [
+    {
+      "path": "window.Text.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "createShadowRoot"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Document.prototype",
+      "propertyName": "registerElement"
+    },
+    {
+      "path": "window.document",
+      "propertyName": "$cdc_asdjflasutopfhvcZLmcfl_"
+    },
+    {
+      "path": "window",
+      "propertyName": "cdc_adoQpoasnfa76pfcZLmcfl"
+    },
+    {
+      "path": "window.HTMLLinkElement.prototype",
+      "propertyName": "import"
+    }
+  ],
+  "modify": [
+    {
+      "path": "window.Element.prototype.requestPointerLock",
+      "propertyName": "_$otherInvocationAsync.window.document.documentElement.requestPointerLock",
+      "property": "WrongDocumentError: The root document of this element is not valid for pointer lock."
+    },
+    {
+      "path": "window.Animation.new().finished.startTime",
+      "propertyName": "_$value",
+      "property": 4223.289000000001
+    }
+  ],
+  "reorder": []
+}
