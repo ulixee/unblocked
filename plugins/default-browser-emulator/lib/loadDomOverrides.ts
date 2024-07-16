@@ -5,7 +5,6 @@ import DomOverridesBuilder from './DomOverridesBuilder';
 import IBrowserEmulatorConfig, { InjectedScript } from '../interfaces/IBrowserEmulatorConfig';
 
 import { Args as ConsoleArgs } from '../injected-scripts/console';
-} from '../interfaces/IBrowserEmulatorConfig';
 
 export default function loadDomOverrides(
   config: IBrowserEmulatorConfig,
@@ -127,10 +126,15 @@ export default function loadDomOverrides(
     domOverrides.add(InjectedScript.UNHANDLED_ERRORS_AND_REJECTIONS);
     domOverrides.registerWorkerOverrides(InjectedScript.UNHANDLED_ERRORS_AND_REJECTIONS);
   }
+
+  if (config[InjectedScript.WEBGL_RENDERING_CONTEXT_PROTOTYPE_GETPARAMETERS]) {
+    domOverrides.add(
       InjectedScript.WEBGL_RENDERING_CONTEXT_PROTOTYPE_GETPARAMETERS,
       deviceProfile.webGlParameters,
     );
-    domOverrides.registerWorkerOverrides('WebGLRenderingContext.prototype.getParameter');
+    domOverrides.registerWorkerOverrides(
+      InjectedScript.WEBGL_RENDERING_CONTEXT_PROTOTYPE_GETPARAMETERS,
+    );
   }
 
   return domOverrides;
