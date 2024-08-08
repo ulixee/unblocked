@@ -1,0 +1,37 @@
+{
+  "add": [],
+  "remove": [
+    {
+      "path": "window.Text.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "createShadowRoot"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Document.prototype",
+      "propertyName": "registerElement"
+    },
+    {
+      "path": "window",
+      "propertyName": "cdc_adoQpoasnfa76pfcZLmcfl"
+    },
+    {
+      "path": "window.HTMLLinkElement.prototype",
+      "propertyName": "import"
+    }
+  ],
+  "modify": [
+    {
+      "path": "window.document.$cdc_asdjflasutopfhvcZLmcfl_.storeItem.new()",
+      "propertyName": "_$constructorException",
+      "property": "TypeError: Cannot set properties of undefined (setting 'acc51152-14c0-4831-b995-604178583969')"
+    }
+  ],
+  "reorder": []
+}

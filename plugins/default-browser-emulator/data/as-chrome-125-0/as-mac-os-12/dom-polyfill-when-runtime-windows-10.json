@@ -1,0 +1,155 @@
+{
+  "add": [
+    {
+      "path": "window",
+      "propertyName": "BarcodeDetector",
+      "prevProperty": "PublicKeyCredential",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": "BarcodeDetector"
+        },
+        "arguments": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "caller": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "prototype": {
+          "_$protos": [
+            "Object.prototype"
+          ],
+          "detect": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 1
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "detect"
+            },
+            "_$type": "function",
+            "_$function": "function detect() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'detect' on 'BarcodeDetector': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function detect() { [native code] }",
+            "_$otherInvocationAsync.window.BarcodeDetector.new().detect": "TypeError: Failed to execute 'detect' on 'BarcodeDetector': 1 argument required, but only 0 present."
+          },
+          "Symbol(Symbol.toStringTag)": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "BarcodeDetector"
+          },
+          "_$type": "object",
+          "_$flags": ""
+        },
+        "getSupportedFormats": {
+          "length": {
+            "_$type": "number",
+            "_$flags": "c",
+            "_$value": 0
+          },
+          "name": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "getSupportedFormats"
+          },
+          "_$type": "function",
+          "_$function": "function getSupportedFormats() { [native code] }",
+          "_$invocation": "[aztec,code_128,code_39,code_93,data_matrix,ean_13,ean_8,itf,pdf417,qr_code,upc_e]",
+          "_$isAsync": true,
+          "_$flags": "cew",
+          "_$value": "function getSupportedFormats() { [native code] }"
+        },
+        "new()": {
+          "_$protos": [
+            "BarcodeDetector.prototype",
+            "Object.prototype"
+          ],
+          "_$type": "constructor"
+        },
+        "_$type": "function",
+        "_$function": "function BarcodeDetector() { [native code] }",
+        "_$invocation": "TypeError: Failed to construct 'BarcodeDetector': Please use the 'new' operator, this DOM object constructor cannot be called as a function.",
+        "_$flags": "cw",
+        "_$value": "function BarcodeDetector() { [native code] }"
+      }
+    }
+  ],
+  "remove": [
+    {
+      "path": "window.Navigator.prototype",
+      "propertyName": "canShare"
+    },
+    {
+      "path": "window.Navigator.prototype",
+      "propertyName": "share"
+    },
+    {
+      "path": "window.Notification.prototype",
+      "propertyName": "image"
+    },
+    {
+      "path": "window.Text.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "createShadowRoot"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Document.prototype",
+      "propertyName": "registerElement"
+    },
+    {
+      "path": "window",
+      "propertyName": "cdc_adoQpoasnfa76pfcZLmcfl"
+    },
+    {
+      "path": "window.HTMLLinkElement.prototype",
+      "propertyName": "import"
+    }
+  ],
+  "modify": [
+    {
+      "path": "window.Element.prototype.getHTML",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getHTML",
+      "property": "<head>\n    <title>DoubleAgent - Session #34</title>\n    <meta content=\"text/html;charset=utf-8\" http-equiv=\"Content-Type\">\n    <meta content=\"utf-8\" http-equiv=\"encoding\">\n    <script>\n      window.pageQueue = [];\n    </script>\n    <style>\n      .display-inline-when-done { display: none; }\n      .display-block-when-done { display: none; }\n    </style>\n    \n</head>\n<body>\n<div>\n  Loading... <span class=\"display-inline-when-done\" style=\"display: none;\">DONE!</span>\n</div>\n<div class=\"display-block-when-done\">\n  \n  <div>Plugin Complete</div>\n</div>\n\n\n      <script type=\"text/javascript\">\n        function DomExtractor(selfName, pageMeta = {}) {\n    const { saveToUrl, pageUrl, pageHost, pageName } = pageMeta;\n    const skipProps = [\n        'Fingerprint2',\n        'pageQueue',\n        'DomExtractor',\n        'pageLoaded',\n        'axios',\n        'justAFunction',\n    ];\n    const skipValues = ['innerHTML', 'outerHTML', 'innerText', 'outerText'];\n    const doNotInvoke = [\n        'replaceChildren',\n        'print',\n        'alert',\n        'prompt',\n        'confirm',\n        'open',\n        'close',\n        'reload',\n        'assert',\n        'requestPermission',\n        'screenshot',\n        'pageLoaded',\n        'delete',\n        'clear',\n        'read',\n        'start',\n        'stop',\n        'write',\n        'writeln',\n        'replaceWith',\n        'remove',\n        'self.history.back',\n        'self.history.forward',\n        'self.history.go',\n        'self.history.pushState',\n        'self.history.replaceState',\n        'self.navigation.back',\n        'self.navigation.forward',\n        'self.navigation.go',\n        'self.navigation.pushState',\n        'self.navigation.replaceState',\n        'getUserMedia',\n        'requestFullscreen',\n        'webkitRequestFullScreen',\n        'webkitRequestFullscreen',\n        'getDisplayMedia',\n    ].map(x => x.replace(/self\\./g, `${selfName}.`));\n    const doNotAccess = [\n        'document.body',\n        'self.CSSAnimation.prototype.timeline',\n        'self.Animation.prototype.timeline',\n        'self.CSSTransition.prototype.timeline',\n    ].map(x => x.replace(/self\\./g, `${selfName}.`));\n    const excludedInheritedKeys = ['name', 'length', 'constructor'];\n    const loadedObjectsRef = new Map([[self, selfName]]);\n    const loadedObjectsProp = new Map();\n    const hierarchyNav = new Map();\n    const detached = {};\n    async function extractPropsFromObject(obj, parentPath) {\n        const keys = [];\n        let symbols = [];\n        try {\n            for (const key of Object.getOwnPropertyNames(obj)) {\n                if (!keys.includes(key))\n                    keys.push(key);\n            }\n        }\n        catch (err) { }\n        try {\n            symbols = Object.getOwnPropertySymbols(obj);\n            for (const key of symbols) {\n                if (!keys.includes(key))\n                    keys.push(key);\n            }\n        }\n        catch (err) { }\n        try {\n            for (const key in obj) {\n                if (!keys.includes(key))\n                    keys.push(key);\n            }\n        }\n        catch (err) { }\n        const newObj = {\n            _$protos: await loadProtoHierarchy(obj, parentPath),\n        };\n        if (parentPath.includes(`${selfName}.document.`) &&\n            !parentPath.includes(`${selfName}.document.documentElement`) &&\n            newObj._$protos.includes('HTMLElement.prototype')) {\n            newObj._$skipped = 'SKIPPED ELEMENT';\n            return newObj;\n        }\n        if (parentPath.includes('new()') && parentPath.endsWith('.ownerElement')) {\n            newObj._$skipped = 'SKIPPED ELEMENT';\n            return newObj;\n        }\n        if (parentPath.split('.').length >= 8) {\n            newObj._$skipped = 'SKIPPED MAX DEPTH';\n            return newObj;\n        }\n        const isNewObject = parentPath.includes('.new()');\n        if (isNewObject && newObj._$protos[0] === 'HTMLDocument.prototype') {\n            newObj._$skipped = 'SKIPPED DOCUMENT';\n            newObj._$type = 'HTMLDocument.prototype';\n            return newObj;\n        }\n        if (Object.isFrozen(obj))\n            newObj._$isFrozen = true;\n        if (Object.isSealed(obj))\n            newObj._$isSealed = true;\n        if (!newObj._$protos.length)\n            delete newObj._$protos;\n        const inheritedProps = [];\n        if (isNewObject) {\n            let proto = obj;\n            while (proto) {\n                proto = Object.getPrototypeOf(proto);\n                if (!proto ||\n                    proto === Object ||\n                    proto === Object.prototype ||\n                    proto === Function ||\n                    proto === Function.prototype ||\n                    proto === HTMLElement.prototype ||\n                    proto === EventTarget.prototype)\n                    break;\n                for (const key of Object.getOwnPropertyNames(proto)) {\n                    if (!keys.includes(key) && !excludedInheritedKeys.includes(key))\n                        inheritedProps.push(key);\n                }\n            }\n        }\n        keys.push(...inheritedProps);\n        for (const key of keys) {\n            if (skipProps.includes(key)) {\n                continue;\n            }\n            if (key === 'constructor')\n                continue;\n            const path = `${parentPath}.${String(key)}`;\n            if (path.endsWith('_GLOBAL_HOOK__'))\n                continue;\n            const prop = `${String(key)}`;\n            if (path.startsWith(`${selfName}.document`) &&\n                typeof key === 'string' &&\n                (key.startsWith('child') ||\n                    key.startsWith('first') ||\n                    key.startsWith('last') ||\n                    key.startsWith('next') ||\n                    key.startsWith('prev') ||\n                    key === 'textContent' ||\n                    key === 'text')) {\n                newObj[prop] = { _$type: 'dom', _$skipped: 'SKIPPED DOM' };\n                continue;\n            }\n            if (path.startsWith(`${selfName}.document`) && path.split('.').length > 5) {\n                newObj[prop] = { _$type: 'object', _$skipped: 'SKIPPED DEPTH' };\n                continue;\n            }\n            if (key === 'style') {\n                if (isNewObject) {\n                    newObj[prop] = { _$type: 'object', _$skipped: 'SKIPPED STYLE' };\n                    continue;\n                }\n            }\n            if (hierarchyNav.has(path)) {\n                newObj[prop] = hierarchyNav.get(path);\n                continue;\n            }\n            if (doNotAccess.includes(path)) {\n                continue;\n            }\n            try {\n                const isOwnProp = obj.hasOwnProperty && obj.hasOwnProperty(key) && !inheritedProps.includes(key);\n                const value = await extractPropValue(obj, key, path, !isOwnProp);\n                if (value && typeof value === 'string' && value.startsWith('REF:') && !isOwnProp) {\n                    // don't assign here\n                    // console.log('skipping ref', value);\n                }\n                else {\n                    newObj[prop] = value;\n                }\n            }\n            catch (err) {\n                newObj[prop] = err.toString();\n            }\n        }\n        if (obj.prototype) {\n            let instance;\n            let constructorException;\n            try {\n                instance = await new obj();\n            }\n            catch (err) {\n                constructorException = err.toString();\n            }\n            if (constructorException) {\n                newObj['new()'] = { _$type: 'constructor', _$constructorException: constructorException };\n            }\n            else {\n                try {\n                    newObj['new()'] = await extractPropsFromObject(instance, `${parentPath}.new()`);\n                    newObj['new()']._$type = 'constructor';\n                }\n                catch (err) {\n                    newObj['new()'] = err.toString();\n                }\n            }\n        }\n        return newObj;\n    }\n    async function loadProtoHierarchy(obj, parentPath) {\n        const hierarchy = [];\n        let proto = obj;\n        if (typeof proto === 'function')\n            return hierarchy;\n        while (proto) {\n            proto = Object.getPrototypeOf(proto);\n            if (!proto)\n                break;\n            try {\n                const name = getObjectName(proto);\n                if (name && !hierarchy.includes(name))\n                    hierarchy.push(name);\n                if (loadedObjectsRef.has(proto))\n                    continue;\n                let path = `${selfName}.${name}`;\n                const topType = name.split('.').shift();\n                if (!(topType in self)) {\n                    path = `detached.${name}`;\n                }\n                if (!hierarchyNav.has(path)) {\n                    hierarchyNav.set(path, {});\n                    const extracted = await extractPropsFromObject(proto, path);\n                    hierarchyNav.set(path, extracted);\n                    if (!path.includes(`${selfName}.`)) {\n                        detached[name] = extracted;\n                    }\n                }\n            }\n            catch (err) { }\n        }\n        return hierarchy;\n    }\n    async function extractPropValue(obj, key, path, isInherited) {\n        if (obj === null || obj === undefined || !key) {\n            return undefined;\n        }\n        let accessException;\n        const value = await new Promise(async (resolve, reject) => {\n            let didResolve = false;\n            // if you wait on a promise, it will hang!\n            const t = setTimeout(() => reject('Likely a Promise'), 600);\n            try {\n                const p = await obj[key];\n                if (didResolve)\n                    return;\n                didResolve = true;\n                clearTimeout(t);\n                resolve(p);\n            }\n            catch (err) {\n                if (didResolve)\n                    return;\n                clearTimeout(t);\n                reject(err);\n            }\n        }).catch(err => {\n            accessException = err;\n        });\n        let ref;\n        if (value &&\n            path !== `${selfName}.document` &&\n            (typeof value === 'function' || typeof value === 'object' || typeof value === 'symbol')) {\n            if (loadedObjectsRef.has(value)) {\n                ref = loadedObjectsRef.get(value);\n                const shouldContinue = typeof value === 'function' &&\n                    (isInherited || !path.replace(String(key), '').includes(String(key)));\n                if (!shouldContinue)\n                    return `REF: ${loadedObjectsRef.get(value)}`;\n            }\n            // safari will end up in an infinite loop since each plugin is a new object as your traverse\n            if (path.includes('.navigator') && path.endsWith('.enabledPlugin')) {\n                return `REF: ${selfName}.navigator.plugins.X`;\n            }\n            if (!loadedObjectsRef.has(value)) {\n                loadedObjectsRef.set(value, path);\n            }\n        }\n        let details = {};\n        if (value && (typeof value === 'object' || typeof value === 'function')) {\n            details = await extractPropsFromObject(value, path);\n        }\n        const descriptor = await getDescriptor(obj, key, accessException, path);\n        if (!Object.keys(descriptor).length && !Object.keys(details).length)\n            return undefined;\n        const prop = Object.assign(details, descriptor);\n        if (prop._$value === `REF: ${path}`) {\n            prop._$value = undefined;\n        }\n        if (ref) {\n            const baseProp = loadedObjectsProp.get(value);\n            if (baseProp['_$invocation'] === prop._$invocation) {\n                return;\n            }\n            let key = '_$otherInvocation';\n            if (prop._$isAsync) {\n                key += 'Async';\n            }\n            baseProp[`${key}.${path}`] = prop._$invocation;\n            return;\n        }\n        loadedObjectsProp.set(value, prop);\n        return prop;\n    }\n    async function getDescriptor(obj, key, accessException, path) {\n        const objDesc = Object.getOwnPropertyDescriptor(obj, key);\n        if (objDesc) {\n            let value;\n            try {\n                value = objDesc.value;\n                if (!value && !accessException) {\n                    value = obj[key];\n                }\n            }\n            catch (err) { }\n            let type = typeof value;\n            value = getJsonUsableValue(value, key);\n            const functionDetails = await getFunctionDetails(value, obj, key, type, path);\n            type = functionDetails.type;\n            const flags = [];\n            if (objDesc.configurable)\n                flags.push('c');\n            if (objDesc.enumerable)\n                flags.push('e');\n            if (objDesc.writable)\n                flags.push('w');\n            return {\n                _$type: type,\n                _$function: functionDetails.func,\n                _$invocation: functionDetails.invocation,\n                _$isAsync: functionDetails.isAsync,\n                _$flags: flags.join(''),\n                _$accessException: accessException ? accessException.toString() : undefined,\n                _$value: value,\n                _$get: objDesc.get ? objDesc.get.toString() : undefined,\n                _$set: objDesc.set ? objDesc.set.toString() : undefined,\n                _$getToStringToString: objDesc.get ? objDesc.get.toString.toString() : undefined,\n                _$setToStringToString: objDesc.set ? objDesc.set.toString.toString() : undefined,\n            };\n        }\n        const plainObject = {};\n        if (accessException && String(accessException).includes('Likely a Promise')) {\n            plainObject._$value = 'Likely a Promise';\n        }\n        else if (accessException)\n            return plainObject;\n        let value;\n        try {\n            value = obj[key];\n        }\n        catch (err) { }\n        let type = typeof value;\n        if (value && Array.isArray(value))\n            type = 'array';\n        const functionDetails = await getFunctionDetails(value, obj, key, type, path);\n        plainObject._$type = functionDetails.type;\n        plainObject._$value = getJsonUsableValue(value, key);\n        plainObject._$function = functionDetails.func;\n        plainObject._$invocation = functionDetails.invocation;\n        plainObject._$isAsync = functionDetails.isAsync;\n        return plainObject;\n    }\n    async function getFunctionDetails(value, obj, key, type, path) {\n        let func;\n        let invocation;\n        let isAsync;\n        if (type === 'undefined')\n            type = undefined;\n        if (type === 'function') {\n            try {\n                func = String(value);\n            }\n            catch (err) {\n                func = err.toString();\n            }\n            try {\n                if (!doNotInvoke.includes(key) && !doNotInvoke.includes(path) && !value.prototype) {\n                    invocation = await new Promise(async (resolve, reject) => {\n                        const c = setTimeout(() => reject('Promise-like'), 650);\n                        let didReply = false;\n                        try {\n                            let answer = obj[key]();\n                            if (answer && answer.on) {\n                                answer.on('error', err => {\n                                    console.log('Error', err, obj, key);\n                                });\n                            }\n                            isAsync = answer instanceof Promise;\n                            answer = await answer;\n                            if (didReply)\n                                return;\n                            clearTimeout(c);\n                            didReply = true;\n                            resolve(answer);\n                        }\n                        catch (err) {\n                            if (didReply)\n                                return;\n                            didReply = true;\n                            clearTimeout(c);\n                            reject(err);\n                        }\n                    });\n                }\n            }\n            catch (err) {\n                invocation = err ? err.toString() : err;\n            }\n        }\n        return {\n            type,\n            func,\n            invocation: func || invocation !== undefined ? getJsonUsableValue(invocation) : undefined,\n            isAsync,\n        };\n    }\n    function getJsonUsableValue(value, key) {\n        if (key && skipValues.includes(key)) {\n            return 'SKIPPED VALUE';\n        }\n        try {\n            if (value && typeof value === 'symbol') {\n                value = `${String(value)}`;\n            }\n            else if (value && (value instanceof Promise || typeof value.then === 'function')) {\n                value = 'Promise';\n            }\n            else if (value && typeof value === 'object') {\n                const values = [];\n                if (loadedObjectsRef.has(value)) {\n                    return `REF: ${loadedObjectsRef.get(value)}`;\n                }\n                if (value.join !== undefined) {\n                    // is array\n                    // eslint-disable-next-line guard-for-in\n                    for (const prop in value) {\n                        values.push(getJsonUsableValue(value[prop]));\n                    }\n                    return `[${values.join(',')}]`;\n                }\n                for (const prop in value) {\n                    if (value.hasOwnProperty(prop)) {\n                        values.push(`${prop}: ${getJsonUsableValue(value[prop])}`);\n                    }\n                }\n                return `{${values.map(x => x.toString()).join(',')}}`;\n            }\n            else if (typeof value === 'function') {\n                return value.toString();\n            }\n            else if (value && typeof value === 'string') {\n                if (pageUrl) {\n                    while (value.includes(pageUrl)) {\n                        value = value.replace(pageUrl, '<URL>');\n                    }\n                }\n                if (pageHost) {\n                    while (value.includes(pageHost)) {\n                        value = value.replace(pageHost, '<HOST>');\n                    }\n                }\n                value = value.replace(/<url>:\\d+:\\d+/g, '<url>:<lines>');\n            }\n            else {\n                return value;\n            }\n        }\n        catch (err) {\n            value = err.toString();\n        }\n        return value;\n    }\n    function getObjectName(obj) {\n        if (obj === Object)\n            return 'Object';\n        if (obj === Object.prototype)\n            return 'Object.prototype';\n        try {\n            if (typeof obj === 'symbol') {\n                return `${String(obj)}`;\n            }\n        }\n        catch (err) { }\n        try {\n            let name = obj[Symbol.toStringTag];\n            if (!name) {\n                try {\n                    name = obj.name;\n                }\n                catch (err) { }\n            }\n            if (obj.constructor) {\n                const constructorName = obj.constructor.name;\n                if (constructorName &&\n                    constructorName !== Function.name &&\n                    constructorName !== Object.name) {\n                    name = constructorName;\n                }\n            }\n            if ('prototype' in obj) {\n                name = obj.prototype[Symbol.toStringTag] || obj.prototype.name || name;\n                if (name)\n                    return name;\n            }\n            if (typeof obj === 'function') {\n                if (name && name !== Function.name)\n                    return name;\n                return obj.constructor.name;\n            }\n            if (!name)\n                return;\n            return `${name}.prototype`;\n        }\n        catch (err) { }\n    }\n    async function runAndSave() {\n        self.addEventListener('unhandledrejection', promiseRejectionEvent => {\n            console.log(promiseRejectionEvent);\n        });\n        const props = await extractPropsFromObject(self, selfName);\n        await fetch(saveToUrl, {\n            method: 'POST',\n            body: JSON.stringify({\n                [selfName]: props,\n                detached,\n            }),\n            headers: {\n                'Content-Type': 'application/json',\n                'Page-Name': pageName,\n            },\n        });\n    }\n    async function run(obj, parentPath, extractKeys = []) {\n        const result = await extractPropsFromObject(obj, parentPath);\n        if (extractKeys && extractKeys.length) {\n            const extracted = {};\n            for (const key of extractKeys) {\n                extracted[key] = result[key];\n            }\n            return JSON.stringify({ window: extracted, windowKeys: Object.keys(result) });\n        }\n        // NOTE: need to stringify to make sure this transfers same as it will from a browser window\n        return JSON.stringify({ window: result, detached });\n    }\n    this.run = run;\n    this.runAndSave = runAndSave;\n    return this;\n};\n        window.pageQueue.push(new DomExtractor('window', {\"saveToUrl\":\"https://<HOST>/browser-dom-environment/save?sessionId=34\",\"pageUrl\":\"<URL>\",\"pageHost\":\"<HOST>\",\"pageName\":\"BrowserDom\"}).runAndSave());\n      </script>\n    \n\n<script type=\"text/javascript\">\n  Promise.all(window.pageQueue)\n    .then(() => {\n      document.querySelectorAll('.display-inline-when-done').forEach(elem => {\n        elem.style.display = 'inline';\n      });\n      document.querySelectorAll('.display-block-when-done').forEach(elem => {\n        elem.style.display = 'block';\n      });\n      document.body.classList.add('ready');\n      \n      window.afterReady ? window.afterReady() : null\n    }).catch(err => {\n      console.log(err.stack);\n    });\n</script>\n\n\n\n\n</body>"
+    },
+    {
+      "path": "window.GPU.prototype.requestAdapter",
+      "propertyName": "_$otherInvocationAsync.window.navigator.gpu.requestAdapter",
+      "property": "{}"
+    },
+    {
+      "path": "window.Bluetooth.prototype.getAvailability",
+      "propertyName": "_$otherInvocationAsync.window.navigator.bluetooth.getAvailability",
+      "property": true
+    }
+  ],
+  "reorder": [
+    {
+      "path": "window",
+      "propertyName": "Bluetooth",
+      "throughProperty": "PERSISTENT",
+      "prevProperty": "BarcodeDetector"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "add": [],
+  "remove": [
+    {
+      "path": "window.Navigator.prototype",
+      "propertyName": "bluetooth"
+    },
+    {
+      "path": "window.Navigator.prototype",
+      "propertyName": "canShare"
+    },
+    {
+      "path": "window.Navigator.prototype",
+      "propertyName": "share"
+    },
+    {
+      "path": "window.navigator",
+      "propertyName": "bluetooth"
+    },
+    {
+      "path": "window",
+      "propertyName": "Bluetooth"
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothCharacteristicProperties"
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothDevice"
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothRemoteGATTCharacteristic"
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothRemoteGATTDescriptor"
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothRemoteGATTServer"
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothRemoteGATTService"
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothUUID"
+    },
+    {
+      "path": "window.Text.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "createShadowRoot"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Document.prototype",
+      "propertyName": "registerElement"
+    },
+    {
+      "path": "window",
+      "propertyName": "cdc_adoQpoasnfa76pfcZLmcfl"
+    },
+    {
+      "path": "window.HTMLLinkElement.prototype",
+      "propertyName": "import"
+    }
+  ],
+  "modify": [
+    {
+      "path": "window.document.$cdc_asdjflasutopfhvcZLmcfl_.storeItem.new()",
+      "propertyName": "_$constructorException",
+      "property": "TypeError: Cannot set properties of undefined (setting 'f0f22478-7b9a-4d54-89a3-bf27b85dc6b9')"
+    }
+  ],
+  "reorder": []
+}

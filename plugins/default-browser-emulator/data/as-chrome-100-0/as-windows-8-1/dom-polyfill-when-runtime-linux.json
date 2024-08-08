@@ -1,0 +1,872 @@
+{
+  "add": [
+    {
+      "path": "window.navigator.plugins",
+      "propertyName": "PDF Viewer",
+      "prevProperty": "_$protos",
+      "property": "REF: window.navigator.plugins.0"
+    },
+    {
+      "path": "window.navigator.plugins",
+      "propertyName": "Chrome PDF Viewer",
+      "prevProperty": "PDF Viewer",
+      "property": "REF: window.navigator.plugins.1"
+    },
+    {
+      "path": "window.navigator.plugins",
+      "propertyName": "Chromium PDF Viewer",
+      "prevProperty": "Chrome PDF Viewer",
+      "property": "REF: window.navigator.plugins.2"
+    },
+    {
+      "path": "window.navigator.plugins",
+      "propertyName": "Microsoft Edge PDF Viewer",
+      "prevProperty": "Chromium PDF Viewer",
+      "property": "REF: window.navigator.plugins.3"
+    },
+    {
+      "path": "window.navigator.plugins",
+      "propertyName": "WebKit built-in PDF",
+      "prevProperty": "Microsoft Edge PDF Viewer",
+      "property": "REF: window.navigator.plugins.4"
+    },
+    {
+      "path": "window.navigator.mimeTypes",
+      "propertyName": "application/pdf",
+      "prevProperty": "_$protos",
+      "property": "REF: window.navigator.mimeTypes.0"
+    },
+    {
+      "path": "window.document",
+      "propertyName": "$cdc_asdjflasutopfhvcZLmcfl_",
+      "prevProperty": "location",
+      "property": {
+        "_$protos": [
+          "Object.prototype"
+        ],
+        "cache_": {
+          "_$type": "object",
+          "_$flags": "cew"
+        },
+        "storeItem": {
+          "length": {
+            "_$type": "number",
+            "_$flags": "c",
+            "_$value": 1
+          },
+          "name": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "storeItem"
+          },
+          "arguments": {
+            "_$type": "object",
+            "_$flags": "",
+            "_$value": null
+          },
+          "caller": {
+            "_$type": "object",
+            "_$flags": "",
+            "_$value": null
+          },
+          "prototype": {
+            "_$protos": [
+              "Object.prototype"
+            ],
+            "_$type": "object",
+            "_$flags": "w"
+          },
+          "new()": {
+            "_$type": "constructor",
+            "_$constructorException": "TypeError: Cannot set properties of undefined (setting 'a765b38c-335d-4eb4-b40c-f10c9f9cf87a')"
+          },
+          "_$type": "function",
+          "_$value": "function(item) {\n    for (var i in this.cache_) {\n      if (item == this.cache_[i])\n        return i;\n    }\n    var id = generateUUID();\n    this.cache_[id] = item;\n    return id;\n  }",
+          "_$function": "function(item) {\n    for (var i in this.cache_) {\n      if (item == this.cache_[i])\n        return i;\n    }\n    var id = generateUUID();\n    this.cache_[id] = item;\n    return id;\n  }"
+        },
+        "retrieveItem": {
+          "length": {
+            "_$type": "number",
+            "_$flags": "c",
+            "_$value": 1
+          },
+          "name": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "retrieveItem"
+          },
+          "arguments": {
+            "_$type": "object",
+            "_$flags": "",
+            "_$value": null
+          },
+          "caller": {
+            "_$type": "object",
+            "_$flags": "",
+            "_$value": null
+          },
+          "prototype": {
+            "_$protos": [
+              "Object.prototype"
+            ],
+            "_$type": "object",
+            "_$flags": "w"
+          },
+          "new()": {
+            "_$type": "constructor",
+            "_$constructorException": "TypeError: Cannot read properties of undefined (reading 'undefined')"
+          },
+          "_$type": "function",
+          "_$value": "function(id) {\n    var item = this.cache_[id];\n    if (item && this.isNodeReachable_(item))\n      return item;\n    throw newError('element is not attached to the page document',\n                   StatusCode.STALE_ELEMENT_REFERENCE);\n  }",
+          "_$function": "function(id) {\n    var item = this.cache_[id];\n    if (item && this.isNodeReachable_(item))\n      return item;\n    throw newError('element is not attached to the page document',\n                   StatusCode.STALE_ELEMENT_REFERENCE);\n  }"
+        },
+        "isNodeReachable_": {
+          "length": {
+            "_$type": "number",
+            "_$flags": "c",
+            "_$value": 1
+          },
+          "name": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "isNodeReachable_"
+          },
+          "arguments": {
+            "_$type": "object",
+            "_$flags": "",
+            "_$value": null
+          },
+          "caller": {
+            "_$type": "object",
+            "_$flags": "",
+            "_$value": null
+          },
+          "prototype": {
+            "_$protos": [
+              "Object.prototype"
+            ],
+            "_$type": "object",
+            "_$flags": "w"
+          },
+          "new()": {
+            "_$protos": [
+              "isNodeReachable_.prototype",
+              "Object.prototype"
+            ],
+            "_$type": "constructor"
+          },
+          "_$type": "function",
+          "_$value": "function(node) {\n    var nodeRoot = getNodeRootThroughAnyShadows(node);\n    return (nodeRoot == document.documentElement.parentNode);\n  }",
+          "_$function": "function(node) {\n    var nodeRoot = getNodeRootThroughAnyShadows(node);\n    return (nodeRoot == document.documentElement.parentNode);\n  }"
+        },
+        "_$type": "object",
+        "_$flags": "cew"
+      }
+    },
+    {
+      "path": "window.navigator.plugins",
+      "propertyName": "0",
+      "property": {
+        "0": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "application/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "ce",
+          "_$value": "{}"
+        },
+        "1": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "text/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "ce",
+          "_$value": "{}"
+        },
+        "_$protos": [
+          "Plugin.prototype",
+          "Object.prototype"
+        ],
+        "application/pdf": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "application/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "c",
+          "_$value": "{}"
+        },
+        "text/pdf": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "text/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "c",
+          "_$value": "{}"
+        },
+        "name": {
+          "_$type": "string",
+          "_$value": "PDF Viewer"
+        },
+        "filename": {
+          "_$type": "string",
+          "_$value": "internal-pdf-viewer"
+        },
+        "description": {
+          "_$type": "string",
+          "_$value": "Portable Document Format"
+        },
+        "length": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "_$type": "object",
+        "_$flags": "ce"
+      }
+    },
+    {
+      "path": "window.navigator.languages",
+      "propertyName": "1",
+      "prevProperty": "0",
+      "property": {
+        "_$type": "string",
+        "_$flags": "e",
+        "_$value": "en"
+      }
+    },
+    {
+      "path": "window.navigator.plugins",
+      "propertyName": "1",
+      "prevProperty": "0",
+      "property": {
+        "0": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "application/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "ce",
+          "_$value": "{}"
+        },
+        "1": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "text/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "ce",
+          "_$value": "{}"
+        },
+        "_$protos": [
+          "Plugin.prototype",
+          "Object.prototype"
+        ],
+        "application/pdf": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "application/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "c",
+          "_$value": "{}"
+        },
+        "text/pdf": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "text/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "c",
+          "_$value": "{}"
+        },
+        "name": {
+          "_$type": "string",
+          "_$value": "Chrome PDF Viewer"
+        },
+        "filename": {
+          "_$type": "string",
+          "_$value": "internal-pdf-viewer"
+        },
+        "description": {
+          "_$type": "string",
+          "_$value": "Portable Document Format"
+        },
+        "length": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "_$type": "object",
+        "_$flags": "ce"
+      }
+    },
+    {
+      "path": "window.navigator.plugins",
+      "propertyName": "2",
+      "prevProperty": "1",
+      "property": {
+        "0": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "application/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "ce",
+          "_$value": "{}"
+        },
+        "1": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "text/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "ce",
+          "_$value": "{}"
+        },
+        "_$protos": [
+          "Plugin.prototype",
+          "Object.prototype"
+        ],
+        "application/pdf": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "application/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "c",
+          "_$value": "{}"
+        },
+        "text/pdf": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "text/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "c",
+          "_$value": "{}"
+        },
+        "name": {
+          "_$type": "string",
+          "_$value": "Chromium PDF Viewer"
+        },
+        "filename": {
+          "_$type": "string",
+          "_$value": "internal-pdf-viewer"
+        },
+        "description": {
+          "_$type": "string",
+          "_$value": "Portable Document Format"
+        },
+        "length": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "_$type": "object",
+        "_$flags": "ce"
+      }
+    },
+    {
+      "path": "window.navigator.plugins",
+      "propertyName": "3",
+      "prevProperty": "2",
+      "property": {
+        "0": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "application/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "ce",
+          "_$value": "{}"
+        },
+        "1": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "text/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "ce",
+          "_$value": "{}"
+        },
+        "_$protos": [
+          "Plugin.prototype",
+          "Object.prototype"
+        ],
+        "application/pdf": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "application/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "c",
+          "_$value": "{}"
+        },
+        "text/pdf": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "text/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "c",
+          "_$value": "{}"
+        },
+        "name": {
+          "_$type": "string",
+          "_$value": "Microsoft Edge PDF Viewer"
+        },
+        "filename": {
+          "_$type": "string",
+          "_$value": "internal-pdf-viewer"
+        },
+        "description": {
+          "_$type": "string",
+          "_$value": "Portable Document Format"
+        },
+        "length": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "_$type": "object",
+        "_$flags": "ce"
+      }
+    },
+    {
+      "path": "window.navigator.plugins",
+      "propertyName": "4",
+      "prevProperty": "3",
+      "property": {
+        "0": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "application/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "ce",
+          "_$value": "{}"
+        },
+        "1": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "text/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "ce",
+          "_$value": "{}"
+        },
+        "_$protos": [
+          "Plugin.prototype",
+          "Object.prototype"
+        ],
+        "application/pdf": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "application/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "c",
+          "_$value": "{}"
+        },
+        "text/pdf": {
+          "_$protos": [
+            "MimeType.prototype",
+            "Object.prototype"
+          ],
+          "type": {
+            "_$type": "string",
+            "_$value": "text/pdf"
+          },
+          "suffixes": {
+            "_$type": "string",
+            "_$value": "pdf"
+          },
+          "description": {
+            "_$type": "string",
+            "_$value": "Portable Document Format"
+          },
+          "_$type": "object",
+          "_$flags": "c",
+          "_$value": "{}"
+        },
+        "name": {
+          "_$type": "string",
+          "_$value": "WebKit built-in PDF"
+        },
+        "filename": {
+          "_$type": "string",
+          "_$value": "internal-pdf-viewer"
+        },
+        "description": {
+          "_$type": "string",
+          "_$value": "Portable Document Format"
+        },
+        "length": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "_$type": "object",
+        "_$flags": "ce"
+      }
+    },
+    {
+      "path": "window.navigator.mimeTypes",
+      "propertyName": "0",
+      "property": {
+        "_$protos": [
+          "MimeType.prototype",
+          "Object.prototype"
+        ],
+        "type": {
+          "_$type": "string",
+          "_$value": "application/pdf"
+        },
+        "suffixes": {
+          "_$type": "string",
+          "_$value": "pdf"
+        },
+        "description": {
+          "_$type": "string",
+          "_$value": "Portable Document Format"
+        },
+        "_$type": "object",
+        "_$flags": "ce"
+      }
+    },
+    {
+      "path": "window.navigator.mimeTypes",
+      "propertyName": "1",
+      "prevProperty": "0",
+      "property": {
+        "_$protos": [
+          "MimeType.prototype",
+          "Object.prototype"
+        ],
+        "type": {
+          "_$type": "string",
+          "_$value": "text/pdf"
+        },
+        "suffixes": {
+          "_$type": "string",
+          "_$value": "pdf"
+        },
+        "description": {
+          "_$type": "string",
+          "_$value": "Portable Document Format"
+        },
+        "_$type": "object",
+        "_$flags": "ce"
+      }
+    }
+  ],
+  "remove": [
+    {
+      "path": "window.Text.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "createShadowRoot"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Document.prototype",
+      "propertyName": "registerElement"
+    },
+    {
+      "path": "window",
+      "propertyName": "cdc_adoQpoasnfa76pfcZLmcfl"
+    },
+    {
+      "path": "window.HTMLLinkElement.prototype",
+      "propertyName": "import"
+    }
+  ],
+  "modify": [
+    {
+      "path": "window.navigator.pdfViewerEnabled",
+      "propertyName": "_$value",
+      "property": true
+    },
+    {
+      "path": "window.Notification.permission",
+      "propertyName": "_$value",
+      "property": "default"
+    }
+  ],
+  "reorder": [
+    {
+      "path": "window",
+      "propertyName": "WebAssembly",
+      "throughProperty": "webkitResolveLocalFileSystemURL",
+      "prevProperty": "chrome"
+    },
+    {
+      "path": "window",
+      "propertyName": "TEMPORARY",
+      "throughProperty": "PERSISTENT",
+      "prevProperty": "cdc_adoQpoasnfa76pfcZLmcfl_Symbol"
+    },
+    {
+      "path": "window.document",
+      "propertyName": "implementation",
+      "throughProperty": "DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC",
+      "prevProperty": "$cdc_asdjflasutopfhvcZLmcfl_"
+    },
+    {
+      "path": "window.navigator.languages",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "1"
+    },
+    {
+      "path": "window.navigator.mimeTypes",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "application/pdf"
+    },
+    {
+      "path": "window.navigator.plugins",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "WebKit built-in PDF"
+    },
+    {
+      "path": "window.navigator.userAgentData.brands",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "2"
+    }
+  ]
+}
