@@ -1,0 +1,1124 @@
+{
+  "add": [
+    {
+      "path": "window.Navigator.prototype",
+      "propertyName": "bluetooth",
+      "prevProperty": "vibrate",
+      "property": {
+        "_$flags": "ce",
+        "_$accessException": "TypeError: Illegal invocation",
+        "_$get": "function get bluetooth() { [native code] }",
+        "_$getToStringToString": "function toString() { [native code] }"
+      }
+    },
+    {
+      "path": "window.Navigator.prototype",
+      "propertyName": "canShare",
+      "prevProperty": "serial",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": "canShare"
+        },
+        "_$type": "function",
+        "_$function": "function canShare() { [native code] }",
+        "_$invocation": "TypeError: Illegal invocation",
+        "_$flags": "cew",
+        "_$value": "function canShare() { [native code] }",
+        "_$otherInvocation.window.navigator.canShare": false
+      }
+    },
+    {
+      "path": "window.Navigator.prototype",
+      "propertyName": "share",
+      "prevProperty": "canShare",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": "share"
+        },
+        "_$type": "function",
+        "_$function": "function share() { [native code] }",
+        "_$invocation": "TypeError: Failed to execute 'share' on 'Navigator': Illegal invocation",
+        "_$isAsync": true,
+        "_$flags": "cew",
+        "_$value": "function share() { [native code] }",
+        "_$otherInvocationAsync.window.navigator.share": "NotAllowedError: Failed to execute 'share' on 'Navigator': Must be handling a user gesture to perform a share request."
+      }
+    },
+    {
+      "path": "window.navigator.languages",
+      "propertyName": "1",
+      "prevProperty": "0",
+      "property": {
+        "_$type": "string",
+        "_$flags": "e",
+        "_$value": "en"
+      }
+    },
+    {
+      "path": "window",
+      "propertyName": "Bluetooth",
+      "prevProperty": "PublicKeyCredential",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": "Bluetooth"
+        },
+        "arguments": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "caller": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "prototype": {
+          "_$protos": [
+            "EventTarget.prototype",
+            "Object.prototype"
+          ],
+          "getAvailability": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 0
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "getAvailability"
+            },
+            "_$type": "function",
+            "_$function": "function getAvailability() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'getAvailability' on 'Bluetooth': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function getAvailability() { [native code] }",
+            "_$otherInvocationAsync.window.navigator.bluetooth.getAvailability": false
+          },
+          "requestDevice": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 0
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "requestDevice"
+            },
+            "_$type": "function",
+            "_$function": "function requestDevice() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'requestDevice' on 'Bluetooth': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function requestDevice() { [native code] }",
+            "_$otherInvocationAsync.window.navigator.bluetooth.requestDevice": "SecurityError: Failed to execute 'requestDevice' on 'Bluetooth': Must be handling a user gesture to show a permission request."
+          },
+          "Symbol(Symbol.toStringTag)": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "Bluetooth"
+          }
+        },
+        "new()": {
+          "_$type": "constructor",
+          "_$constructorException": "TypeError: Illegal constructor"
+        },
+        "_$type": "function",
+        "_$function": "function Bluetooth() { [native code] }",
+        "_$invocation": "TypeError: Illegal constructor",
+        "_$flags": "cw",
+        "_$value": "function Bluetooth() { [native code] }"
+      }
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothCharacteristicProperties",
+      "prevProperty": "Bluetooth",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": "BluetoothCharacteristicProperties"
+        },
+        "arguments": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "caller": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "prototype": {
+          "_$protos": [
+            "Object.prototype"
+          ],
+          "broadcast": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get broadcast() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "read": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get read() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "writeWithoutResponse": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get writeWithoutResponse() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "write": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get write() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "notify": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get notify() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "indicate": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get indicate() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "authenticatedSignedWrites": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get authenticatedSignedWrites() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "reliableWrite": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get reliableWrite() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "writableAuxiliaries": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get writableAuxiliaries() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "Symbol(Symbol.toStringTag)": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "BluetoothCharacteristicProperties"
+          },
+          "_$type": "object",
+          "_$flags": ""
+        },
+        "new()": {
+          "_$type": "constructor",
+          "_$constructorException": "TypeError: Illegal constructor"
+        },
+        "_$type": "function",
+        "_$function": "function BluetoothCharacteristicProperties() { [native code] }",
+        "_$invocation": "TypeError: Illegal constructor",
+        "_$flags": "cw",
+        "_$value": "function BluetoothCharacteristicProperties() { [native code] }"
+      }
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothDevice",
+      "prevProperty": "BluetoothCharacteristicProperties",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": "BluetoothDevice"
+        },
+        "arguments": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "caller": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "prototype": {
+          "_$protos": [
+            "EventTarget.prototype",
+            "Object.prototype"
+          ],
+          "id": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get id() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "name": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get name() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "gatt": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get gatt() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "ongattserverdisconnected": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get ongattserverdisconnected() { [native code] }",
+            "_$set": "function set ongattserverdisconnected() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }",
+            "_$setToStringToString": "function toString() { [native code] }"
+          },
+          "Symbol(Symbol.toStringTag)": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "BluetoothDevice"
+          },
+          "_$type": "object",
+          "_$flags": ""
+        },
+        "new()": {
+          "_$type": "constructor",
+          "_$constructorException": "TypeError: Illegal constructor"
+        },
+        "_$type": "function",
+        "_$function": "function BluetoothDevice() { [native code] }",
+        "_$invocation": "TypeError: Illegal constructor",
+        "_$flags": "cw",
+        "_$value": "function BluetoothDevice() { [native code] }"
+      }
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothRemoteGATTCharacteristic",
+      "prevProperty": "BluetoothDevice",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": "BluetoothRemoteGATTCharacteristic"
+        },
+        "arguments": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "caller": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "prototype": {
+          "_$protos": [
+            "EventTarget.prototype",
+            "Object.prototype"
+          ],
+          "service": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get service() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "uuid": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get uuid() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "properties": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get properties() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "value": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get value() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "oncharacteristicvaluechanged": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get oncharacteristicvaluechanged() { [native code] }",
+            "_$set": "function set oncharacteristicvaluechanged() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }",
+            "_$setToStringToString": "function toString() { [native code] }"
+          },
+          "getDescriptor": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 1
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "getDescriptor"
+            },
+            "_$type": "function",
+            "_$function": "function getDescriptor() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'getDescriptor' on 'BluetoothRemoteGATTCharacteristic': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function getDescriptor() { [native code] }"
+          },
+          "getDescriptors": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 0
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "getDescriptors"
+            },
+            "_$type": "function",
+            "_$function": "function getDescriptors() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'getDescriptors' on 'BluetoothRemoteGATTCharacteristic': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function getDescriptors() { [native code] }"
+          },
+          "readValue": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 0
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "readValue"
+            },
+            "_$type": "function",
+            "_$function": "function readValue() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'readValue' on 'BluetoothRemoteGATTCharacteristic': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function readValue() { [native code] }"
+          },
+          "startNotifications": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 0
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "startNotifications"
+            },
+            "_$type": "function",
+            "_$function": "function startNotifications() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'startNotifications' on 'BluetoothRemoteGATTCharacteristic': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function startNotifications() { [native code] }"
+          },
+          "stopNotifications": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 0
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "stopNotifications"
+            },
+            "_$type": "function",
+            "_$function": "function stopNotifications() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'stopNotifications' on 'BluetoothRemoteGATTCharacteristic': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function stopNotifications() { [native code] }"
+          },
+          "writeValue": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 1
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "writeValue"
+            },
+            "_$type": "function",
+            "_$function": "function writeValue() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'writeValue' on 'BluetoothRemoteGATTCharacteristic': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function writeValue() { [native code] }"
+          },
+          "writeValueWithResponse": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 1
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "writeValueWithResponse"
+            },
+            "_$type": "function",
+            "_$function": "function writeValueWithResponse() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'writeValueWithResponse' on 'BluetoothRemoteGATTCharacteristic': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function writeValueWithResponse() { [native code] }"
+          },
+          "writeValueWithoutResponse": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 1
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "writeValueWithoutResponse"
+            },
+            "_$type": "function",
+            "_$function": "function writeValueWithoutResponse() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'writeValueWithoutResponse' on 'BluetoothRemoteGATTCharacteristic': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function writeValueWithoutResponse() { [native code] }"
+          },
+          "Symbol(Symbol.toStringTag)": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "BluetoothRemoteGATTCharacteristic"
+          },
+          "_$type": "object",
+          "_$flags": ""
+        },
+        "new()": {
+          "_$type": "constructor",
+          "_$constructorException": "TypeError: Illegal constructor"
+        },
+        "_$type": "function",
+        "_$function": "function BluetoothRemoteGATTCharacteristic() { [native code] }",
+        "_$invocation": "TypeError: Illegal constructor",
+        "_$flags": "cw",
+        "_$value": "function BluetoothRemoteGATTCharacteristic() { [native code] }"
+      }
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothRemoteGATTDescriptor",
+      "prevProperty": "BluetoothRemoteGATTCharacteristic",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": "BluetoothRemoteGATTDescriptor"
+        },
+        "arguments": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "caller": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "prototype": {
+          "_$protos": [
+            "Object.prototype"
+          ],
+          "characteristic": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get characteristic() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "uuid": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get uuid() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "value": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get value() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "readValue": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 0
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "readValue"
+            },
+            "_$type": "function",
+            "_$function": "function readValue() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'readValue' on 'BluetoothRemoteGATTDescriptor': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function readValue() { [native code] }"
+          },
+          "writeValue": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 1
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "writeValue"
+            },
+            "_$type": "function",
+            "_$function": "function writeValue() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'writeValue' on 'BluetoothRemoteGATTDescriptor': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function writeValue() { [native code] }"
+          },
+          "Symbol(Symbol.toStringTag)": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "BluetoothRemoteGATTDescriptor"
+          },
+          "_$type": "object",
+          "_$flags": ""
+        },
+        "new()": {
+          "_$type": "constructor",
+          "_$constructorException": "TypeError: Illegal constructor"
+        },
+        "_$type": "function",
+        "_$function": "function BluetoothRemoteGATTDescriptor() { [native code] }",
+        "_$invocation": "TypeError: Illegal constructor",
+        "_$flags": "cw",
+        "_$value": "function BluetoothRemoteGATTDescriptor() { [native code] }"
+      }
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothRemoteGATTServer",
+      "prevProperty": "BluetoothRemoteGATTDescriptor",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": "BluetoothRemoteGATTServer"
+        },
+        "arguments": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "caller": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "prototype": {
+          "_$protos": [
+            "Object.prototype"
+          ],
+          "device": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get device() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "connected": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get connected() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "connect": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 0
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "connect"
+            },
+            "_$type": "function",
+            "_$function": "function connect() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'connect' on 'BluetoothRemoteGATTServer': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function connect() { [native code] }"
+          },
+          "disconnect": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 0
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "disconnect"
+            },
+            "_$type": "function",
+            "_$function": "function disconnect() { [native code] }",
+            "_$invocation": "TypeError: Illegal invocation",
+            "_$flags": "cew",
+            "_$value": "function disconnect() { [native code] }"
+          },
+          "getPrimaryService": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 1
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "getPrimaryService"
+            },
+            "_$type": "function",
+            "_$function": "function getPrimaryService() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'getPrimaryService' on 'BluetoothRemoteGATTServer': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function getPrimaryService() { [native code] }"
+          },
+          "getPrimaryServices": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 0
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "getPrimaryServices"
+            },
+            "_$type": "function",
+            "_$function": "function getPrimaryServices() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'getPrimaryServices' on 'BluetoothRemoteGATTServer': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function getPrimaryServices() { [native code] }"
+          },
+          "Symbol(Symbol.toStringTag)": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "BluetoothRemoteGATTServer"
+          },
+          "_$type": "object",
+          "_$flags": ""
+        },
+        "new()": {
+          "_$type": "constructor",
+          "_$constructorException": "TypeError: Illegal constructor"
+        },
+        "_$type": "function",
+        "_$function": "function BluetoothRemoteGATTServer() { [native code] }",
+        "_$invocation": "TypeError: Illegal constructor",
+        "_$flags": "cw",
+        "_$value": "function BluetoothRemoteGATTServer() { [native code] }"
+      }
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothRemoteGATTService",
+      "prevProperty": "BluetoothRemoteGATTServer",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": "BluetoothRemoteGATTService"
+        },
+        "arguments": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "caller": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "prototype": {
+          "_$protos": [
+            "Object.prototype"
+          ],
+          "device": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get device() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "uuid": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get uuid() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "isPrimary": {
+            "_$flags": "ce",
+            "_$accessException": "TypeError: Illegal invocation",
+            "_$get": "function get isPrimary() { [native code] }",
+            "_$getToStringToString": "function toString() { [native code] }"
+          },
+          "getCharacteristic": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 1
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "getCharacteristic"
+            },
+            "_$type": "function",
+            "_$function": "function getCharacteristic() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'getCharacteristic' on 'BluetoothRemoteGATTService': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function getCharacteristic() { [native code] }"
+          },
+          "getCharacteristics": {
+            "length": {
+              "_$type": "number",
+              "_$flags": "c",
+              "_$value": 0
+            },
+            "name": {
+              "_$type": "string",
+              "_$flags": "c",
+              "_$value": "getCharacteristics"
+            },
+            "_$type": "function",
+            "_$function": "function getCharacteristics() { [native code] }",
+            "_$invocation": "TypeError: Failed to execute 'getCharacteristics' on 'BluetoothRemoteGATTService': Illegal invocation",
+            "_$isAsync": true,
+            "_$flags": "cew",
+            "_$value": "function getCharacteristics() { [native code] }"
+          },
+          "Symbol(Symbol.toStringTag)": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "BluetoothRemoteGATTService"
+          },
+          "_$type": "object",
+          "_$flags": ""
+        },
+        "new()": {
+          "_$type": "constructor",
+          "_$constructorException": "TypeError: Illegal constructor"
+        },
+        "_$type": "function",
+        "_$function": "function BluetoothRemoteGATTService() { [native code] }",
+        "_$invocation": "TypeError: Illegal constructor",
+        "_$flags": "cw",
+        "_$value": "function BluetoothRemoteGATTService() { [native code] }"
+      }
+    },
+    {
+      "path": "window",
+      "propertyName": "BluetoothUUID",
+      "prevProperty": "BackgroundFetchRegistration",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": "BluetoothUUID"
+        },
+        "arguments": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "caller": {
+          "_$type": "object",
+          "_$flags": "",
+          "_$value": null
+        },
+        "prototype": {
+          "_$protos": [
+            "Object.prototype"
+          ],
+          "Symbol(Symbol.toStringTag)": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "BluetoothUUID"
+          },
+          "_$type": "object",
+          "_$flags": ""
+        },
+        "canonicalUUID": {
+          "length": {
+            "_$type": "number",
+            "_$flags": "c",
+            "_$value": 1
+          },
+          "name": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "canonicalUUID"
+          },
+          "_$type": "function",
+          "_$function": "function canonicalUUID() { [native code] }",
+          "_$invocation": "TypeError: Failed to execute 'canonicalUUID' on 'BluetoothUUID': 1 argument required, but only 0 present.",
+          "_$flags": "cew",
+          "_$value": "function canonicalUUID() { [native code] }"
+        },
+        "getCharacteristic": {
+          "length": {
+            "_$type": "number",
+            "_$flags": "c",
+            "_$value": 1
+          },
+          "name": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "getCharacteristic"
+          },
+          "_$type": "function",
+          "_$function": "function getCharacteristic() { [native code] }",
+          "_$invocation": "TypeError: Failed to execute 'getCharacteristic' on 'BluetoothUUID': 1 argument required, but only 0 present.",
+          "_$flags": "cew",
+          "_$value": "function getCharacteristic() { [native code] }"
+        },
+        "getDescriptor": {
+          "length": {
+            "_$type": "number",
+            "_$flags": "c",
+            "_$value": 1
+          },
+          "name": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "getDescriptor"
+          },
+          "_$type": "function",
+          "_$function": "function getDescriptor() { [native code] }",
+          "_$invocation": "TypeError: Failed to execute 'getDescriptor' on 'BluetoothUUID': 1 argument required, but only 0 present.",
+          "_$flags": "cew",
+          "_$value": "function getDescriptor() { [native code] }"
+        },
+        "getService": {
+          "length": {
+            "_$type": "number",
+            "_$flags": "c",
+            "_$value": 1
+          },
+          "name": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "getService"
+          },
+          "_$type": "function",
+          "_$function": "function getService() { [native code] }",
+          "_$invocation": "TypeError: Failed to execute 'getService' on 'BluetoothUUID': 1 argument required, but only 0 present.",
+          "_$flags": "cew",
+          "_$value": "function getService() { [native code] }"
+        },
+        "new()": {
+          "_$type": "constructor",
+          "_$constructorException": "TypeError: Illegal constructor"
+        },
+        "_$type": "function",
+        "_$function": "function BluetoothUUID() { [native code] }",
+        "_$invocation": "TypeError: Illegal constructor",
+        "_$flags": "cw",
+        "_$value": "function BluetoothUUID() { [native code] }"
+      }
+    },
+    {
+      "path": "window.navigator",
+      "propertyName": "bluetooth",
+      "prevProperty": "webdriver",
+      "property": {
+        "_$protos": [
+          "Bluetooth.prototype",
+          "EventTarget.prototype",
+          "Object.prototype"
+        ],
+        "_$type": "object"
+      }
+    }
+  ],
+  "remove": [
+    {
+      "path": "window.HTMLAnchorElement.prototype",
+      "propertyName": "hrefTranslate"
+    },
+    {
+      "path": "window.Text.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "createShadowRoot"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Document.prototype",
+      "propertyName": "registerElement"
+    },
+    {
+      "path": "window",
+      "propertyName": "cdc_adoQpoasnfa76pfcZLmcfl"
+    },
+    {
+      "path": "window.HTMLLinkElement.prototype",
+      "propertyName": "import"
+    }
+  ],
+  "modify": [
+    {
+      "path": "window.Intl.DateTimeFormat.new().format",
+      "propertyName": "_$invocation",
+      "property": "6/17/2024"
+    },
+    {
+      "path": "window.FeaturePolicy.prototype.allowedFeatures",
+      "propertyName": "_$otherInvocation.window.document.featurePolicy.allowedFeatures",
+      "property": "[geolocation,storage-access,gamepad,ch-ect,midi,display-capture,usb,picture-in-picture,publickey-credentials-get,local-fonts,otp-credentials,encrypted-media,ch-save-data,ch-ua-full-version-list,ch-ua-wow64,ch-downlink,ch-prefers-color-scheme,sync-xhr,ch-ua-model,ch-prefers-reduced-transparency,serial,camera,ch-prefers-reduced-motion,private-state-token-issuance,bluetooth,identity-credentials-get,ch-ua-full-version,fullscreen,ch-dpr,unload,keyboard-map,ch-ua-platform,gyroscope,ch-ua-mobile,window-management,ch-ua,publickey-credentials-create,magnetometer,accelerometer,private-state-token-redemption,ch-ua-arch,xr-spatial-tracking,ch-ua-form-factors,idle-detection,ch-ua-platform-version,ch-width,clipboard-read,ch-viewport-width,compute-pressure,payment,ch-viewport-height,ch-rtt,autoplay,cross-origin-isolated,hid,ch-ua-bitness,screen-wake-lock,clipboard-write,attribution-reporting,ch-device-memory,microphone]"
+    },
+    {
+      "path": "window.FeaturePolicy.prototype.features",
+      "propertyName": "_$otherInvocation.window.document.featurePolicy.features",
+      "property": "[geolocation,storage-access,gamepad,ch-ect,midi,display-capture,usb,picture-in-picture,publickey-credentials-get,local-fonts,otp-credentials,encrypted-media,ch-save-data,ch-ua-full-version-list,ch-ua-wow64,ch-downlink,ch-prefers-color-scheme,sync-xhr,ch-ua-model,ch-prefers-reduced-transparency,serial,camera,ch-prefers-reduced-motion,private-state-token-issuance,bluetooth,identity-credentials-get,ch-ua-full-version,fullscreen,ch-dpr,unload,keyboard-map,ch-ua-platform,gyroscope,ch-ua-mobile,window-management,ch-ua,publickey-credentials-create,magnetometer,accelerometer,private-state-token-redemption,ch-ua-arch,xr-spatial-tracking,ch-ua-form-factors,idle-detection,ch-ua-platform-version,ch-width,clipboard-read,ch-viewport-width,compute-pressure,payment,ch-viewport-height,ch-rtt,autoplay,cross-origin-isolated,hid,ch-ua-bitness,screen-wake-lock,clipboard-write,attribution-reporting,ch-device-memory,microphone]"
+    },
+    {
+      "path": "window.Element.prototype.requestPointerLock",
+      "propertyName": "_$otherInvocationAsync.window.document.documentElement.requestPointerLock",
+      "property": "NotAllowedError: A user gesture is required to request Pointer Lock."
+    },
+    {
+      "path": "window.Element.prototype.getHTML",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getHTML",
+      "property": "<head>\n    <title>DoubleAgent - Session #134</title>\n    <meta content=\"text/html;charset=utf-8\" http-equiv=\"Content-Type\">\n    <meta content=\"utf-8\" http-equiv=\"encoding\">\n    <script>\n      window.pageQueue = [];\n    </script>\n    <style>\n      .display-inline-when-done { display: none; }\n      .display-block-when-done { display: none; }\n    </style>\n    \n</head>\n<body>\n<div>\n  Loading... <span class=\"display-inline-when-done\" style=\"display: none;\">DONE!</span>\n</div>\n<div class=\"display-block-when-done\">\n  \n  <div>Plugin Complete</div>\n</div>\n\n\n      <script type=\"text/javascript\">\n        function DomExtractor(selfName, pageMeta = {}) {\n    const { saveToUrl, pageUrl, pageHost, pageName } = pageMeta;\n    const skipProps = [\n        'Fingerprint2',\n        'pageQueue',\n        'DomExtractor',\n        'pageLoaded',\n        'axios',\n        'justAFunction',\n    ];\n    const skipValues = ['innerHTML', 'outerHTML', 'innerText', 'outerText'];\n    const doNotInvoke = [\n        'replaceChildren',\n        'print',\n        'alert',\n        'prompt',\n        'confirm',\n        'open',\n        'close',\n        'reload',\n        'assert',\n        'requestPermission',\n        'screenshot',\n        'pageLoaded',\n        'delete',\n        'clear',\n        'read',\n        'start',\n        'stop',\n        'write',\n        'writeln',\n        'replaceWith',\n        'remove',\n        'self.history.back',\n        'self.history.forward',\n        'self.history.go',\n        'self.history.pushState',\n        'self.history.replaceState',\n        'self.navigation.back',\n        'self.navigation.forward',\n        'self.navigation.go',\n        'self.navigation.pushState',\n        'self.navigation.replaceState',\n        'getUserMedia',\n        'requestFullscreen',\n        'webkitRequestFullScreen',\n        'webkitRequestFullscreen',\n        'getDisplayMedia',\n    ].map(x => x.replace(/self\\./g, `${selfName}.`));\n    const doNotAccess = [\n        'document.body',\n        'self.CSSAnimation.prototype.timeline',\n        'self.Animation.prototype.timeline',\n        'self.CSSTransition.prototype.timeline',\n    ].map(x => x.replace(/self\\./g, `${selfName}.`));\n    const excludedInheritedKeys = ['name', 'length', 'constructor'];\n    const loadedObjectsRef = new Map([[self, selfName]]);\n    const loadedObjectsProp = new Map();\n    const hierarchyNav = new Map();\n    const detached = {};\n    async function extractPropsFromObject(obj, parentPath) {\n        const keys = [];\n        let symbols = [];\n        try {\n            for (const key of Object.getOwnPropertyNames(obj)) {\n                if (!keys.includes(key))\n                    keys.push(key);\n            }\n        }\n        catch (err) { }\n        try {\n            symbols = Object.getOwnPropertySymbols(obj);\n            for (const key of symbols) {\n                if (!keys.includes(key))\n                    keys.push(key);\n            }\n        }\n        catch (err) { }\n        try {\n            for (const key in obj) {\n                if (!keys.includes(key))\n                    keys.push(key);\n            }\n        }\n        catch (err) { }\n        const newObj = {\n            _$protos: await loadProtoHierarchy(obj, parentPath),\n        };\n        if (parentPath.includes(`${selfName}.document.`) &&\n            !parentPath.includes(`${selfName}.document.documentElement`) &&\n            newObj._$protos.includes('HTMLElement.prototype')) {\n            newObj._$skipped = 'SKIPPED ELEMENT';\n            return newObj;\n        }\n        if (parentPath.includes('new()') && parentPath.endsWith('.ownerElement')) {\n            newObj._$skipped = 'SKIPPED ELEMENT';\n            return newObj;\n        }\n        if (parentPath.split('.').length >= 8) {\n            newObj._$skipped = 'SKIPPED MAX DEPTH';\n            return newObj;\n        }\n        const isNewObject = parentPath.includes('.new()');\n        if (isNewObject && newObj._$protos[0] === 'HTMLDocument.prototype') {\n            newObj._$skipped = 'SKIPPED DOCUMENT';\n            newObj._$type = 'HTMLDocument.prototype';\n            return newObj;\n        }\n        if (Object.isFrozen(obj))\n            newObj._$isFrozen = true;\n        if (Object.isSealed(obj))\n            newObj._$isSealed = true;\n        if (!newObj._$protos.length)\n            delete newObj._$protos;\n        const inheritedProps = [];\n        if (isNewObject) {\n            let proto = obj;\n            while (proto) {\n                proto = Object.getPrototypeOf(proto);\n                if (!proto ||\n                    proto === Object ||\n                    proto === Object.prototype ||\n                    proto === Function ||\n                    proto === Function.prototype ||\n                    proto === HTMLElement.prototype ||\n                    proto === EventTarget.prototype)\n                    break;\n                for (const key of Object.getOwnPropertyNames(proto)) {\n                    if (!keys.includes(key) && !excludedInheritedKeys.includes(key))\n                        inheritedProps.push(key);\n                }\n            }\n        }\n        keys.push(...inheritedProps);\n        for (const key of keys) {\n            if (skipProps.includes(key)) {\n                continue;\n            }\n            if (key === 'constructor')\n                continue;\n            const path = `${parentPath}.${String(key)}`;\n            if (path.endsWith('_GLOBAL_HOOK__'))\n                continue;\n            const prop = `${String(key)}`;\n            if (path.startsWith(`${selfName}.document`) &&\n                typeof key === 'string' &&\n                (key.startsWith('child') ||\n                    key.startsWith('first') ||\n                    key.startsWith('last') ||\n                    key.startsWith('next') ||\n                    key.startsWith('prev') ||\n                    key === 'textContent' ||\n                    key === 'text')) {\n                newObj[prop] = { _$type: 'dom', _$skipped: 'SKIPPED DOM' };\n                continue;\n            }\n            if (path.startsWith(`${selfName}.document`) && path.split('.').length > 5) {\n                newObj[prop] = { _$type: 'object', _$skipped: 'SKIPPED DEPTH' };\n                continue;\n            }\n            if (key === 'style') {\n                if (isNewObject) {\n                    newObj[prop] = { _$type: 'object', _$skipped: 'SKIPPED STYLE' };\n                    continue;\n                }\n            }\n            if (hierarchyNav.has(path)) {\n                newObj[prop] = hierarchyNav.get(path);\n                continue;\n            }\n            if (doNotAccess.includes(path)) {\n                continue;\n            }\n            try {\n                const isOwnProp = obj.hasOwnProperty && obj.hasOwnProperty(key) && !inheritedProps.includes(key);\n                const value = await extractPropValue(obj, key, path, !isOwnProp);\n                if (value && typeof value === 'string' && value.startsWith('REF:') && !isOwnProp) {\n                    // don't assign here\n                    // console.log('skipping ref', value);\n                }\n                else {\n                    newObj[prop] = value;\n                }\n            }\n            catch (err) {\n                newObj[prop] = err.toString();\n            }\n        }\n        if (obj.prototype) {\n            let instance;\n            let constructorException;\n            try {\n                instance = await new obj();\n            }\n            catch (err) {\n                constructorException = err.toString();\n            }\n            if (constructorException) {\n                newObj['new()'] = { _$type: 'constructor', _$constructorException: constructorException };\n            }\n            else {\n                try {\n                    newObj['new()'] = await extractPropsFromObject(instance, `${parentPath}.new()`);\n                    newObj['new()']._$type = 'constructor';\n                }\n                catch (err) {\n                    newObj['new()'] = err.toString();\n                }\n            }\n        }\n        return newObj;\n    }\n    async function loadProtoHierarchy(obj, parentPath) {\n        const hierarchy = [];\n        let proto = obj;\n        if (typeof proto === 'function')\n            return hierarchy;\n        while (proto) {\n            proto = Object.getPrototypeOf(proto);\n            if (!proto)\n                break;\n            try {\n                const name = getObjectName(proto);\n                if (name && !hierarchy.includes(name))\n                    hierarchy.push(name);\n                if (loadedObjectsRef.has(proto))\n                    continue;\n                let path = `${selfName}.${name}`;\n                const topType = name.split('.').shift();\n                if (!(topType in self)) {\n                    path = `detached.${name}`;\n                }\n                if (!hierarchyNav.has(path)) {\n                    hierarchyNav.set(path, {});\n                    const extracted = await extractPropsFromObject(proto, path);\n                    hierarchyNav.set(path, extracted);\n                    if (!path.includes(`${selfName}.`)) {\n                        detached[name] = extracted;\n                    }\n                }\n            }\n            catch (err) { }\n        }\n        return hierarchy;\n    }\n    async function extractPropValue(obj, key, path, isInherited) {\n        if (obj === null || obj === undefined || !key) {\n            return undefined;\n        }\n        let accessException;\n        const value = await new Promise(async (resolve, reject) => {\n            let didResolve = false;\n            // if you wait on a promise, it will hang!\n            const t = setTimeout(() => reject('Likely a Promise'), 600);\n            try {\n                const p = await obj[key];\n                if (didResolve)\n                    return;\n                didResolve = true;\n                clearTimeout(t);\n                resolve(p);\n            }\n            catch (err) {\n                if (didResolve)\n                    return;\n                clearTimeout(t);\n                reject(err);\n            }\n        }).catch(err => {\n            accessException = err;\n        });\n        let ref;\n        if (value &&\n            path !== `${selfName}.document` &&\n            (typeof value === 'function' || typeof value === 'object' || typeof value === 'symbol')) {\n            if (loadedObjectsRef.has(value)) {\n                ref = loadedObjectsRef.get(value);\n                const shouldContinue = typeof value === 'function' &&\n                    (isInherited || !path.replace(String(key), '').includes(String(key)));\n                if (!shouldContinue)\n                    return `REF: ${loadedObjectsRef.get(value)}`;\n            }\n            // safari will end up in an infinite loop since each plugin is a new object as your traverse\n            if (path.includes('.navigator') && path.endsWith('.enabledPlugin')) {\n                return `REF: ${selfName}.navigator.plugins.X`;\n            }\n            if (!loadedObjectsRef.has(value)) {\n                loadedObjectsRef.set(value, path);\n            }\n        }\n        let details = {};\n        if (value && (typeof value === 'object' || typeof value === 'function')) {\n            details = await extractPropsFromObject(value, path);\n        }\n        const descriptor = await getDescriptor(obj, key, accessException, path);\n        if (!Object.keys(descriptor).length && !Object.keys(details).length)\n            return undefined;\n        const prop = Object.assign(details, descriptor);\n        if (prop._$value === `REF: ${path}`) {\n            prop._$value = undefined;\n        }\n        if (ref) {\n            const baseProp = loadedObjectsProp.get(value);\n            if (baseProp['_$invocation'] === prop._$invocation) {\n                return;\n            }\n            let key = '_$otherInvocation';\n            if (prop._$isAsync) {\n                key += 'Async';\n            }\n            baseProp[`${key}.${path}`] = prop._$invocation;\n            return;\n        }\n        loadedObjectsProp.set(value, prop);\n        return prop;\n    }\n    async function getDescriptor(obj, key, accessException, path) {\n        const objDesc = Object.getOwnPropertyDescriptor(obj, key);\n        if (objDesc) {\n            let value;\n            try {\n                value = objDesc.value;\n                if (!value && !accessException) {\n                    value = obj[key];\n                }\n            }\n            catch (err) { }\n            let type = typeof value;\n            value = getJsonUsableValue(value, key);\n            const functionDetails = await getFunctionDetails(value, obj, key, type, path);\n            type = functionDetails.type;\n            const flags = [];\n            if (objDesc.configurable)\n                flags.push('c');\n            if (objDesc.enumerable)\n                flags.push('e');\n            if (objDesc.writable)\n                flags.push('w');\n            return {\n                _$type: type,\n                _$function: functionDetails.func,\n                _$invocation: functionDetails.invocation,\n                _$isAsync: functionDetails.isAsync,\n                _$flags: flags.join(''),\n                _$accessException: accessException ? accessException.toString() : undefined,\n                _$value: value,\n                _$get: objDesc.get ? objDesc.get.toString() : undefined,\n                _$set: objDesc.set ? objDesc.set.toString() : undefined,\n                _$getToStringToString: objDesc.get ? objDesc.get.toString.toString() : undefined,\n                _$setToStringToString: objDesc.set ? objDesc.set.toString.toString() : undefined,\n            };\n        }\n        const plainObject = {};\n        if (accessException && String(accessException).includes('Likely a Promise')) {\n            plainObject._$value = 'Likely a Promise';\n        }\n        else if (accessException)\n            return plainObject;\n        let value;\n        try {\n            value = obj[key];\n        }\n        catch (err) { }\n        let type = typeof value;\n        if (value && Array.isArray(value))\n            type = 'array';\n        const functionDetails = await getFunctionDetails(value, obj, key, type, path);\n        plainObject._$type = functionDetails.type;\n        plainObject._$value = getJsonUsableValue(value, key);\n        plainObject._$function = functionDetails.func;\n        plainObject._$invocation = functionDetails.invocation;\n        plainObject._$isAsync = functionDetails.isAsync;\n        return plainObject;\n    }\n    async function getFunctionDetails(value, obj, key, type, path) {\n        let func;\n        let invocation;\n        let isAsync;\n        if (type === 'undefined')\n            type = undefined;\n        if (type === 'function') {\n            try {\n                func = String(value);\n            }\n            catch (err) {\n                func = err.toString();\n            }\n            try {\n                if (!doNotInvoke.includes(key) && !doNotInvoke.includes(path) && !value.prototype) {\n                    invocation = await new Promise(async (resolve, reject) => {\n                        const c = setTimeout(() => reject('Promise-like'), 650);\n                        let didReply = false;\n                        try {\n                            let answer = obj[key]();\n                            if (answer && answer.on) {\n                                answer.on('error', err => {\n                                    console.log('Error', err, obj, key);\n                                });\n                            }\n                            isAsync = answer instanceof Promise;\n                            answer = await answer;\n                            if (didReply)\n                                return;\n                            clearTimeout(c);\n                            didReply = true;\n                            resolve(answer);\n                        }\n                        catch (err) {\n                            if (didReply)\n                                return;\n                            didReply = true;\n                            clearTimeout(c);\n                            reject(err);\n                        }\n                    });\n                }\n            }\n            catch (err) {\n                invocation = err ? err.toString() : err;\n            }\n        }\n        return {\n            type,\n            func,\n            invocation: func || invocation !== undefined ? getJsonUsableValue(invocation) : undefined,\n            isAsync,\n        };\n    }\n    function getJsonUsableValue(value, key) {\n        if (key && skipValues.includes(key)) {\n            return 'SKIPPED VALUE';\n        }\n        try {\n            if (value && typeof value === 'symbol') {\n                value = `${String(value)}`;\n            }\n            else if (value && (value instanceof Promise || typeof value.then === 'function')) {\n                value = 'Promise';\n            }\n            else if (value && typeof value === 'object') {\n                const values = [];\n                if (loadedObjectsRef.has(value)) {\n                    return `REF: ${loadedObjectsRef.get(value)}`;\n                }\n                if (value.join !== undefined) {\n                    // is array\n                    // eslint-disable-next-line guard-for-in\n                    for (const prop in value) {\n                        values.push(getJsonUsableValue(value[prop]));\n                    }\n                    return `[${values.join(',')}]`;\n                }\n                for (const prop in value) {\n                    if (value.hasOwnProperty(prop)) {\n                        values.push(`${prop}: ${getJsonUsableValue(value[prop])}`);\n                    }\n                }\n                return `{${values.map(x => x.toString()).join(',')}}`;\n            }\n            else if (typeof value === 'function') {\n                return value.toString();\n            }\n            else if (value && typeof value === 'string') {\n                if (pageUrl) {\n                    while (value.includes(pageUrl)) {\n                        value = value.replace(pageUrl, '<URL>');\n                    }\n                }\n                if (pageHost) {\n                    while (value.includes(pageHost)) {\n                        value = value.replace(pageHost, '<HOST>');\n                    }\n                }\n                value = value.replace(/<url>:\\d+:\\d+/g, '<url>:<lines>');\n            }\n            else {\n                return value;\n            }\n        }\n        catch (err) {\n            value = err.toString();\n        }\n        return value;\n    }\n    function getObjectName(obj) {\n        if (obj === Object)\n            return 'Object';\n        if (obj === Object.prototype)\n            return 'Object.prototype';\n        try {\n            if (typeof obj === 'symbol') {\n                return `${String(obj)}`;\n            }\n        }\n        catch (err) { }\n        try {\n            let name = obj[Symbol.toStringTag];\n            if (!name) {\n                try {\n                    name = obj.name;\n                }\n                catch (err) { }\n            }\n            if (obj.constructor) {\n                const constructorName = obj.constructor.name;\n                if (constructorName &&\n                    constructorName !== Function.name &&\n                    constructorName !== Object.name) {\n                    name = constructorName;\n                }\n            }\n            if ('prototype' in obj) {\n                name = obj.prototype[Symbol.toStringTag] || obj.prototype.name || name;\n                if (name)\n                    return name;\n            }\n            if (typeof obj === 'function') {\n                if (name && name !== Function.name)\n                    return name;\n                return obj.constructor.name;\n            }\n            if (!name)\n                return;\n            return `${name}.prototype`;\n        }\n        catch (err) { }\n    }\n    async function runAndSave() {\n        self.addEventListener('unhandledrejection', promiseRejectionEvent => {\n            console.log(promiseRejectionEvent);\n        });\n        const props = await extractPropsFromObject(self, selfName);\n        await fetch(saveToUrl, {\n            method: 'POST',\n            body: JSON.stringify({\n                [selfName]: props,\n                detached,\n            }),\n            headers: {\n                'Content-Type': 'application/json',\n                'Page-Name': pageName,\n            },\n        });\n    }\n    async function run(obj, parentPath, extractKeys = []) {\n        const result = await extractPropsFromObject(obj, parentPath);\n        if (extractKeys && extractKeys.length) {\n            const extracted = {};\n            for (const key of extractKeys) {\n                extracted[key] = result[key];\n            }\n            return JSON.stringify({ window: extracted, windowKeys: Object.keys(result) });\n        }\n        // NOTE: need to stringify to make sure this transfers same as it will from a browser window\n        return JSON.stringify({ window: result, detached });\n    }\n    this.run = run;\n    this.runAndSave = runAndSave;\n    return this;\n};\n        window.pageQueue.push(new DomExtractor('window', {\"saveToUrl\":\"https://<HOST>/browser-dom-environment/save?sessionId=134\",\"pageUrl\":\"<URL>\",\"pageHost\":\"<HOST>\",\"pageName\":\"BrowserDom\"}).runAndSave());\n      </script>\n    \n\n<script type=\"text/javascript\">\n  Promise.all(window.pageQueue)\n    .then(() => {\n      document.querySelectorAll('.display-inline-when-done').forEach(elem => {\n        elem.style.display = 'inline';\n      });\n      document.querySelectorAll('.display-block-when-done').forEach(elem => {\n        elem.style.display = 'block';\n      });\n      document.body.classList.add('ready');\n      \n      window.afterReady ? window.afterReady() : null\n    }).catch(err => {\n      console.log(err.stack);\n    });\n</script>\n\n\n\n\n</body>"
+    }
+  ],
+  "reorder": [
+    {
+      "path": "window",
+      "propertyName": "CaptureController",
+      "throughProperty": "BackgroundFetchRegistration",
+      "prevProperty": "BluetoothRemoteGATTService"
+    },
+    {
+      "path": "window",
+      "propertyName": "CSSPositionTryDescriptors",
+      "throughProperty": "webkitResolveLocalFileSystemURL",
+      "prevProperty": "BluetoothUUID"
+    },
+    {
+      "path": "window",
+      "propertyName": "TEMPORARY",
+      "throughProperty": "PERSISTENT",
+      "prevProperty": "cdc_adoQpoasnfa76pfcZLmcfl_JSON"
+    },
+    {
+      "path": "window.navigator",
+      "propertyName": "storageBuckets",
+      "throughProperty": "serial",
+      "prevProperty": "bluetooth"
+    },
+    {
+      "path": "window.navigator.languages",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "1"
+    },
+    {
+      "path": "window.Navigator.prototype",
+      "propertyName": "storageBuckets",
+      "throughProperty": "serial",
+      "prevProperty": "bluetooth"
+    },
+    {
+      "path": "window.Navigator.prototype",
+      "propertyName": "clearAppBadge",
+      "throughProperty": "unregisterProtocolHandler",
+      "prevProperty": "share"
+    }
+  ]
+}
