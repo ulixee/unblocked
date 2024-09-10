@@ -12,7 +12,7 @@ const pageScripts = {
 };
 
 const pageEventsCallbackName = '__ulxPagePaintEventListenerCallback';
-export const injectedScript = `(function ulxInjectedScripts(runtimeFunction) {
+export const injectedScript = `(function ulxInjectedScripts(callbackName) {
 const exports = {}; // workaround for ts adding an exports variable
 ${stringifiedTypeSerializerClass};
 

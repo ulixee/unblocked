@@ -6,9 +6,11 @@ declare global {
   }
 }
 
-declare const runtimeFunction: string;
-// callback binding
-const eventsCallback = window[runtimeFunction] as unknown as (data: string) => void;
+declare const callbackName: string;
+declare const callback: (name: string, data: string) => void;
+const eventsCallback = (data: string) => {
+  callback(callbackName, data);
+};
 
 class PaintEvents {
   onEventCallbackFn: (event: IDomPaintEvent, timestamp: number, url: string) => void;

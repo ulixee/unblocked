@@ -31,6 +31,7 @@ import FrameOutOfProcess from './FrameOutOfProcess';
 import CookieParam = Protocol.Network.CookieParam;
 import TargetInfo = Protocol.Target.TargetInfo;
 import CreateBrowserContextRequest = Protocol.Target.CreateBrowserContextRequest;
+import { WebsocketSession } from './WebsocketSession';
 
 const { log } = Log(module);
 
@@ -68,6 +69,7 @@ export default class BrowserContext
   }
 
   public isIncognito = true;
+  public readonly websocketSession: WebsocketSession;
 
   public readonly idTracker = {
     navigationId: 0,
@@ -87,6 +89,7 @@ export default class BrowserContext
 
   private readonly events = new EventSubscriber();
 
+
   constructor(browser: Browser, isIncognito: boolean, options?: IBrowserContextCreateOptions) {
     super();
     this.browser = browser;
@@ -102,6 +105,7 @@ export default class BrowserContext
     this.devtoolsSessionLogger.subscribeToDevtoolsMessages(this.browser.devtoolsSession, {
       sessionType: 'browser',
     });
+    this.websocketSession = new WebsocketSession();
   }
 
   public async open(): Promise<void> {
@@ -125,6 +129,7 @@ export default class BrowserContext
     this.logger = this.logger.createChild(module, {
       browserContextId,
     });
+    await this.websocketSession.initialize();
   }
 
   async newPage(options?: IPageCreateOptions): Promise<Page> {
@@ -344,6 +349,7 @@ export default class BrowserContext
       this.resources.cleanup();
       this.events.close();
       this.emit('close');
+      this.websocketSession.close();
       this.devtoolsSessionLogger.close();
       this.removeAllListeners();
       this.cleanup();

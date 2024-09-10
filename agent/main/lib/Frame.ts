@@ -135,6 +135,8 @@ export default class Frame extends TypedEventEmitter<IFrameEvents> implements IF
   private closedWithError: Error;
   private isClosing = false;
   private defaultContextCreated: Resolvable<void>;
+  private shouldRefreshContextIds = false;
+  private hasCreatedIsolate = false;
   private readonly checkIfAttached: () => boolean;
   private inPageCounter = 0;
   private events = new EventSubscriber();
@@ -173,6 +175,7 @@ export default class Frame extends TypedEventEmitter<IFrameEvents> implements IF
     activeContextIds: Set<number>,
   ): Promise<void> {
     if (this.devtoolsSession === devtoolsSession) return;
+    this.shouldRefreshContextIds = true;
 
     this.devtoolsSession = devtoolsSession;
     this.activeContextIds = activeContextIds;
@@ -227,6 +230,17 @@ export default class Frame extends TypedEventEmitter<IFrameEvents> implements IF
         this.waitForActiveContextId(false),
       ]);
 
+      // const [isolatedContextId, defaultContextId] = await Promise.all([
+      //   this.#framesManager.getExecutionContextId({ frameId: this.id, type: 'isolated' }),
+      //   this.#framesManager.getExecutionContextId({ frameId: this.id, type: 'default' }),
+      // ]);
+
+      // const [isolatedContextId, defaultContextId] =
+      // await this.#framesManager.getExecutionContextIds([
+      //   { frameId: this.id, type: 'isolated' },
+      //   { frameId: this.id, type: 'default' },
+      // ]);
+
       if (this.closedWithError || !this.devtoolsSession.isConnected()) return;
 
       await Promise.all(
@@ -278,6 +292,8 @@ export default class Frame extends TypedEventEmitter<IFrameEvents> implements IF
     const startOrigin = this.securityOrigin;
     const isolateFromWebPageEnvironment = options?.isolateFromWebPageEnvironment ?? false;
     const contextId = await this.waitForActiveContextId(isolateFromWebPageEnvironment);
+
+    // contextId = 67890;
     try {
       if (!contextId) {
         const notFound: any = new Error('Could not find a valid context for this request');
@@ -691,9 +707,15 @@ export default class Frame extends TypedEventEmitter<IFrameEvents> implements IF
     const hasLoaderError = await this.navigationLoadersById[loaderId]?.navigationResolver;
     if (hasLoaderError instanceof Error) throw hasLoaderError;
 
-    if (!this.getActiveContextId(false)) {
-      await this.waitForDefaultContext();
-    }
+    // if (!this.getActiveContextId(false)) {
+    //   await this.waitForDefaultContext();
+    // }
+
+    await this.#framesManager.getExecutionContextId({
+      frameId: this.id,
+      type: 'default',
+      refresh: this.shouldRefreshContextIds,
+    });
   }
 
   public onLifecycleEvent(name: string, timestamp?: number, pageLoaderId?: string): void {
@@ -786,18 +808,34 @@ export default class Frame extends TypedEventEmitter<IFrameEvents> implements IF
   public async waitForActiveContextId(isolatedContext = true): Promise<number> {
     if (!this.isAttached) throw new Error('Execution Context is not available in detached frame');
 
-    const existing = this.getActiveContextId(isolatedContext);
-    if (existing) return existing;
-
-    if (isolatedContext) {
+    if (isolatedContext && !this.hasCreatedIsolate) {
+      this.hasCreatedIsolate = true;
       const context = await this.createIsolatedWorld();
       // give one task to set up
       await new Promise(setImmediate);
       return context;
     }
 
-    await this.waitForDefaultContext();
-    return this.getActiveContextId(isolatedContext);
+    const contextId = await this.#framesManager.getExecutionContextId({
+      frameId: this.id,
+      type: isolatedContext ? 'isolated' : 'default',
+      refresh: this.shouldRefreshContextIds,
+    });
+
+    this.shouldRefreshContextIds = false;
+    return contextId;
+    // const existing = this.getActiveContextId(isolatedContext);
+    // if (existing) return existing;
+
+    // if (isolatedContext) {
+    //   const context = await this.createIsolatedWorld();
+    //   // give one task to set up
+    //   await new Promise(setImmediate);
+    //   return context;
+    // }
+
+    // await this.waitForDefaultContext();
+    // return this.getActiveContextId(isolatedContext);
   }
 
   public canEvaluate(isolatedFromWebPageEnvironment: boolean): boolean {
@@ -883,6 +921,11 @@ export default class Frame extends TypedEventEmitter<IFrameEvents> implements IF
     if (this.getActiveContextId(false)) return;
 
     this.defaultContextCreated = new Resolvable<void>();
+
+    await Promise.all([
+      this.devtoolsSession.send('Runtime.enable'),
+      this.devtoolsSession.send('Runtime.disable'),
+    ]);
     // don't time out this event, we'll just wait for the page to shut down
     await this.defaultContextCreated.promise.catch(err => {
       if (err instanceof CanceledPromiseError) return;

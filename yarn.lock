@@ -1762,7 +1762,7 @@
   dependencies:
     "@babel/types" "^7.20.7"
 
-"@types/better-sqlite3@^7.6.9":
+"@types/better-sqlite3@^7.6.11":
   version "7.6.11"
   resolved "https://registry.yarnpkg.com/@types/better-sqlite3/-/better-sqlite3-7.6.11.tgz#95acf22fcf5577624eea202058e26ba239760b9f"
   integrity sha512-i8KcD3PgGtGBLl3+mMYA8PdKkButvPyARxA7IQAd6qeslht13qxb1zzO8dRCtE7U3IoJS782zDBAeoKiM695kg==
@@ -2229,10 +2229,10 @@
     progress "^2.0.3"
     tar "^6.1.11"
 
-"@ulixee/commons@2.0.0-alpha.29":
-  version "2.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/@ulixee/commons/-/commons-2.0.0-alpha.29.tgz#522321a6bbb1d9b2a24b249e6703615b44eae5f4"
-  integrity sha512-8sPJlVhcP/YY6FE/iMsxP6sMTEdZOjmk575HAo0V76/Y04Kzq3XoKjAq6OggTrba2Xfr//aHn3Q3yubsZXlKcw==
+"@ulixee/commons@2.0.0-alpha.28":
+  version "2.0.0-alpha.28"
+  resolved "https://registry.yarnpkg.com/@ulixee/commons/-/commons-2.0.0-alpha.28.tgz#52c3401fbbb25563ccb93d1e02980de83780f44d"
+  integrity sha512-/WXy+4yRr7GMCZYuYiqpiv4qEhfOrgDL8jZ85H4I+uyPIxgSTk8TWujHp5XkieE/4AbIwb8I4Q/lE+0TKKPGUQ==
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.18"
     bech32 "^2.0.0"
@@ -9304,11 +9304,6 @@ ws@^7.2.0:
   version "7.5.9"
   resolved "https://registry.npmjs.org/ws/-/ws-7.5.9.tgz"
   integrity sha512-F+P9Jil7UiSKSkppIiD94dN07AwvFixvLIj1Og1Rl9GGMuNipJnV9JzjD6XuqmAeiswGvUmNLjr5cFuXwNS77Q==
-
-ws@^7.5.9:
-  version "7.5.10"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.10.tgz#58b5c20dc281633f6c19113f39b349bd8bd558d9"
-  integrity sha512-+dbF1tHwZpXcbOJdVOkzLDxZP1ailvSxM6ZweXTegylPny803bFhA+vqBYw4s31NSAk4S2Qz+AKXK9a4wkdjcQ==
 
 ws@^8.18.0:
   version "8.18.0"
