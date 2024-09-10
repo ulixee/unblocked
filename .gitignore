@@ -18,3 +18,12 @@ browserstack.err
 agent/mitm-socket/dist
 connect
 /real-user-agents/local.log
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml

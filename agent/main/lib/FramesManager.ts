@@ -9,6 +9,7 @@ import { CanceledPromiseError } from '@ulixee/commons/interfaces/IPendingWaitEve
 import IResourceMeta from '@ulixee/unblocked-specification/agent/net/IResourceMeta';
 import { IPageEvents } from '@ulixee/unblocked-specification/agent/browser/IPage';
 import { IDomPaintEvent } from '@ulixee/unblocked-specification/agent/browser/Location';
+import Resolvable from '@ulixee/commons/lib/Resolvable';
 import DevtoolsSession from './DevtoolsSession';
 import Frame from './Frame';
 import NetworkManager from './NetworkManager';
@@ -48,6 +49,7 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
   }
 
   public devtoolsSession: DevtoolsSession;
+  public websocketIdToFrameId = new Map<string, string>();
 
   protected readonly logger: IBoundLog;
 
@@ -69,6 +71,9 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
   private readonly domStorageTracker: DomStorageTracker;
 
   private isReady: Promise<void>;
+
+  // Key = ${frameId}__${type}
+  private frameToContextId = new Map<string, Resolvable<number>>();
 
   constructor(page: Page, devtoolsSession: DevtoolsSession) {
     super();
@@ -121,20 +126,25 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
         'Page.lifecycleEvent',
         this.onLifecycleEvent.bind(this, devtoolsSession),
       ),
-      this.events.on(
-        devtoolsSession,
-        'Runtime.executionContextsCleared',
-        this.onExecutionContextsCleared.bind(this, devtoolsSession),
-      ),
-      this.events.on(
-        devtoolsSession,
-        'Runtime.executionContextDestroyed',
-        this.onExecutionContextDestroyed.bind(this, devtoolsSession),
-      ),
+      // this.events.on(
+      //   devtoolsSession,
+      //   'Runtime.executionContextsCleared',
+      //   this.onExecutionContextsCleared.bind(this, devtoolsSession),
+      // ),
+      // this.events.on(
+      //   devtoolsSession,
+      //   'Runtime.executionContextDestroyed',
+      //   this.onExecutionContextDestroyed.bind(this, devtoolsSession),
+      // ),
       this.events.on(
         devtoolsSession,
         'Runtime.executionContextCreated',
         this.onExecutionContextCreated.bind(this, devtoolsSession),
+      ),
+      this.events.on(
+        devtoolsSession,
+        'Runtime.executionContextCreated',
+        this.onExecutionContextCreatedNew.bind(this, devtoolsSession),
       ),
     );
     const id = devtoolsSession.id;
@@ -157,8 +167,9 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
               };
             }),
           devtoolsSession.send('Page.setLifecycleEventsEnabled', { enabled: true }),
-          devtoolsSession.send('Runtime.enable'),
+          // devtoolsSession.send('Runtime.enable'),
           InjectedScripts.install(this, devtoolsSession, this.onDomPaintEvent),
+          // devtoolsSession.send('Runtime.disable'),
         ]);
         this.recurseFrameTree(devtoolsSession, framesResponse.frameTree);
         resolve();
@@ -212,23 +223,30 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
     onCallback: (payload: string, frame: IFrame) => any,
     isolateFromWebPageEnvironment?: boolean,
     devtoolsSession?: DevtoolsSession,
-  ): Promise<IRegisteredEventListener> {
-    const params: Protocol.Runtime.AddBindingRequest = {
-      name,
-    };
-    if (isolateFromWebPageEnvironment) {
-      params.executionContextName = ISOLATED_WORLD;
-    }
-    devtoolsSession ??= this.devtoolsSession;
-    // add binding to every new context automatically
-    await devtoolsSession.send('Runtime.addBinding', params);
-    return this.events.on(devtoolsSession, 'Runtime.bindingCalled', async event => {
+  ): Promise<any> {
+    return this.page.browserContext.websocketSession.on('message-received', async event => {
       if (event.name === name) {
         await this.isReady;
-        const frame = this.getFrameForExecutionContext(event.executionContextId);
+        const frame = this.framesById.get(event.id);
         if (frame) onCallback(event.payload, frame);
       }
     });
+    // const params: Protocol.Runtime.AddBindingRequest = {
+    //   name,
+    // };
+    // if (isolateFromWebPageEnvironment) {
+    //   params.executionContextName = ISOLATED_WORLD;
+    // }
+    // devtoolsSession ??= this.devtoolsSession;
+    // // add binding to every new context automatically
+    // await devtoolsSession.send('Runtime.addBinding', params);
+    // return this.events.on(devtoolsSession, 'Runtime.bindingCalled', async event => {
+    //   if (event.name === name) {
+    //     await this.isReady;
+    //     const frame = this.getFrameForExecutionContext(event.executionContextId);
+    //     if (frame) onCallback(event.payload, frame);
+    //   }
+    // });
   }
 
   public async addNewDocumentScript(
@@ -237,6 +255,7 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
     devtoolsSession?: DevtoolsSession,
   ): Promise<{ identifier: string }> {
     devtoolsSession ??= this.devtoolsSession;
+    script = this.page.browserContext.websocketSession.injectWebsocketCallbackIntoScript(script);
     const installedScript = await devtoolsSession.send('Page.addScriptToEvaluateOnNewDocument', {
       source: script,
       worldName: installInIsolatedScope ? ISOLATED_WORLD : undefined,
@@ -409,6 +428,64 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
     if (isDefault || isIsolatedWorld) {
       frame?.addContextId(context.id, isDefault, context.origin);
     }
+  }
+
+  private async onExecutionContextCreatedNew(
+    devtoolsSession: DevtoolsSession,
+    event: ExecutionContextCreatedEvent,
+  ): Promise<void> {
+    await this.isReady;
+    const { context } = event;
+    const frameId = context.auxData.frameId as string;
+    const type = context.auxData.type as string;
+
+    const isDefault =
+      context.name === '' && context.auxData.isDefault === true && type === 'default';
+    const isIsolatedWorld = context.name === ISOLATED_WORLD && type === 'isolated';
+
+    // Not interested for now in others
+    if (!isDefault && !isIsolatedWorld) return;
+
+    const key = `${frameId}__${isDefault ? 'default' : 'isolated'}`;
+    const storedId = this.frameToContextId.get(key);
+    if (storedId && !storedId.isResolved) {
+      storedId.resolve(context.id);
+    } else {
+      const resolvable = new Resolvable<number>();
+      resolvable.resolve(context.id);
+      this.frameToContextId.set(key, resolvable);
+    }
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  public async getExecutionContextId(opts: {
+    frameId: string;
+    type: 'default' | 'isolated';
+    refresh?: boolean;
+  }): Promise<number | undefined> {
+    const refresh = async (): Promise<void> => {
+      await Promise.all([
+        this.devtoolsSession.send('Runtime.enable'),
+        this.devtoolsSession.send('Runtime.disable'),
+      ]).catch(() => undefined);
+    };
+
+    if (opts.refresh) {
+      this.frameToContextId.clear();
+      void refresh();
+    }
+
+    const key = `${opts.frameId}__${opts.type}`;
+    const stored = this.frameToContextId.get(key);
+    if (stored) {
+      return stored.promise;
+    }
+
+    const resolvable = new Resolvable<number>(3e3);
+    this.frameToContextId.set(key, resolvable);
+    if (!opts.refresh) void refresh();
+    const id = await resolvable.promise;
+    return id;
   }
 
   /////// FRAMES ///////////////////////////////////////////////////////////////
@@ -625,6 +702,12 @@ export default class FramesManager extends TypedEventEmitter<IFrameManagerEvents
       : this.main;
 
     if (!frame) return;
+
+    // Websocket urls
+    const { websocketSession } = this.page.browserContext;
+    if (url.includes(`localhost:${websocketSession.port}`)) {
+      websocketSession.registerWebsocketFrameId(url, frameId);
+    }
 
     const navigations = frame.navigations;
 

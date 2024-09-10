@@ -29,7 +29,7 @@ export default class BrowserProcess extends TypedEventEmitter<{ close: void }> {
     private processEnv?: NodeJS.ProcessEnv,
   ) {
     super();
-
+    
     bindFunctions(this);
     this.launchedProcess = this.launch();
     this.bindProcessEvents();

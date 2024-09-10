@@ -2,6 +2,7 @@
 declare let sourceUrl: string;
 declare let targetType: string | undefined;
 declare let args: any;
+declare const callback: (name: string, data: string) => void;
 
 /* eslint-disable no-restricted-properties */
 
@@ -225,6 +226,27 @@ function runAndInjectProxyInStack(target: any, thisArg: any, argArray: any, prox
   return wrapper[name]();
 }
 
+// const socket = new WebSocket('ws://localhost:9898');
+// // Connection opened
+// socket.addEventListener('open', event => {
+//   socket.send('Hello Server!');
+// });
+
+// try {
+//   const socket = new WebSocket('ws://localhost:9898');
+//   socket.addEventListener('open', event => {
+//     socket.send('Hello Server!');
+//   });
+// } catch (error) {
+//   console.log(error);
+// }
+
+// try {
+//   const socket = new WebSocket('ws://localhost:9897');
+// } catch (error) {
+//   console.log(error);
+// }
+
 (function trackProxyInstances() {
   if (typeof self === 'undefined') return;
   const descriptor = ObjectCached.getOwnPropertyDescriptor(self, 'Proxy');
@@ -252,8 +274,6 @@ function runAndInjectProxyInStack(target: any, thisArg: any, argArray: any, prox
   Proxy.prototype.constructor = Proxy;
   toOriginalFn.set(Proxy, OriginalProxy);
 })();
-
-
 
 /////// END TOSTRING  //////////////////////////////////////////////////////////////////////////////////////////////////
 
