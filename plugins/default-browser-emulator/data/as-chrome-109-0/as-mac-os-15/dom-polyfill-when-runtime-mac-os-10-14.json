@@ -1,0 +1,6092 @@
+{
+  "add": [
+    {
+      "path": "window.Object.prototype.hasOwnProperty",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Object.prototype.__lookupGetter__",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.Object.prototype.__lookupSetter__",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.Object.prototype.isPrototypeOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Object.prototype.propertyIsEnumerable",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Object.prototype.toString",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Object.prototype.valueOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Object.prototype.toLocaleString",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Object.is",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Object.preventExtensions",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.Object.seal",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.Object.freeze",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.Object.isExtensible",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Object.isFrozen",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Object.isSealed",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Object",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Function.prototype.apply",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.Function.prototype.bind",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Function.prototype.call",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.Function.prototype.toString",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Function.prototype",
+      "propertyName": "Symbol.hasInstance._$isAsync",
+      "property": false
+    },
+    {
+      "path": "window.Function.prototype",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.Function",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.at",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.concat",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.copyWithin",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.fill",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.lastIndexOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.pop",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.push",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.reverse",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.shift",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.unshift",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.slice",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.sort",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.splice",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.includes",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.indexOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.join",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.keys",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.entries",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.values",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.DOMTokenList.prototype.forEach",
+      "prevProperty": "_$value",
+      "property": "TypeError: Illegal invocation"
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.NodeList.prototype.forEach",
+      "prevProperty": "_$otherInvocation.window.DOMTokenList.prototype.forEach",
+      "property": "TypeError: Illegal invocation"
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.RadioNodeList.prototype.forEach",
+      "prevProperty": "_$otherInvocation.window.NodeList.prototype.forEach",
+      "property": "TypeError: Illegal invocation"
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.CSSUnparsedValue.prototype.forEach",
+      "prevProperty": "_$otherInvocation.window.RadioNodeList.prototype.forEach",
+      "property": "TypeError: Illegal invocation"
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.CSSTransformValue.prototype.forEach",
+      "prevProperty": "_$otherInvocation.window.CSSUnparsedValue.prototype.forEach",
+      "property": "TypeError: Illegal invocation"
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.CSSNumericArray.prototype.forEach",
+      "prevProperty": "_$otherInvocation.window.CSSTransformValue.prototype.forEach",
+      "property": "TypeError: Illegal invocation"
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.XRInputSourceArray.prototype.forEach",
+      "prevProperty": "_$otherInvocation.window.CSSNumericArray.prototype.forEach",
+      "property": "TypeError: Illegal invocation"
+    },
+    {
+      "path": "window.Array.prototype.flat",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.toLocaleString",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.toString",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.prototype.toString",
+      "propertyName": "_$otherInvocation.detached.TypedArray.prototype.toString",
+      "prevProperty": "_$value",
+      "property": "TypeError: Method %TypedArray%.prototype.join called on incompatible receiver [object Object]"
+    },
+    {
+      "path": "window.Array.isArray",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array.of",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Array",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Number.prototype.toExponential",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Number.prototype.toFixed",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Number.prototype.toPrecision",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Number.prototype.toString",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Number.prototype.valueOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Number.prototype.toLocaleString",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Number.isFinite",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Number.isInteger",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Number.isNaN",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Number.isSafeInteger",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Number.parseFloat",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Number.parseFloat",
+      "propertyName": "_$otherInvocation.window.parseFloat",
+      "prevProperty": "_$value",
+      "property": null
+    },
+    {
+      "path": "window.Number.parseInt",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Number.parseInt",
+      "propertyName": "_$otherInvocation.window.parseInt",
+      "prevProperty": "_$value",
+      "property": null
+    },
+    {
+      "path": "window.Number",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Boolean.prototype.toString",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Boolean.prototype.valueOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Boolean",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.anchor",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.at",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.big",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.blink",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.bold",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.charAt",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.charCodeAt",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.codePointAt",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.concat",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.endsWith",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.fontcolor",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.fontsize",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.fixed",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.includes",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.indexOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.italics",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.lastIndexOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.link",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.localeCompare",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.match",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.matchAll",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.normalize",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.padEnd",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.padStart",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.repeat",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.replace",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.replaceAll",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.search",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.slice",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.small",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.split",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.strike",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.sub",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.substr",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.substring",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.sup",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.startsWith",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.toString",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.trim",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.trimStart",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.trimEnd",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.toLocaleLowerCase",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.toLocaleUpperCase",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.toLowerCase",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.toUpperCase",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype.valueOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.prototype",
+      "propertyName": "Symbol.iterator._$isAsync",
+      "property": false
+    },
+    {
+      "path": "window.String.fromCharCode",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String.fromCodePoint",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.String",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Symbol.for",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Symbol",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Promise.all",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Promise.allSettled",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Promise.any",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Promise.race",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Promise.resolve",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": true
+    },
+    {
+      "path": "window.Promise.reject",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": true
+    },
+    {
+      "path": "window.RegExp.prototype.toString",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.RegExp.prototype",
+      "propertyName": "Symbol.matchAll._$isAsync",
+      "property": false
+    },
+    {
+      "path": "window.RegExp.prototype",
+      "propertyName": "Symbol.split._$isAsync",
+      "property": false
+    },
+    {
+      "path": "window.RegExp.new()",
+      "propertyName": "dotAll",
+      "prevProperty": "lastIndex",
+      "property": {
+        "_$type": "boolean",
+        "_$value": false
+      }
+    },
+    {
+      "path": "window.RegExp.new()",
+      "propertyName": "flags",
+      "prevProperty": "dotAll",
+      "property": {
+        "_$type": "string",
+        "_$value": ""
+      }
+    },
+    {
+      "path": "window.RegExp.new()",
+      "propertyName": "global",
+      "prevProperty": "flags",
+      "property": {
+        "_$type": "boolean",
+        "_$value": false
+      }
+    },
+    {
+      "path": "window.RegExp.new()",
+      "propertyName": "hasIndices",
+      "prevProperty": "global",
+      "property": {
+        "_$type": "boolean",
+        "_$value": false
+      }
+    },
+    {
+      "path": "window.RegExp.new()",
+      "propertyName": "ignoreCase",
+      "prevProperty": "hasIndices",
+      "property": {
+        "_$type": "boolean",
+        "_$value": false
+      }
+    },
+    {
+      "path": "window.RegExp.new()",
+      "propertyName": "multiline",
+      "prevProperty": "ignoreCase",
+      "property": {
+        "_$type": "boolean",
+        "_$value": false
+      }
+    },
+    {
+      "path": "window.RegExp.new()",
+      "propertyName": "source",
+      "prevProperty": "multiline",
+      "property": {
+        "_$type": "string",
+        "_$value": "(?:)"
+      }
+    },
+    {
+      "path": "window.RegExp.new()",
+      "propertyName": "sticky",
+      "prevProperty": "source",
+      "property": {
+        "_$type": "boolean",
+        "_$value": false
+      }
+    },
+    {
+      "path": "window.RegExp.new()",
+      "propertyName": "unicode",
+      "prevProperty": "sticky",
+      "property": {
+        "_$type": "boolean",
+        "_$value": false
+      }
+    },
+    {
+      "path": "window.RegExp",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Error.prototype.toString",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Error.new()",
+      "propertyName": "message",
+      "prevProperty": "stack",
+      "property": {
+        "_$type": "string",
+        "_$value": ""
+      }
+    },
+    {
+      "path": "window.Error",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.EvalError.new()",
+      "propertyName": "message",
+      "prevProperty": "stack",
+      "property": {
+        "_$type": "string",
+        "_$value": ""
+      }
+    },
+    {
+      "path": "window.EvalError",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.RangeError.new()",
+      "propertyName": "message",
+      "prevProperty": "stack",
+      "property": {
+        "_$type": "string",
+        "_$value": ""
+      }
+    },
+    {
+      "path": "window.RangeError",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.ReferenceError.new()",
+      "propertyName": "message",
+      "prevProperty": "stack",
+      "property": {
+        "_$type": "string",
+        "_$value": ""
+      }
+    },
+    {
+      "path": "window.ReferenceError",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.SyntaxError.new()",
+      "propertyName": "message",
+      "prevProperty": "stack",
+      "property": {
+        "_$type": "string",
+        "_$value": ""
+      }
+    },
+    {
+      "path": "window.SyntaxError",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.TypeError.new()",
+      "propertyName": "message",
+      "prevProperty": "stack",
+      "property": {
+        "_$type": "string",
+        "_$value": ""
+      }
+    },
+    {
+      "path": "window.TypeError",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.URIError.new()",
+      "propertyName": "message",
+      "prevProperty": "stack",
+      "property": {
+        "_$type": "string",
+        "_$value": ""
+      }
+    },
+    {
+      "path": "window.URIError",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.JSON.stringify",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.Math.abs",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.acos",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.acosh",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.asin",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.asinh",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.atan",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.atanh",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.atan2",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.ceil",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.cbrt",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.expm1",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.clz32",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.cos",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.cosh",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.exp",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.floor",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.fround",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.hypot",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.imul",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.log",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.log1p",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.log2",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.log10",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.max",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.min",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.pow",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.round",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.sign",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.sin",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.sinh",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.sqrt",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.tan",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.tanh",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Math.trunc",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.getCanonicalLocales",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.DateTimeFormat.supportedLocalesOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.DateTimeFormat.new()",
+      "propertyName": "format",
+      "prevProperty": "_$protos",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 1
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": ""
+        },
+        "_$type": "function",
+        "_$value": "function () { [native code] }",
+        "_$function": "function () { [native code] }",
+        "_$invocation": "8/28/2024",
+        "_$isAsync": false
+      }
+    },
+    {
+      "path": "window.Intl.DateTimeFormat",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.NumberFormat.supportedLocalesOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.NumberFormat.new()",
+      "propertyName": "format",
+      "prevProperty": "_$protos",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 1
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": ""
+        },
+        "_$type": "function",
+        "_$value": "function () { [native code] }",
+        "_$function": "function () { [native code] }",
+        "_$invocation": "NaN",
+        "_$isAsync": false
+      }
+    },
+    {
+      "path": "window.Intl.NumberFormat",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.Collator.supportedLocalesOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.Collator.new()",
+      "propertyName": "compare",
+      "prevProperty": "_$protos",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 2
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": ""
+        },
+        "_$type": "function",
+        "_$value": "function () { [native code] }",
+        "_$function": "function () { [native code] }",
+        "_$invocation": 0,
+        "_$isAsync": false
+      }
+    },
+    {
+      "path": "window.Intl.Collator",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.v8BreakIterator.supportedLocalesOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.v8BreakIterator.new()",
+      "propertyName": "adoptText",
+      "prevProperty": "_$protos",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 1
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": ""
+        },
+        "_$type": "function",
+        "_$value": "function () { [native code] }",
+        "_$function": "function () { [native code] }",
+        "_$isAsync": false
+      }
+    },
+    {
+      "path": "window.Intl.v8BreakIterator.new()",
+      "propertyName": "first",
+      "prevProperty": "adoptText",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": ""
+        },
+        "_$type": "function",
+        "_$value": "function () { [native code] }",
+        "_$function": "function () { [native code] }",
+        "_$invocation": 0,
+        "_$isAsync": false
+      }
+    },
+    {
+      "path": "window.Intl.v8BreakIterator.new()",
+      "propertyName": "next",
+      "prevProperty": "first",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": ""
+        },
+        "_$type": "function",
+        "_$value": "function () { [native code] }",
+        "_$function": "function () { [native code] }",
+        "_$invocation": 9,
+        "_$isAsync": false
+      }
+    },
+    {
+      "path": "window.Intl.v8BreakIterator.new()",
+      "propertyName": "current",
+      "prevProperty": "next",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": ""
+        },
+        "_$type": "function",
+        "_$value": "function () { [native code] }",
+        "_$function": "function () { [native code] }",
+        "_$invocation": 9,
+        "_$isAsync": false
+      }
+    },
+    {
+      "path": "window.Intl.v8BreakIterator.new()",
+      "propertyName": "breakType",
+      "prevProperty": "current",
+      "property": {
+        "length": {
+          "_$type": "number",
+          "_$flags": "c",
+          "_$value": 0
+        },
+        "name": {
+          "_$type": "string",
+          "_$flags": "c",
+          "_$value": ""
+        },
+        "_$type": "function",
+        "_$value": "function () { [native code] }",
+        "_$function": "function () { [native code] }",
+        "_$invocation": "letter",
+        "_$isAsync": false
+      }
+    },
+    {
+      "path": "window.Intl.v8BreakIterator",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.PluralRules.supportedLocalesOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.RelativeTimeFormat.supportedLocalesOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.ListFormat.supportedLocalesOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.DisplayNames.supportedLocalesOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Intl.Segmenter.supportedLocalesOf",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.ArrayBuffer.isView",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.ArrayBuffer.new()",
+      "propertyName": "byteLength",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Uint8Array.new()",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 1
+      }
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.prototype.setLocalDescription",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.prototype.setRemoteDescription",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.generateCertificate",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.WebKitCSSMatrix.fromMatrix",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.WritableStreamDefaultWriter.prototype.abort",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.WritableStream.prototype.abort",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.WebGLRenderingContext.prototype.makeXRCompatible",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.WebGL2RenderingContext.prototype.makeXRCompatible",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.TrustedTypePolicyFactory.prototype.getTypeMapping",
+      "propertyName": "_$otherInvocation.window.trustedTypes.getTypeMapping",
+      "prevProperty": "_$value",
+      "property": "{embed: {properties: {src: TrustedScriptURL},attributes: {src: TrustedScriptURL}},iframe: {properties: {srcdoc: TrustedHTML},attributes: {srcdoc: TrustedHTML}},object: {properties: {codeBase: TrustedScriptURL,data: TrustedScriptURL},attributes: {codeBase: TrustedScriptURL,data: TrustedScriptURL}},script: {properties: {innerText: TrustedScript,src: TrustedScriptURL,text: TrustedScript,textContent: TrustedScript},attributes: {src: TrustedScriptURL}},*: {properties: {innerHTML: TrustedHTML,outerHTML: TrustedHTML},attributes: {onabort: TrustedScript,onabortpayment: TrustedScript,onaccessibleclick: TrustedScript,onaccessiblecontextmenu: TrustedScript,onaccessibledecrement: TrustedScript,onaccessiblefocus: TrustedScript,onaccessibleincrement: TrustedScript,onaccessiblescrollintoview: TrustedScript,onactivate: TrustedScript,onactive: TrustedScript,onaddsourcebuffer: TrustedScript,onaddstream: TrustedScript,onaddtrack: TrustedScript,onadvertisementreceived: TrustedScript,onafterprint: TrustedScript,onanimationend: TrustedScript,onanimationiteration: TrustedScript,onanimationstart: TrustedScript,onappinstalled: TrustedScript,onaudioend: TrustedScript,onaudioprocess: TrustedScript,onaudiostart: TrustedScript,onauxclick: TrustedScript,onbackgroundfetchabort: TrustedScript,onbackgroundfetchclick: TrustedScript,onbackgroundfetchfail: TrustedScript,onbackgroundfetchsuccess: TrustedScript,onbeforecopy: TrustedScript,onbeforecreatepolicy: TrustedScript,onbeforecut: TrustedScript,onbeforeinput: TrustedScript,onbeforeinstallprompt: TrustedScript,onbeforematch: TrustedScript,onbeforepaste: TrustedScript,onbeforeprint: TrustedScript,onbeforeunload: TrustedScript,onbeforexrselect: TrustedScript,onbegin: TrustedScript,onblocked: TrustedScript,onblur: TrustedScript,onboundary: TrustedScript,onbufferedamountlow: TrustedScript,oncancel: TrustedScript,oncanmakepayment: TrustedScript,oncanplay: TrustedScript,oncanplaythrough: TrustedScript,oncapturehandlechange: TrustedScript,onchange: TrustedScript,oncharacterboundsupdate: TrustedScript,oncharacteristicvaluechanged: TrustedScript,onchargingchange: TrustedScript,onchargingtimechange: TrustedScript,onclick: TrustedScript,onclose: TrustedScript,onclosing: TrustedScript,oncomplete: TrustedScript,oncompositionend: TrustedScript,oncompositionstart: TrustedScript,onconnect: TrustedScript,onconnecting: TrustedScript,onconnectionavailable: TrustedScript,onconnectionstatechange: TrustedScript,oncontentdelete: TrustedScript,oncontentvisibilityautostatechange: TrustedScript,oncontextlost: TrustedScript,oncontextmenu: TrustedScript,oncontextrestored: TrustedScript,oncontrollerchange: TrustedScript,oncookiechange: TrustedScript,oncopy: TrustedScript,oncuechange: TrustedScript,oncurrententrychange: TrustedScript,oncurrentscreenchange: TrustedScript,oncut: TrustedScript,ondataavailable: TrustedScript,ondatachannel: TrustedScript,ondblclick: TrustedScript,ondequeue: TrustedScript,ondevicechange: TrustedScript,ondevicemotion: TrustedScript,ondeviceorientation: TrustedScript,ondeviceorientationabsolute: TrustedScript,ondischargingtimechange: TrustedScript,ondisconnect: TrustedScript,ondispose: TrustedScript,ondrag: TrustedScript,ondragend: TrustedScript,ondragenter: TrustedScript,ondragleave: TrustedScript,ondragover: TrustedScript,ondragstart: TrustedScript,ondrop: TrustedScript,ondurationchange: TrustedScript,onemptied: TrustedScript,onencrypted: TrustedScript,onend: TrustedScript,onended: TrustedScript,onenter: TrustedScript,onenterpictureinpicture: TrustedScript,onerror: TrustedScript,onexit: TrustedScript,onfetch: TrustedScript,onfinish: TrustedScript,onfocus: TrustedScript,onformdata: TrustedScript,onfreeze: TrustedScript,onfullscreenchange: TrustedScript,onfullscreenerror: TrustedScript,ongatheringstatechange: TrustedScript,ongattserverdisconnected: TrustedScript,ongeometrychange: TrustedScript,ongotpointercapture: TrustedScript,onhashchange: TrustedScript,onicecandidate: TrustedScript,onicecandidateerror: TrustedScript,oniceconnectionstatechange: TrustedScript,onicegatheringstatechange: TrustedScript,oninactive: TrustedScript,oninput: TrustedScript,oninputreport: TrustedScript,oninputsourceschange: TrustedScript,oninstall: TrustedScript,oninterfacerequest: TrustedScript,oninvalid: TrustedScript,onkeydown: TrustedScript,onkeypress: TrustedScript,onkeystatuseschange: TrustedScript,onkeyup: TrustedScript,onlanguagechange: TrustedScript,onleavepictureinpicture: TrustedScript,onlevelchange: TrustedScript,onload: TrustedScript,onloadeddata: TrustedScript,onloadedmetadata: TrustedScript,onloadend: TrustedScript,onloading: TrustedScript,onloadingdone: TrustedScript,onloadingerror: TrustedScript,onloadstart: TrustedScript,onlostpointercapture: TrustedScript,onmanagedconfigurationchange: TrustedScript,onmark: TrustedScript,onmessage: TrustedScript,onmessageerror: TrustedScript,onmidimessage: TrustedScript,onmousedown: TrustedScript,onmouseenter: TrustedScript,onmouseleave: TrustedScript,onmousemove: TrustedScript,onmouseout: TrustedScript,onmouseover: TrustedScript,onmouseup: TrustedScript,onmousewheel: TrustedScript,onmute: TrustedScript,onnavigate: TrustedScript,onnavigateerror: TrustedScript,onnavigatesuccess: TrustedScript,onnegotiationneeded: TrustedScript,onnomatch: TrustedScript,onnotificationclick: TrustedScript,onnotificationclose: TrustedScript,onoffline: TrustedScript,ononline: TrustedScript,onopen: TrustedScript,onorientationchange: TrustedScript,onoverscroll: TrustedScript,onpagehide: TrustedScript,onpageshow: TrustedScript,onpaste: TrustedScript,onpause: TrustedScript,onpayerdetailchange: TrustedScript,onpaymentmethodchange: TrustedScript,onpaymentrequest: TrustedScript,onperiodicsync: TrustedScript,onplay: TrustedScript,onplaying: TrustedScript,onpointercancel: TrustedScript,onpointerdown: TrustedScript,onpointerenter: TrustedScript,onpointerleave: TrustedScript,onpointerlockchange: TrustedScript,onpointerlockerror: TrustedScript,onpointermove: TrustedScript,onpointerout: TrustedScript,onpointerover: TrustedScript,onpointerrawupdate: TrustedScript,onpointerup: TrustedScript,onpopoverhide: TrustedScript,onpopovershow: TrustedScript,onpopstate: TrustedScript,onportalactivate: TrustedScript,onprerenderingchange: TrustedScript,onprioritychange: TrustedScript,onprocessorerror: TrustedScript,onprogress: TrustedScript,onpush: TrustedScript,onpushsubscriptionchange: TrustedScript,onquotachange: TrustedScript,onratechange: TrustedScript,onreading: TrustedScript,onreadingerror: TrustedScript,onreadystatechange: TrustedScript,onreflectionchange: TrustedScript,onrejectionhandled: TrustedScript,onrelease: TrustedScript,onremove: TrustedScript,onremovesourcebuffer: TrustedScript,onremovestream: TrustedScript,onremovetrack: TrustedScript,onrepeat: TrustedScript,onreset: TrustedScript,onresize: TrustedScript,onresourcetimingbufferfull: TrustedScript,onresult: TrustedScript,onresume: TrustedScript,onscreenschange: TrustedScript,onscroll: TrustedScript,onscrollend: TrustedScript,onsearch: TrustedScript,onsecuritypolicyviolation: TrustedScript,onseeked: TrustedScript,onseeking: TrustedScript,onselect: TrustedScript,onselectedcandidatepairchange: TrustedScript,onselectend: TrustedScript,onselectionchange: TrustedScript,onselectstart: TrustedScript,onshippingaddresschange: TrustedScript,onshippingoptionchange: TrustedScript,onshow: TrustedScript,onsignalingstatechange: TrustedScript,onsinkchange: TrustedScript,onslotchange: TrustedScript,onsoundend: TrustedScript,onsoundstart: TrustedScript,onsourceclose: TrustedScript,onsourceended: TrustedScript,onsourceopen: TrustedScript,onspeechend: TrustedScript,onspeechstart: TrustedScript,onsqueeze: TrustedScript,onsqueezeend: TrustedScript,onsqueezestart: TrustedScript,onstalled: TrustedScript,onstart: TrustedScript,onstatechange: TrustedScript,onstop: TrustedScript,onstorage: TrustedScript,onsubmit: TrustedScript,onsuccess: TrustedScript,onsuspend: TrustedScript,onsync: TrustedScript,onterminate: TrustedScript,ontextformatupdate: TrustedScript,ontextupdate: TrustedScript,ontimeout: TrustedScript,ontimeupdate: TrustedScript,ontimezonechange: TrustedScript,ontoggle: TrustedScript,ontonechange: TrustedScript,ontouchcancel: TrustedScript,ontouchend: TrustedScript,ontouchmove: TrustedScript,ontouchstart: TrustedScript,ontrack: TrustedScript,ontransitioncancel: TrustedScript,ontransitionend: TrustedScript,ontransitionrun: TrustedScript,ontransitionstart: TrustedScript,ontypechange: TrustedScript,onuncapturederror: TrustedScript,onunhandledrejection: TrustedScript,onunload: TrustedScript,onunmute: TrustedScript,onupdate: TrustedScript,onupdateend: TrustedScript,onupdatefound: TrustedScript,onupdatestart: TrustedScript,onupgradeneeded: TrustedScript,onversionchange: TrustedScript,onvisibilitychange: TrustedScript,onvoiceschanged: TrustedScript,onvolumechange: TrustedScript,onwaiting: TrustedScript,onwaitingforkey: TrustedScript,onwebkitanimationend: TrustedScript,onwebkitanimationiteration: TrustedScript,onwebkitanimationstart: TrustedScript,onwebkitfullscreenchange: TrustedScript,onwebkitfullscreenerror: TrustedScript,onwebkittransitionend: TrustedScript,onwheel: TrustedScript,onwrite: TrustedScript,onwriteend: TrustedScript,onwritestart: TrustedScript}}}"
+    },
+    {
+      "path": "window.TrustedScript.prototype.toJSON",
+      "propertyName": "_$otherInvocation.window.trustedTypes.emptyScript.toJSON",
+      "prevProperty": "_$value",
+      "property": ""
+    },
+    {
+      "path": "window.TrustedScript.prototype.toString",
+      "propertyName": "_$otherInvocation.window.trustedTypes.emptyScript.toString",
+      "prevProperty": "_$value",
+      "property": ""
+    },
+    {
+      "path": "window.TrustedHTML.prototype.toJSON",
+      "propertyName": "_$otherInvocation.window.trustedTypes.emptyHTML.toJSON",
+      "prevProperty": "_$value",
+      "property": ""
+    },
+    {
+      "path": "window.TrustedHTML.prototype.toString",
+      "propertyName": "_$otherInvocation.window.trustedTypes.emptyHTML.toString",
+      "prevProperty": "_$value",
+      "property": ""
+    },
+    {
+      "path": "window.TaskSignal.abort",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.SyncManager.prototype.getTags",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SyncManager.prototype.register",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.StylePropertyMapReadOnly.prototype.entries",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributeStyleMap.entries",
+      "prevProperty": "_$otherInvocation.window.Audio.new().attributeStyleMap.entries",
+      "property": "{}"
+    },
+    {
+      "path": "window.StylePropertyMapReadOnly.prototype.keys",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributeStyleMap.keys",
+      "prevProperty": "_$otherInvocation.window.Audio.new().attributeStyleMap.keys",
+      "property": "{}"
+    },
+    {
+      "path": "window.StylePropertyMapReadOnly.prototype.values",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributeStyleMap.values",
+      "prevProperty": "_$otherInvocation.window.Audio.new().attributeStyleMap.values",
+      "property": "{}"
+    },
+    {
+      "path": "window.ScreenOrientation.prototype.lock",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Scheduling.prototype.isInputPending",
+      "propertyName": "_$otherInvocation.window.navigator.scheduling.isInputPending",
+      "prevProperty": "_$value",
+      "property": false
+    },
+    {
+      "path": "window.Scheduler.prototype.postTask",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SVGImageElement.prototype.decode",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Response.prototype.arrayBuffer",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Response.prototype.blob",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Response.prototype.formData",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Response.prototype.json",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Response.prototype.text",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Response.error",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Request.prototype.arrayBuffer",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Request.prototype.blob",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Request.prototype.formData",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Request.prototype.json",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Request.prototype.text",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ReadableStreamDefaultReader.prototype.cancel",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ReadableStreamBYOBReader.prototype.cancel",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ReadableStream.prototype.cancel",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ReadableStream.prototype.pipeTo",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.RTCRtpSender.prototype.getStats",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.RTCRtpSender.prototype.replaceTrack",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.RTCRtpSender.prototype.setParameters",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.RTCRtpReceiver.prototype.getStats",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PerformanceNavigation.prototype.toJSON",
+      "propertyName": "_$otherInvocation.window.performance.navigation.toJSON",
+      "prevProperty": "_$value",
+      "property": "{type: 0,redirectCount: 0}"
+    },
+    {
+      "path": "window.OffscreenCanvas.prototype.convertToBlob",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.OfflineAudioContext.prototype.resume",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.OfflineAudioContext.prototype.startRendering",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.OfflineAudioContext.prototype.suspend",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Node.prototype.cloneNode",
+      "propertyName": "_$otherInvocation.window.document.documentElement.cloneNode",
+      "prevProperty": "_$otherInvocation.window.Comment.new().cloneNode",
+      "property": "{}"
+    },
+    {
+      "path": "window.Node.prototype.cloneNode",
+      "propertyName": "_$otherInvocation.window.document.cloneNode",
+      "prevProperty": "_$otherInvocation.window.document.documentElement.cloneNode",
+      "property": "{location: null}"
+    },
+    {
+      "path": "window.Node.prototype.getRootNode",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getRootNode",
+      "prevProperty": "_$otherInvocation.window.Comment.new().getRootNode",
+      "property": "REF: window.Option.new().attributes.0.ownerDocument"
+    },
+    {
+      "path": "window.Node.prototype.getRootNode",
+      "propertyName": "_$otherInvocation.window.document.getRootNode",
+      "prevProperty": "_$otherInvocation.window.document.documentElement.getRootNode",
+      "property": "REF: window.Option.new().attributes.0.ownerDocument"
+    },
+    {
+      "path": "window.Node.prototype.hasChildNodes",
+      "propertyName": "_$otherInvocation.window.document.documentElement.hasChildNodes",
+      "prevProperty": "_$otherInvocation.window.Comment.new().hasChildNodes",
+      "property": true
+    },
+    {
+      "path": "window.Node.prototype.hasChildNodes",
+      "propertyName": "_$otherInvocation.window.document.hasChildNodes",
+      "prevProperty": "_$otherInvocation.window.document.documentElement.hasChildNodes",
+      "property": true
+    },
+    {
+      "path": "window.Navigator.prototype.getGamepads",
+      "propertyName": "_$otherInvocation.window.navigator.getGamepads",
+      "prevProperty": "_$value",
+      "property": "[,,,]"
+    },
+    {
+      "path": "window.Navigator.prototype.javaEnabled",
+      "propertyName": "_$otherInvocation.window.navigator.javaEnabled",
+      "prevProperty": "_$value",
+      "property": false
+    },
+    {
+      "path": "window.Navigator.prototype.clearAppBadge",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Navigator.prototype.getBattery",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Navigator.prototype.getBattery",
+      "propertyName": "_$otherInvocationAsync.window.navigator.getBattery",
+      "prevProperty": "_$value",
+      "property": "{}"
+    },
+    {
+      "path": "window.Navigator.prototype.requestMIDIAccess",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Navigator.prototype.requestMediaKeySystemAccess",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Navigator.prototype.setAppBadge",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Navigator.prototype.getInstalledRelatedApps",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Navigator.prototype.getInstalledRelatedApps",
+      "propertyName": "_$otherInvocationAsync.window.navigator.getInstalledRelatedApps",
+      "prevProperty": "_$value",
+      "property": "[]"
+    },
+    {
+      "path": "window.MediaCapabilities.prototype.decodingInfo",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.MediaCapabilities.prototype.encodingInfo",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ImageCapture.prototype.getPhotoCapabilities",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ImageCapture.prototype.getPhotoSettings",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ImageCapture.prototype.grabFrame",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ImageCapture.prototype.takePhoto",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.IDBFactory.prototype.databases",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.IDBFactory.prototype.databases",
+      "propertyName": "_$otherInvocationAsync.window.indexedDB.databases",
+      "prevProperty": "_$value",
+      "property": "[]"
+    },
+    {
+      "path": "window.HTMLVideoElement.prototype.requestPictureInPicture",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.HTMLMediaElement.prototype.play",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.HTMLMediaElement.prototype.setSinkId",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.HTMLMediaElement.prototype.setMediaKeys",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.HTMLElement.prototype.attachInternals",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attachInternals",
+      "prevProperty": "_$otherInvocation.window.Audio.new().attachInternals",
+      "property": "NotSupportedError: Failed to execute 'attachInternals' on 'HTMLElement': Unable to attach ElementInternals to non-custom elements."
+    },
+    {
+      "path": "window.GamepadHapticActuator.prototype.playEffect",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.GamepadHapticActuator.prototype.reset",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FontFace.prototype.load",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FeaturePolicy.prototype.allowedFeatures",
+      "propertyName": "_$otherInvocation.window.document.featurePolicy.allowedFeatures",
+      "prevProperty": "_$otherInvocation.window.Document.new().featurePolicy.allowedFeatures",
+      "property": "[geolocation,gamepad,ch-ect,midi,display-capture,usb,local-fonts,magnetometer,picture-in-picture,publickey-credentials-get,window-placement,accelerometer,otp-credentials,document-domain,encrypted-media,ch-save-data,ch-ua-full-version-list,ch-ua-wow64,ch-downlink,ch-ua-arch,xr-spatial-tracking,ch-prefers-color-scheme,idle-detection,ch-ua-platform-version,ch-width,sync-xhr,ch-ua-model,serial,clipboard-read,camera,ch-prefers-reduced-motion,ch-viewport-width,payment,ch-viewport-height,bluetooth,ch-rtt,ch-ua-full-version,fullscreen,autoplay,cross-origin-isolated,ch-dpr,hid,ch-ua-bitness,keyboard-map,ch-ua-platform,screen-wake-lock,gyroscope,clipboard-write,ch-ua-mobile,ch-device-memory,ch-ua,microphone]"
+    },
+    {
+      "path": "window.FeaturePolicy.prototype.features",
+      "propertyName": "_$otherInvocation.window.document.featurePolicy.features",
+      "prevProperty": "_$otherInvocation.window.Document.new().featurePolicy.features",
+      "property": "[geolocation,gamepad,ch-ect,midi,display-capture,usb,local-fonts,magnetometer,picture-in-picture,publickey-credentials-get,window-placement,accelerometer,otp-credentials,document-domain,encrypted-media,ch-save-data,ch-ua-full-version-list,ch-ua-wow64,ch-downlink,ch-ua-arch,xr-spatial-tracking,ch-prefers-color-scheme,idle-detection,ch-ua-platform-version,ch-width,sync-xhr,ch-ua-model,serial,clipboard-read,camera,ch-prefers-reduced-motion,ch-viewport-width,payment,ch-viewport-height,bluetooth,ch-rtt,ch-ua-full-version,fullscreen,autoplay,cross-origin-isolated,ch-dpr,hid,ch-ua-bitness,keyboard-map,ch-ua-platform,screen-wake-lock,gyroscope,clipboard-write,ch-ua-mobile,ch-device-memory,ch-ua,microphone]"
+    },
+    {
+      "path": "window.EventCounts.prototype.entries",
+      "propertyName": "_$otherInvocation.window.performance.eventCounts.entries",
+      "prevProperty": "_$value",
+      "property": "{}"
+    },
+    {
+      "path": "window.EventCounts.prototype.keys",
+      "propertyName": "_$otherInvocation.window.performance.eventCounts.keys",
+      "prevProperty": "_$value",
+      "property": "{}"
+    },
+    {
+      "path": "window.EventCounts.prototype.values",
+      "propertyName": "_$otherInvocation.window.performance.eventCounts.values",
+      "prevProperty": "_$value",
+      "property": "{}"
+    },
+    {
+      "path": "window.Element.prototype.computedStyleMap",
+      "propertyName": "_$otherInvocation.window.document.documentElement.computedStyleMap",
+      "prevProperty": "_$otherInvocation.window.Audio.new().computedStyleMap",
+      "property": "{}"
+    },
+    {
+      "path": "window.Element.prototype.getAttributeNames",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getAttributeNames",
+      "prevProperty": "_$otherInvocation.window.Audio.new().getAttributeNames",
+      "property": "[class,part]"
+    },
+    {
+      "path": "window.Element.prototype.getBoundingClientRect",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getBoundingClientRect",
+      "prevProperty": "_$otherInvocation.window.Audio.new().getBoundingClientRect",
+      "property": "{}"
+    },
+    {
+      "path": "window.Element.prototype.getClientRects",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getClientRects",
+      "prevProperty": "_$otherInvocation.window.Audio.new().getClientRects",
+      "property": "{0: {}}"
+    },
+    {
+      "path": "window.Element.prototype.hasAttributes",
+      "propertyName": "_$otherInvocation.window.document.documentElement.hasAttributes",
+      "prevProperty": "_$otherInvocation.window.Audio.new().hasAttributes",
+      "property": true
+    },
+    {
+      "path": "window.Element.prototype.requestPointerLock",
+      "propertyName": "_$otherInvocationAsync.window.document.documentElement.requestPointerLock",
+      "prevProperty": "_$otherInvocationAsync.window.Audio.new().requestPointerLock",
+      "property": "NotAllowedError: A user gesture is required to request Pointer Lock."
+    },
+    {
+      "path": "window.Element.prototype.checkVisibility",
+      "propertyName": "_$otherInvocation.window.document.documentElement.checkVisibility",
+      "prevProperty": "_$otherInvocation.window.Audio.new().checkVisibility",
+      "property": true
+    },
+    {
+      "path": "window.Element.prototype.getAnimations",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getAnimations",
+      "prevProperty": "_$otherInvocation.window.Audio.new().getAnimations",
+      "property": "[]"
+    },
+    {
+      "path": "window.Document.prototype.caretRangeFromPoint",
+      "propertyName": "_$otherInvocation.window.document.caretRangeFromPoint",
+      "prevProperty": "_$otherInvocation.window.Document.new().caretRangeFromPoint",
+      "property": "{}"
+    },
+    {
+      "path": "window.Document.prototype.createDocumentFragment",
+      "propertyName": "_$otherInvocation.window.document.createDocumentFragment",
+      "prevProperty": "_$otherInvocation.window.Document.new().createDocumentFragment",
+      "property": "{}"
+    },
+    {
+      "path": "window.Document.prototype.createRange",
+      "propertyName": "_$otherInvocation.window.document.createRange",
+      "prevProperty": "_$otherInvocation.window.Document.new().createRange",
+      "property": "{}"
+    },
+    {
+      "path": "window.Document.prototype.exitFullscreen",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Document.prototype.exitFullscreen",
+      "propertyName": "_$otherInvocationAsync.window.document.exitFullscreen",
+      "prevProperty": "_$otherInvocationAsync.window.Document.new().exitFullscreen",
+      "property": "TypeError: Failed to execute 'exitFullscreen' on 'Document': Document not active"
+    },
+    {
+      "path": "window.Document.prototype.getSelection",
+      "propertyName": "_$otherInvocation.window.document.getSelection",
+      "prevProperty": "_$otherInvocation.window.Document.new().getSelection",
+      "property": "{}"
+    },
+    {
+      "path": "window.Document.prototype.exitPictureInPicture",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Document.prototype.exitPictureInPicture",
+      "propertyName": "_$otherInvocationAsync.window.document.exitPictureInPicture",
+      "prevProperty": "_$otherInvocationAsync.window.Document.new().exitPictureInPicture",
+      "property": "InvalidStateError: Failed to execute 'exitPictureInPicture' on 'Document': There is no Picture-in-Picture element in this document."
+    },
+    {
+      "path": "window.Document.prototype.getAnimations",
+      "propertyName": "_$otherInvocation.window.document.getAnimations",
+      "prevProperty": "_$otherInvocation.window.Document.new().getAnimations",
+      "property": "[]"
+    },
+    {
+      "path": "window.Document.new().fonts.load",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Document.new().fonts.entries",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Document.new().fonts.keys",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Document.new().fonts.values",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.DataTransferItem.prototype.getAsFileSystemHandle",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.DOMTokenList.prototype.toString",
+      "propertyName": "_$otherInvocation.window.document.documentElement.classList.toString",
+      "prevProperty": "_$otherInvocation.window.Audio.new().part.toString",
+      "property": ""
+    },
+    {
+      "path": "window.DOMTokenList.prototype.toString",
+      "propertyName": "_$otherInvocation.window.document.documentElement.part.toString",
+      "prevProperty": "_$otherInvocation.window.document.documentElement.classList.toString",
+      "property": ""
+    },
+    {
+      "path": "window.DOMRectReadOnly.prototype.toJSON",
+      "propertyName": "_$otherInvocation.window.navigator.virtualKeyboard.boundingRect.toJSON",
+      "prevProperty": "_$otherInvocation.window.DOMRect.new().toJSON",
+      "property": "{x: 0,y: 0,width: 0,height: 0,top: 0,right: 0,bottom: 0,left: 0}"
+    },
+    {
+      "path": "window.DOMRectReadOnly.fromRect",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.DOMRect.fromRect",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.DOMQuad.fromQuad",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.DOMQuad.fromRect",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.DOMPointReadOnly.fromPoint",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.DOMPoint.fromPoint",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.DOMMatrixReadOnly.fromMatrix",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.DOMImplementation.prototype.createHTMLDocument",
+      "propertyName": "_$otherInvocation.window.document.implementation.createHTMLDocument",
+      "prevProperty": "_$otherInvocation.window.Document.new().implementation.createHTMLDocument",
+      "property": "{location: null}"
+    },
+    {
+      "path": "window.DOMImplementation.prototype.hasFeature",
+      "propertyName": "_$otherInvocation.window.document.implementation.hasFeature",
+      "prevProperty": "_$otherInvocation.window.Document.new().implementation.hasFeature",
+      "property": true
+    },
+    {
+      "path": "window.CustomElementRegistry.prototype.whenDefined",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CSSStyleSheet.prototype.replace",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Blob.prototype.arrayBuffer",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Blob.prototype.text",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BaseAudioContext.prototype.decodeAudioData",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.AudioContext.prototype.resume",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.AudioContext.prototype.suspend",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Animation.new().finished",
+      "propertyName": "_$protos",
+      "property": [
+        "Animation.prototype",
+        "EventTarget.prototype",
+        "Object.prototype"
+      ]
+    },
+    {
+      "path": "window.Animation.new().finished",
+      "propertyName": "effect",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "object",
+        "_$value": null
+      }
+    },
+    {
+      "path": "window.Animation.new().finished",
+      "propertyName": "startTime",
+      "prevProperty": "effect",
+      "property": {
+        "_$type": "number",
+        "_$value": 3055.961
+      }
+    },
+    {
+      "path": "window.Animation.new().finished",
+      "propertyName": "currentTime",
+      "prevProperty": "startTime",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Animation.new().finished",
+      "propertyName": "playbackRate",
+      "prevProperty": "currentTime",
+      "property": {
+        "_$type": "number",
+        "_$value": -1
+      }
+    },
+    {
+      "path": "window.Animation.new().finished",
+      "propertyName": "playState",
+      "prevProperty": "playbackRate",
+      "property": {
+        "_$type": "string",
+        "_$value": "finished"
+      }
+    },
+    {
+      "path": "window.Animation.new().finished",
+      "propertyName": "pending",
+      "prevProperty": "playState",
+      "property": {
+        "_$type": "boolean",
+        "_$value": false
+      }
+    },
+    {
+      "path": "window.Animation.new().finished",
+      "propertyName": "id",
+      "prevProperty": "pending",
+      "property": {
+        "_$type": "string",
+        "_$value": ""
+      }
+    },
+    {
+      "path": "window.Animation.new().finished",
+      "propertyName": "onfinish",
+      "prevProperty": "id",
+      "property": {
+        "_$type": "object",
+        "_$value": null
+      }
+    },
+    {
+      "path": "window.Animation.new().finished",
+      "propertyName": "oncancel",
+      "prevProperty": "onfinish",
+      "property": {
+        "_$type": "object",
+        "_$value": null
+      }
+    },
+    {
+      "path": "window.Animation.new().finished",
+      "propertyName": "replaceState",
+      "prevProperty": "oncancel",
+      "property": {
+        "_$type": "string",
+        "_$value": "active"
+      }
+    },
+    {
+      "path": "window.Animation.new().finished",
+      "propertyName": "onremove",
+      "prevProperty": "replaceState",
+      "property": {
+        "_$type": "object",
+        "_$value": null
+      }
+    },
+    {
+      "path": "window.Uint8Array.new()",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 0
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.Uint8Array.new()",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Uint8Array.new()",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Int8Array.new()",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 1
+      }
+    },
+    {
+      "path": "window.Int8Array.new()",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 0
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.Int8Array.new()",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Int8Array.new()",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Uint16Array.new()",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 2
+      }
+    },
+    {
+      "path": "window.Uint16Array.new()",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 0
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.Uint16Array.new()",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Uint16Array.new()",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Int16Array.new()",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 2
+      }
+    },
+    {
+      "path": "window.Int16Array.new()",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 0
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.Int16Array.new()",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Int16Array.new()",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Uint32Array.new()",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 4
+      }
+    },
+    {
+      "path": "window.Uint32Array.new()",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 0
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.Uint32Array.new()",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Uint32Array.new()",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Int32Array.new()",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 4
+      }
+    },
+    {
+      "path": "window.Int32Array.new()",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 0
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.Int32Array.new()",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Int32Array.new()",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Float32Array.new()",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 4
+      }
+    },
+    {
+      "path": "window.Float32Array.new()",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 0
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.Float32Array.new()",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Float32Array.new()",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Float64Array.new()",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 8
+      }
+    },
+    {
+      "path": "window.Float64Array.new()",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 0
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.Float64Array.new()",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Float64Array.new()",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Uint8ClampedArray.new()",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 1
+      }
+    },
+    {
+      "path": "window.Uint8ClampedArray.new()",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 0
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.Uint8ClampedArray.new()",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Uint8ClampedArray.new()",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.BigUint64Array.new()",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 8
+      }
+    },
+    {
+      "path": "window.BigUint64Array.new()",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 0
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.BigUint64Array.new()",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.BigUint64Array.new()",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.BigInt64Array.new()",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 8
+      }
+    },
+    {
+      "path": "window.BigInt64Array.new()",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 0
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.BigInt64Array.new()",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.BigInt64Array.new()",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.Map.new()",
+      "propertyName": "size",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 1
+      }
+    },
+    {
+      "path": "window.Set.new()",
+      "propertyName": "size",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 1
+      }
+    },
+    {
+      "path": "window.decodeURI",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.decodeURIComponent",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.encodeURI",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.encodeURIComponent",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.escape",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.unescape",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.eval",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.isFinite",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.isNaN",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.console.debug",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.error",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.info",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.log",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.warn",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.dir",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.dirxml",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.table",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.trace",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.group",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.groupCollapsed",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.groupEnd",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.count",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.countReset",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.profile",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.profileEnd",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.time",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.timeLog",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.timeEnd",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.timeStamp",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.console.context",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Option.new().attributes",
+      "propertyName": "class",
+      "prevProperty": "_$protos",
+      "property": "REF: window.Option.new().attributes.0"
+    },
+    {
+      "path": "window.Image.prototype.decode",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Image.new().attributes",
+      "propertyName": "class",
+      "prevProperty": "_$protos",
+      "property": "REF: window.Image.new().attributes.0"
+    },
+    {
+      "path": "window.Audio.new().attributes",
+      "propertyName": "controlslist",
+      "prevProperty": "preload",
+      "property": "REF: window.Audio.new().attributes.1"
+    },
+    {
+      "path": "window.Audio.new().attributes",
+      "propertyName": "class",
+      "prevProperty": "controlslist",
+      "property": "REF: window.Audio.new().attributes.2"
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.prototype.addIceCandidate",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.prototype.createAnswer",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.prototype.createOffer",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.prototype.getStats",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.document.documentElement.attributes",
+      "propertyName": "class",
+      "prevProperty": "_$protos",
+      "property": "REF: window.document.documentElement.attributes.0"
+    },
+    {
+      "path": "window.blur",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.captureEvents",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.clearInterval",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.clearTimeout",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.createImageBitmap",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.fetch",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.find",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.focus",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.getSelection",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.releaseEvents",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.scroll",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.scrollBy",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.scrollTo",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.Atomics.isLockFree",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.WebAssembly.compile",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.WebAssembly.instantiate",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.WebAssembly.compileStreaming",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.WebAssembly.instantiateStreaming",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.WebAssembly.CompileError.new()",
+      "propertyName": "message",
+      "prevProperty": "stack",
+      "property": {
+        "_$type": "string",
+        "_$value": ""
+      }
+    },
+    {
+      "path": "window.WebAssembly.CompileError",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.WebAssembly.LinkError.new()",
+      "propertyName": "message",
+      "prevProperty": "stack",
+      "property": {
+        "_$type": "string",
+        "_$value": ""
+      }
+    },
+    {
+      "path": "window.WebAssembly.LinkError",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.WebAssembly.RuntimeError.new()",
+      "propertyName": "message",
+      "prevProperty": "stack",
+      "property": {
+        "_$type": "string",
+        "_$value": ""
+      }
+    },
+    {
+      "path": "window.WebAssembly.RuntimeError",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Cache.prototype.add",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Cache.prototype.addAll",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Cache.prototype.keys",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Cache.prototype.match",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Cache.prototype.matchAll",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Cache.prototype.put",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CacheStorage.prototype.has",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CacheStorage.prototype.keys",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CacheStorage.prototype.keys",
+      "propertyName": "_$otherInvocationAsync.window.caches.keys",
+      "prevProperty": "_$value",
+      "property": "[]"
+    },
+    {
+      "path": "window.CacheStorage.prototype.match",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Clipboard.prototype.readText",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Clipboard.prototype.writeText",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ClipboardItem.prototype.getType",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CookieStore.prototype.get",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CookieStore.prototype.get",
+      "propertyName": "_$otherInvocationAsync.window.cookieStore.get",
+      "prevProperty": "_$value",
+      "property": "TypeError: Failed to execute 'get' on 'CookieStore': CookieStoreGetOptions must not be empty"
+    },
+    {
+      "path": "window.CookieStore.prototype.getAll",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CookieStore.prototype.getAll",
+      "propertyName": "_$otherInvocationAsync.window.cookieStore.getAll",
+      "prevProperty": "_$value",
+      "property": "[]"
+    },
+    {
+      "path": "window.CookieStore.prototype.set",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CookieStoreManager.prototype.getSubscriptions",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CookieStoreManager.prototype.subscribe",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CookieStoreManager.prototype.unsubscribe",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CredentialsContainer.prototype.create",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CredentialsContainer.prototype.create",
+      "propertyName": "_$otherInvocationAsync.window.navigator.credentials.create",
+      "prevProperty": "_$value",
+      "property": "NotSupportedError: Only exactly one of 'password', 'federated', and 'publicKey' credential types are currently supported."
+    },
+    {
+      "path": "window.CredentialsContainer.prototype.get",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CredentialsContainer.prototype.get",
+      "propertyName": "_$otherInvocationAsync.window.navigator.credentials.get",
+      "prevProperty": "_$value",
+      "property": null
+    },
+    {
+      "path": "window.CredentialsContainer.prototype.preventSilentAccess",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CredentialsContainer.prototype.store",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Keyboard.prototype.getLayoutMap",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Keyboard.prototype.getLayoutMap",
+      "propertyName": "_$otherInvocationAsync.window.navigator.keyboard.getLayoutMap",
+      "prevProperty": "_$value",
+      "property": "{}"
+    },
+    {
+      "path": "window.Keyboard.prototype.lock",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.LockManager.prototype.query",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.LockManager.prototype.query",
+      "propertyName": "_$otherInvocationAsync.window.navigator.locks.query",
+      "prevProperty": "_$value",
+      "property": "{held: [],pending: []}"
+    },
+    {
+      "path": "window.LockManager.prototype.request",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.MediaDevices.prototype.enumerateDevices",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.MediaDevices.prototype.getSupportedConstraints",
+      "propertyName": "_$otherInvocation.window.navigator.mediaDevices.getSupportedConstraints",
+      "prevProperty": "_$value",
+      "property": "{aspectRatio: true,autoGainControl: true,brightness: true,channelCount: true,colorTemperature: true,contrast: true,deviceId: true,displaySurface: true,echoCancellation: true,exposureCompensation: true,exposureMode: true,exposureTime: true,facingMode: true,focusDistance: true,focusMode: true,frameRate: true,groupId: true,height: true,iso: true,latency: true,noiseSuppression: true,pan: true,pointsOfInterest: true,resizeMode: true,sampleRate: true,sampleSize: true,saturation: true,sharpness: true,suppressLocalAudioPlayback: true,tilt: true,torch: true,whiteBalanceMode: true,width: true,zoom: true}"
+    },
+    {
+      "path": "window.MediaKeySession.prototype.generateRequest",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.MediaKeySession.prototype.load",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.MediaKeySession.prototype.update",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.MediaKeySystemAccess.prototype.createMediaKeys",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.MediaKeys.prototype.setServerCertificate",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.MediaKeys.prototype.getStatusForPolicy",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.NavigationPreloadManager.prototype.disable",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.NavigationPreloadManager.prototype.enable",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.NavigationPreloadManager.prototype.getState",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.NavigationPreloadManager.prototype.setHeaderValue",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.NavigatorManagedData.prototype.getManagedConfiguration",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ServiceWorkerContainer.prototype.getRegistration",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ServiceWorkerContainer.prototype.getRegistrations",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ServiceWorkerContainer.prototype.getRegistrations",
+      "propertyName": "_$otherInvocationAsync.window.navigator.serviceWorker.getRegistrations",
+      "prevProperty": "_$value",
+      "property": "[]"
+    },
+    {
+      "path": "window.ServiceWorkerContainer.prototype.register",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ServiceWorkerRegistration.prototype.unregister",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ServiceWorkerRegistration.prototype.update",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ServiceWorkerRegistration.prototype.getNotifications",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ServiceWorkerRegistration.prototype.showNotification",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.StorageManager.prototype.estimate",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.StorageManager.prototype.persisted",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.StorageManager.prototype.persisted",
+      "propertyName": "_$otherInvocationAsync.window.navigator.storage.persisted",
+      "prevProperty": "_$value",
+      "property": false
+    },
+    {
+      "path": "window.StorageManager.prototype.getDirectory",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.StorageManager.prototype.getDirectory",
+      "propertyName": "_$otherInvocationAsync.window.navigator.storage.getDirectory",
+      "prevProperty": "_$value",
+      "property": "{}"
+    },
+    {
+      "path": "window.StorageManager.prototype.persist",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.StorageManager.prototype.persist",
+      "propertyName": "_$otherInvocationAsync.window.navigator.storage.persist",
+      "prevProperty": "_$value",
+      "property": false
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.decrypt",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.deriveBits",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.deriveKey",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.digest",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.encrypt",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.exportKey",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.generateKey",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.importKey",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.sign",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.unwrapKey",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.verify",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.wrapKey",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.WebTransport.prototype.createBidirectionalStream",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.WebTransport.prototype.createUnidirectionalStream",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Worklet.prototype.addModule",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.VideoFrame.prototype.copyTo",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.AudioDecoder.prototype.flush",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.AudioDecoder.isConfigSupported",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.AudioEncoder.prototype.flush",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.AudioEncoder.isConfigSupported",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ImageDecoder.prototype.decode",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.ImageDecoder.isTypeSupported",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.VideoDecoder.prototype.flush",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.VideoDecoder.isConfigSupported",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.VideoEncoder.prototype.flush",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.VideoEncoder.isConfigSupported",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PublicKeyCredential.isConditionalMediationAvailable",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BarcodeDetector.prototype.detect",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Bluetooth.prototype.getAvailability",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Bluetooth.prototype.getAvailability",
+      "propertyName": "_$otherInvocationAsync.window.navigator.bluetooth.getAvailability",
+      "prevProperty": "_$value",
+      "property": true
+    },
+    {
+      "path": "window.Bluetooth.prototype.requestDevice",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Bluetooth.prototype.requestDevice",
+      "propertyName": "_$otherInvocationAsync.window.navigator.bluetooth.requestDevice",
+      "prevProperty": "_$value",
+      "property": "SecurityError: Failed to execute 'requestDevice' on 'Bluetooth': Must be handling a user gesture to show a permission request."
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.getDescriptor",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.getDescriptors",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.readValue",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.startNotifications",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.stopNotifications",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.writeValue",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.writeValueWithResponse",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.writeValueWithoutResponse",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTDescriptor.prototype.readValue",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTDescriptor.prototype.writeValue",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTServer.prototype.connect",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTServer.prototype.getPrimaryService",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTServer.prototype.getPrimaryServices",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTService.prototype.getCharacteristic",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BluetoothRemoteGATTService.prototype.getCharacteristics",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FileSystemDirectoryHandle.prototype.getDirectoryHandle",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FileSystemDirectoryHandle.prototype.getFileHandle",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FileSystemDirectoryHandle.prototype.removeEntry",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FileSystemDirectoryHandle.prototype.resolve",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FileSystemFileHandle.prototype.createWritable",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FileSystemFileHandle.prototype.getFile",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FileSystemFileHandle.prototype.move",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FileSystemHandle.prototype.isSameEntry",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FileSystemHandle.prototype.queryPermission",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FileSystemWritableFileStream.prototype.seek",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FileSystemWritableFileStream.prototype.truncate",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.FontData.prototype.blob",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.HID.prototype.getDevices",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.HID.prototype.getDevices",
+      "propertyName": "_$otherInvocationAsync.window.navigator.hid.getDevices",
+      "prevProperty": "_$value",
+      "property": "[]"
+    },
+    {
+      "path": "window.HID.prototype.requestDevice",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.HIDDevice.prototype.receiveFeatureReport",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.HIDDevice.prototype.sendFeatureReport",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.HIDDevice.prototype.sendReport",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.HIDDevice.prototype.forget",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PaymentRequest.prototype.abort",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PaymentRequest.prototype.canMakePayment",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PaymentRequest.prototype.hasEnrolledInstrument",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PaymentRequest.prototype.show",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PaymentResponse.prototype.complete",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PaymentResponse.prototype.retry",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PresentationRequest.prototype.getAvailability",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PresentationRequest.prototype.reconnect",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Sanitizer.getDefaultConfiguration",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.Serial.prototype.getPorts",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Serial.prototype.getPorts",
+      "propertyName": "_$otherInvocationAsync.window.navigator.serial.getPorts",
+      "prevProperty": "_$value",
+      "property": "[]"
+    },
+    {
+      "path": "window.Serial.prototype.requestPort",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Serial.prototype.requestPort",
+      "propertyName": "_$otherInvocationAsync.window.navigator.serial.requestPort",
+      "prevProperty": "_$value",
+      "property": "SecurityError: Failed to execute 'requestPort' on 'Serial': Must be handling a user gesture to show a permission request."
+    },
+    {
+      "path": "window.SerialPort.prototype.getSignals",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SerialPort.prototype.setSignals",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.SerialPort.prototype.forget",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USB.prototype.getDevices",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USB.prototype.getDevices",
+      "propertyName": "_$otherInvocationAsync.window.navigator.usb.getDevices",
+      "prevProperty": "_$value",
+      "property": "[]"
+    },
+    {
+      "path": "window.USB.prototype.requestDevice",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USBDevice.prototype.claimInterface",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USBDevice.prototype.clearHalt",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USBDevice.prototype.controlTransferIn",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USBDevice.prototype.controlTransferOut",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USBDevice.prototype.isochronousTransferIn",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USBDevice.prototype.isochronousTransferOut",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USBDevice.prototype.releaseInterface",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USBDevice.prototype.reset",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USBDevice.prototype.selectAlternateInterface",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USBDevice.prototype.selectConfiguration",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USBDevice.prototype.transferIn",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USBDevice.prototype.transferOut",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.USBDevice.prototype.forget",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.WakeLock.prototype.request",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.WakeLock.prototype.request",
+      "propertyName": "_$otherInvocationAsync.window.navigator.wakeLock.request",
+      "prevProperty": "_$value",
+      "property": "{}"
+    },
+    {
+      "path": "window.WakeLockSentinel.prototype.release",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.WindowControlsOverlay.prototype.getTitlebarAreaRect",
+      "propertyName": "_$otherInvocation.window.navigator.windowControlsOverlay.getTitlebarAreaRect",
+      "prevProperty": "_$value",
+      "property": "{}"
+    },
+    {
+      "path": "window.XRFrame.prototype.createAnchor",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.XRRigidTransform.new().matrix",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 4
+      }
+    },
+    {
+      "path": "window.XRRigidTransform.new().matrix",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 64
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.XRRigidTransform.new().matrix",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 64
+      }
+    },
+    {
+      "path": "window.XRRigidTransform.new().matrix",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.XRRigidTransform.new().inverse.matrix",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 4
+      }
+    },
+    {
+      "path": "window.XRRigidTransform.new().inverse.matrix",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 64
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.XRRigidTransform.new().inverse.matrix",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 64
+      }
+    },
+    {
+      "path": "window.XRRigidTransform.new().inverse.matrix",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.XRSession.prototype.end",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.XRSession.prototype.requestReferenceSpace",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.XRSession.prototype.requestHitTestSource",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.XRSession.prototype.requestHitTestSourceForTransientInput",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.XRSession.prototype.requestLightProbe",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.XRSystem.prototype.isSessionSupported",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.XRSystem.prototype.requestSession",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.XRSystem.prototype.supportsSession",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.XRHitTestResult.prototype.createAnchor",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.XRRay.new().matrix",
+      "propertyName": "BYTES_PER_ELEMENT",
+      "prevProperty": "_$protos",
+      "property": {
+        "_$type": "number",
+        "_$value": 4
+      }
+    },
+    {
+      "path": "window.XRRay.new().matrix",
+      "propertyName": "buffer",
+      "prevProperty": "BYTES_PER_ELEMENT",
+      "property": {
+        "_$protos": [
+          "ArrayBuffer.prototype",
+          "Object.prototype"
+        ],
+        "byteLength": {
+          "_$type": "number",
+          "_$value": 64
+        },
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.XRRay.new().matrix",
+      "propertyName": "byteLength",
+      "prevProperty": "buffer",
+      "property": {
+        "_$type": "number",
+        "_$value": 64
+      }
+    },
+    {
+      "path": "window.XRRay.new().matrix",
+      "propertyName": "byteOffset",
+      "prevProperty": "byteLength",
+      "property": {
+        "_$type": "number",
+        "_$value": 0
+      }
+    },
+    {
+      "path": "window.getScreenDetails",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.queryLocalFonts",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.showDirectoryPicker",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.showOpenFilePicker",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.showSaveFilePicker",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.speechSynthesis.cancel",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.speechSynthesis.getVoices",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": false
+    },
+    {
+      "path": "window.speechSynthesis.pause",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.speechSynthesis.resume",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$function",
+      "property": false
+    },
+    {
+      "path": "window.BackgroundFetchManager.prototype.fetch",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BackgroundFetchManager.prototype.get",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BackgroundFetchManager.prototype.getIds",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BackgroundFetchRegistration.prototype.abort",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BackgroundFetchRegistration.prototype.match",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BackgroundFetchRegistration.prototype.matchAll",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.BrowserCaptureMediaStreamTrack.prototype.cropTo",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.CropTarget.fromElement",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Ink.prototype.requestPresenter",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Ink.prototype.requestPresenter",
+      "propertyName": "_$otherInvocationAsync.window.navigator.ink.requestPresenter",
+      "prevProperty": "_$value",
+      "property": "{}"
+    },
+    {
+      "path": "window.HighlightRegistry.prototype.entries",
+      "propertyName": "_$otherInvocation.window.CSS.highlights.entries",
+      "prevProperty": "_$value",
+      "property": "{}"
+    },
+    {
+      "path": "window.HighlightRegistry.prototype.keys",
+      "propertyName": "_$otherInvocation.window.CSS.highlights.keys",
+      "prevProperty": "_$value",
+      "property": "{}"
+    },
+    {
+      "path": "window.HighlightRegistry.prototype.values",
+      "propertyName": "_$otherInvocation.window.CSS.highlights.values",
+      "prevProperty": "_$value",
+      "property": "{}"
+    },
+    {
+      "path": "window.MediaStreamTrack.prototype.applyConstraints",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Navigation.prototype.entries",
+      "propertyName": "_$otherInvocation.window.navigation.entries",
+      "prevProperty": "_$value",
+      "property": "[REF: window.navigation.currentEntry]"
+    },
+    {
+      "path": "window.NavigatorUAData.prototype.getHighEntropyValues",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PaymentInstruments.prototype.get",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PaymentInstruments.prototype.has",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PaymentInstruments.prototype.keys",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PaymentInstruments.prototype.set",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PaymentManager.prototype.enableDelegations",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PeriodicSyncManager.prototype.getTags",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PeriodicSyncManager.prototype.register",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PeriodicSyncManager.prototype.unregister",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.Permissions.prototype.query",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PushManager.prototype.getSubscription",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PushManager.prototype.permissionState",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PushManager.prototype.subscribe",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.PushSubscription.prototype.unsubscribe",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.RemotePlayback.prototype.cancelWatchAvailability",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "window.RemotePlayback.prototype.watchAvailability",
+      "propertyName": "_$isAsync",
+      "prevProperty": "_$invocation",
+      "property": true
+    },
+    {
+      "path": "detached.StyleMedia.prototype.matchMedium",
+      "propertyName": "_$otherInvocation.window.styleMedia.matchMedium",
+      "prevProperty": "_$value",
+      "property": false
+    },
+    {
+      "path": "window.Option.new().attributes",
+      "propertyName": "0",
+      "property": {
+        "_$protos": [
+          "Attr.prototype",
+          "Node.prototype",
+          "EventTarget.prototype",
+          "Object.prototype"
+        ],
+        "namespaceURI": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "prefix": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "localName": {
+          "_$type": "string",
+          "_$value": "class"
+        },
+        "name": {
+          "_$type": "string",
+          "_$value": "class"
+        },
+        "value": {
+          "_$type": "string",
+          "_$value": ""
+        },
+        "ownerElement": {
+          "_$protos": [
+            "HTMLOptionElement.prototype",
+            "HTMLElement.prototype",
+            "Element.prototype",
+            "Node.prototype",
+            "EventTarget.prototype",
+            "Object.prototype"
+          ],
+          "_$skipped": "SKIPPED ELEMENT",
+          "_$type": "object"
+        },
+        "specified": {
+          "_$type": "boolean",
+          "_$value": true
+        },
+        "nodeType": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "nodeName": {
+          "_$type": "string",
+          "_$value": "class"
+        },
+        "baseURI": {
+          "_$type": "string",
+          "_$value": "<URL>"
+        },
+        "isConnected": {
+          "_$type": "boolean",
+          "_$value": false
+        },
+        "ownerDocument": {
+          "_$protos": [
+            "HTMLDocument.prototype",
+            "Document.prototype",
+            "Node.prototype",
+            "EventTarget.prototype",
+            "Object.prototype"
+          ],
+          "_$skipped": "SKIPPED DOCUMENT",
+          "_$type": "object"
+        },
+        "parentNode": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "parentElement": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "childNodes": {
+          "_$protos": [
+            "NodeList.prototype",
+            "Object.prototype"
+          ],
+          "length": {
+            "_$type": "number",
+            "_$value": 0
+          },
+          "_$type": "object"
+        },
+        "firstChild": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "lastChild": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "previousSibling": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "nextSibling": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "nodeValue": {
+          "_$type": "string",
+          "_$value": ""
+        },
+        "textContent": {
+          "_$type": "string",
+          "_$value": ""
+        },
+        "ELEMENT_NODE": {
+          "_$type": "number",
+          "_$value": 1
+        },
+        "ATTRIBUTE_NODE": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "TEXT_NODE": {
+          "_$type": "number",
+          "_$value": 3
+        },
+        "CDATA_SECTION_NODE": {
+          "_$type": "number",
+          "_$value": 4
+        },
+        "ENTITY_REFERENCE_NODE": {
+          "_$type": "number",
+          "_$value": 5
+        },
+        "ENTITY_NODE": {
+          "_$type": "number",
+          "_$value": 6
+        },
+        "PROCESSING_INSTRUCTION_NODE": {
+          "_$type": "number",
+          "_$value": 7
+        },
+        "COMMENT_NODE": {
+          "_$type": "number",
+          "_$value": 8
+        },
+        "DOCUMENT_NODE": {
+          "_$type": "number",
+          "_$value": 9
+        },
+        "DOCUMENT_TYPE_NODE": {
+          "_$type": "number",
+          "_$value": 10
+        },
+        "DOCUMENT_FRAGMENT_NODE": {
+          "_$type": "number",
+          "_$value": 11
+        },
+        "NOTATION_NODE": {
+          "_$type": "number",
+          "_$value": 12
+        },
+        "DOCUMENT_POSITION_DISCONNECTED": {
+          "_$type": "number",
+          "_$value": 1
+        },
+        "DOCUMENT_POSITION_PRECEDING": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "DOCUMENT_POSITION_FOLLOWING": {
+          "_$type": "number",
+          "_$value": 4
+        },
+        "DOCUMENT_POSITION_CONTAINS": {
+          "_$type": "number",
+          "_$value": 8
+        },
+        "DOCUMENT_POSITION_CONTAINED_BY": {
+          "_$type": "number",
+          "_$value": 16
+        },
+        "DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC": {
+          "_$type": "number",
+          "_$value": 32
+        },
+        "_$type": "object",
+        "_$flags": "ce"
+      }
+    },
+    {
+      "path": "window.Image.new().attributes",
+      "propertyName": "0",
+      "property": {
+        "_$protos": [
+          "Attr.prototype",
+          "Node.prototype",
+          "EventTarget.prototype",
+          "Object.prototype"
+        ],
+        "namespaceURI": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "prefix": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "localName": {
+          "_$type": "string",
+          "_$value": "class"
+        },
+        "name": {
+          "_$type": "string",
+          "_$value": "class"
+        },
+        "value": {
+          "_$type": "string",
+          "_$value": ""
+        },
+        "ownerElement": {
+          "_$protos": [
+            "HTMLImageElement.prototype",
+            "HTMLElement.prototype",
+            "Element.prototype",
+            "Node.prototype",
+            "EventTarget.prototype",
+            "Object.prototype"
+          ],
+          "_$skipped": "SKIPPED ELEMENT",
+          "_$type": "object"
+        },
+        "specified": {
+          "_$type": "boolean",
+          "_$value": true
+        },
+        "nodeType": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "nodeName": {
+          "_$type": "string",
+          "_$value": "class"
+        },
+        "baseURI": {
+          "_$type": "string",
+          "_$value": "<URL>"
+        },
+        "isConnected": {
+          "_$type": "boolean",
+          "_$value": false
+        },
+        "parentNode": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "parentElement": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "childNodes": {
+          "_$protos": [
+            "NodeList.prototype",
+            "Object.prototype"
+          ],
+          "length": {
+            "_$type": "number",
+            "_$value": 0
+          },
+          "_$type": "object"
+        },
+        "firstChild": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "lastChild": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "previousSibling": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "nextSibling": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "nodeValue": {
+          "_$type": "string",
+          "_$value": ""
+        },
+        "textContent": {
+          "_$type": "string",
+          "_$value": ""
+        },
+        "ELEMENT_NODE": {
+          "_$type": "number",
+          "_$value": 1
+        },
+        "ATTRIBUTE_NODE": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "TEXT_NODE": {
+          "_$type": "number",
+          "_$value": 3
+        },
+        "CDATA_SECTION_NODE": {
+          "_$type": "number",
+          "_$value": 4
+        },
+        "ENTITY_REFERENCE_NODE": {
+          "_$type": "number",
+          "_$value": 5
+        },
+        "ENTITY_NODE": {
+          "_$type": "number",
+          "_$value": 6
+        },
+        "PROCESSING_INSTRUCTION_NODE": {
+          "_$type": "number",
+          "_$value": 7
+        },
+        "COMMENT_NODE": {
+          "_$type": "number",
+          "_$value": 8
+        },
+        "DOCUMENT_NODE": {
+          "_$type": "number",
+          "_$value": 9
+        },
+        "DOCUMENT_TYPE_NODE": {
+          "_$type": "number",
+          "_$value": 10
+        },
+        "DOCUMENT_FRAGMENT_NODE": {
+          "_$type": "number",
+          "_$value": 11
+        },
+        "NOTATION_NODE": {
+          "_$type": "number",
+          "_$value": 12
+        },
+        "DOCUMENT_POSITION_DISCONNECTED": {
+          "_$type": "number",
+          "_$value": 1
+        },
+        "DOCUMENT_POSITION_PRECEDING": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "DOCUMENT_POSITION_FOLLOWING": {
+          "_$type": "number",
+          "_$value": 4
+        },
+        "DOCUMENT_POSITION_CONTAINS": {
+          "_$type": "number",
+          "_$value": 8
+        },
+        "DOCUMENT_POSITION_CONTAINED_BY": {
+          "_$type": "number",
+          "_$value": 16
+        },
+        "DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC": {
+          "_$type": "number",
+          "_$value": 32
+        },
+        "_$type": "object",
+        "_$flags": "ce"
+      }
+    },
+    {
+      "path": "window.Audio.new().attributes",
+      "propertyName": "1",
+      "prevProperty": "0",
+      "property": {
+        "_$protos": [
+          "Attr.prototype",
+          "Node.prototype",
+          "EventTarget.prototype",
+          "Object.prototype"
+        ],
+        "namespaceURI": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "prefix": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "localName": {
+          "_$type": "string",
+          "_$value": "controlslist"
+        },
+        "name": {
+          "_$type": "string",
+          "_$value": "controlslist"
+        },
+        "value": {
+          "_$type": "string",
+          "_$value": ""
+        },
+        "specified": {
+          "_$type": "boolean",
+          "_$value": true
+        },
+        "nodeType": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "nodeName": {
+          "_$type": "string",
+          "_$value": "controlslist"
+        },
+        "baseURI": {
+          "_$type": "string",
+          "_$value": "<URL>"
+        },
+        "isConnected": {
+          "_$type": "boolean",
+          "_$value": false
+        },
+        "parentNode": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "parentElement": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "childNodes": {
+          "_$protos": [
+            "NodeList.prototype",
+            "Object.prototype"
+          ],
+          "length": {
+            "_$type": "number",
+            "_$value": 0
+          },
+          "_$type": "object"
+        },
+        "firstChild": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "lastChild": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "previousSibling": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "nextSibling": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "nodeValue": {
+          "_$type": "string",
+          "_$value": ""
+        },
+        "textContent": {
+          "_$type": "string",
+          "_$value": ""
+        },
+        "ELEMENT_NODE": {
+          "_$type": "number",
+          "_$value": 1
+        },
+        "ATTRIBUTE_NODE": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "TEXT_NODE": {
+          "_$type": "number",
+          "_$value": 3
+        },
+        "CDATA_SECTION_NODE": {
+          "_$type": "number",
+          "_$value": 4
+        },
+        "ENTITY_REFERENCE_NODE": {
+          "_$type": "number",
+          "_$value": 5
+        },
+        "ENTITY_NODE": {
+          "_$type": "number",
+          "_$value": 6
+        },
+        "PROCESSING_INSTRUCTION_NODE": {
+          "_$type": "number",
+          "_$value": 7
+        },
+        "COMMENT_NODE": {
+          "_$type": "number",
+          "_$value": 8
+        },
+        "DOCUMENT_NODE": {
+          "_$type": "number",
+          "_$value": 9
+        },
+        "DOCUMENT_TYPE_NODE": {
+          "_$type": "number",
+          "_$value": 10
+        },
+        "DOCUMENT_FRAGMENT_NODE": {
+          "_$type": "number",
+          "_$value": 11
+        },
+        "NOTATION_NODE": {
+          "_$type": "number",
+          "_$value": 12
+        },
+        "DOCUMENT_POSITION_DISCONNECTED": {
+          "_$type": "number",
+          "_$value": 1
+        },
+        "DOCUMENT_POSITION_PRECEDING": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "DOCUMENT_POSITION_FOLLOWING": {
+          "_$type": "number",
+          "_$value": 4
+        },
+        "DOCUMENT_POSITION_CONTAINS": {
+          "_$type": "number",
+          "_$value": 8
+        },
+        "DOCUMENT_POSITION_CONTAINED_BY": {
+          "_$type": "number",
+          "_$value": 16
+        },
+        "DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC": {
+          "_$type": "number",
+          "_$value": 32
+        },
+        "_$type": "object",
+        "_$flags": "ce"
+      }
+    },
+    {
+      "path": "window.Audio.new().attributes",
+      "propertyName": "2",
+      "prevProperty": "1",
+      "property": {
+        "_$protos": [
+          "Attr.prototype",
+          "Node.prototype",
+          "EventTarget.prototype",
+          "Object.prototype"
+        ],
+        "namespaceURI": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "prefix": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "localName": {
+          "_$type": "string",
+          "_$value": "class"
+        },
+        "name": {
+          "_$type": "string",
+          "_$value": "class"
+        },
+        "value": {
+          "_$type": "string",
+          "_$value": ""
+        },
+        "specified": {
+          "_$type": "boolean",
+          "_$value": true
+        },
+        "nodeType": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "nodeName": {
+          "_$type": "string",
+          "_$value": "class"
+        },
+        "baseURI": {
+          "_$type": "string",
+          "_$value": "<URL>"
+        },
+        "isConnected": {
+          "_$type": "boolean",
+          "_$value": false
+        },
+        "parentNode": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "parentElement": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "childNodes": {
+          "_$protos": [
+            "NodeList.prototype",
+            "Object.prototype"
+          ],
+          "length": {
+            "_$type": "number",
+            "_$value": 0
+          },
+          "_$type": "object"
+        },
+        "firstChild": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "lastChild": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "previousSibling": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "nextSibling": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "nodeValue": {
+          "_$type": "string",
+          "_$value": ""
+        },
+        "textContent": {
+          "_$type": "string",
+          "_$value": ""
+        },
+        "ELEMENT_NODE": {
+          "_$type": "number",
+          "_$value": 1
+        },
+        "ATTRIBUTE_NODE": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "TEXT_NODE": {
+          "_$type": "number",
+          "_$value": 3
+        },
+        "CDATA_SECTION_NODE": {
+          "_$type": "number",
+          "_$value": 4
+        },
+        "ENTITY_REFERENCE_NODE": {
+          "_$type": "number",
+          "_$value": 5
+        },
+        "ENTITY_NODE": {
+          "_$type": "number",
+          "_$value": 6
+        },
+        "PROCESSING_INSTRUCTION_NODE": {
+          "_$type": "number",
+          "_$value": 7
+        },
+        "COMMENT_NODE": {
+          "_$type": "number",
+          "_$value": 8
+        },
+        "DOCUMENT_NODE": {
+          "_$type": "number",
+          "_$value": 9
+        },
+        "DOCUMENT_TYPE_NODE": {
+          "_$type": "number",
+          "_$value": 10
+        },
+        "DOCUMENT_FRAGMENT_NODE": {
+          "_$type": "number",
+          "_$value": 11
+        },
+        "NOTATION_NODE": {
+          "_$type": "number",
+          "_$value": 12
+        },
+        "DOCUMENT_POSITION_DISCONNECTED": {
+          "_$type": "number",
+          "_$value": 1
+        },
+        "DOCUMENT_POSITION_PRECEDING": {
+          "_$type": "number",
+          "_$value": 2
+        },
+        "DOCUMENT_POSITION_FOLLOWING": {
+          "_$type": "number",
+          "_$value": 4
+        },
+        "DOCUMENT_POSITION_CONTAINS": {
+          "_$type": "number",
+          "_$value": 8
+        },
+        "DOCUMENT_POSITION_CONTAINED_BY": {
+          "_$type": "number",
+          "_$value": 16
+        },
+        "DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC": {
+          "_$type": "number",
+          "_$value": 32
+        },
+        "_$type": "object",
+        "_$flags": "ce"
+      }
+    },
+    {
+      "path": "window.document.documentElement.attributes",
+      "propertyName": "0",
+      "property": {
+        "_$protos": [
+          "Attr.prototype",
+          "Node.prototype",
+          "EventTarget.prototype",
+          "Object.prototype"
+        ],
+        "namespaceURI": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "prefix": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "localName": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "name": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "value": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "ownerElement": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "specified": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "nodeType": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "nodeName": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "baseURI": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "isConnected": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "ownerDocument": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "parentNode": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "parentElement": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "childNodes": {
+          "_$type": "dom",
+          "_$skipped": "SKIPPED DOM"
+        },
+        "firstChild": {
+          "_$type": "dom",
+          "_$skipped": "SKIPPED DOM"
+        },
+        "lastChild": {
+          "_$type": "dom",
+          "_$skipped": "SKIPPED DOM"
+        },
+        "previousSibling": {
+          "_$type": "dom",
+          "_$skipped": "SKIPPED DOM"
+        },
+        "nextSibling": {
+          "_$type": "dom",
+          "_$skipped": "SKIPPED DOM"
+        },
+        "nodeValue": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "textContent": {
+          "_$type": "dom",
+          "_$skipped": "SKIPPED DOM"
+        },
+        "ELEMENT_NODE": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "ATTRIBUTE_NODE": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "TEXT_NODE": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "CDATA_SECTION_NODE": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "ENTITY_REFERENCE_NODE": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "ENTITY_NODE": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "PROCESSING_INSTRUCTION_NODE": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "COMMENT_NODE": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "DOCUMENT_NODE": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "DOCUMENT_TYPE_NODE": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "DOCUMENT_FRAGMENT_NODE": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "NOTATION_NODE": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "DOCUMENT_POSITION_DISCONNECTED": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "DOCUMENT_POSITION_PRECEDING": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "DOCUMENT_POSITION_FOLLOWING": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "DOCUMENT_POSITION_CONTAINS": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "DOCUMENT_POSITION_CONTAINED_BY": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "appendChild": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "cloneNode": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "compareDocumentPosition": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "contains": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "getRootNode": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "hasChildNodes": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "insertBefore": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "isDefaultNamespace": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "isEqualNode": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "isSameNode": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "lookupNamespaceURI": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "lookupPrefix": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "normalize": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "removeChild": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "replaceChild": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "addEventListener": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "dispatchEvent": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "removeEventListener": {
+          "_$type": "object",
+          "_$skipped": "SKIPPED DEPTH"
+        },
+        "_$type": "object",
+        "_$flags": "ce"
+      }
+    }
+  ],
+  "remove": [
+    {
+      "path": "window.Array.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.String.prototype",
+      "propertyName": "trimLeft"
+    },
+    {
+      "path": "window.String.prototype",
+      "propertyName": "trimRight"
+    },
+    {
+      "path": "window.Map.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.Set.prototype",
+      "propertyName": "keys"
+    },
+    {
+      "path": "window.Set.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.URLSearchParams.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.TouchList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.TextTrackList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.TextTrackCueList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.StyleSheetList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.StylePropertyMapReadOnly.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.SVGTransformList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.SVGStringList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.SVGPointList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.SVGNumberList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.SVGLengthList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.RadioNodeList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.RTCStatsReport.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.PluginArray.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.Plugin.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.NodeList.prototype",
+      "propertyName": "entries"
+    },
+    {
+      "path": "window.NodeList.prototype",
+      "propertyName": "keys"
+    },
+    {
+      "path": "window.NodeList.prototype",
+      "propertyName": "values"
+    },
+    {
+      "path": "window.NodeList.prototype",
+      "propertyName": "forEach"
+    },
+    {
+      "path": "window.NodeList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.NamedNodeMap.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.MimeTypeArray.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.MediaList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.Headers.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.HTMLSelectElement.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.HTMLOptionsCollection.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.HTMLFormElement.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.HTMLFormControlsCollection.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.HTMLCollection.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.HTMLAllCollection.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.FormData.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.FileList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.EventCounts.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.Element.prototype.replaceChildren",
+      "propertyName": "_$invocation"
+    },
+    {
+      "path": "window.DocumentFragment.prototype.replaceChildren",
+      "propertyName": "_$invocation"
+    },
+    {
+      "path": "window.Document.prototype.replaceChildren",
+      "propertyName": "_$invocation"
+    },
+    {
+      "path": "window.DataTransferItemList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.DOMTokenList.prototype",
+      "propertyName": "entries"
+    },
+    {
+      "path": "window.DOMTokenList.prototype",
+      "propertyName": "keys"
+    },
+    {
+      "path": "window.DOMTokenList.prototype",
+      "propertyName": "values"
+    },
+    {
+      "path": "window.DOMTokenList.prototype",
+      "propertyName": "forEach"
+    },
+    {
+      "path": "window.DOMTokenList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.DOMStringList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.DOMRectList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.CustomStateSet.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.CSSUnparsedValue.prototype",
+      "propertyName": "entries"
+    },
+    {
+      "path": "window.CSSUnparsedValue.prototype",
+      "propertyName": "keys"
+    },
+    {
+      "path": "window.CSSUnparsedValue.prototype",
+      "propertyName": "values"
+    },
+    {
+      "path": "window.CSSUnparsedValue.prototype",
+      "propertyName": "forEach"
+    },
+    {
+      "path": "window.CSSUnparsedValue.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.CSSTransformValue.prototype",
+      "propertyName": "entries"
+    },
+    {
+      "path": "window.CSSTransformValue.prototype",
+      "propertyName": "keys"
+    },
+    {
+      "path": "window.CSSTransformValue.prototype",
+      "propertyName": "values"
+    },
+    {
+      "path": "window.CSSTransformValue.prototype",
+      "propertyName": "forEach"
+    },
+    {
+      "path": "window.CSSTransformValue.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.CSSStyleValue",
+      "propertyName": "parse"
+    },
+    {
+      "path": "window.CSSStyleValue",
+      "propertyName": "parseAll"
+    },
+    {
+      "path": "window.CSSStyleDeclaration.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.CSSRuleList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.CSSNumericValue",
+      "propertyName": "parse"
+    },
+    {
+      "path": "window.CSSNumericArray.prototype",
+      "propertyName": "entries"
+    },
+    {
+      "path": "window.CSSNumericArray.prototype",
+      "propertyName": "keys"
+    },
+    {
+      "path": "window.CSSNumericArray.prototype",
+      "propertyName": "values"
+    },
+    {
+      "path": "window.CSSNumericArray.prototype",
+      "propertyName": "forEach"
+    },
+    {
+      "path": "window.CSSNumericArray.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.CSSKeyframesRule.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.AudioParamMap.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.AbortSignal",
+      "propertyName": "abort"
+    },
+    {
+      "path": "window.AbortSignal",
+      "propertyName": "timeout"
+    },
+    {
+      "path": "window.KeyboardLayoutMap.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.MIDIInputMap.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.MIDIOutputMap.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.MediaKeyStatusMap.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.ImageTrackList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.FileSystemDirectoryHandle.prototype",
+      "propertyName": "Symbol.asyncIterator"
+    },
+    {
+      "path": "window.XRAnchorSet.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.XRInputSourceArray.prototype",
+      "propertyName": "entries"
+    },
+    {
+      "path": "window.XRInputSourceArray.prototype",
+      "propertyName": "keys"
+    },
+    {
+      "path": "window.XRInputSourceArray.prototype",
+      "propertyName": "values"
+    },
+    {
+      "path": "window.XRInputSourceArray.prototype",
+      "propertyName": "forEach"
+    },
+    {
+      "path": "window.XRInputSourceArray.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.Highlight.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.HighlightRegistry.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.SourceBufferList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.webkitSpeechGrammarList.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window",
+      "propertyName": "parseFloat"
+    },
+    {
+      "path": "window",
+      "propertyName": "parseInt"
+    },
+    {
+      "path": "window",
+      "propertyName": "URL"
+    },
+    {
+      "path": "window",
+      "propertyName": "RTCPeerConnection"
+    },
+    {
+      "path": "window",
+      "propertyName": "MutationObserver"
+    },
+    {
+      "path": "window",
+      "propertyName": "MediaStream"
+    },
+    {
+      "path": "window",
+      "propertyName": "DOMMatrix"
+    },
+    {
+      "path": "detached.TypedArray.prototype",
+      "propertyName": "Symbol.iterator"
+    },
+    {
+      "path": "window.Text.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "createShadowRoot"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Document.prototype",
+      "propertyName": "registerElement"
+    },
+    {
+      "path": "window",
+      "propertyName": "cdc_adoQpoasnfa76pfcZLmcfl"
+    },
+    {
+      "path": "window.HTMLLinkElement.prototype",
+      "propertyName": "import"
+    }
+  ],
+  "modify": [
+    {
+      "path": "window.Array",
+      "propertyName": "Symbol.species",
+      "property": "TypeError: Cannot read properties of undefined (reading '_$invocation')"
+    },
+    {
+      "path": "window.Promise",
+      "propertyName": "Symbol.species",
+      "property": "TypeError: Cannot read properties of undefined (reading '_$invocation')"
+    },
+    {
+      "path": "window.RegExp",
+      "propertyName": "Symbol.species",
+      "property": "TypeError: Cannot read properties of undefined (reading '_$invocation')"
+    },
+    {
+      "path": "window.ArrayBuffer",
+      "propertyName": "Symbol.species",
+      "property": "TypeError: Cannot read properties of undefined (reading '_$invocation')"
+    },
+    {
+      "path": "window.Map",
+      "propertyName": "Symbol.species",
+      "property": "TypeError: Cannot read properties of undefined (reading '_$invocation')"
+    },
+    {
+      "path": "window.Set",
+      "propertyName": "Symbol.species",
+      "property": "TypeError: Cannot read properties of undefined (reading '_$invocation')"
+    },
+    {
+      "path": "window.document.$cdc_asdjflasutopfhvcZLmcfl_.storeItem.new()",
+      "propertyName": "_$constructorException",
+      "property": "TypeError: Cannot set properties of undefined (setting '2bb9ce98-762a-4b61-aa33-9ea563609824')"
+    },
+    {
+      "path": "window.document",
+      "propertyName": "_$value",
+      "property": "REF: window.Option.new().attributes.0.ownerDocument"
+    }
+  ],
+  "reorder": [
+    {
+      "path": "detached.TypedArray.prototype",
+      "propertyName": "toString",
+      "throughProperty": "toString",
+      "prevProperty": null
+    },
+    {
+      "path": "detached.TypedArray.prototype",
+      "propertyName": "findLast",
+      "throughProperty": "findLastIndex",
+      "prevProperty": "toLocaleString"
+    },
+    {
+      "path": "window.document.documentElement.attributes",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "class"
+    },
+    {
+      "path": "window.document.location",
+      "propertyName": "ancestorOrigins",
+      "throughProperty": "toString",
+      "prevProperty": null
+    }
+  ]
+}

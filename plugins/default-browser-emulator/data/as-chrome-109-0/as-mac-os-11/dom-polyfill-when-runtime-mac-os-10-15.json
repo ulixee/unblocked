@@ -1,0 +1,166 @@
+{
+  "add": [
+    {
+      "path": "window.document",
+      "propertyName": "$cdc_asdjflasutopfhvcZLmcfl_",
+      "prevProperty": "location",
+      "property": {
+        "_$protos": [
+          "Object.prototype"
+        ],
+        "cache_": {
+          "_$type": "object",
+          "_$flags": "cew"
+        },
+        "storeItem": {
+          "length": {
+            "_$type": "number",
+            "_$flags": "c",
+            "_$value": 1
+          },
+          "name": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "storeItem"
+          },
+          "arguments": {
+            "_$type": "object",
+            "_$flags": "",
+            "_$value": null
+          },
+          "caller": {
+            "_$type": "object",
+            "_$flags": "",
+            "_$value": null
+          },
+          "prototype": {
+            "_$protos": [
+              "Object.prototype"
+            ],
+            "_$type": "object",
+            "_$flags": "w"
+          },
+          "new()": {
+            "_$type": "constructor",
+            "_$constructorException": "TypeError: Cannot set properties of undefined (setting 'c62471ef-51b2-4eab-9b99-fb7373c24059')"
+          },
+          "_$type": "function",
+          "_$value": "function(item) {\n    for (var i in this.cache_) {\n      if (item == this.cache_[i])\n        return i;\n    }\n    var id = generateUUID();\n    this.cache_[id] = item;\n    return id;\n  }",
+          "_$function": "function(item) {\n    for (var i in this.cache_) {\n      if (item == this.cache_[i])\n        return i;\n    }\n    var id = generateUUID();\n    this.cache_[id] = item;\n    return id;\n  }"
+        },
+        "retrieveItem": {
+          "length": {
+            "_$type": "number",
+            "_$flags": "c",
+            "_$value": 1
+          },
+          "name": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "retrieveItem"
+          },
+          "arguments": {
+            "_$type": "object",
+            "_$flags": "",
+            "_$value": null
+          },
+          "caller": {
+            "_$type": "object",
+            "_$flags": "",
+            "_$value": null
+          },
+          "prototype": {
+            "_$protos": [
+              "Object.prototype"
+            ],
+            "_$type": "object",
+            "_$flags": "w"
+          },
+          "new()": {
+            "_$type": "constructor",
+            "_$constructorException": "TypeError: Cannot read properties of undefined (reading 'undefined')"
+          },
+          "_$type": "function",
+          "_$value": "function(id) {\n    var item = this.cache_[id];\n    if (item && this.isNodeReachable_(item))\n      return item;\n    throw newError('element is not attached to the page document',\n                   StatusCode.STALE_ELEMENT_REFERENCE);\n  }",
+          "_$function": "function(id) {\n    var item = this.cache_[id];\n    if (item && this.isNodeReachable_(item))\n      return item;\n    throw newError('element is not attached to the page document',\n                   StatusCode.STALE_ELEMENT_REFERENCE);\n  }"
+        },
+        "isNodeReachable_": {
+          "length": {
+            "_$type": "number",
+            "_$flags": "c",
+            "_$value": 1
+          },
+          "name": {
+            "_$type": "string",
+            "_$flags": "c",
+            "_$value": "isNodeReachable_"
+          },
+          "arguments": {
+            "_$type": "object",
+            "_$flags": "",
+            "_$value": null
+          },
+          "caller": {
+            "_$type": "object",
+            "_$flags": "",
+            "_$value": null
+          },
+          "prototype": {
+            "_$protos": [
+              "Object.prototype"
+            ],
+            "_$type": "object",
+            "_$flags": "w"
+          },
+          "new()": {
+            "_$protos": [
+              "isNodeReachable_.prototype",
+              "Object.prototype"
+            ],
+            "_$type": "constructor"
+          },
+          "_$type": "function",
+          "_$value": "function(node) {\n    var nodeRoot = getNodeRootThroughAnyShadows(node);\n    return (nodeRoot == document.documentElement.parentNode);\n  }",
+          "_$function": "function(node) {\n    var nodeRoot = getNodeRootThroughAnyShadows(node);\n    return (nodeRoot == document.documentElement.parentNode);\n  }"
+        },
+        "_$type": "object",
+        "_$flags": "cew"
+      }
+    }
+  ],
+  "remove": [
+    {
+      "path": "window.Text.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "createShadowRoot"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Document.prototype",
+      "propertyName": "registerElement"
+    },
+    {
+      "path": "window",
+      "propertyName": "cdc_adoQpoasnfa76pfcZLmcfl"
+    },
+    {
+      "path": "window.HTMLLinkElement.prototype",
+      "propertyName": "import"
+    }
+  ],
+  "modify": [],
+  "reorder": [
+    {
+      "path": "window.document",
+      "propertyName": "implementation",
+      "throughProperty": "DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC",
+      "prevProperty": "$cdc_asdjflasutopfhvcZLmcfl_"
+    }
+  ]
+}

@@ -1,0 +1,4332 @@
+{
+  "add": [
+    {
+      "path": "window.Array.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window",
+      "propertyName": "parseFloat",
+      "prevProperty": "Number",
+      "property": "REF: window.Number.parseFloat"
+    },
+    {
+      "path": "window",
+      "propertyName": "parseInt",
+      "prevProperty": "parseFloat",
+      "property": "REF: window.Number.parseInt"
+    },
+    {
+      "path": "window.String.prototype",
+      "propertyName": "trimLeft",
+      "prevProperty": "trimStart",
+      "property": "REF: window.String.prototype.trimStart"
+    },
+    {
+      "path": "window.String.prototype",
+      "propertyName": "trimRight",
+      "prevProperty": "trimEnd",
+      "property": "REF: window.String.prototype.trimEnd"
+    },
+    {
+      "path": "window.Map.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Map.prototype.entries"
+    },
+    {
+      "path": "window.Set.prototype",
+      "propertyName": "keys",
+      "prevProperty": "values",
+      "property": "REF: window.Set.prototype.values"
+    },
+    {
+      "path": "window.Set.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Set.prototype.values"
+    },
+    {
+      "path": "window.URLSearchParams.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.URLSearchParams.prototype.entries"
+    },
+    {
+      "path": "window",
+      "propertyName": "URL",
+      "prevProperty": "URLPattern",
+      "property": "REF: window.webkitURL"
+    },
+    {
+      "path": "window.TouchList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.TextTrackList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.TextTrackCueList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.StyleSheetList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.StylePropertyMapReadOnly.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.StylePropertyMapReadOnly.prototype.entries"
+    },
+    {
+      "path": "window.SVGTransformList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.SVGStringList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.SVGPointList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.SVGNumberList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.SVGLengthList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.RadioNodeList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.RTCStatsReport.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.RTCStatsReport.prototype.entries"
+    },
+    {
+      "path": "window",
+      "propertyName": "RTCPeerConnection",
+      "prevProperty": "RTCPeerConnectionIceErrorEvent",
+      "property": "REF: window.webkitRTCPeerConnection"
+    },
+    {
+      "path": "window.PluginArray.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.Plugin.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.NodeList.prototype",
+      "propertyName": "entries",
+      "prevProperty": "_$protos",
+      "property": "REF: window.Array.prototype.entries"
+    },
+    {
+      "path": "window.NodeList.prototype",
+      "propertyName": "keys",
+      "prevProperty": "entries",
+      "property": "REF: window.Array.prototype.keys"
+    },
+    {
+      "path": "window.NodeList.prototype",
+      "propertyName": "values",
+      "prevProperty": "keys",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.NodeList.prototype",
+      "propertyName": "forEach",
+      "prevProperty": "values",
+      "property": "REF: window.Array.prototype.forEach"
+    },
+    {
+      "path": "window.NodeList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.NamedNodeMap.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window",
+      "propertyName": "MutationObserver",
+      "prevProperty": "MutationRecord",
+      "property": "REF: window.WebKitMutationObserver"
+    },
+    {
+      "path": "window.MimeTypeArray.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window",
+      "propertyName": "MediaStream",
+      "prevProperty": "MediaStreamAudioDestinationNode",
+      "property": "REF: window.webkitMediaStream"
+    },
+    {
+      "path": "window.MediaList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.Headers.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Headers.prototype.entries"
+    },
+    {
+      "path": "window.HTMLSelectElement.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.HTMLOptionsCollection.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.HTMLFormElement.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.HTMLFormControlsCollection.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.HTMLCollection.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.HTMLAllCollection.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.FormData.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.FormData.prototype.entries"
+    },
+    {
+      "path": "window.FileList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.EventCounts.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.EventCounts.prototype.entries"
+    },
+    {
+      "path": "window.Element.prototype.replaceChildren",
+      "propertyName": "_$invocation",
+      "prevProperty": "_$function",
+      "property": "TypeError: Illegal invocation"
+    },
+    {
+      "path": "window.DocumentFragment.prototype.replaceChildren",
+      "propertyName": "_$invocation",
+      "prevProperty": "_$function",
+      "property": "TypeError: Illegal invocation"
+    },
+    {
+      "path": "window.Document.prototype.replaceChildren",
+      "propertyName": "_$invocation",
+      "prevProperty": "_$function",
+      "property": "TypeError: Illegal invocation"
+    },
+    {
+      "path": "window.DataTransferItemList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.DOMTokenList.prototype",
+      "propertyName": "entries",
+      "prevProperty": "_$protos",
+      "property": "REF: window.Array.prototype.entries"
+    },
+    {
+      "path": "window.DOMTokenList.prototype",
+      "propertyName": "keys",
+      "prevProperty": "entries",
+      "property": "REF: window.Array.prototype.keys"
+    },
+    {
+      "path": "window.DOMTokenList.prototype",
+      "propertyName": "values",
+      "prevProperty": "keys",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.DOMTokenList.prototype",
+      "propertyName": "forEach",
+      "prevProperty": "values",
+      "property": "REF: window.Array.prototype.forEach"
+    },
+    {
+      "path": "window.DOMTokenList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.DOMStringList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.DOMRectList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window",
+      "propertyName": "DOMMatrix",
+      "prevProperty": "DOMMatrixReadOnly",
+      "property": "REF: window.WebKitCSSMatrix"
+    },
+    {
+      "path": "window.CustomStateSet.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.CustomStateSet.prototype.values"
+    },
+    {
+      "path": "window.CSSUnparsedValue.prototype",
+      "propertyName": "entries",
+      "prevProperty": "_$protos",
+      "property": "REF: window.Array.prototype.entries"
+    },
+    {
+      "path": "window.CSSUnparsedValue.prototype",
+      "propertyName": "keys",
+      "prevProperty": "entries",
+      "property": "REF: window.Array.prototype.keys"
+    },
+    {
+      "path": "window.CSSUnparsedValue.prototype",
+      "propertyName": "values",
+      "prevProperty": "keys",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.CSSUnparsedValue.prototype",
+      "propertyName": "forEach",
+      "prevProperty": "values",
+      "property": "REF: window.Array.prototype.forEach"
+    },
+    {
+      "path": "window.CSSUnparsedValue.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.CSSTransformValue.prototype",
+      "propertyName": "entries",
+      "prevProperty": "_$protos",
+      "property": "REF: window.Array.prototype.entries"
+    },
+    {
+      "path": "window.CSSTransformValue.prototype",
+      "propertyName": "keys",
+      "prevProperty": "entries",
+      "property": "REF: window.Array.prototype.keys"
+    },
+    {
+      "path": "window.CSSTransformValue.prototype",
+      "propertyName": "values",
+      "prevProperty": "keys",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.CSSTransformValue.prototype",
+      "propertyName": "forEach",
+      "prevProperty": "values",
+      "property": "REF: window.Array.prototype.forEach"
+    },
+    {
+      "path": "window.CSSTransformValue.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.CSSStyleValue",
+      "propertyName": "parse",
+      "prevProperty": "prototype",
+      "property": "REF: window.CSSUnparsedValue.parse"
+    },
+    {
+      "path": "window.CSSStyleValue",
+      "propertyName": "parseAll",
+      "prevProperty": "parse",
+      "property": "REF: window.CSSUnparsedValue.parseAll"
+    },
+    {
+      "path": "window.CSSStyleDeclaration.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.CSSRuleList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.CSSNumericValue",
+      "propertyName": "parse",
+      "prevProperty": "prototype",
+      "property": "REF: window.CSSUnitValue.parse"
+    },
+    {
+      "path": "window.CSSNumericArray.prototype",
+      "propertyName": "entries",
+      "prevProperty": "_$protos",
+      "property": "REF: window.Array.prototype.entries"
+    },
+    {
+      "path": "window.CSSNumericArray.prototype",
+      "propertyName": "keys",
+      "prevProperty": "entries",
+      "property": "REF: window.Array.prototype.keys"
+    },
+    {
+      "path": "window.CSSNumericArray.prototype",
+      "propertyName": "values",
+      "prevProperty": "keys",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.CSSNumericArray.prototype",
+      "propertyName": "forEach",
+      "prevProperty": "values",
+      "property": "REF: window.Array.prototype.forEach"
+    },
+    {
+      "path": "window.CSSNumericArray.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.CSSKeyframesRule.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.AudioParamMap.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.AudioParamMap.prototype.entries"
+    },
+    {
+      "path": "window.AbortSignal",
+      "propertyName": "abort",
+      "prevProperty": "prototype",
+      "property": "REF: window.TaskSignal.abort"
+    },
+    {
+      "path": "window.AbortSignal",
+      "propertyName": "timeout",
+      "prevProperty": "abort",
+      "property": "REF: window.TaskSignal.timeout"
+    },
+    {
+      "path": "window.KeyboardLayoutMap.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.KeyboardLayoutMap.prototype.entries"
+    },
+    {
+      "path": "window.MIDIInputMap.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.MIDIInputMap.prototype.entries"
+    },
+    {
+      "path": "window.MIDIOutputMap.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.MIDIOutputMap.prototype.entries"
+    },
+    {
+      "path": "window.MediaKeyStatusMap.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.MediaKeyStatusMap.prototype.entries"
+    },
+    {
+      "path": "window.ImageTrackList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.FileSystemDirectoryHandle.prototype",
+      "propertyName": "Symbol.asyncIterator",
+      "property": "REF: window.FileSystemDirectoryHandle.prototype.entries"
+    },
+    {
+      "path": "window.XRAnchorSet.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.XRAnchorSet.prototype.values"
+    },
+    {
+      "path": "window.XRInputSourceArray.prototype",
+      "propertyName": "entries",
+      "prevProperty": "_$protos",
+      "property": "REF: window.Array.prototype.entries"
+    },
+    {
+      "path": "window.XRInputSourceArray.prototype",
+      "propertyName": "keys",
+      "prevProperty": "entries",
+      "property": "REF: window.Array.prototype.keys"
+    },
+    {
+      "path": "window.XRInputSourceArray.prototype",
+      "propertyName": "values",
+      "prevProperty": "keys",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.XRInputSourceArray.prototype",
+      "propertyName": "forEach",
+      "prevProperty": "values",
+      "property": "REF: window.Array.prototype.forEach"
+    },
+    {
+      "path": "window.XRInputSourceArray.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.Highlight.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Highlight.prototype.values"
+    },
+    {
+      "path": "window.HighlightRegistry.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.HighlightRegistry.prototype.entries"
+    },
+    {
+      "path": "window.SourceBufferList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "window.webkitSpeechGrammarList.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: window.Array.prototype.values"
+    },
+    {
+      "path": "detached.TypedArray.prototype",
+      "propertyName": "Symbol.iterator",
+      "property": "REF: detached.TypedArray.prototype.values"
+    },
+    {
+      "path": "window.Option.new()",
+      "propertyName": "ownerDocument",
+      "prevProperty": "isConnected",
+      "property": {
+        "_$protos": [
+          "HTMLDocument.prototype",
+          "Document.prototype",
+          "Node.prototype",
+          "EventTarget.prototype",
+          "Object.prototype"
+        ],
+        "_$skipped": "SKIPPED DOCUMENT",
+        "_$type": "object"
+      }
+    },
+    {
+      "path": "window.Animation.new()",
+      "propertyName": "ready",
+      "prevProperty": "finished",
+      "property": {
+        "_$protos": [
+          "Animation.prototype",
+          "EventTarget.prototype",
+          "Object.prototype"
+        ],
+        "effect": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "startTime": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "currentTime": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "playbackRate": {
+          "_$type": "number",
+          "_$value": 1
+        },
+        "playState": {
+          "_$type": "string",
+          "_$value": "idle"
+        },
+        "pending": {
+          "_$type": "boolean",
+          "_$value": false
+        },
+        "id": {
+          "_$type": "string",
+          "_$value": ""
+        },
+        "onfinish": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "oncancel": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "replaceState": {
+          "_$type": "string",
+          "_$value": "active"
+        },
+        "onremove": {
+          "_$type": "object",
+          "_$value": null
+        },
+        "finished": {
+          "_$value": "Promise",
+          "_$type": "object"
+        },
+        "_$type": "object",
+        "_$value": "Promise"
+      }
+    }
+  ],
+  "remove": [
+    {
+      "path": "window.Object.prototype.hasOwnProperty",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.prototype.__lookupGetter__",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.prototype.__lookupSetter__",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.prototype.isPrototypeOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.prototype.propertyIsEnumerable",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.prototype.toString",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.prototype.valueOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.prototype.toLocaleString",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.is",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.preventExtensions",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.seal",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.freeze",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.isExtensible",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.isFrozen",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object.isSealed",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Object",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Function.prototype.apply",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Function.prototype.bind",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Function.prototype.call",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Function.prototype.toString",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Function.prototype",
+      "propertyName": "Symbol.hasInstance._$isAsync"
+    },
+    {
+      "path": "window.Function.prototype",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Function",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.at",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.concat",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.copyWithin",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.fill",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.lastIndexOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.pop",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.push",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.reverse",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.shift",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.unshift",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.slice",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.sort",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.splice",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.includes",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.indexOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.join",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.keys",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.entries",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.values",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.DOMTokenList.prototype.forEach"
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.NodeList.prototype.forEach"
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.RadioNodeList.prototype.forEach"
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.CSSUnparsedValue.prototype.forEach"
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.CSSTransformValue.prototype.forEach"
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.CSSNumericArray.prototype.forEach"
+    },
+    {
+      "path": "window.Array.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.XRInputSourceArray.prototype.forEach"
+    },
+    {
+      "path": "window.Array.prototype.flat",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.toLocaleString",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.toString",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.prototype.toString",
+      "propertyName": "_$otherInvocation.detached.TypedArray.prototype.toString"
+    },
+    {
+      "path": "window.Array.isArray",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array.of",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Array",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Number.prototype.toExponential",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Number.prototype.toFixed",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Number.prototype.toPrecision",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Number.prototype.toString",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Number.prototype.valueOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Number.prototype.toLocaleString",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Number.isFinite",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Number.isInteger",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Number.isNaN",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Number.isSafeInteger",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Number.parseFloat",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Number.parseFloat",
+      "propertyName": "_$otherInvocation.window.parseFloat"
+    },
+    {
+      "path": "window.Number.parseInt",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Number.parseInt",
+      "propertyName": "_$otherInvocation.window.parseInt"
+    },
+    {
+      "path": "window.Number",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Boolean.prototype.toString",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Boolean.prototype.valueOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Boolean",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.anchor",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.at",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.big",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.blink",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.bold",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.charAt",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.charCodeAt",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.codePointAt",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.concat",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.endsWith",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.fontcolor",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.fontsize",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.fixed",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.includes",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.indexOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.italics",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.lastIndexOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.link",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.localeCompare",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.match",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.matchAll",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.normalize",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.padEnd",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.padStart",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.repeat",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.replace",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.replaceAll",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.search",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.slice",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.small",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.split",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.strike",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.sub",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.substr",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.substring",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.sup",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.startsWith",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.toString",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.trim",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.trimStart",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.trimEnd",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.toLocaleLowerCase",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.toLocaleUpperCase",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.toLowerCase",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.toUpperCase",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype.valueOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.prototype",
+      "propertyName": "Symbol.iterator._$isAsync"
+    },
+    {
+      "path": "window.String.fromCharCode",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String.fromCodePoint",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.String",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Symbol.for",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Symbol",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Promise.all",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Promise.allSettled",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Promise.any",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Promise.race",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Promise.resolve",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Promise.reject",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.RegExp.prototype.toString",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.RegExp.prototype",
+      "propertyName": "Symbol.matchAll._$isAsync"
+    },
+    {
+      "path": "window.RegExp.prototype",
+      "propertyName": "Symbol.split._$isAsync"
+    },
+    {
+      "path": "window.RegExp",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Error.prototype.toString",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Error",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.EvalError",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.RangeError",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ReferenceError",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SyntaxError",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.TypeError",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.URIError",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.JSON.stringify",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.abs",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.acos",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.acosh",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.asin",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.asinh",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.atan",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.atanh",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.atan2",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.ceil",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.cbrt",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.expm1",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.clz32",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.cos",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.cosh",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.exp",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.floor",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.fround",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.hypot",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.imul",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.log",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.log1p",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.log2",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.log10",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.max",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.min",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.pow",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.round",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.sign",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.sin",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.sinh",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.sqrt",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.tan",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.tanh",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Math.trunc",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.getCanonicalLocales",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.DateTimeFormat.supportedLocalesOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.DateTimeFormat",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.NumberFormat.supportedLocalesOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.NumberFormat",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.Collator.supportedLocalesOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.Collator",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.v8BreakIterator.supportedLocalesOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.v8BreakIterator",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.PluralRules.supportedLocalesOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.RelativeTimeFormat.supportedLocalesOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.ListFormat.supportedLocalesOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.DisplayNames.supportedLocalesOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Intl.Segmenter.supportedLocalesOf",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ArrayBuffer.isView",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.decodeURI",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.decodeURIComponent",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.encodeURI",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.encodeURIComponent",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.escape",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.unescape",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.eval",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.isFinite",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.isNaN",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.debug",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.error",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.info",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.log",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.warn",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.dir",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.dirxml",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.table",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.trace",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.group",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.groupCollapsed",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.groupEnd",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.count",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.countReset",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.profile",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.profileEnd",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.time",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.timeLog",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.timeEnd",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.timeStamp",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.console.context",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Image.prototype.decode",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.prototype.addIceCandidate",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.prototype.createAnswer",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.prototype.createOffer",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.prototype.getStats",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.prototype.setLocalDescription",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.prototype.setRemoteDescription",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.webkitRTCPeerConnection.generateCertificate",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WebKitCSSMatrix.fromMatrix",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WritableStreamDefaultWriter.prototype.abort",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WritableStream.prototype.abort",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WebGLRenderingContext.prototype.makeXRCompatible",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WebGL2RenderingContext.prototype.makeXRCompatible",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.TrustedTypePolicyFactory.prototype.createPolicy",
+      "propertyName": "_$otherInvocation.window.trustedTypes.createPolicy"
+    },
+    {
+      "path": "window.TrustedTypePolicyFactory.prototype.getAttributeType",
+      "propertyName": "_$otherInvocation.window.trustedTypes.getAttributeType"
+    },
+    {
+      "path": "window.TrustedTypePolicyFactory.prototype.getPropertyType",
+      "propertyName": "_$otherInvocation.window.trustedTypes.getPropertyType"
+    },
+    {
+      "path": "window.TrustedTypePolicyFactory.prototype.getTypeMapping",
+      "propertyName": "_$otherInvocation.window.trustedTypes.getTypeMapping"
+    },
+    {
+      "path": "window.TrustedTypePolicyFactory.prototype.isHTML",
+      "propertyName": "_$otherInvocation.window.trustedTypes.isHTML"
+    },
+    {
+      "path": "window.TrustedTypePolicyFactory.prototype.isScript",
+      "propertyName": "_$otherInvocation.window.trustedTypes.isScript"
+    },
+    {
+      "path": "window.TrustedTypePolicyFactory.prototype.isScriptURL",
+      "propertyName": "_$otherInvocation.window.trustedTypes.isScriptURL"
+    },
+    {
+      "path": "window.TrustedScript.prototype.toJSON",
+      "propertyName": "_$otherInvocation.window.trustedTypes.emptyScript.toJSON"
+    },
+    {
+      "path": "window.TrustedScript.prototype.toString",
+      "propertyName": "_$otherInvocation.window.trustedTypes.emptyScript.toString"
+    },
+    {
+      "path": "window.TrustedHTML.prototype.toJSON",
+      "propertyName": "_$otherInvocation.window.trustedTypes.emptyHTML.toJSON"
+    },
+    {
+      "path": "window.TrustedHTML.prototype.toString",
+      "propertyName": "_$otherInvocation.window.trustedTypes.emptyHTML.toString"
+    },
+    {
+      "path": "window.TaskSignal.abort",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SyncManager.prototype.getTags",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SyncManager.prototype.register",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.StylePropertyMapReadOnly.prototype.get",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributeStyleMap.get"
+    },
+    {
+      "path": "window.StylePropertyMapReadOnly.prototype.getAll",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributeStyleMap.getAll"
+    },
+    {
+      "path": "window.StylePropertyMapReadOnly.prototype.has",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributeStyleMap.has"
+    },
+    {
+      "path": "window.StylePropertyMapReadOnly.prototype.entries",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributeStyleMap.entries"
+    },
+    {
+      "path": "window.StylePropertyMapReadOnly.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributeStyleMap.forEach"
+    },
+    {
+      "path": "window.StylePropertyMapReadOnly.prototype.keys",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributeStyleMap.keys"
+    },
+    {
+      "path": "window.StylePropertyMapReadOnly.prototype.values",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributeStyleMap.values"
+    },
+    {
+      "path": "window.StylePropertyMap.prototype.append",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributeStyleMap.append"
+    },
+    {
+      "path": "window.StylePropertyMap.prototype.set",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributeStyleMap.set"
+    },
+    {
+      "path": "window.Storage.prototype.getItem",
+      "propertyName": "_$otherInvocation.window.sessionStorage.getItem"
+    },
+    {
+      "path": "window.Storage.prototype.getItem",
+      "propertyName": "_$otherInvocation.window.localStorage.getItem"
+    },
+    {
+      "path": "window.Storage.prototype.key",
+      "propertyName": "_$otherInvocation.window.sessionStorage.key"
+    },
+    {
+      "path": "window.Storage.prototype.key",
+      "propertyName": "_$otherInvocation.window.localStorage.key"
+    },
+    {
+      "path": "window.Storage.prototype.removeItem",
+      "propertyName": "_$otherInvocation.window.sessionStorage.removeItem"
+    },
+    {
+      "path": "window.Storage.prototype.removeItem",
+      "propertyName": "_$otherInvocation.window.localStorage.removeItem"
+    },
+    {
+      "path": "window.Storage.prototype.setItem",
+      "propertyName": "_$otherInvocation.window.sessionStorage.setItem"
+    },
+    {
+      "path": "window.Storage.prototype.setItem",
+      "propertyName": "_$otherInvocation.window.localStorage.setItem"
+    },
+    {
+      "path": "window.ScreenOrientation.prototype.lock",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ScreenOrientation.prototype.lock",
+      "propertyName": "_$otherInvocationAsync.window.screen.orientation.lock"
+    },
+    {
+      "path": "window.Scheduling.prototype.isInputPending",
+      "propertyName": "_$otherInvocation.window.navigator.scheduling.isInputPending"
+    },
+    {
+      "path": "window.Scheduler.prototype.postTask",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Scheduler.prototype.postTask",
+      "propertyName": "_$otherInvocationAsync.window.scheduler.postTask"
+    },
+    {
+      "path": "window.SVGImageElement.prototype.decode",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Response.prototype.arrayBuffer",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Response.prototype.blob",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Response.prototype.formData",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Response.prototype.json",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Response.prototype.text",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Response.error",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Request.prototype.arrayBuffer",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Request.prototype.blob",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Request.prototype.formData",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Request.prototype.json",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Request.prototype.text",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ReadableStreamDefaultReader.prototype.cancel",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ReadableStreamBYOBReader.prototype.cancel",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ReadableStream.prototype.cancel",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ReadableStream.prototype.pipeTo",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.RTCRtpSender.prototype.getStats",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.RTCRtpSender.prototype.replaceTrack",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.RTCRtpSender.prototype.setParameters",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.RTCRtpReceiver.prototype.getStats",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PluginArray.prototype.item",
+      "propertyName": "_$otherInvocation.window.navigator.plugins.item"
+    },
+    {
+      "path": "window.PluginArray.prototype.namedItem",
+      "propertyName": "_$otherInvocation.window.navigator.plugins.namedItem"
+    },
+    {
+      "path": "window.Plugin.prototype.item",
+      "propertyName": "_$otherInvocation.window.navigator.plugins.0.item"
+    },
+    {
+      "path": "window.Plugin.prototype.item",
+      "propertyName": "_$otherInvocation.window.navigator.plugins.1.item"
+    },
+    {
+      "path": "window.Plugin.prototype.item",
+      "propertyName": "_$otherInvocation.window.navigator.plugins.2.item"
+    },
+    {
+      "path": "window.Plugin.prototype.item",
+      "propertyName": "_$otherInvocation.window.navigator.plugins.3.item"
+    },
+    {
+      "path": "window.Plugin.prototype.item",
+      "propertyName": "_$otherInvocation.window.navigator.plugins.4.item"
+    },
+    {
+      "path": "window.Plugin.prototype.namedItem",
+      "propertyName": "_$otherInvocation.window.navigator.plugins.0.namedItem"
+    },
+    {
+      "path": "window.Plugin.prototype.namedItem",
+      "propertyName": "_$otherInvocation.window.navigator.plugins.1.namedItem"
+    },
+    {
+      "path": "window.Plugin.prototype.namedItem",
+      "propertyName": "_$otherInvocation.window.navigator.plugins.2.namedItem"
+    },
+    {
+      "path": "window.Plugin.prototype.namedItem",
+      "propertyName": "_$otherInvocation.window.navigator.plugins.3.namedItem"
+    },
+    {
+      "path": "window.Plugin.prototype.namedItem",
+      "propertyName": "_$otherInvocation.window.navigator.plugins.4.namedItem"
+    },
+    {
+      "path": "window.PerformanceNavigation.prototype.toJSON",
+      "propertyName": "_$otherInvocation.window.performance.navigation.toJSON"
+    },
+    {
+      "path": "window.Performance.prototype.mark",
+      "propertyName": "_$otherInvocation.window.performance.mark"
+    },
+    {
+      "path": "window.Performance.prototype.measure",
+      "propertyName": "_$otherInvocation.window.performance.measure"
+    },
+    {
+      "path": "window.Performance.prototype.setResourceTimingBufferSize",
+      "propertyName": "_$otherInvocation.window.performance.setResourceTimingBufferSize"
+    },
+    {
+      "path": "window.OffscreenCanvas.prototype.convertToBlob",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.OfflineAudioContext.prototype.resume",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.OfflineAudioContext.prototype.startRendering",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.OfflineAudioContext.prototype.suspend",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Node.prototype.appendChild",
+      "propertyName": "_$otherInvocation.window.document.documentElement.appendChild"
+    },
+    {
+      "path": "window.Node.prototype.appendChild",
+      "propertyName": "_$otherInvocation.window.document.appendChild"
+    },
+    {
+      "path": "window.Node.prototype.cloneNode",
+      "propertyName": "_$otherInvocation.window.document.documentElement.cloneNode"
+    },
+    {
+      "path": "window.Node.prototype.cloneNode",
+      "propertyName": "_$otherInvocation.window.document.cloneNode"
+    },
+    {
+      "path": "window.Node.prototype.compareDocumentPosition",
+      "propertyName": "_$otherInvocation.window.document.documentElement.compareDocumentPosition"
+    },
+    {
+      "path": "window.Node.prototype.compareDocumentPosition",
+      "propertyName": "_$otherInvocation.window.document.compareDocumentPosition"
+    },
+    {
+      "path": "window.Node.prototype.contains",
+      "propertyName": "_$otherInvocation.window.document.documentElement.contains"
+    },
+    {
+      "path": "window.Node.prototype.contains",
+      "propertyName": "_$otherInvocation.window.document.contains"
+    },
+    {
+      "path": "window.Node.prototype.getRootNode",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getRootNode"
+    },
+    {
+      "path": "window.Node.prototype.getRootNode",
+      "propertyName": "_$otherInvocation.window.document.getRootNode"
+    },
+    {
+      "path": "window.Node.prototype.hasChildNodes",
+      "propertyName": "_$otherInvocation.window.document.documentElement.hasChildNodes"
+    },
+    {
+      "path": "window.Node.prototype.hasChildNodes",
+      "propertyName": "_$otherInvocation.window.document.hasChildNodes"
+    },
+    {
+      "path": "window.Node.prototype.insertBefore",
+      "propertyName": "_$otherInvocation.window.document.documentElement.insertBefore"
+    },
+    {
+      "path": "window.Node.prototype.insertBefore",
+      "propertyName": "_$otherInvocation.window.document.insertBefore"
+    },
+    {
+      "path": "window.Node.prototype.isDefaultNamespace",
+      "propertyName": "_$otherInvocation.window.document.documentElement.isDefaultNamespace"
+    },
+    {
+      "path": "window.Node.prototype.isDefaultNamespace",
+      "propertyName": "_$otherInvocation.window.document.isDefaultNamespace"
+    },
+    {
+      "path": "window.Node.prototype.isEqualNode",
+      "propertyName": "_$otherInvocation.window.document.documentElement.isEqualNode"
+    },
+    {
+      "path": "window.Node.prototype.isEqualNode",
+      "propertyName": "_$otherInvocation.window.document.isEqualNode"
+    },
+    {
+      "path": "window.Node.prototype.isSameNode",
+      "propertyName": "_$otherInvocation.window.document.documentElement.isSameNode"
+    },
+    {
+      "path": "window.Node.prototype.isSameNode",
+      "propertyName": "_$otherInvocation.window.document.isSameNode"
+    },
+    {
+      "path": "window.Node.prototype.lookupNamespaceURI",
+      "propertyName": "_$otherInvocation.window.document.documentElement.lookupNamespaceURI"
+    },
+    {
+      "path": "window.Node.prototype.lookupNamespaceURI",
+      "propertyName": "_$otherInvocation.window.document.lookupNamespaceURI"
+    },
+    {
+      "path": "window.Node.prototype.lookupPrefix",
+      "propertyName": "_$otherInvocation.window.document.documentElement.lookupPrefix"
+    },
+    {
+      "path": "window.Node.prototype.lookupPrefix",
+      "propertyName": "_$otherInvocation.window.document.lookupPrefix"
+    },
+    {
+      "path": "window.Node.prototype.removeChild",
+      "propertyName": "_$otherInvocation.window.document.documentElement.removeChild"
+    },
+    {
+      "path": "window.Node.prototype.removeChild",
+      "propertyName": "_$otherInvocation.window.document.removeChild"
+    },
+    {
+      "path": "window.Node.prototype.replaceChild",
+      "propertyName": "_$otherInvocation.window.document.documentElement.replaceChild"
+    },
+    {
+      "path": "window.Node.prototype.replaceChild",
+      "propertyName": "_$otherInvocation.window.document.replaceChild"
+    },
+    {
+      "path": "window.Navigator.prototype.getGamepads",
+      "propertyName": "_$otherInvocation.window.navigator.getGamepads"
+    },
+    {
+      "path": "window.Navigator.prototype.javaEnabled",
+      "propertyName": "_$otherInvocation.window.navigator.javaEnabled"
+    },
+    {
+      "path": "window.Navigator.prototype.sendBeacon",
+      "propertyName": "_$otherInvocation.window.navigator.sendBeacon"
+    },
+    {
+      "path": "window.Navigator.prototype.vibrate",
+      "propertyName": "_$otherInvocation.window.navigator.vibrate"
+    },
+    {
+      "path": "window.Navigator.prototype.clearAppBadge",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Navigator.prototype.requestMIDIAccess",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Navigator.prototype.requestMediaKeySystemAccess",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Navigator.prototype.requestMediaKeySystemAccess",
+      "propertyName": "_$otherInvocationAsync.window.navigator.requestMediaKeySystemAccess"
+    },
+    {
+      "path": "window.Navigator.prototype.setAppBadge",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Navigator.prototype.webkitGetUserMedia",
+      "propertyName": "_$otherInvocation.window.navigator.webkitGetUserMedia"
+    },
+    {
+      "path": "window.Navigator.prototype.getBattery",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Navigator.prototype.getBattery",
+      "propertyName": "_$otherInvocationAsync.window.navigator.getBattery"
+    },
+    {
+      "path": "window.Navigator.prototype.getInstalledRelatedApps",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Navigator.prototype.getInstalledRelatedApps",
+      "propertyName": "_$otherInvocationAsync.window.navigator.getInstalledRelatedApps"
+    },
+    {
+      "path": "window.Navigator.prototype.registerProtocolHandler",
+      "propertyName": "_$otherInvocation.window.navigator.registerProtocolHandler"
+    },
+    {
+      "path": "window.Navigator.prototype.unregisterProtocolHandler",
+      "propertyName": "_$otherInvocation.window.navigator.unregisterProtocolHandler"
+    },
+    {
+      "path": "window.NamedNodeMap.prototype.getNamedItem",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributes.getNamedItem"
+    },
+    {
+      "path": "window.NamedNodeMap.prototype.getNamedItemNS",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributes.getNamedItemNS"
+    },
+    {
+      "path": "window.NamedNodeMap.prototype.item",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributes.item"
+    },
+    {
+      "path": "window.NamedNodeMap.prototype.removeNamedItem",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributes.removeNamedItem"
+    },
+    {
+      "path": "window.NamedNodeMap.prototype.removeNamedItemNS",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributes.removeNamedItemNS"
+    },
+    {
+      "path": "window.NamedNodeMap.prototype.setNamedItem",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributes.setNamedItem"
+    },
+    {
+      "path": "window.NamedNodeMap.prototype.setNamedItemNS",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attributes.setNamedItemNS"
+    },
+    {
+      "path": "window.MimeTypeArray.prototype.item",
+      "propertyName": "_$otherInvocation.window.navigator.mimeTypes.item"
+    },
+    {
+      "path": "window.MimeTypeArray.prototype.namedItem",
+      "propertyName": "_$otherInvocation.window.navigator.mimeTypes.namedItem"
+    },
+    {
+      "path": "window.MediaCapabilities.prototype.decodingInfo",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.MediaCapabilities.prototype.decodingInfo",
+      "propertyName": "_$otherInvocationAsync.window.navigator.mediaCapabilities.decodingInfo"
+    },
+    {
+      "path": "window.MediaCapabilities.prototype.encodingInfo",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.MediaCapabilities.prototype.encodingInfo",
+      "propertyName": "_$otherInvocationAsync.window.navigator.mediaCapabilities.encodingInfo"
+    },
+    {
+      "path": "window.ImageCapture.prototype.getPhotoCapabilities",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ImageCapture.prototype.getPhotoSettings",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ImageCapture.prototype.grabFrame",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ImageCapture.prototype.takePhoto",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.IDBFactory.prototype.cmp",
+      "propertyName": "_$otherInvocation.window.indexedDB.cmp"
+    },
+    {
+      "path": "window.IDBFactory.prototype.databases",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.IDBFactory.prototype.databases",
+      "propertyName": "_$otherInvocationAsync.window.indexedDB.databases"
+    },
+    {
+      "path": "window.IDBFactory.prototype.deleteDatabase",
+      "propertyName": "_$otherInvocation.window.indexedDB.deleteDatabase"
+    },
+    {
+      "path": "window.HTMLVideoElement.prototype.requestPictureInPicture",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.HTMLMediaElement.prototype.play",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.HTMLMediaElement.prototype.setSinkId",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.HTMLMediaElement.prototype.setMediaKeys",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.HTMLElement.prototype.attachInternals",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attachInternals"
+    },
+    {
+      "path": "window.HTMLCollection.prototype.item",
+      "propertyName": "_$otherInvocation.window.document.images.item"
+    },
+    {
+      "path": "window.HTMLCollection.prototype.item",
+      "propertyName": "_$otherInvocation.window.document.embeds.item"
+    },
+    {
+      "path": "window.HTMLCollection.prototype.item",
+      "propertyName": "_$otherInvocation.window.document.links.item"
+    },
+    {
+      "path": "window.HTMLCollection.prototype.item",
+      "propertyName": "_$otherInvocation.window.document.forms.item"
+    },
+    {
+      "path": "window.HTMLCollection.prototype.item",
+      "propertyName": "_$otherInvocation.window.document.anchors.item"
+    },
+    {
+      "path": "window.HTMLCollection.prototype.item",
+      "propertyName": "_$otherInvocation.window.document.applets.item"
+    },
+    {
+      "path": "window.HTMLCollection.prototype.namedItem",
+      "propertyName": "_$otherInvocation.window.document.images.namedItem"
+    },
+    {
+      "path": "window.HTMLCollection.prototype.namedItem",
+      "propertyName": "_$otherInvocation.window.document.embeds.namedItem"
+    },
+    {
+      "path": "window.HTMLCollection.prototype.namedItem",
+      "propertyName": "_$otherInvocation.window.document.links.namedItem"
+    },
+    {
+      "path": "window.HTMLCollection.prototype.namedItem",
+      "propertyName": "_$otherInvocation.window.document.forms.namedItem"
+    },
+    {
+      "path": "window.HTMLCollection.prototype.namedItem",
+      "propertyName": "_$otherInvocation.window.document.anchors.namedItem"
+    },
+    {
+      "path": "window.HTMLCollection.prototype.namedItem",
+      "propertyName": "_$otherInvocation.window.document.applets.namedItem"
+    },
+    {
+      "path": "window.Geolocation.prototype.clearWatch",
+      "propertyName": "_$otherInvocation.window.navigator.geolocation.clearWatch"
+    },
+    {
+      "path": "window.Geolocation.prototype.getCurrentPosition",
+      "propertyName": "_$otherInvocation.window.navigator.geolocation.getCurrentPosition"
+    },
+    {
+      "path": "window.Geolocation.prototype.watchPosition",
+      "propertyName": "_$otherInvocation.window.navigator.geolocation.watchPosition"
+    },
+    {
+      "path": "window.GamepadHapticActuator.prototype.playEffect",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.GamepadHapticActuator.prototype.reset",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FontFace.prototype.load",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FeaturePolicy.prototype.allowedFeatures",
+      "propertyName": "_$otherInvocation.window.document.featurePolicy.allowedFeatures"
+    },
+    {
+      "path": "window.FeaturePolicy.prototype.allowsFeature",
+      "propertyName": "_$otherInvocation.window.document.featurePolicy.allowsFeature"
+    },
+    {
+      "path": "window.FeaturePolicy.prototype.features",
+      "propertyName": "_$otherInvocation.window.document.featurePolicy.features"
+    },
+    {
+      "path": "window.FeaturePolicy.prototype.getAllowlistForFeature",
+      "propertyName": "_$otherInvocation.window.document.featurePolicy.getAllowlistForFeature"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.document.documentElement.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.document.fonts.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.document.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.bluetooth.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.clipboard.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.managed.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.mediaDevices.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.storage.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.serviceWorker.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.virtualKeyboard.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.hid.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.serial.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.usb.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.windowControlsOverlay.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.xr.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.screen.orientation.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.screen.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.visualViewport.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.trustedTypes.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.performance.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.cookieStore.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.navigation.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.speechSynthesis.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.addEventListener",
+      "propertyName": "_$otherInvocation.window.addEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.document.documentElement.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.document.fonts.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.document.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.navigator.bluetooth.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.navigator.clipboard.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.navigator.managed.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.navigator.mediaDevices.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.navigator.storage.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.navigator.serviceWorker.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.navigator.virtualKeyboard.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.navigator.hid.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.navigator.serial.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.navigator.usb.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.navigator.windowControlsOverlay.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.navigator.xr.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.screen.orientation.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.screen.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.visualViewport.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.trustedTypes.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.performance.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.cookieStore.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.navigation.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.speechSynthesis.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.dispatchEvent",
+      "propertyName": "_$otherInvocation.window.dispatchEvent"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.document.documentElement.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.document.fonts.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.document.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.bluetooth.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.clipboard.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.managed.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.mediaDevices.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.storage.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.serviceWorker.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.virtualKeyboard.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.hid.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.serial.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.usb.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.windowControlsOverlay.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.navigator.xr.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.screen.orientation.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.screen.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.visualViewport.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.trustedTypes.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.performance.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.cookieStore.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.navigation.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.speechSynthesis.removeEventListener"
+    },
+    {
+      "path": "window.EventTarget.prototype.removeEventListener",
+      "propertyName": "_$otherInvocation.window.removeEventListener"
+    },
+    {
+      "path": "window.EventCounts.prototype.entries",
+      "propertyName": "_$otherInvocation.window.performance.eventCounts.entries"
+    },
+    {
+      "path": "window.EventCounts.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.performance.eventCounts.forEach"
+    },
+    {
+      "path": "window.EventCounts.prototype.get",
+      "propertyName": "_$otherInvocation.window.performance.eventCounts.get"
+    },
+    {
+      "path": "window.EventCounts.prototype.has",
+      "propertyName": "_$otherInvocation.window.performance.eventCounts.has"
+    },
+    {
+      "path": "window.EventCounts.prototype.keys",
+      "propertyName": "_$otherInvocation.window.performance.eventCounts.keys"
+    },
+    {
+      "path": "window.EventCounts.prototype.values",
+      "propertyName": "_$otherInvocation.window.performance.eventCounts.values"
+    },
+    {
+      "path": "window.Element.prototype.animate",
+      "propertyName": "_$otherInvocation.window.document.documentElement.animate"
+    },
+    {
+      "path": "window.Element.prototype.attachShadow",
+      "propertyName": "_$otherInvocation.window.document.documentElement.attachShadow"
+    },
+    {
+      "path": "window.Element.prototype.closest",
+      "propertyName": "_$otherInvocation.window.document.documentElement.closest"
+    },
+    {
+      "path": "window.Element.prototype.computedStyleMap",
+      "propertyName": "_$otherInvocation.window.document.documentElement.computedStyleMap"
+    },
+    {
+      "path": "window.Element.prototype.getAttribute",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getAttribute"
+    },
+    {
+      "path": "window.Element.prototype.getAttributeNS",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getAttributeNS"
+    },
+    {
+      "path": "window.Element.prototype.getAttributeNames",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getAttributeNames"
+    },
+    {
+      "path": "window.Element.prototype.getAttributeNode",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getAttributeNode"
+    },
+    {
+      "path": "window.Element.prototype.getAttributeNodeNS",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getAttributeNodeNS"
+    },
+    {
+      "path": "window.Element.prototype.getBoundingClientRect",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getBoundingClientRect"
+    },
+    {
+      "path": "window.Element.prototype.getClientRects",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getClientRects"
+    },
+    {
+      "path": "window.Element.prototype.getElementsByClassName",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getElementsByClassName"
+    },
+    {
+      "path": "window.Element.prototype.getElementsByTagName",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getElementsByTagName"
+    },
+    {
+      "path": "window.Element.prototype.getElementsByTagNameNS",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getElementsByTagNameNS"
+    },
+    {
+      "path": "window.Element.prototype.hasAttribute",
+      "propertyName": "_$otherInvocation.window.document.documentElement.hasAttribute"
+    },
+    {
+      "path": "window.Element.prototype.hasAttributeNS",
+      "propertyName": "_$otherInvocation.window.document.documentElement.hasAttributeNS"
+    },
+    {
+      "path": "window.Element.prototype.hasAttributes",
+      "propertyName": "_$otherInvocation.window.document.documentElement.hasAttributes"
+    },
+    {
+      "path": "window.Element.prototype.hasPointerCapture",
+      "propertyName": "_$otherInvocation.window.document.documentElement.hasPointerCapture"
+    },
+    {
+      "path": "window.Element.prototype.insertAdjacentElement",
+      "propertyName": "_$otherInvocation.window.document.documentElement.insertAdjacentElement"
+    },
+    {
+      "path": "window.Element.prototype.insertAdjacentHTML",
+      "propertyName": "_$otherInvocation.window.document.documentElement.insertAdjacentHTML"
+    },
+    {
+      "path": "window.Element.prototype.insertAdjacentText",
+      "propertyName": "_$otherInvocation.window.document.documentElement.insertAdjacentText"
+    },
+    {
+      "path": "window.Element.prototype.matches",
+      "propertyName": "_$otherInvocation.window.document.documentElement.matches"
+    },
+    {
+      "path": "window.Element.prototype.querySelector",
+      "propertyName": "_$otherInvocation.window.document.documentElement.querySelector"
+    },
+    {
+      "path": "window.Element.prototype.querySelectorAll",
+      "propertyName": "_$otherInvocation.window.document.documentElement.querySelectorAll"
+    },
+    {
+      "path": "window.Element.prototype.releasePointerCapture",
+      "propertyName": "_$otherInvocation.window.document.documentElement.releasePointerCapture"
+    },
+    {
+      "path": "window.Element.prototype.removeAttribute",
+      "propertyName": "_$otherInvocation.window.document.documentElement.removeAttribute"
+    },
+    {
+      "path": "window.Element.prototype.removeAttributeNS",
+      "propertyName": "_$otherInvocation.window.document.documentElement.removeAttributeNS"
+    },
+    {
+      "path": "window.Element.prototype.removeAttributeNode",
+      "propertyName": "_$otherInvocation.window.document.documentElement.removeAttributeNode"
+    },
+    {
+      "path": "window.Element.prototype.requestPointerLock",
+      "propertyName": "_$otherInvocationAsync.window.document.documentElement.requestPointerLock"
+    },
+    {
+      "path": "window.Element.prototype.setAttribute",
+      "propertyName": "_$otherInvocation.window.document.documentElement.setAttribute"
+    },
+    {
+      "path": "window.Element.prototype.setAttributeNS",
+      "propertyName": "_$otherInvocation.window.document.documentElement.setAttributeNS"
+    },
+    {
+      "path": "window.Element.prototype.setAttributeNode",
+      "propertyName": "_$otherInvocation.window.document.documentElement.setAttributeNode"
+    },
+    {
+      "path": "window.Element.prototype.setAttributeNodeNS",
+      "propertyName": "_$otherInvocation.window.document.documentElement.setAttributeNodeNS"
+    },
+    {
+      "path": "window.Element.prototype.setPointerCapture",
+      "propertyName": "_$otherInvocation.window.document.documentElement.setPointerCapture"
+    },
+    {
+      "path": "window.Element.prototype.toggleAttribute",
+      "propertyName": "_$otherInvocation.window.document.documentElement.toggleAttribute"
+    },
+    {
+      "path": "window.Element.prototype.webkitMatchesSelector",
+      "propertyName": "_$otherInvocation.window.document.documentElement.webkitMatchesSelector"
+    },
+    {
+      "path": "window.Element.prototype.checkVisibility",
+      "propertyName": "_$otherInvocation.window.document.documentElement.checkVisibility"
+    },
+    {
+      "path": "window.Element.prototype.getAnimations",
+      "propertyName": "_$otherInvocation.window.document.documentElement.getAnimations"
+    },
+    {
+      "path": "window.Element.prototype.setHTML",
+      "propertyName": "_$otherInvocation.window.document.documentElement.setHTML"
+    },
+    {
+      "path": "window.Document.prototype.adoptNode",
+      "propertyName": "_$otherInvocation.window.document.adoptNode"
+    },
+    {
+      "path": "window.Document.prototype.caretRangeFromPoint",
+      "propertyName": "_$otherInvocation.window.document.caretRangeFromPoint"
+    },
+    {
+      "path": "window.Document.prototype.createAttribute",
+      "propertyName": "_$otherInvocation.window.document.createAttribute"
+    },
+    {
+      "path": "window.Document.prototype.createAttributeNS",
+      "propertyName": "_$otherInvocation.window.document.createAttributeNS"
+    },
+    {
+      "path": "window.Document.prototype.createCDATASection",
+      "propertyName": "_$otherInvocation.window.document.createCDATASection"
+    },
+    {
+      "path": "window.Document.prototype.createComment",
+      "propertyName": "_$otherInvocation.window.document.createComment"
+    },
+    {
+      "path": "window.Document.prototype.createDocumentFragment",
+      "propertyName": "_$otherInvocation.window.document.createDocumentFragment"
+    },
+    {
+      "path": "window.Document.prototype.createElement",
+      "propertyName": "_$otherInvocation.window.document.createElement"
+    },
+    {
+      "path": "window.Document.prototype.createElementNS",
+      "propertyName": "_$otherInvocation.window.document.createElementNS"
+    },
+    {
+      "path": "window.Document.prototype.createEvent",
+      "propertyName": "_$otherInvocation.window.document.createEvent"
+    },
+    {
+      "path": "window.Document.prototype.createExpression",
+      "propertyName": "_$otherInvocation.window.document.createExpression"
+    },
+    {
+      "path": "window.Document.prototype.createNSResolver",
+      "propertyName": "_$otherInvocation.window.document.createNSResolver"
+    },
+    {
+      "path": "window.Document.prototype.createNodeIterator",
+      "propertyName": "_$otherInvocation.window.document.createNodeIterator"
+    },
+    {
+      "path": "window.Document.prototype.createProcessingInstruction",
+      "propertyName": "_$otherInvocation.window.document.createProcessingInstruction"
+    },
+    {
+      "path": "window.Document.prototype.createRange",
+      "propertyName": "_$otherInvocation.window.document.createRange"
+    },
+    {
+      "path": "window.Document.prototype.createTextNode",
+      "propertyName": "_$otherInvocation.window.document.createTextNode"
+    },
+    {
+      "path": "window.Document.prototype.createTreeWalker",
+      "propertyName": "_$otherInvocation.window.document.createTreeWalker"
+    },
+    {
+      "path": "window.Document.prototype.elementFromPoint",
+      "propertyName": "_$otherInvocation.window.document.elementFromPoint"
+    },
+    {
+      "path": "window.Document.prototype.elementsFromPoint",
+      "propertyName": "_$otherInvocation.window.document.elementsFromPoint"
+    },
+    {
+      "path": "window.Document.prototype.evaluate",
+      "propertyName": "_$otherInvocation.window.document.evaluate"
+    },
+    {
+      "path": "window.Document.prototype.execCommand",
+      "propertyName": "_$otherInvocation.window.document.execCommand"
+    },
+    {
+      "path": "window.Document.prototype.exitFullscreen",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Document.prototype.exitFullscreen",
+      "propertyName": "_$otherInvocationAsync.window.document.exitFullscreen"
+    },
+    {
+      "path": "window.Document.prototype.getElementById",
+      "propertyName": "_$otherInvocation.window.document.getElementById"
+    },
+    {
+      "path": "window.Document.prototype.getElementsByClassName",
+      "propertyName": "_$otherInvocation.window.document.getElementsByClassName"
+    },
+    {
+      "path": "window.Document.prototype.getElementsByName",
+      "propertyName": "_$otherInvocation.window.document.getElementsByName"
+    },
+    {
+      "path": "window.Document.prototype.getElementsByTagName",
+      "propertyName": "_$otherInvocation.window.document.getElementsByTagName"
+    },
+    {
+      "path": "window.Document.prototype.getElementsByTagNameNS",
+      "propertyName": "_$otherInvocation.window.document.getElementsByTagNameNS"
+    },
+    {
+      "path": "window.Document.prototype.getSelection",
+      "propertyName": "_$otherInvocation.window.document.getSelection"
+    },
+    {
+      "path": "window.Document.prototype.importNode",
+      "propertyName": "_$otherInvocation.window.document.importNode"
+    },
+    {
+      "path": "window.Document.prototype.queryCommandEnabled",
+      "propertyName": "_$otherInvocation.window.document.queryCommandEnabled"
+    },
+    {
+      "path": "window.Document.prototype.queryCommandIndeterm",
+      "propertyName": "_$otherInvocation.window.document.queryCommandIndeterm"
+    },
+    {
+      "path": "window.Document.prototype.queryCommandState",
+      "propertyName": "_$otherInvocation.window.document.queryCommandState"
+    },
+    {
+      "path": "window.Document.prototype.queryCommandSupported",
+      "propertyName": "_$otherInvocation.window.document.queryCommandSupported"
+    },
+    {
+      "path": "window.Document.prototype.queryCommandValue",
+      "propertyName": "_$otherInvocation.window.document.queryCommandValue"
+    },
+    {
+      "path": "window.Document.prototype.querySelector",
+      "propertyName": "_$otherInvocation.window.document.querySelector"
+    },
+    {
+      "path": "window.Document.prototype.querySelectorAll",
+      "propertyName": "_$otherInvocation.window.document.querySelectorAll"
+    },
+    {
+      "path": "window.Document.prototype.exitPictureInPicture",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Document.prototype.exitPictureInPicture",
+      "propertyName": "_$otherInvocationAsync.window.document.exitPictureInPicture"
+    },
+    {
+      "path": "window.Document.prototype.getAnimations",
+      "propertyName": "_$otherInvocation.window.document.getAnimations"
+    },
+    {
+      "path": "window.DataTransferItem.prototype.getAsFileSystemHandle",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.DOMTokenList.prototype.contains",
+      "propertyName": "_$otherInvocation.window.document.documentElement.classList.contains"
+    },
+    {
+      "path": "window.DOMTokenList.prototype.contains",
+      "propertyName": "_$otherInvocation.window.document.documentElement.part.contains"
+    },
+    {
+      "path": "window.DOMTokenList.prototype.item",
+      "propertyName": "_$otherInvocation.window.document.documentElement.classList.item"
+    },
+    {
+      "path": "window.DOMTokenList.prototype.item",
+      "propertyName": "_$otherInvocation.window.document.documentElement.part.item"
+    },
+    {
+      "path": "window.DOMTokenList.prototype.replace",
+      "propertyName": "_$otherInvocation.window.document.documentElement.classList.replace"
+    },
+    {
+      "path": "window.DOMTokenList.prototype.replace",
+      "propertyName": "_$otherInvocation.window.document.documentElement.part.replace"
+    },
+    {
+      "path": "window.DOMTokenList.prototype.supports",
+      "propertyName": "_$otherInvocation.window.document.documentElement.classList.supports"
+    },
+    {
+      "path": "window.DOMTokenList.prototype.supports",
+      "propertyName": "_$otherInvocation.window.document.documentElement.part.supports"
+    },
+    {
+      "path": "window.DOMTokenList.prototype.toggle",
+      "propertyName": "_$otherInvocation.window.document.documentElement.classList.toggle"
+    },
+    {
+      "path": "window.DOMTokenList.prototype.toggle",
+      "propertyName": "_$otherInvocation.window.document.documentElement.part.toggle"
+    },
+    {
+      "path": "window.DOMTokenList.prototype.toString",
+      "propertyName": "_$otherInvocation.window.document.documentElement.classList.toString"
+    },
+    {
+      "path": "window.DOMTokenList.prototype.toString",
+      "propertyName": "_$otherInvocation.window.document.documentElement.part.toString"
+    },
+    {
+      "path": "window.DOMRectReadOnly.prototype.toJSON",
+      "propertyName": "_$otherInvocation.window.navigator.virtualKeyboard.boundingRect.toJSON"
+    },
+    {
+      "path": "window.DOMRectReadOnly.fromRect",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.DOMRect.fromRect",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.DOMQuad.fromQuad",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.DOMQuad.fromRect",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.DOMPointReadOnly.fromPoint",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.DOMPoint.fromPoint",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.DOMMatrixReadOnly.fromMatrix",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.DOMImplementation.prototype.createDocument",
+      "propertyName": "_$otherInvocation.window.document.implementation.createDocument"
+    },
+    {
+      "path": "window.DOMImplementation.prototype.createDocumentType",
+      "propertyName": "_$otherInvocation.window.document.implementation.createDocumentType"
+    },
+    {
+      "path": "window.DOMImplementation.prototype.createHTMLDocument",
+      "propertyName": "_$otherInvocation.window.document.implementation.createHTMLDocument"
+    },
+    {
+      "path": "window.DOMImplementation.prototype.hasFeature",
+      "propertyName": "_$otherInvocation.window.document.implementation.hasFeature"
+    },
+    {
+      "path": "window.CustomElementRegistry.prototype.define",
+      "propertyName": "_$otherInvocation.window.customElements.define"
+    },
+    {
+      "path": "window.CustomElementRegistry.prototype.get",
+      "propertyName": "_$otherInvocation.window.customElements.get"
+    },
+    {
+      "path": "window.CustomElementRegistry.prototype.upgrade",
+      "propertyName": "_$otherInvocation.window.customElements.upgrade"
+    },
+    {
+      "path": "window.CustomElementRegistry.prototype.whenDefined",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CustomElementRegistry.prototype.whenDefined",
+      "propertyName": "_$otherInvocationAsync.window.customElements.whenDefined"
+    },
+    {
+      "path": "window.Crypto.prototype.getRandomValues",
+      "propertyName": "_$otherInvocation.window.crypto.getRandomValues"
+    },
+    {
+      "path": "window.CSSStyleSheet.prototype.replace",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Blob.prototype.arrayBuffer",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Blob.prototype.text",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BaseAudioContext.prototype.decodeAudioData",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.AudioContext.prototype.resume",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.AudioContext.prototype.suspend",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.document.documentElement.attributes",
+      "propertyName": "0"
+    },
+    {
+      "path": "window.document.documentElement.attributes",
+      "propertyName": "class"
+    },
+    {
+      "path": "window.blur",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.captureEvents",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.clearInterval",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.clearTimeout",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.createImageBitmap",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.fetch",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.find",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.focus",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.getSelection",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.releaseEvents",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.scroll",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.scrollBy",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.scrollTo",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Atomics.isLockFree",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.chrome.app.getDetails",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.chrome.app.getIsInstalled",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.chrome.app.runningState",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WebAssembly.compile",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WebAssembly.instantiate",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WebAssembly.compileStreaming",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WebAssembly.instantiateStreaming",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WebAssembly.CompileError",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WebAssembly.LinkError",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WebAssembly.RuntimeError",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Cache.prototype.add",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Cache.prototype.addAll",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Cache.prototype.keys",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Cache.prototype.match",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Cache.prototype.matchAll",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Cache.prototype.put",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CacheStorage.prototype.has",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CacheStorage.prototype.has",
+      "propertyName": "_$otherInvocationAsync.window.caches.has"
+    },
+    {
+      "path": "window.CacheStorage.prototype.keys",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CacheStorage.prototype.keys",
+      "propertyName": "_$otherInvocationAsync.window.caches.keys"
+    },
+    {
+      "path": "window.CacheStorage.prototype.match",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CacheStorage.prototype.match",
+      "propertyName": "_$otherInvocationAsync.window.caches.match"
+    },
+    {
+      "path": "window.Clipboard.prototype.readText",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Clipboard.prototype.writeText",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Clipboard.prototype.writeText",
+      "propertyName": "_$otherInvocationAsync.window.navigator.clipboard.writeText"
+    },
+    {
+      "path": "window.ClipboardItem.prototype.getType",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CookieStore.prototype.get",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CookieStore.prototype.get",
+      "propertyName": "_$otherInvocationAsync.window.cookieStore.get"
+    },
+    {
+      "path": "window.CookieStore.prototype.getAll",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CookieStore.prototype.getAll",
+      "propertyName": "_$otherInvocationAsync.window.cookieStore.getAll"
+    },
+    {
+      "path": "window.CookieStore.prototype.set",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CookieStoreManager.prototype.getSubscriptions",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CookieStoreManager.prototype.subscribe",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CookieStoreManager.prototype.unsubscribe",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CredentialsContainer.prototype.create",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CredentialsContainer.prototype.create",
+      "propertyName": "_$otherInvocationAsync.window.navigator.credentials.create"
+    },
+    {
+      "path": "window.CredentialsContainer.prototype.get",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CredentialsContainer.prototype.get",
+      "propertyName": "_$otherInvocationAsync.window.navigator.credentials.get"
+    },
+    {
+      "path": "window.CredentialsContainer.prototype.preventSilentAccess",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CredentialsContainer.prototype.store",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CredentialsContainer.prototype.store",
+      "propertyName": "_$otherInvocationAsync.window.navigator.credentials.store"
+    },
+    {
+      "path": "window.Keyboard.prototype.getLayoutMap",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Keyboard.prototype.getLayoutMap",
+      "propertyName": "_$otherInvocationAsync.window.navigator.keyboard.getLayoutMap"
+    },
+    {
+      "path": "window.Keyboard.prototype.lock",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.LockManager.prototype.query",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.LockManager.prototype.query",
+      "propertyName": "_$otherInvocationAsync.window.navigator.locks.query"
+    },
+    {
+      "path": "window.LockManager.prototype.request",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.MediaDevices.prototype.enumerateDevices",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.MediaDevices.prototype.getSupportedConstraints",
+      "propertyName": "_$otherInvocation.window.navigator.mediaDevices.getSupportedConstraints"
+    },
+    {
+      "path": "window.MediaKeySession.prototype.generateRequest",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.MediaKeySession.prototype.load",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.MediaKeySession.prototype.update",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.MediaKeySystemAccess.prototype.createMediaKeys",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.MediaKeys.prototype.setServerCertificate",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.MediaKeys.prototype.getStatusForPolicy",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.NavigationPreloadManager.prototype.disable",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.NavigationPreloadManager.prototype.enable",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.NavigationPreloadManager.prototype.getState",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.NavigationPreloadManager.prototype.setHeaderValue",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.NavigatorManagedData.prototype.getManagedConfiguration",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.NavigatorManagedData.prototype.getManagedConfiguration",
+      "propertyName": "_$otherInvocationAsync.window.navigator.managed.getManagedConfiguration"
+    },
+    {
+      "path": "window.ServiceWorkerContainer.prototype.getRegistration",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ServiceWorkerContainer.prototype.getRegistrations",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ServiceWorkerContainer.prototype.getRegistrations",
+      "propertyName": "_$otherInvocationAsync.window.navigator.serviceWorker.getRegistrations"
+    },
+    {
+      "path": "window.ServiceWorkerContainer.prototype.register",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ServiceWorkerContainer.prototype.register",
+      "propertyName": "_$otherInvocationAsync.window.navigator.serviceWorker.register"
+    },
+    {
+      "path": "window.ServiceWorkerRegistration.prototype.unregister",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ServiceWorkerRegistration.prototype.update",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ServiceWorkerRegistration.prototype.getNotifications",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ServiceWorkerRegistration.prototype.showNotification",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.StorageManager.prototype.estimate",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.StorageManager.prototype.persisted",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.StorageManager.prototype.persisted",
+      "propertyName": "_$otherInvocationAsync.window.navigator.storage.persisted"
+    },
+    {
+      "path": "window.StorageManager.prototype.getDirectory",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.StorageManager.prototype.getDirectory",
+      "propertyName": "_$otherInvocationAsync.window.navigator.storage.getDirectory"
+    },
+    {
+      "path": "window.StorageManager.prototype.persist",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.StorageManager.prototype.persist",
+      "propertyName": "_$otherInvocationAsync.window.navigator.storage.persist"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.decrypt",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.decrypt",
+      "propertyName": "_$otherInvocationAsync.window.crypto.subtle.decrypt"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.deriveBits",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.deriveBits",
+      "propertyName": "_$otherInvocationAsync.window.crypto.subtle.deriveBits"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.deriveKey",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.deriveKey",
+      "propertyName": "_$otherInvocationAsync.window.crypto.subtle.deriveKey"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.digest",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.digest",
+      "propertyName": "_$otherInvocationAsync.window.crypto.subtle.digest"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.encrypt",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.encrypt",
+      "propertyName": "_$otherInvocationAsync.window.crypto.subtle.encrypt"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.exportKey",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.exportKey",
+      "propertyName": "_$otherInvocationAsync.window.crypto.subtle.exportKey"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.generateKey",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.generateKey",
+      "propertyName": "_$otherInvocationAsync.window.crypto.subtle.generateKey"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.importKey",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.importKey",
+      "propertyName": "_$otherInvocationAsync.window.crypto.subtle.importKey"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.sign",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.sign",
+      "propertyName": "_$otherInvocationAsync.window.crypto.subtle.sign"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.unwrapKey",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.unwrapKey",
+      "propertyName": "_$otherInvocationAsync.window.crypto.subtle.unwrapKey"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.verify",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.verify",
+      "propertyName": "_$otherInvocationAsync.window.crypto.subtle.verify"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.wrapKey",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SubtleCrypto.prototype.wrapKey",
+      "propertyName": "_$otherInvocationAsync.window.crypto.subtle.wrapKey"
+    },
+    {
+      "path": "window.WebTransport.prototype.createBidirectionalStream",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WebTransport.prototype.createUnidirectionalStream",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Worklet.prototype.addModule",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Worklet.prototype.addModule",
+      "propertyName": "_$otherInvocationAsync.window.CSS.paintWorklet.addModule"
+    },
+    {
+      "path": "window.VideoFrame.prototype.copyTo",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.AudioDecoder.prototype.flush",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.AudioDecoder.isConfigSupported",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.AudioEncoder.prototype.flush",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.AudioEncoder.isConfigSupported",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ImageDecoder.prototype.decode",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.ImageDecoder.isTypeSupported",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.VideoDecoder.prototype.flush",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.VideoDecoder.isConfigSupported",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.VideoEncoder.prototype.flush",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.VideoEncoder.isConfigSupported",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BarcodeDetector.prototype.detect",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Bluetooth.prototype.getAvailability",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Bluetooth.prototype.getAvailability",
+      "propertyName": "_$otherInvocationAsync.window.navigator.bluetooth.getAvailability"
+    },
+    {
+      "path": "window.Bluetooth.prototype.requestDevice",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Bluetooth.prototype.requestDevice",
+      "propertyName": "_$otherInvocationAsync.window.navigator.bluetooth.requestDevice"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.getDescriptor",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.getDescriptors",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.readValue",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.startNotifications",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.stopNotifications",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.writeValue",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.writeValueWithResponse",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTCharacteristic.prototype.writeValueWithoutResponse",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTDescriptor.prototype.readValue",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTDescriptor.prototype.writeValue",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTServer.prototype.connect",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTServer.prototype.getPrimaryService",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTServer.prototype.getPrimaryServices",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTService.prototype.getCharacteristic",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BluetoothRemoteGATTService.prototype.getCharacteristics",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BrowserCaptureMediaStreamTrack.prototype.cropTo",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.CropTarget.fromElement",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FileSystemDirectoryHandle.prototype.getDirectoryHandle",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FileSystemDirectoryHandle.prototype.getFileHandle",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FileSystemDirectoryHandle.prototype.removeEntry",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FileSystemDirectoryHandle.prototype.resolve",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FileSystemFileHandle.prototype.createWritable",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FileSystemFileHandle.prototype.getFile",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FileSystemFileHandle.prototype.move",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FileSystemHandle.prototype.isSameEntry",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FileSystemHandle.prototype.queryPermission",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FileSystemWritableFileStream.prototype.seek",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FileSystemWritableFileStream.prototype.truncate",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.FontData.prototype.blob",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.HID.prototype.getDevices",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.HID.prototype.getDevices",
+      "propertyName": "_$otherInvocationAsync.window.navigator.hid.getDevices"
+    },
+    {
+      "path": "window.HID.prototype.requestDevice",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.HID.prototype.requestDevice",
+      "propertyName": "_$otherInvocationAsync.window.navigator.hid.requestDevice"
+    },
+    {
+      "path": "window.HIDDevice.prototype.receiveFeatureReport",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.HIDDevice.prototype.sendFeatureReport",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.HIDDevice.prototype.sendReport",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.HIDDevice.prototype.forget",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.LaunchQueue.prototype.setConsumer",
+      "propertyName": "_$otherInvocation.window.launchQueue.setConsumer"
+    },
+    {
+      "path": "window.PaymentRequest.prototype.abort",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PaymentRequest.prototype.canMakePayment",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PaymentRequest.prototype.hasEnrolledInstrument",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PaymentRequest.prototype.show",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PaymentResponse.prototype.complete",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PaymentResponse.prototype.retry",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PresentationRequest.prototype.getAvailability",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PresentationRequest.prototype.reconnect",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Sanitizer.getDefaultConfiguration",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Serial.prototype.getPorts",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Serial.prototype.getPorts",
+      "propertyName": "_$otherInvocationAsync.window.navigator.serial.getPorts"
+    },
+    {
+      "path": "window.Serial.prototype.requestPort",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Serial.prototype.requestPort",
+      "propertyName": "_$otherInvocationAsync.window.navigator.serial.requestPort"
+    },
+    {
+      "path": "window.SerialPort.prototype.getSignals",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SerialPort.prototype.setSignals",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.SerialPort.prototype.forget",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USB.prototype.getDevices",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USB.prototype.getDevices",
+      "propertyName": "_$otherInvocationAsync.window.navigator.usb.getDevices"
+    },
+    {
+      "path": "window.USB.prototype.requestDevice",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USB.prototype.requestDevice",
+      "propertyName": "_$otherInvocationAsync.window.navigator.usb.requestDevice"
+    },
+    {
+      "path": "window.USBDevice.prototype.claimInterface",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USBDevice.prototype.clearHalt",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USBDevice.prototype.controlTransferIn",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USBDevice.prototype.controlTransferOut",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USBDevice.prototype.isochronousTransferIn",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USBDevice.prototype.isochronousTransferOut",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USBDevice.prototype.releaseInterface",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USBDevice.prototype.reset",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USBDevice.prototype.selectAlternateInterface",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USBDevice.prototype.selectConfiguration",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USBDevice.prototype.transferIn",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USBDevice.prototype.transferOut",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.USBDevice.prototype.forget",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WakeLock.prototype.request",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WakeLock.prototype.request",
+      "propertyName": "_$otherInvocationAsync.window.navigator.wakeLock.request"
+    },
+    {
+      "path": "window.WakeLockSentinel.prototype.release",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.WindowControlsOverlay.prototype.getTitlebarAreaRect",
+      "propertyName": "_$otherInvocation.window.navigator.windowControlsOverlay.getTitlebarAreaRect"
+    },
+    {
+      "path": "window.XRFrame.prototype.createAnchor",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.XRSession.prototype.end",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.XRSession.prototype.requestReferenceSpace",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.XRSession.prototype.requestHitTestSource",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.XRSession.prototype.requestHitTestSourceForTransientInput",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.XRSession.prototype.requestLightProbe",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.XRSystem.prototype.isSessionSupported",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.XRSystem.prototype.isSessionSupported",
+      "propertyName": "_$otherInvocationAsync.window.navigator.xr.isSessionSupported"
+    },
+    {
+      "path": "window.XRSystem.prototype.requestSession",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.XRSystem.prototype.requestSession",
+      "propertyName": "_$otherInvocationAsync.window.navigator.xr.requestSession"
+    },
+    {
+      "path": "window.XRSystem.prototype.supportsSession",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.XRSystem.prototype.supportsSession",
+      "propertyName": "_$otherInvocationAsync.window.navigator.xr.supportsSession"
+    },
+    {
+      "path": "window.XRHitTestResult.prototype.createAnchor",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.getScreenDetails",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.queryLocalFonts",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.showDirectoryPicker",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.showOpenFilePicker",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.showSaveFilePicker",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.speechSynthesis.cancel",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.speechSynthesis.getVoices",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.speechSynthesis.pause",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.speechSynthesis.resume",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BackgroundFetchManager.prototype.fetch",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BackgroundFetchManager.prototype.get",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BackgroundFetchManager.prototype.getIds",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BackgroundFetchRegistration.prototype.abort",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BackgroundFetchRegistration.prototype.match",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.BackgroundFetchRegistration.prototype.matchAll",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Ink.prototype.requestPresenter",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Ink.prototype.requestPresenter",
+      "propertyName": "_$otherInvocationAsync.window.navigator.ink.requestPresenter"
+    },
+    {
+      "path": "window.HighlightRegistry.prototype.entries",
+      "propertyName": "_$otherInvocation.window.CSS.highlights.entries"
+    },
+    {
+      "path": "window.HighlightRegistry.prototype.forEach",
+      "propertyName": "_$otherInvocation.window.CSS.highlights.forEach"
+    },
+    {
+      "path": "window.HighlightRegistry.prototype.get",
+      "propertyName": "_$otherInvocation.window.CSS.highlights.get"
+    },
+    {
+      "path": "window.HighlightRegistry.prototype.has",
+      "propertyName": "_$otherInvocation.window.CSS.highlights.has"
+    },
+    {
+      "path": "window.HighlightRegistry.prototype.keys",
+      "propertyName": "_$otherInvocation.window.CSS.highlights.keys"
+    },
+    {
+      "path": "window.HighlightRegistry.prototype.set",
+      "propertyName": "_$otherInvocation.window.CSS.highlights.set"
+    },
+    {
+      "path": "window.HighlightRegistry.prototype.values",
+      "propertyName": "_$otherInvocation.window.CSS.highlights.values"
+    },
+    {
+      "path": "window.MediaSession.prototype.setActionHandler",
+      "propertyName": "_$otherInvocation.window.navigator.mediaSession.setActionHandler"
+    },
+    {
+      "path": "window.MediaSession.prototype.setCameraActive",
+      "propertyName": "_$otherInvocation.window.navigator.mediaSession.setCameraActive"
+    },
+    {
+      "path": "window.MediaSession.prototype.setMicrophoneActive",
+      "propertyName": "_$otherInvocation.window.navigator.mediaSession.setMicrophoneActive"
+    },
+    {
+      "path": "window.MediaStreamTrack.prototype.applyConstraints",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Navigation.prototype.entries",
+      "propertyName": "_$otherInvocation.window.navigation.entries"
+    },
+    {
+      "path": "window.Navigation.prototype.navigate",
+      "propertyName": "_$otherInvocation.window.navigation.navigate"
+    },
+    {
+      "path": "window.Navigation.prototype.traverseTo",
+      "propertyName": "_$otherInvocation.window.navigation.traverseTo"
+    },
+    {
+      "path": "window.Navigation.prototype.updateCurrentEntry",
+      "propertyName": "_$otherInvocation.window.navigation.updateCurrentEntry"
+    },
+    {
+      "path": "window.NavigatorUAData.prototype.getHighEntropyValues",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PaymentInstruments.prototype.get",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PaymentInstruments.prototype.has",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PaymentInstruments.prototype.keys",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PaymentInstruments.prototype.set",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PaymentManager.prototype.enableDelegations",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PeriodicSyncManager.prototype.getTags",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PeriodicSyncManager.prototype.register",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PeriodicSyncManager.prototype.unregister",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Permissions.prototype.query",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.Permissions.prototype.query",
+      "propertyName": "_$otherInvocationAsync.window.navigator.permissions.query"
+    },
+    {
+      "path": "window.PushManager.prototype.getSubscription",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PushManager.prototype.permissionState",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PushManager.prototype.subscribe",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.PushSubscription.prototype.unsubscribe",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.RemotePlayback.prototype.cancelWatchAvailability",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "window.RemotePlayback.prototype.watchAvailability",
+      "propertyName": "_$isAsync"
+    },
+    {
+      "path": "detached.DeprecatedStorageQuota.prototype.queryUsageAndQuota",
+      "propertyName": "_$otherInvocation.window.navigator.webkitTemporaryStorage.queryUsageAndQuota"
+    },
+    {
+      "path": "detached.DeprecatedStorageQuota.prototype.requestQuota",
+      "propertyName": "_$otherInvocation.window.navigator.webkitTemporaryStorage.requestQuota"
+    },
+    {
+      "path": "detached.StyleMedia.prototype.matchMedium",
+      "propertyName": "_$otherInvocation.window.styleMedia.matchMedium"
+    },
+    {
+      "path": "detached.DeprecatedStorageInfo.prototype.queryUsageAndQuota",
+      "propertyName": "_$otherInvocation.window.webkitStorageInfo.queryUsageAndQuota"
+    },
+    {
+      "path": "detached.DeprecatedStorageInfo.prototype.requestQuota",
+      "propertyName": "_$otherInvocation.window.webkitStorageInfo.requestQuota"
+    },
+    {
+      "path": "window.Text.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "createShadowRoot"
+    },
+    {
+      "path": "window.Element.prototype",
+      "propertyName": "getDestinationInsertionPoints"
+    },
+    {
+      "path": "window.Document.prototype",
+      "propertyName": "registerElement"
+    },
+    {
+      "path": "window",
+      "propertyName": "cdc_adoQpoasnfa76pfcZLmcfl"
+    },
+    {
+      "path": "window.HTMLLinkElement.prototype",
+      "propertyName": "import"
+    }
+  ],
+  "modify": [
+    {
+      "path": "window.Array",
+      "propertyName": "Symbol.species",
+      "property": "REF: window.Array"
+    },
+    {
+      "path": "window.Promise",
+      "propertyName": "Symbol.species",
+      "property": "REF: window.Promise"
+    },
+    {
+      "path": "window.RegExp",
+      "propertyName": "Symbol.species",
+      "property": "REF: window.RegExp"
+    },
+    {
+      "path": "window.ArrayBuffer",
+      "propertyName": "Symbol.species",
+      "property": "REF: window.ArrayBuffer"
+    },
+    {
+      "path": "window.Map",
+      "propertyName": "Symbol.species",
+      "property": "REF: window.Map"
+    },
+    {
+      "path": "window.Set",
+      "propertyName": "Symbol.species",
+      "property": "REF: window.Set"
+    },
+    {
+      "path": "window.document.$cdc_asdjflasutopfhvcZLmcfl_.storeItem.new()",
+      "propertyName": "_$constructorException",
+      "property": "TypeError: Cannot set properties of undefined (setting 'c70a0f1b-e996-4065-b0c1-e5392faa53e7')"
+    },
+    {
+      "path": "window.document",
+      "propertyName": "_$value",
+      "property": "REF: window.Option.new().ownerDocument"
+    },
+    {
+      "path": "detached.TypedArray.prototype",
+      "propertyName": "toString",
+      "property": "REF: window.Array.prototype.toString"
+    }
+  ],
+  "reorder": [
+    {
+      "path": "detached.TypedArray.prototype",
+      "propertyName": "findLast",
+      "throughProperty": "findLastIndex",
+      "prevProperty": "toString"
+    },
+    {
+      "path": "window",
+      "propertyName": "Infinity",
+      "throughProperty": "URLPattern",
+      "prevProperty": "parseInt"
+    },
+    {
+      "path": "window",
+      "propertyName": "UIEvent",
+      "throughProperty": "RTCPeerConnectionIceErrorEvent",
+      "prevProperty": "URL"
+    },
+    {
+      "path": "window",
+      "propertyName": "RTCIceCandidate",
+      "throughProperty": "MutationRecord",
+      "prevProperty": "RTCPeerConnection"
+    },
+    {
+      "path": "window",
+      "propertyName": "MutationEvent",
+      "throughProperty": "MediaStreamAudioDestinationNode",
+      "prevProperty": "MutationObserver"
+    },
+    {
+      "path": "window",
+      "propertyName": "MediaRecorder",
+      "throughProperty": "DOMMatrixReadOnly",
+      "prevProperty": "MediaStream"
+    },
+    {
+      "path": "window",
+      "propertyName": "DOMImplementation",
+      "throughProperty": "webkitResolveLocalFileSystemURL",
+      "prevProperty": "DOMMatrix"
+    },
+    {
+      "path": "window",
+      "propertyName": "TEMPORARY",
+      "throughProperty": "PERSISTENT",
+      "prevProperty": "cdc_adoQpoasnfa76pfcZLmcfl_Symbol"
+    },
+    {
+      "path": "window.AbortSignal",
+      "propertyName": "new()",
+      "throughProperty": "new()",
+      "prevProperty": "timeout"
+    },
+    {
+      "path": "window.CSSNumericArray.prototype",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "forEach"
+    },
+    {
+      "path": "window.CSSNumericValue",
+      "propertyName": "new()",
+      "throughProperty": "new()",
+      "prevProperty": "parse"
+    },
+    {
+      "path": "window.CSSStyleValue",
+      "propertyName": "new()",
+      "throughProperty": "new()",
+      "prevProperty": "parseAll"
+    },
+    {
+      "path": "window.CSSTransformValue.prototype",
+      "propertyName": "length",
+      "throughProperty": "toMatrix",
+      "prevProperty": "forEach"
+    },
+    {
+      "path": "window.CSSUnparsedValue.prototype",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "forEach"
+    },
+    {
+      "path": "window.Date.prototype",
+      "propertyName": "getDate",
+      "throughProperty": "toLocaleTimeString",
+      "prevProperty": "toGMTString"
+    },
+    {
+      "path": "window.document.location",
+      "propertyName": "ancestorOrigins",
+      "throughProperty": "toString",
+      "prevProperty": "valueOf"
+    },
+    {
+      "path": "window.DOMTokenList.prototype",
+      "propertyName": "length",
+      "throughProperty": "toString",
+      "prevProperty": "forEach"
+    },
+    {
+      "path": "window.NodeList.prototype",
+      "propertyName": "length",
+      "throughProperty": "item",
+      "prevProperty": "forEach"
+    },
+    {
+      "path": "window.String.prototype",
+      "propertyName": "trimEnd",
+      "throughProperty": "trimEnd",
+      "prevProperty": "trimLeft"
+    },
+    {
+      "path": "window.String.prototype",
+      "propertyName": "toLocaleLowerCase",
+      "throughProperty": "valueOf",
+      "prevProperty": "trimRight"
+    },
+    {
+      "path": "window.XRInputSourceArray.prototype",
+      "propertyName": "length",
+      "throughProperty": "length",
+      "prevProperty": "forEach"
+    }
+  ]
+}
