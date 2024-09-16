@@ -1,4 +1,10 @@
-# Unblocked Web
+# Migrated into ulixee/hero repo
+This repo will have future work done in the [Hero](https://github.com/ulixee/hero) repo
+
+----
+Old readme:
+---
+### Unblocked Web
 
 This project maintains a suite of tools for protecting the web's open knowledge. Its primary function is to create a web-scraping engine that mimics a human interacting with a website - both from a user behavior, as well as from a "browser" perspective.
 
